@@ -285,7 +285,7 @@ Then open `http://127.0.0.1:4321`.
 4. The Playwright suite uses Chromium only.
 5. No automated accessibility scoring or assistive-technology session was run.
 6. Screenshots of third-party live sites may age independently of this repository.
-7. The GitHub Pages deployment requires the repository Pages source to be set to **GitHub Actions**. Until that setting is applied, the legacy branch build remains active.
+7. The GitHub Pages deployment requires the repository Pages source to remain set to **GitHub Actions**. It was switched from the legacy branch build and verified on 2026-11-12.
 
 ## 11. Production verification
 
@@ -295,13 +295,15 @@ Then open `http://127.0.0.1:4321`.
 
 | Item | Value |
 |---|---|
-| Commit | `c634104` — “Rebuild portfolio as a verified Astro archive” |
-| Workflow | [Deploy site to GitHub Pages #43137552926](https://github.com/zhubao315/zhubao315.github.io/actions/runs/43137552926) |
+| Verified code commit | `bb30e05` — “Preserve the full 2022 archive path hierarchy” |
+| Workflow | [Deploy site to GitHub Pages #43140271248](https://github.com/zhubao315/zhubao315.github.io/actions/runs/43140271248) |
 | Trigger | Push to `main` |
 | Build job | Success |
 | Deploy job | Success |
 | Pages build type | GitHub Actions (`workflow`) |
 | Production URL | https://zhubao315.github.io |
+
+Documentation-only commits after `bb30e05` reuse the same site output. The route, sitemap, and browser checks below were run against the deployed site after this workflow completed.
 
 ### Route checks
 
@@ -317,6 +319,8 @@ Then open `http://127.0.0.1:4321`.
 | `/tags/` | 200 | `noindex` compatibility page |
 | `/categories/` | 200 | `noindex` compatibility page |
 | `/archives/` | 200 | `noindex` compatibility page |
+| `/archives/2022/` | 200 | `noindex` year index |
+| `/archives/2022/07/` | 200 | `noindex` month index |
 | `/2022/07/05/` | 200 | `noindex` compatibility index |
 | `/2022/07/05/hello-world/` | 200 | `noindex` compatibility entry |
 | `/2022/07/05/zhubao315/` | 200 | `noindex` compatibility entry |
@@ -333,7 +337,7 @@ All 23 URLs in the deployed `sitemap-0.xml` returned HTTP 200:
 - `/work/`
 - 18 project case studies under `/work/[slug]/`
 
-The deployed sitemap contains no `/tags/`, `/categories/`, `/archives/`, `/2022/`, or `/404` entries.
+The deployed sitemap contains no `/tags/`, `/categories/`, `/archives/` (including `/archives/2022/` and `/archives/2022/07/`), `/2022/`, or `/404` entries.
 
 ### Production smoke checks
 
@@ -342,7 +346,7 @@ The deployed sitemap contains no `/tags/`, `/categories/`, `/archives/`, `/2022/
 - All images on `/explore/`, `/about/`, `/work/`, and `/work/mbti64/` load.
 - `/`, `/work/`, and `/about/` have no horizontal overflow at 390px.
 - The mobile menu opens and is visible at 390px.
-- No browser console errors were observed across the 14 route checks.
+- No browser console errors were observed across the 16 route checks.
 - Deployed pages use the new title, canonical URL, stylesheet, and `noindex` metadata.
 - The legacy branch build is no longer the Pages source.
 
