@@ -2,7 +2,7 @@
 
 **Project:** ZHUBAO · Personal Digital Portfolio  
 **Repository:** `zhubao315/zhubao315.github.io`  
-**Verification date:** 2026-11-11 (local), production re-check recorded below after deployment  
+**Verification date:** 2026-11-11 (local), 2026-11-12 (production)  
 **Content snapshot:** 2026-11-11
 
 ## 1. Summary
@@ -18,7 +18,7 @@
 | Sitemap | 23 indexable URLs; compatibility and 404 routes excluded |
 | Image loading | No broken images on `/`, `/explore/`, `/about/` |
 | External URL audit | 44 of 45 URLs returned 200; X.com unreachable from this environment |
-| Production deployment | See section 11 |
+| Production deployment | GitHub Actions build and deploy succeeded; 23/23 sitemap URLs return 200 |
 
 The local verification ran against a static preview of `dist/`, so it exercises the same output that GitHub Pages receives.
 
@@ -287,24 +287,71 @@ Then open `http://127.0.0.1:4321`.
 
 ## 11. Production verification
 
-**Status:** pending at the time this report was written locally. This section is updated after the first successful GitHub Actions deployment.
+**Status:** deployed and verified on 2026-11-12.
 
-Planned checks after deployment:
+### Deployment
 
-- `https://zhubao315.github.io/` returns 200 and serves the new homepage.
-- `/work/`, `/think/`, `/explore/`, `/about/` return 200.
-- All five required legacy paths return 200.
-- `/404.html` returns 200 and is noindex.
-- The deployed sitemap excludes compatibility routes.
-- The Pages workflow completes both build and deploy jobs.
+| Item | Value |
+|---|---|
+| Commit | `c634104` — “Rebuild portfolio as a verified Astro archive” |
+| Workflow | [Deploy site to GitHub Pages #43137552926](https://github.com/zhubao315/zhubao315.github.io/actions/runs/43137552926) |
+| Trigger | Push to `main` |
+| Build job | Success |
+| Deploy job | Success |
+| Pages build type | GitHub Actions (`workflow`) |
+| Production URL | https://zhubao315.github.io |
+
+### Route checks
+
+| Route | Status | Result |
+|---|---|---|
+| `/` | 200 | New homepage, one `<h1>`, canonical URL |
+| `/work/` | 200 | New project index |
+| `/think/` | 200 | New editorial page |
+| `/explore/` | 200 | New exploration page |
+| `/about/` | 200 | New profile page |
+| `/work/mbti64/` | 200 | Case study |
+| `/work/perfectme/` | 200 | Case study |
+| `/tags/` | 200 | `noindex` compatibility page |
+| `/categories/` | 200 | `noindex` compatibility page |
+| `/archives/` | 200 | `noindex` compatibility page |
+| `/2022/07/05/` | 200 | `noindex` compatibility index |
+| `/2022/07/05/hello-world/` | 200 | `noindex` compatibility entry |
+| `/2022/07/05/zhubao315/` | 200 | `noindex` compatibility entry |
+| `/404.html` | 200 | `noindex` recovery page |
+
+### Indexable URLs
+
+All 23 URLs in the deployed `sitemap-0.xml` returned HTTP 200:
+
+- `/`
+- `/about/`
+- `/explore/`
+- `/think/`
+- `/work/`
+- 18 project case studies under `/work/[slug]/`
+
+The deployed sitemap contains no `/tags/`, `/categories/`, `/archives/`, `/2022/`, or `/404` entries.
+
+### Production smoke checks
+
+- Homepage contains exactly 6 flagship `.featured-piece` elements.
+- All 10 homepage images load (`naturalWidth > 0`).
+- All images on `/explore/`, `/about/`, `/work/`, and `/work/mbti64/` load.
+- `/`, `/work/`, and `/about/` have no horizontal overflow at 390px.
+- The mobile menu opens and is visible at 390px.
+- No browser console errors were observed across the 14 route checks.
+- Deployed pages use the new title, canonical URL, stylesheet, and `noindex` metadata.
+- The legacy branch build is no longer the Pages source.
 
 ## 12. Sign-off
 
-Local build and test verification: **passed**.
+Local build and test verification: **passed**.  
+Production deployment and route verification: **passed**.
 
-Outstanding before calling the public launch complete:
+Launch checklist:
 
-- [ ] Push the rebuild to `main`.
-- [ ] Set Pages source to GitHub Actions.
-- [ ] Confirm the deploy workflow succeeds.
-- [ ] Verify production routes and update this section.
+- [x] Push the rebuild to `main`.
+- [x] Set Pages source to GitHub Actions.
+- [x] Confirm the deploy workflow succeeds.
+- [x] Verify production routes and update this section.

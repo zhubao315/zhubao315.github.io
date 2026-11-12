@@ -5,6 +5,7 @@ Source for **[zhubao315.github.io](https://zhubao315.github.io)** — a working 
 The site is a static Astro build: warm editorial design, bilingual content, verified project facts, no third-party runtime scripts, and a compatibility layer for the 2022 Hexo URLs.
 
 **Content snapshot:** 2026-11-11  
+**Production:** deployed via GitHub Actions on 2026-11-12  
 **Stack:** Astro 7 · TypeScript · native CSS · Playwright · GitHub Pages
 
 ## Pages
@@ -133,6 +134,7 @@ playwright         28 passed
 responsive         1440 / 1280 / 768 / 390 / 375px, no overflow
 sitemap            23 indexable URLs, noindex routes excluded
 external audit     44 / 45 URLs HTTP 200 (X.com unreachable)
+production         23 / 23 sitemap URLs HTTP 200, 0 broken images
 ```
 
 The full matrix, limitations, and reproduction commands are in [`docs/test-report.md`](docs/test-report.md). The pre-rebuild repository audit is in [`docs/audit.md`](docs/audit.md).
@@ -150,7 +152,7 @@ Deployment is defined in `.github/workflows/deploy.yml`:
 7. Upload `dist/` as a Pages artifact.
 8. Deploy with `actions/deploy-pages@v4`.
 
-**Repository setting required:** Settings → Pages → Build and deployment → Source = **GitHub Actions**. The old site used a legacy branch build from the repository root; that mode no longer matches this source tree.
+**Repository setting:** Settings → Pages → Build and deployment → Source = **GitHub Actions**. This was applied and verified on 2026-11-12; the old site used a legacy branch build from the repository root, which no longer matches this source tree.
 
 No credentials are stored in the repository or remote URL. Deployment uses the workflow's short-lived `GITHUB_TOKEN` with `pages: write` and `id-token: write` permissions.
 
