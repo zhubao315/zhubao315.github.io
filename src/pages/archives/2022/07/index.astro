@@ -1,0 +1,43 @@
+---
+import LegacyPage from '../../../../components/LegacyPage.astro';
+import { ArrowUpRight } from '@lucide/astro';
+---
+
+<LegacyPage
+  title="July 2022,"
+  titleEm="one known day."
+  eyebrow="LEGACY / MONTH ARCHIVE"
+  description="朱宝旧版博客 /archives/2022/07/ 的兼容入口。保留月份索引路径，链接到 2022 年 7 月 5 日的两个公开入口。"
+  oldPath="/archives/2022/07/"
+  index="MONTH NODE / 2022-07"
+  intro="旧站的月份归档同样由 Hexo 生成。保留下来的证据只指向 2022 年 7 月 5 日；这个页面让原路径继续可达，并清楚说明范围。"
+>
+  <div class="legacy-date-head">
+    <span>JUL</span>
+    <strong>07</strong>
+    <span>2022</span>
+  </div>
+
+  <div class="legacy-date-list">
+    <a href="/2022/07/05/hello-world/">
+      <span>01</span>
+      <div><strong>Hello World</strong><small>Legacy blog entry · content not recoverable</small></div>
+      <span class="status-label status-label--archived"><i aria-hidden="true"></i>兼容保留</span>
+      <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+    </a>
+    <a href="/2022/07/05/zhubao315/">
+      <span>02</span>
+      <div><strong>ZHUBAO</strong><small>Legacy author page · content not recoverable</small></div>
+      <span class="status-label status-label--archived"><i aria-hidden="true"></i>兼容保留</span>
+      <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+    </a>
+  </div>
+
+  <div class="legacy-prose legacy-prose--spaced">
+    <p class="case-kicker">SCOPE</p>
+    <p>
+      这个月份索引只覆盖可核实的一天，不代表旧站 2022 年 7 月的完整文章列表。
+      返回 <a href="/archives/2022/">2022 年索引</a>、<a href="/archives/">兼容归档</a>，或从 <a href="/2022/07/05/">日期索引</a> 继续。
+    </p>
+  </div>
+</LegacyPage>

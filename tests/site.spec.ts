@@ -13,10 +13,20 @@ const primaryRoutes = [
   '/tags/',
   '/categories/',
   '/archives/',
+  '/archives/2022/',
+  '/archives/2022/07/',
   '/2022/07/05/',
 ];
 
-const compatibilityRoutes = ['/2022/07/05/hello-world/', '/2022/07/05/zhubao315/', '/tags/', '/categories/', '/archives/'];
+const compatibilityRoutes = [
+  '/2022/07/05/hello-world/',
+  '/2022/07/05/zhubao315/',
+  '/tags/',
+  '/categories/',
+  '/archives/',
+  '/archives/2022/',
+  '/archives/2022/07/',
+];
 
 async function loadAllImages(page: Page) {
   await page.evaluate(async () => {

@@ -50,9 +50,9 @@ The redesign has to solve three problems at once:
 | Content integrity | All public claims map to a repository, site, or metadata source | Met through `src/data/projects.ts` and `docs/content-manifest.md` |
 | Six flagship projects | Homepage shows exactly six, each with a distinct treatment | Met |
 | Compatibility | Every legacy URL returns 200 and explains its status | Met |
-| Build | Reproducible static build from source | 30 pages built |
-| Links | All internal references resolve | 1,044 references checked |
-| Responsive | No horizontal overflow at five target widths | 28 Playwright tests pass |
+| Build | Reproducible static build from source | 32 pages built |
+| Links | All internal references resolve | 1,121 references checked |
+| Responsive | No horizontal overflow at five target widths | 32 Playwright tests pass |
 | Performance/privacy | No third-party runtime requests | Fonts and icons are local |
 | Deployment | Push to `main` builds and deploys through Pages | Workflow included; production verification recorded in `test-report.md` |
 
@@ -95,6 +95,8 @@ The full specification is in `docs/design-system.md`.
 | `/tags/` | Supplemental `noindex` page explaining the lost taxonomy |
 | `/categories/` | Supplemental `noindex` page explaining the lost categories |
 | `/archives/` | Supplemental `noindex` archive with links to the two preserved 2022 paths |
+| `/archives/2022/` | Supplemental `noindex` year index |
+| `/archives/2022/07/` | Supplemental `noindex` month index |
 | `/2022/07/05/` | Supplemental date index |
 | `/2022/07/05/hello-world/` | `noindex` compatibility entry; the original body was the stock Hexo starter post |
 | `/2022/07/05/zhubao315/` | `noindex` compatibility entry; no authored body survived |

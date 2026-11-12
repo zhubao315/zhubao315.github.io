@@ -27,6 +27,8 @@ These paths remain available as supplemental `noindex` compatibility entries. Th
 - `/tags/`
 - `/categories/`
 - `/archives/`
+- `/archives/2022/`
+- `/archives/2022/07/`
 - `/2022/07/05/`
 - `/2022/07/05/hello-world/`
 - `/2022/07/05/zhubao315/`
@@ -127,10 +129,10 @@ Full details: [`docs/design-system.md`](docs/design-system.md).
 Verified locally on 2026-11-11:
 
 ```text
-astro check        0 errors, 0 warnings, 0 hints (31 files)
-astro build        30 pages
-link check         1,044 references across 30 HTML files, 0 broken
-playwright         28 passed
+astro check        0 errors, 0 warnings, 0 hints (33 files)
+astro build        32 pages
+link check         1,121 references across 32 HTML files, 0 broken
+playwright         32 passed
 responsive         1440 / 1280 / 768 / 390 / 375px, no overflow
 sitemap            23 indexable URLs, noindex routes excluded
 external audit     44 / 45 URLs HTTP 200 (X.com unreachable)

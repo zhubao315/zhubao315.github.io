@@ -11,6 +11,8 @@ const requiredRoutes = [
   'tags/index.html',
   'categories/index.html',
   'archives/index.html',
+  'archives/2022/index.html',
+  'archives/2022/07/index.html',
   '2022/07/05/index.html',
   '2022/07/05/hello-world/index.html',
   '2022/07/05/zhubao315/index.html',

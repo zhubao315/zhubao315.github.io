@@ -9,11 +9,11 @@
 
 | Check | Result |
 |---|---|
-| Type/diagnostics (`astro check`) | 0 errors, 0 warnings, 0 hints across 31 files |
-| Production build | 30 HTML pages generated |
-| Internal link check | 1,044 references across 30 HTML files, 0 broken |
-| Required compatibility routes | All 12 required files present |
-| Playwright suite | 28 passed, 0 failed |
+| Type/diagnostics (`astro check`) | 0 errors, 0 warnings, 0 hints across 33 files |
+| Production build | 32 HTML pages generated |
+| Internal link check | 1,121 references across 32 HTML files, 0 broken |
+| Required compatibility routes | All 14 required files present |
+| Playwright suite | 32 passed, 0 failed |
 | Responsive QA | No horizontal overflow at 1440 / 1280 / 768 / 390 / 375px |
 | Sitemap | 23 indexable URLs; compatibility and 404 routes excluded |
 | Image loading | No broken images on `/`, `/explore/`, `/about/` |
@@ -49,7 +49,7 @@ npm run check
 Result:
 
 ```text
-Result (31 files):
+Result (33 files):
 - 0 errors
 - 0 warnings
 - 0 hints
@@ -65,16 +65,16 @@ npm run build
 
 Result:
 
-- 30 pages built in under one second after image-cache warm-up.
+- 32 pages built in under one second after image-cache warm-up.
 - Output written to `dist/`.
 - `sitemap-index.xml` and `sitemap-0.xml` generated.
 - No build warnings or missing assets.
 
-The 30 HTML files comprise:
+The 32 HTML files comprise:
 
 - 6 primary pages: `/`, `/work/`, `/think/`, `/explore/`, `/about/`, `/404.html`
 - 18 project case studies under `/work/[slug]/`
-- 6 compatibility/supplemental pages under `/tags/`, `/categories/`, `/archives/`, `/2022/07/05/`, and the two 2022 article paths
+- 8 compatibility/supplemental pages under `/tags/`, `/categories/`, `/archives/`, `/archives/2022/`, `/archives/2022/07/`, `/2022/07/05/`, and the two 2022 article paths
 
 ### 3.3 Internal links
 
@@ -87,12 +87,12 @@ npm run test:links
 Result:
 
 ```text
-Link check passed: 1044 internal references across 30 HTML files.
+Link check passed: 1121 internal references across 32 HTML files.
 ```
 
 The checker verifies:
 
-- All 12 required routes exist.
+- All 14 required routes exist.
 - Every root-relative `href` resolves to a file or directory index in `dist/`.
 - External, mail, phone, fragment, and data links are skipped.
 
@@ -121,18 +121,18 @@ npx playwright test
 Result:
 
 ```text
-28 passed (5.7s)
+32 passed (5.8s)
 ```
 
 ### 4.2 Coverage
 
 | Suite | Tests | What is asserted |
 |---|---|---|
-| Required routes | 14 | HTTP 200; one `<h1>`; `lang="zh-CN"`; canonical URL; title and description present; no horizontal overflow; 404 is noindex |
-| Responsive QA widths | 5 | 13 primary routes fit at 1440, 1280, 768, 390, and 375px |
+| Required routes | 16 | HTTP 200; one `<h1>`; `lang="zh-CN"`; canonical URL; title and description present; no horizontal overflow; 404 is noindex |
+| Responsive QA widths | 5 | 15 primary routes fit at 1440, 1280, 768, 390, and 375px |
 | Homepage | 2 | Exactly six featured projects; all six names present; one cinematic treatment; two reversed compositions; no broken images on `/`, `/explore/`, `/about/` |
 | Work index | 1 | 18 cards; category filter returns 2 Agent projects; reset restores 18; search for “MBTI” returns 1; `?filter=agent` sets the active filter |
-| Navigation / compatibility | 6 | Mobile menu opens and closes with Escape; five compatibility pages are noindex and contain the compatibility explanation |
+| Navigation / compatibility | 8 | Mobile menu opens and closes with Escape; seven compatibility pages are noindex and contain the compatibility explanation |
 
 The primary-route list is:
 
@@ -149,12 +149,14 @@ The primary-route list is:
 /tags/
 /categories/
 /archives/
+/archives/2022/
+/archives/2022/07/
 /2022/07/05/
 ```
 
 ### 4.3 Responsive matrix
 
-The same 13 routes were checked at each width:
+The same 15 routes were checked at each width:
 
 | Width | Viewport height | Result |
 |---|---|---|

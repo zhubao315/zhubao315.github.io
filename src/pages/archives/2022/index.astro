@@ -1,0 +1,54 @@
+---
+import LegacyPage from '../../../components/LegacyPage.astro';
+import { ArrowUpRight } from '@lucide/astro';
+---
+
+<LegacyPage
+  title="2022,"
+  titleEm="the year that survived."
+  eyebrow="LEGACY / YEAR ARCHIVE"
+  description="朱宝旧版博客 /archives/2022/ 的兼容入口。保留年份索引路径，并说明可核实的公开节点。"
+  oldPath="/archives/2022/"
+  index="YEAR NODE / 2022"
+  intro="旧站的年份归档由 Hexo 自动生成。这里保留原路径，但不把自动生成的空壳当作完整历史；可核实的节点只有 2022 年 7 月 5 日。"
+>
+  <div class="legacy-prose">
+    <p class="case-kicker">YEAR STATUS</p>
+    <h2>一个年份，<br />两个仍然可达的入口。</h2>
+    <p>
+      旧版 <code>/archives/2022/</code> 是 Hexo 的年份索引。仓库中没有保留当时的文章正文，也没有足够的日期信息去重建其他月份。
+      因此本页只列出可核实的 2022 年 7 月节点，并把访问者带回当前的公开归档。
+    </p>
+  </div>
+
+  <div class="legacy-archive">
+    <div class="legacy-archive-head">
+      <span>MONTH / NODE</span><span>RECORD</span><span>STATUS</span><span>OPEN</span>
+    </div>
+    <div class="legacy-archive-year">
+      <span>07</span>
+      <div>
+        <a class="legacy-archive-row" href="/archives/2022/07/">
+          <span>July 2022</span>
+          <span>Date archive · 2022-07-05</span>
+          <span class="status-label status-label--archived"><i aria-hidden="true"></i>兼容保留</span>
+          <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+        </a>
+        <a class="legacy-archive-row" href="/2022/07/05/">
+          <span>2022.07.05</span>
+          <span>Two surviving public paths</span>
+          <span class="status-label status-label--archived"><i aria-hidden="true"></i>日期索引</span>
+          <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="legacy-prose legacy-prose--spaced">
+    <p class="case-kicker">SCOPE</p>
+    <p>
+      本页不是 2022 年全部文章的替代品。返回 <a href="/archives/">兼容归档</a> 查看当前已知的所有节点，
+      或前往 <a href="/work/">作品索引</a> 浏览现有的公开项目。
+    </p>
+  </div>
+</LegacyPage>
