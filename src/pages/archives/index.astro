@@ -1,0 +1,85 @@
+---
+import LegacyPage from '../../components/LegacyPage.astro';
+import { ArrowUpRight } from '@lucide/astro';
+import { projects } from '../../data/projects';
+
+const currentProjects = projects.filter((project) => project.featured);
+---
+
+<LegacyPage
+  title="Archive,"
+  titleEm="with the gaps left in."
+  eyebrow="LEGACY / ARCHIVES"
+  description="朱宝旧版博客的 /archives/ 兼容入口。旧文章正文不可恢复，本页保留原路径并列出可核验的新旧节点。"
+  oldPath="/archives/"
+  index="ARCHIVE NODE / 03"
+  intro="归档页最重要的不是看起来完整，而是知道哪些内容已经丢失。这里只列出可核实的时间节点，不给旧站补写不存在的文章。"
+>
+  <div class="legacy-prose">
+    <p class="case-kicker">ARCHIVE STATUS</p>
+    <h2>一份诚实的归档，<br />允许有空位。</h2>
+    <p>
+      旧版的 <code>/archives/</code> 由 Hexo 根据文章日期生成。迁移后能确认的只有两个 2022 年 7 月 5 日的公开路径：
+      <a href="/2022/07/05/hello-world/">Hello World</a> 与
+      <a href="/2022/07/05/zhubao315/">ZHUBAO</a>。原生成文件没有保留正文，因此它们在新站中作为兼容节点存在。
+    </p>
+  </div>
+
+  <div class="legacy-archive">
+    <div class="legacy-archive-head">
+      <span>YEAR / NODE</span><span>RECORD</span><span>STATUS</span><span>OPEN</span>
+    </div>
+
+    <div class="legacy-archive-year">
+      <span>2026</span>
+      <div>
+        <a class="legacy-archive-row" href="/work/">
+          <span>Personal digital portfolio rebuilt</span>
+          <span>Astro · TypeScript · six featured projects</span>
+          <span class="status-label"><i aria-hidden="true"></i>当前</span>
+          <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+        </a>
+        <a class="legacy-archive-row" href="/about/">
+          <span>Public facts verified</span>
+          <span>GitHub / project READMEs / live dashboards</span>
+          <span class="status-label status-label--prototype"><i aria-hidden="true"></i>快照</span>
+          <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+
+    <div class="legacy-archive-year">
+      <span>2022</span>
+      <div>
+        <a class="legacy-archive-row" href="/2022/07/05/hello-world/">
+          <span>Hello World</span>
+          <span>2022-07-05 · legacy blog entry</span>
+          <span class="status-label status-label--archived"><i aria-hidden="true"></i>正文不可恢复</span>
+          <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+        </a>
+        <a class="legacy-archive-row" href="/2022/07/05/zhubao315/">
+          <span>ZHUBAO</span>
+          <span>2022-07-05 · legacy author page</span>
+          <span class="status-label status-label--archived"><i aria-hidden="true"></i>兼容保留</span>
+          <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="legacy-prose legacy-prose--spaced">
+    <p class="case-kicker">READING THE GAP</p>
+    <h2>旧文章不在这里，<br />新作品在这里。</h2>
+    <div class="legacy-featured-links">
+      {
+        currentProjects.map((project) => (
+          <a href={`/work/${project.slug}/`}>
+            <span>{project.name}</span>
+            <small>{project.nameZh}</small>
+            <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</LegacyPage>

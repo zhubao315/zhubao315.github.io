@@ -1,0 +1,60 @@
+---
+import LegacyPage from '../../components/LegacyPage.astro';
+import { ArrowUpRight } from '@lucide/astro';
+import { projects, categoryMeta } from '../../data/projects';
+
+const categories = Object.entries(categoryMeta)
+  .map(([key, meta]) => ({
+    key,
+    ...meta,
+    count: projects.filter((project) => project.category === key).length,
+  }))
+  .filter((category) => category.count > 0);
+---
+
+<LegacyPage
+  title="Tag index,"
+  titleEm="rebuilt with sources."
+  eyebrow="LEGACY / TAGS"
+  description="朱宝旧版博客的 /tags/ 兼容入口。原标签数据已不可恢复，本页提供新站的主题索引与来源说明。"
+  oldPath="/tags/"
+  index="ARCHIVE NODE / 01"
+  intro="旧版的标签索引没有保留可核验的文章数据。与其编造一组标签，本页改为新站的主题入口：每个主题都能指向具体作品，而不是空标签。"
+>
+  <div class="legacy-prose">
+    <p class="case-kicker">WHAT CHANGED</p>
+    <h2>标签不是装饰，是导航。</h2>
+    <p>
+      原站使用 Hexo 生成静态页面，标签页汇总文章分类。迁移时，旧生成文件没有留下文章正文与标签映射，
+      因此无法忠实重建“2022 年曾有哪些标签、每篇属于哪个标签”。本页不对缺失数据做猜测。
+    </p>
+    <p>
+      新站采用“方向 + 项目”的结构。下面的主题索引基于当前已核验的作品数据生成，数量来自项目清单，
+      不包含虚构文章或占位内容。
+    </p>
+  </div>
+
+  <div class="legacy-topic-list">
+    {
+      categories.map((category, index) => (
+        <a class="legacy-topic" href={category.key === 'agent' ? '/work/?filter=agent' : `/work/?filter=${category.key}`}>
+          <span class="legacy-topic-index">{String(index + 1).padStart(2, '0')}</span>
+          <span class="legacy-topic-name">
+            <strong>{category.key}</strong>
+            <small>{category.labelZh}</small>
+          </span>
+          <span class="legacy-topic-count">{category.count} 个项目</span>
+          <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="legacy-callout">
+    <span>SOURCE NOTE</span>
+    <p>
+      新站没有“标签即文章集合”的页面。若你在寻找某个主题，从
+      <a href="/work/">作品索引</a> 或 <a href="/explore/">探索页</a> 进入更可靠。
+    </p>
+  </div>
+</LegacyPage>

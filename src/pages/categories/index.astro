@@ -1,0 +1,59 @@
+---
+import LegacyPage from '../../components/LegacyPage.astro';
+import { ArrowUpRight } from '@lucide/astro';
+import { projects, categoryMeta } from '../../data/projects';
+
+const categories = Object.entries(categoryMeta)
+  .map(([key, meta]) => ({
+    key,
+    ...meta,
+    count: projects.filter((project) => project.category === key).length,
+  }))
+  .filter((category) => category.count > 0);
+---
+
+<LegacyPage
+  title="Category map,"
+  titleEm="not a reconstruction."
+  eyebrow="LEGACY / CATEGORIES"
+  description="朱宝旧版博客的 /categories/ 兼容入口。旧文章分类无法核验，本页说明新站如何按领域组织作品。"
+  oldPath="/categories/"
+  index="ARCHIVE NODE / 02"
+  intro="旧版文章分类已随生成文件丢失。本页保留原 URL，并用当前作品的六个领域替代无法核实的旧分类，不声称这是历史原貌。"
+>
+  <div class="legacy-prose">
+    <p class="case-kicker">WHY THIS IS NOT THE OLD PAGE</p>
+    <h2>分类可以重建，<br />但不应伪造。</h2>
+    <p>
+      Hexo 的分类页由文章元数据自动生成。旧站迁移后，原文章、分类关系和生成时使用的数据都不在仓库中，
+      只剩若干空壳 HTML。任何“恢复”出来的分类数量都会是新的猜测。
+    </p>
+    <p>
+      因此，这里列出的分类来自 2026 年新作品集的项目数据。它们是现在的真实结构，而不是对 2022 年博客的回溯。
+    </p>
+  </div>
+
+  <div class="legacy-category-grid">
+    {
+      categories.map((category, index) => (
+        <a class="legacy-category" href={`/work/?filter=${category.key}`}>
+          <div class="legacy-category-top">
+            <span>0{index + 1}</span>
+            <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
+          </div>
+          <h3>{category.label}</h3>
+          <p>{category.labelZh}</p>
+          <span class="legacy-category-count">{category.count} 个公开项目</span>
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="legacy-callout">
+    <span>CURRENT STRUCTURE</span>
+    <p>
+      每个分类都通向作品索引，并可在页内继续按领域、状态和关键词筛选。
+      <a href="/work/">打开完整作品索引 →</a>
+    </p>
+  </div>
+</LegacyPage>

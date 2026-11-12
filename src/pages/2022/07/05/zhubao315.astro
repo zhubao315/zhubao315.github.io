@@ -1,0 +1,52 @@
+---
+import LegacyPage from '../../../../components/LegacyPage.astro';
+import { ArrowUpRight } from '@lucide/astro';
+import { site } from '../../../../data/site';
+---
+
+<LegacyPage
+  title="About me,"
+  titleEm="older frame."
+  eyebrow="2022-07-05 / LEGACY AUTHOR"
+  description="旧版博客 /2022/07/05/zhubao315/ 的兼容页面。现在关于朱宝的完整信息请见新的关于页。"
+  oldPath="/2022/07/05/zhubao315/"
+  index="PROFILE NODE / 2022-07-05"
+  intro="这曾经是旧站的一篇作者介绍。原正文不可恢复，本页不重写 2022 年的自我描述，只保留入口并指向当前版本。"
+>
+  <article class="legacy-author">
+    <div class="legacy-author-top">
+      <div class="legacy-author-avatar">
+        <img src="/images/avatar.webp" alt="朱宝的公开 GitHub 头像" width="480" height="480" />
+      </div>
+      <div>
+        <p class="case-kicker">CURRENT IDENTITY / NOT THE 2022 TEXT</p>
+        <h2>朱宝 <span>ZHUBAO</span></h2>
+        <p class="legacy-author-role">AI Systems · Product Engineering · Knowledge Engineering · Quantified Life</p>
+        <p class="legacy-author-copy">
+          我构建 AI 能力底座与数字产品，研究知识治理和投资纪律，也用十多年运动数据记录身体与时间。
+          这份介绍来自 2026 年的当前档案，不是对旧页面内容的恢复。
+        </p>
+      </div>
+    </div>
+
+    <div class="legacy-author-facts">
+      <div><span>BASE</span><strong>{site.location}</strong></div>
+      <div><span>PUBLIC REPOS</span><strong>{site.repoCount}</strong></div>
+      <div><span>ON GITHUB SINCE</span><strong>2011</strong></div>
+      <div><span>LAST VERIFIED</span><strong>{site.lastVerified}</strong></div>
+    </div>
+
+    <div class="legacy-author-actions">
+      <a class="button" href="/about/">打开完整的关于页</a>
+      <a class="text-link" href={site.github} target="_blank" rel="noreferrer">
+        GitHub <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
+      </a>
+      <a class="text-link" href="/work/">作品索引 <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" /></a>
+    </div>
+
+    <p class="legacy-author-note">
+      SOURCE NOTE · 旧版作者页正文、发布日期与当时的社会链接均已不可核验。
+      本页只保留原始 URL，并以当前资料提供准确入口。
+    </p>
+  </article>
+</LegacyPage>

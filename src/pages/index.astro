@@ -1,0 +1,442 @@
+---
+import { ArrowRight, ArrowUpRight, MoveUpRight } from '@lucide/astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import FeaturedProject from '../components/FeaturedProject.astro';
+import DirectionMark from '../components/DirectionMark.astro';
+import { Image } from 'astro:assets';
+import { directions, site } from '../data/site';
+import { lifeSites, projects, publications, categoryMeta, statusMeta } from '../data/projects';
+import perfectmeCover from '../assets/projects/perfectme.webp';
+import healthImage from '../assets/projects/health.webp';
+
+const mbti = projects.find((p) => p.id === 'mbti64')!;
+const uskill = projects.find((p) => p.id === 'uskill')!;
+const kbe = projects.find((p) => p.id === 'knowledge-base-engineering')!;
+const investment = projects.find((p) => p.id === 'investment-discipline')!;
+const quantified = projects.find((p) => p.id === 'quantified-life')!;
+const perfectme = projects.find((p) => p.id === 'perfectme')!;
+
+const universeProjects = ['e-life-method', 'uread', 'tescreal-guide', 'h029-psychology', 'dual-asset-strategy', 'hip-drive-running']
+  .map((id) => projects.find((project) => project.id === id))
+  .filter(Boolean);
+
+const nowItems = [
+  {
+    title: 'Agent Skills as infrastructure',
+    zh: '让能力可治理，而不只是可调用',
+    desc: 'uSkill、知识库工程与投资纪律，共同探索技能的标准、权限、证据与版本化。',
+    href: '/work/uskill/',
+    status: 'active',
+  },
+  {
+    title: 'Products that invite exploration',
+    zh: '把方法论变成可以体验的产品',
+    desc: 'MBTI64 继续打磨测评、型别页与分享链路；让复杂内容拥有更低的进入门槛。',
+    href: '/work/mbti64/',
+    status: 'active',
+  },
+  {
+    title: 'A life measured over years',
+    zh: '用长期数据理解身体与时间',
+    desc: '健康、跑步、骑行与徒步每天自动同步，保持历史可查、口径可解释。',
+    href: '/work/quantified-life/',
+    status: 'active',
+  },
+] as const;
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="shell">
+      <div class="hero-topline">
+        <span>Personal Digital Portfolio / 2026</span>
+        <span>Beijing, CN <span aria-hidden="true">·</span> 39.9°N / 116.4°E</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line"><span>Build</span> <em>systems.</em></span>
+        <span class="line"><span>Engineer</span> <em>knowledge.</em></span>
+        <span class="line"><span>Explore</span> <em class="accent-word">life.</em></span>
+      </h1>
+
+      <div class="hero-body">
+        <div class="hero-copy">
+          <p class="hero-intro">
+            我是朱宝。我构建 <strong>AI 系统与数字产品</strong>，研究知识工程与投资纪律，也用数据记录长期的身体与生活。
+          </p>
+          <p class="hero-intro-en">把想法变成系统，把知识沉淀为资产，把生活记录成可持续的实践。</p>
+
+          <div class="hero-actions">
+            <a class="button" href="#selected-work">
+              查看精选作品
+              <ArrowRight size={17} stroke-width={1.5} class="arrow" aria-hidden="true" />
+            </a>
+            <a class="text-link" href="/about/">关于我 / About</a>
+          </div>
+
+          <div class="hero-facts" aria-label="公开资料快照">
+            <div class="hero-fact"><strong>{site.repoCount}</strong><span>公开仓库</span></div>
+            <div class="hero-fact"><strong>04</strong><span>核心方向</span></div>
+            <div class="hero-fact"><strong>2011</strong><span>加入 GitHub</span></div>
+            <div class="hero-fact"><strong>2026.11</strong><span>资料已核验</span></div>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="导航与个人状态">
+          <div class="hero-identity">
+            <img class="hero-avatar" src="/images/avatar.webp" alt="朱宝的 GitHub 头像" width="48" height="48" />
+            <div class="hero-identity-text">
+              <strong>朱宝 / ZHUBAO</strong>
+              <span>BUILDER · RESEARCHER · RECORDER</span>
+            </div>
+            <span class="hero-identity-code">CN</span>
+          </div>
+
+          <div class="hero-panel-head">
+            <span>SYSTEM MAP</span>
+            <span>04 DIRECTIONS</span>
+          </div>
+
+          <nav class="hero-directions" aria-label="四个探索方向">
+            {
+              directions.map((direction) => (
+                <a class="hero-direction" href={direction.href}>
+                  <span class="hero-direction-code">{direction.index}</span>
+                  <span>
+                    <span class="hero-direction-label">{direction.code}</span>
+                    <span class="hero-direction-zh">{direction.title}</span>
+                  </span>
+                  <MoveUpRight size={14} stroke-width={1.5} aria-hidden="true" />
+                </a>
+              ))
+            }
+          </nav>
+
+          <div class="hero-panel-foot">
+            <span><span class="live-dot" aria-hidden="true"></span> BUILDING IN PUBLIC</span>
+            <span>LAST VERIFIED / 2026-11-11</span>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero-ticker">
+        <div class="hero-ticker-list">
+          <span>AI & Agent</span>
+          <span>Product Engineering</span>
+          <span>Knowledge Systems</span>
+          <span>Quantified Life</span>
+        </div>
+        <a class="hero-scroll" href="#selected-work">
+          Scroll to explore
+          <ArrowRight size={14} stroke-width={1.4} aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section selected-work" id="selected-work">
+    <div class="shell">
+      <SectionHeader
+        index="01"
+        eyebrow="Selected Work / 2024—2026"
+        title="六件作品，四种把想法变成系统的方式。"
+        note="从 AI 能力底座到人格测评、知识治理、投资纪律、长期数据与原创动画。每一个项目都指向同一个问题：方法如何真正运行起来？"
+        link="/work/"
+        linkLabel="全部作品与实验"
+      />
+
+      <div class="work-stack">
+        <FeaturedProject project={mbti} index="01" />
+        <FeaturedProject project={uskill} index="02" reverse />
+        <FeaturedProject project={kbe} index="03" />
+        <FeaturedProject project={investment} index="04" reverse narrow />
+        <FeaturedProject project={quantified} index="05" />
+
+        <article class="featured-piece featured-piece--perfect" data-reveal>
+          <div class="perfect-media">
+            <Image
+              src={perfectmeCover}
+              alt="原创 2D 微动漫《满分的我》宣传站画面"
+              widths={[800, 1200, 1600]}
+              sizes="100vw"
+              loading="lazy"
+              quality={84}
+            />
+          </div>
+          <div class="perfect-overlay">
+            <div class="perfect-topline">
+              <span>FEATURED 06 / CREATIVE</span>
+              <span>ORIGINAL 2D MICRO ANIMATION · 2'31"</span>
+            </div>
+            <div class="perfect-copy">
+              <div class="featured-meta">
+                <span class="featured-number">06</span>
+                <span>{categoryMeta[perfectme.category].label}</span>
+                <span>{perfectme.tech.slice(0, 2).join(' · ')}</span>
+              </div>
+              <h3><a href="/work/perfectme/">Perfect <em>Me</em></a></h3>
+              <p>
+                一部关于“被喜欢”与“做自己”的原创 2D 微动漫。从剧本、角色、分镜、AI 图像、配音、配乐到宣传网站，完整走通一条创作链路。
+              </p>
+              <div class="perfect-actions">
+                <a class="button button--light" href={perfectme.demoUrl} target="_blank" rel="noreferrer">
+                  观看作品 <ArrowUpRight size={16} stroke-width={1.6} aria-hidden="true" />
+                </a>
+                <a class="text-link" href="/work/perfectme/">Case study</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark directions-section">
+    <div class="shell">
+      <SectionHeader
+        index="02"
+        eyebrow="Four Directions / Operating Themes"
+        title="Build. Think. Measure. Create."
+        note="不是四个头衔，而是四条彼此连接的工作线：系统、认知、身体与作品。"
+        dark
+      />
+
+      <div class="directions-grid">
+        {
+          directions.map((direction) => (
+            <a class="direction-card" data-accent={direction.accent} href={direction.href} data-reveal>
+              <div class="direction-top">
+                <span>{direction.index} / {direction.code}</span>
+                <span>↗</span>
+              </div>
+              <div class="direction-mark">
+                <DirectionMark type={direction.code as 'BUILD' | 'THINK' | 'MEASURE' | 'CREATE'} />
+              </div>
+              <div class="direction-code">{direction.code}</div>
+              <div class="direction-zh">{direction.title} / {direction.en}</div>
+              <p class="direction-desc">{direction.description}</p>
+              <span class="direction-link">Explore direction <span aria-hidden="true">→</span></span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section universe-section">
+    <div class="shell">
+      <SectionHeader
+        index="03"
+        eyebrow="Project Universe / Index"
+        title="更多方法、研究与实验。"
+        note="主站不罗列全部 61 个仓库。这里展示能代表方法论广度的项目；Fork 与上游研究在作品页单独标注。"
+        link="/work/"
+        linkLabel="进入完整项目索引"
+      />
+
+      <div class="universe-layout">
+        <div class="universe-list">
+          {
+            universeProjects.map((project, index) => (
+              <a class="universe-row" href={`/work/${project!.slug}/`} data-reveal style={`--reveal-delay:${index * 45}ms`}>
+                <span class="universe-index">0{index + 1}</span>
+                <span class="universe-name">
+                  {project!.name}
+                  <span>{project!.nameZh}</span>
+                </span>
+                <span class="universe-desc">{project!.summary}</span>
+                <span class="universe-category">{categoryMeta[project!.category].labelZh}</span>
+                <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+              </a>
+            ))
+          }
+        </div>
+
+        <aside class="universe-aside">
+          <p class="universe-big">{site.repoCount}<br /><span>repos.</span></p>
+          <p>
+            {site.nonForkCount} 个非 Fork 仓库，{site.forkCount} 个 Fork / 上游研究。
+            原创项目、二次开发、研究样本与实验被明确区分，不把 Fork 包装成从零创作。
+          </p>
+          <a class="text-link" href={site.github} target="_blank" rel="noreferrer">
+            GitHub archive <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section publications-section">
+    <div class="shell">
+      <SectionHeader
+        index="04"
+        eyebrow="Publications / Manuscripts"
+        title="两本仍在生长的书稿。"
+        note="书稿不是完成时的纪念碑，而是持续被项目、证据和实践修正的系统。封面为概念排版，不代表正式发行版本。"
+        dark
+      />
+
+      <div class="publications-grid">
+        {
+          publications.map((publication) => (
+            <article class="publication" data-reveal>
+              <div class={`book-cover ${publication.coverClass}`} aria-hidden="true">
+                <div class="book-cover-top">
+                  <span>ZHUBAO / {publication.index}</span>
+                  <span>MANUSCRIPT</span>
+                </div>
+                <h3>{publication.title.split('').slice(0, 3).join('')}<br />{publication.title.split('').slice(3).join('')}</h3>
+                <div class="book-cover-bottom">
+                  <span>朱宝 著</span>
+                  <span>{publication.type}</span>
+                </div>
+              </div>
+              <div>
+                <div class="publication-meta">
+                  <span>{publication.index} / {publication.type}</span>
+                  <span class="pub-status">{publication.status}</span>
+                </div>
+                <h3>{publication.title}</h3>
+                <p class="publication-subtitle">{publication.subtitle}</p>
+                <p class="publication-desc">{publication.description}</p>
+                <div class="publication-facts">
+                  {publication.facts.map((fact) => <span>{fact}</span>)}
+                </div>
+                <a class="text-link" href={publication.href} target="_blank" rel="noreferrer">
+                  {publication.linkLabel} <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+      <p class="publications-note">
+        STATUS NOTE · 目前没有可核实的出版社、ISBN 或发行时间，因此不以“已出版”呈现。内容与状态以作者公开仓库为准。
+      </p>
+    </div>
+  </section>
+
+  <section class="section life-section" id="quantified-life">
+    <div class="shell">
+      <SectionHeader
+        index="05"
+        eyebrow="Quantified Life / 2015—2026"
+        title="把生活，记录成可查询的长期数据。"
+        note="不是把四张仪表盘塞进主页，而是展示一套持续运行的记录系统。细节留在各自的独立站点。"
+        link="/explore/#quantified-life"
+        linkLabel="进入探索页"
+        dark
+      />
+
+      <div class="life-layout">
+        <div data-reveal>
+          <a class="life-media" href="https://zhubao315.github.io/health/" target="_blank" rel="noreferrer" aria-label="打开健康数据面板">
+            <Image
+              src={healthImage}
+              alt="zhubao315 的健康数据面板，展示睡眠、HRV、静息心率与训练负荷"
+              widths={[720, 1200, 1600]}
+              sizes="(max-width: 900px) 100vw, 60vw"
+              loading="lazy"
+              quality={82}
+            />
+            <div class="life-media-caption">
+              <span><span class="live-dot" aria-hidden="true"></span> DAILY SYNC / HEALTH</span>
+              <span>DATA SNAPSHOT · 2026-11-11</span>
+            </div>
+          </a>
+          <p class="life-snapshot">
+            <span>数据来自各项目 README 与站点公开信息。</span>
+            <a href="https://github.com/zhubao315/health" target="_blank" rel="noreferrer">数据仓库 ↗</a>
+          </p>
+        </div>
+
+        <div data-reveal style="--reveal-delay:120ms">
+          <div class="life-list">
+            {
+              lifeSites.map((life) => (
+                <a class="life-row" href={life.href} target="_blank" rel="noreferrer">
+                  <span class="life-row-main">
+                    <span class="life-row-name">{life.name}</span>
+                    <span class="life-row-zh">{life.nameZh}</span>
+                  </span>
+                  <span class="life-row-stat">
+                    <strong>{life.stat}</strong>
+                    <span>{life.unit} · {life.secondary}</span>
+                  </span>
+                </a>
+              ))
+            }
+          </div>
+          <p class="life-snapshot">
+            SNAPSHOT · 2026-11-11. 不同站点独立更新，数字会随时间增长；以各站点实时页面为最终事实源。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section now-section">
+    <div class="shell">
+      <SectionHeader
+        index="06"
+        eyebrow="Now Building / Current Focus"
+        title="正在把哪些问题往前推。"
+        note="不是路线图承诺，而是当前公开可见的建设重点。状态与事实核验于 2026-11-11。"
+      />
+
+      <div class="now-grid">
+        <div class="now-list">
+          {
+            nowItems.map((item, index) => (
+              <a class="now-item" href={item.href} data-reveal>
+                <span class="now-index">0{index + 1}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.zh}。{item.desc}</p>
+                </div>
+                <span class:list={['status-label', `status-label--${item.status}`]}>
+                  <i aria-hidden="true"></i>{statusMeta[item.status].labelZh}
+                </span>
+              </a>
+            ))
+          }
+        </div>
+
+        <aside class="now-aside" data-reveal style="--reveal-delay:100ms">
+          <h3>Slow work.<br /><em>Long horizon.</em></h3>
+          <p>
+            把每一次项目更新都当作一次系统迭代：写清楚问题、保留证据、公开边界，然后继续。
+            这个网站本身就是这些方法的一个样本。
+          </p>
+          <a class="button button--ghost" href="/think/">
+            阅读方法与研究
+            <ArrowUpRight size={16} stroke-width={1.5} aria-hidden="true" />
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-preview">
+    <div class="shell">
+      <div class="about-preview-grid">
+        <div data-reveal>
+          <div class="about-avatar-line">
+            <img class="about-avatar" src="/images/avatar.webp" alt="朱宝的 GitHub 头像" width="40" height="40" />
+            <span>ABOUT / 朱宝 · ZHUBAO</span>
+          </div>
+          <h2>系统、知识、身体与作品，<em>都是长期工程。</em></h2>
+        </div>
+        <div class="about-preview-copy" data-reveal style="--reveal-delay:100ms">
+          <p>
+            我更关心一件事在三个月后是否仍然正确：数据是否还能复跑，知识是否还有来源，产品是否仍然能让人愿意继续使用。这个作品集记录我正在构建的答案。
+          </p>
+          <a class="button button--ghost" href="/about/">
+            了解我的工作方式 <ArrowRight size={16} stroke-width={1.5} aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

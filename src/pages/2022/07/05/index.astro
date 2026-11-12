@@ -1,0 +1,43 @@
+---
+import LegacyPage from '../../../../components/LegacyPage.astro';
+import { ArrowUpRight } from '@lucide/astro';
+---
+
+<LegacyPage
+  title="2022.07.05,"
+  titleEm="two surviving paths."
+  eyebrow="LEGACY / DATE INDEX"
+  description="旧版博客 2022 年 7 月 5 日的日期索引。保留两个可核实的旧入口，不补写不可恢复的文章。"
+  oldPath="/2022/07/05/"
+  index="DATE NODE / 2022-07-05"
+  intro="旧站当天有两篇文章。正文已不可恢复，但两个 URL 继续存在。这个日期索引只做一件事：让入口仍然可达。"
+>
+  <div class="legacy-date-head">
+    <span>JUL</span>
+    <strong>05</strong>
+    <span>2022</span>
+  </div>
+
+  <div class="legacy-date-list">
+    <a href="/2022/07/05/hello-world/">
+      <span>01</span>
+      <div><strong>Hello World</strong><small>Legacy blog entry · content not recoverable</small></div>
+      <span class="status-label status-label--archived"><i aria-hidden="true"></i>兼容保留</span>
+      <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+    </a>
+    <a href="/2022/07/05/zhubao315/">
+      <span>02</span>
+      <div><strong>ZHUBAO</strong><small>Legacy author page · content not recoverable</small></div>
+      <span class="status-label status-label--archived"><i aria-hidden="true"></i>兼容保留</span>
+      <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+    </a>
+  </div>
+
+  <div class="legacy-prose legacy-prose--spaced">
+    <p class="case-kicker">SCOPE</p>
+    <p>
+      这个日期索引不是旧站归档的完整重建。除上述两个路径外，没有发现可核实的同一天文章。
+      返回 <a href="/archives/">兼容归档</a> 查看当前已知的所有节点。
+    </p>
+  </div>
+</LegacyPage>

@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ArrowUpRight } from '@lucide/astro';
+
+interface Props {
+  title: string;
+  titleEm?: string;
+  eyebrow: string;
+  description: string;
+  oldPath: string;
+  index: string;
+  intro: string;
+}
+
+const { title, titleEm, eyebrow, description, oldPath, index, intro } = Astro.props;
+const path = Astro.url.pathname;
+
+const legacyRoutes = [
+  { href: '/tags/', label: 'Tags', zh: '标签索引' },
+  { href: '/categories/', label: 'Categories', zh: '分类索引' },
+  { href: '/archives/', label: 'Archives', zh: '文章归档' },
+  { href: '/2022/07/05/hello-world/', label: 'Hello World', zh: '旧文入口' },
+  { href: '/2022/07/05/zhubao315/', label: 'ZHUBAO', zh: '旧作者页' },
+];
+---
+
+<BaseLayout title={`${title} · 兼容入口 | 朱宝 ZHUBAO`} description={description} noindex>
+  <section class="page-hero legacy-hero">
+    <div class="shell">
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="/">首页</a><span class="sep">/</span>
+        <span>Legacy entry</span><span class="sep">/</span><span>{oldPath.replaceAll('/', '')}</span>
+      </nav>
+      <div class="legacy-hero-label">
+        <span class="legacy-badge">LEGACY URL PRESERVED</span>
+        <span>{index}</span>
+      </div>
+      <div class="page-hero-title">
+        <h1>{title}{titleEm && <><br /><em>{titleEm}</em></>}</h1>
+        <span class="page-hero-index">{eyebrow}</span>
+      </div>
+      <div class="legacy-hero-foot">
+        <p>{intro}</p>
+        <div class="legacy-url">
+          <span>ORIGINAL PATH</span>
+          <code>{oldPath}</code>
+          <span class="status-label status-label--archived"><i aria-hidden="true"></i>兼容保留</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section legacy-body">
+    <div class="shell">
+      <div class="legacy-grid">
+        <div class="legacy-main">
+          <slot />
+        </div>
+        <aside class="legacy-aside">
+          <div class="legacy-aside-block">
+            <p class="sidebar-label">WHY THIS PAGE EXISTS</p>
+            <p>
+              这是旧版 Hexo 站点的公开地址。为了不让外部链接直接落入 404，本页保留原路径并说明它在新站中的位置；
+              旧生成页面没有可恢复的正文，因此不重写、不虚构原始内容。
+            </p>
+          </div>
+
+          <div class="legacy-aside-block">
+            <p class="sidebar-label">LEGACY INDEX</p>
+            <nav class="legacy-nav" aria-label="旧站兼容入口">
+              {
+                legacyRoutes.map((route) => (
+                  <a href={route.href} aria-current={path === route.href ? 'page' : undefined}>
+                    <span>{route.label}<small>{route.zh}</small></span>
+                    <span>↗</span>
+                  </a>
+                ))
+              }
+            </nav>
+          </div>
+
+          <div class="legacy-aside-block">
+            <p class="sidebar-label">GO TO CURRENT SITE</p>
+            <div class="legacy-current-links">
+              <a href="/work/">作品 <ArrowUpRight size={14} stroke-width={1.4} aria-hidden="true" /></a>
+              <a href="/think/">思考 <ArrowUpRight size={14} stroke-width={1.4} aria-hidden="true" /></a>
+              <a href="/explore/">探索 <ArrowUpRight size={14} stroke-width={1.4} aria-hidden="true" /></a>
+              <a href="/about/">关于 <ArrowUpRight size={14} stroke-width={1.4} aria-hidden="true" /></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+import LegacyPage from '../../../../components/LegacyPage.astro';
+import { ArrowUpRight } from '@lucide/astro';
+---
+
+<LegacyPage
+  title="Hello,"
+  titleEm="world. Again."
+  eyebrow="2022-07-05 / LEGACY POST"
+  description="旧版博客 /2022/07/05/hello-world/ 的兼容页面。原始正文不可恢复，本页解释该 URL 的来历与当前入口。"
+  oldPath="/2022/07/05/hello-world/"
+  index="POST NODE / 2022-07-05"
+  intro="这个地址曾属于上一版博客的一篇文章。原生成页面没有留下正文；下面的文字是 2026 年重建时新写的兼容说明，不是 2022 年原文。"
+>
+  <article class="legacy-note">
+    <header class="legacy-note-head">
+      <div>
+        <p class="case-kicker">COMPATIBILITY NOTE / NEW TEXT</p>
+        <h2>A URL is a small promise.</h2>
+      </div>
+      <dl>
+        <div><dt>ORIGINAL DATE</dt><dd>2022-07-05</dd></div>
+        <div><dt>ORIGINAL PLATFORM</dt><dd>Hexo / static site</dd></div>
+        <div><dt>CONTENT STATUS</dt><dd>Not recoverable</dd></div>
+        <div><dt>THIS NOTE</dt><dd>Written 2026</dd></div>
+      </dl>
+    </header>
+
+    <div class="legacy-note-body">
+      <p class="legacy-dropcap">
+        旧站迁移时，最常见的做法是给所有旧地址加一条 301，或者干脆让它们消失。但有些链接可能被收藏、被引用，
+        或者只是某个人偶尔翻回来看一眼。保留 URL 并不等于保留了过去，它只是承认“这里曾经有过东西”。
+      </p>
+
+      <p>
+        2022 年 7 月 5 日，上一版博客发布了这篇文章。仓库中今天只剩下生成后的 HTML 外壳，正文、标签和当时的上下文都不再可恢复。
+        我没有选择用一段通用的“欢迎来到我的博客”补上，因为那会制造一种错误的连续感。
+      </p>
+
+      <blockquote>
+        “保留路径，不虚构内容。”
+      </blockquote>
+
+      <p>
+        新站用作品、研究方向和长期记录替代了旧博客的流水账。如果要从这里继续，建议从
+        <a href="/work/">作品索引</a> 看起，或者读一读
+        <a href="/think/">知识为什么需要被治理</a>。
+      </p>
+
+      <div class="legacy-note-sign">
+        <span>ZHUBAO</span>
+        <span>2026.11 / Rebuilt with Astro</span>
+      </div>
+    </div>
+
+    <footer class="legacy-note-foot">
+      <a class="text-link" href="/archives/">返回兼容归档 <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" /></a>
+      <a class="text-link" href="/work/">查看当前作品 <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" /></a>
+    </footer>
+  </article>
+</LegacyPage>

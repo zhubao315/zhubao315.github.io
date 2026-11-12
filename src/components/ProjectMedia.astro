@@ -1,0 +1,166 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { Project } from '../data/projects';
+import uskillLogo from '../assets/projects/uskill-logo.svg';
+import investmentBanner from '../assets/projects/investment-banner.svg';
+import healthImage from '../assets/projects/health.webp';
+import runningImage from '../assets/projects/running.webp';
+import cyclingImage from '../assets/projects/cycling.webp';
+
+interface Props {
+  project: Project;
+  mode?: 'card' | 'hero';
+  class?: string;
+}
+
+const { project, mode = 'card', class: className = '' } = Astro.props;
+const sizes =
+  mode === 'hero'
+    ? '(max-width: 900px) 100vw, 1200px'
+    : '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 800px';
+const widths = mode === 'hero' ? [800, 1200, 1600] : [480, 800, 1200];
+const loading = mode === 'hero' ? 'eager' : 'lazy';
+
+const quantImages: { image: ImageMetadata; label: string; alt: string }[] = [
+  { image: healthImage, label: 'HEALTH / 2026', alt: '健康数据面板截图' },
+  { image: runningImage, label: 'RUNNING / 2026', alt: '跑步档案面板截图' },
+  { image: cyclingImage, label: 'CYCLING / 2026', alt: '骑行档案面板截图' },
+];
+---
+
+<div class:list={['project-media', `project-media--${project.id}`, `project-media--${mode}`, className]}>
+  {
+    project.id === 'uskill' && (
+      <div class="skill-visual" aria-label="uSkill 能力链路示意图">
+        <div class="visual-meta">
+          <span>AGENT SKILL FOUNDATION</span>
+          <span>v1.1 / BETA</span>
+        </div>
+        <div class="skill-visual-core">
+          <img class="skill-logo" src={uskillLogo.src} alt="uSkills logo" />
+          <div class="skill-flow">
+            <span>SOP</span>
+            <i aria-hidden="true">→</i>
+            <span>SCHEMA</span>
+            <i aria-hidden="true">→</i>
+            <span>EXECUTOR</span>
+          </div>
+        </div>
+        <div class="skill-attributes">
+          <span><b>01</b> 可驾驭</span>
+          <span><b>02</b> 可复用</span>
+          <span><b>03</b> 可调用</span>
+          <span><b>04</b> 可迭代</span>
+        </div>
+        <p class="visual-caption">从零散提示词，到可版本化的能力资产。</p>
+      </div>
+    )
+  }
+
+  {
+    project.id === 'knowledge-base-engineering' && (
+      <div class="kbe-visual" aria-label="知识库工程八个治理模块示意图">
+        <div class="visual-meta">
+          <span>KNOWLEDGE BASE ENGINEERING</span>
+          <span>READ-ONLY FIRST</span>
+        </div>
+        <div class="kbe-title">
+          <span class="kbe-number">08</span>
+          <span class="kbe-label">GOVERNANCE<br />MODULES</span>
+        </div>
+        <div class="kbe-stack">
+          <span><b>01</b> 健康诊断与基线</span>
+          <span><b>02</b> 准入防火墙 G0–G7</span>
+          <span><b>03</b> 消化与分级 L0–L7</span>
+          <span><b>04</b> 语义拓扑</span>
+          <span><b>05</b> 度量与独立审计</span>
+          <span><b>06</b> 安全归档与恢复</span>
+          <span><b>07</b> 持续运营与 90 天</span>
+          <span><b>08</b> AI 上下文交付</span>
+        </div>
+        <p class="visual-caption">先诊断，再治理。物理删除不在 AI 权限集合。</p>
+      </div>
+    )
+  }
+
+  {
+    project.id === 'investment-discipline' && (
+      <div class="investment-visual" aria-label="投资的纪律 Agent Skill 视觉图">
+        <div class="investment-banner">
+          <img src={investmentBanner.src} alt="投资的纪律 · Agent Skill 横幅" loading={loading} />
+        </div>
+        <div class="investment-rules">
+          <span>COLLECT</span><i>→</i><span>VERIFY</span><i>→</i><span>ANALYZE</span><i>→</i
+          ><span>CHECK</span>
+        </div>
+        <div class="investment-foot">
+          <span>NO PREDICTION</span>
+          <span>NO STOCK PICKS</span>
+          <span>JUST DISCIPLINE</span>
+        </div>
+      </div>
+    )
+  }
+
+  {
+    project.id === 'quantified-life' && (
+      <div class="quant-visual" aria-label="量化生活四个数据站点的截图拼贴">
+        <div class="quant-collage">
+          {quantImages.map((item) => (
+            <figure>
+              <Image
+                src={item.image}
+                alt={item.alt}
+                widths={[360, 640, 960]}
+                sizes="(max-width: 800px) 50vw, 30vw"
+                loading={loading}
+                quality={82}
+              />
+              <figcaption>{item.label}</figcaption>
+            </figure>
+          ))}
+          <figure class="quant-hike">
+            <div class="contour" aria-hidden="true">
+              <svg viewBox="0 0 300 220" preserveAspectRatio="none">
+                <path d="M-10 180 C 50 150, 60 110, 110 125 S 170 180, 220 138 S 280 72, 330 96" />
+                <path d="M-10 158 C 50 128, 70 90, 120 103 S 170 158, 228 116 S 282 50, 330 74" />
+                <path d="M-10 202 C 48 174, 68 142, 122 150 S 188 198, 244 162 S 292 108, 330 120" />
+              </svg>
+            </div>
+            <figcaption>HIKING / 3D TERRAIN</figcaption>
+            <span class="quant-hike-meta">344 HIKES · 53,014 M CLIMB</span>
+          </figure>
+        </div>
+        <p class="visual-caption quant-caption">
+          <span class="live-dot" aria-hidden="true"></span> DAILY SYNC · 数据快照 2026-11-11
+        </p>
+      </div>
+    )
+  }
+
+  {
+    project.cover && project.id !== 'quantified-life' && (
+      <div class="media-frame">
+        <div class="media-chrome" aria-hidden="true">
+          <span></span><span></span><span></span>
+          <p>
+            {
+              project.demoUrl
+                ? project.demoUrl.replace('https://', '')
+                : project.githubUrl.replace('https://github.com/', 'github.com/')
+            }
+          </p>
+        </div>
+        <Image
+          src={project.cover}
+          alt={project.coverAlt ?? `${project.name} 项目封面`}
+          widths={widths}
+          sizes={sizes}
+          loading={loading}
+          quality={84}
+        />
+      </div>
+    )
+  }
+</div>

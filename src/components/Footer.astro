@@ -1,0 +1,59 @@
+---
+import { ArrowUpRight } from '@lucide/astro';
+import { nav, site } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="shell footer-top">
+    <p class="footer-kicker"><span class="pulse-dot" aria-hidden="true"></span> KEEP BUILDING / KEEP EXPLORING</p>
+    <div class="footer-statement">
+      <h2>Ideas become systems.<br /><em>Systems become assets.</em></h2>
+      <a class="footer-contact" href={site.github} target="_blank" rel="noreferrer">
+        <span>Start a conversation</span>
+        <ArrowUpRight size={26} stroke-width={1.25} aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <p class="footer-logo">ZHUBAO<span>.</span></p>
+      <p class="footer-cn">朱宝的个人数字作品集</p>
+      <p class="footer-tagline">AI Systems · Product Engineering<br />Knowledge Engineering · Quantified Life</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="页脚导航">
+      <p class="footer-label">INDEX</p>
+      {
+        nav.map((item) => (
+          <a href={item.href}>
+            <span>{item.label}</span>
+            <span>{item.en}</span>
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="footer-meta">
+      <p class="footer-label">CONNECT</p>
+      <a href={site.github} target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+      <a href={site.x} target="_blank" rel="noreferrer">X / Twitter <span>↗</span></a>
+      <a href="/about/">About / Contact <span>↗</span></a>
+      <p class="footer-location">北京 · UTC+8</p>
+    </div>
+
+    <div class="footer-note">
+      <p class="footer-label">COLOPHON</p>
+      <p>Built with Astro + TypeScript.<br />Designed and maintained by ZHUBAO.</p>
+      <p class="footer-verified">Facts verified · {site.lastVerified}</p>
+    </div>
+  </div>
+
+  <div class="shell footer-bottom">
+    <p>© {year} ZHUBAO. 保留所有权利。</p>
+    <p>NO TEMPLATE. NO NOISE. <span class="footer-star">✦</span></p>
+    <a href="#main">BACK TO TOP ↑</a>
+  </div>
+</footer>

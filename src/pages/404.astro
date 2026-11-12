@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ArrowRight, ArrowUpRight } from '@lucide/astro';
+import { nav } from '../data/site';
+
+const quickLinks = nav.filter((item) => item.href !== '/');
+---
+
+<BaseLayout
+  title="404 · 页面不在地图上 | 朱宝 ZHUBAO"
+  description="这个地址没有对应的页面。返回首页，或从作品、思考、探索与关于继续浏览。"
+  noindex
+>
+  <section class="not-found">
+    <div class="shell not-found-inner">
+      <div class="not-found-top">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="/">首页</a><span class="sep">/</span><span>404</span>
+        </nav>
+        <span class="not-found-code">ERR / 404</span>
+      </div>
+
+      <div class="not-found-main">
+        <div class="not-found-number" aria-hidden="true">
+          <span>4</span><span class="not-found-symbol">✦</span><span>4</span>
+        </div>
+        <div class="not-found-copy" data-reveal>
+          <p class="eyebrow">Off the map / 页面不在地图上</p>
+          <h1>这个地址，<br /><em>还没有成为系统。</em></h1>
+          <p>
+            你访问的页面不存在、已被移动，或者从未被创建。没有关系，一张地图的意义不在于每条路都通，
+            而在于迷路之后还能找到方向。
+          </p>
+          <div class="not-found-actions">
+            <a class="button" href="/">
+              回到首页 <ArrowRight size={16} stroke-width={1.5} aria-hidden="true" />
+            </a>
+            <a class="text-link" href="/work/">浏览作品</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="not-found-grid" data-reveal>
+        {
+          quickLinks.map((item, index) => (
+            <a class="not-found-link" href={item.href}>
+              <span>0{index + 1} / {item.en}</span>
+              <strong>{item.label}</strong>
+              <ArrowUpRight size={18} stroke-width={1.4} aria-hidden="true" />
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="not-found-foot">
+        <span><span class="live-dot" aria-hidden="true"></span> 404 IS STILL A PAGE</span>
+        <span>TRY / ARCHIVES / OR / TAGS</span>
+        <a href="/archives/">兼容归档 ↗</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ArrowUpRight } from '@lucide/astro';
+import { projects, publications } from '../data/projects';
+
+const knowledgeBase = projects.find((project) => project.id === 'knowledge-base-engineering')!;
+const eLife = projects.find((project) => project.id === 'e-life-method')!;
+const uRead = projects.find((project) => project.id === 'uread')!;
+const investment = projects.find((project) => project.id === 'investment-discipline')!;
+const dualAsset = projects.find((project) => project.id === 'dual-asset-strategy')!;
+const uVision = projects.find((project) => project.id === 'uvision')!;
+const uSkill = projects.find((project) => project.id === 'uskill')!;
+const reading = projects.find((project) => project.id === 'reading-2026')!;
+const hipDrive = projects.find((project) => project.id === 'hip-drive-running')!;
+const tescreal = projects.find((project) => project.id === 'tescreal-guide')!;
+const h029 = projects.find((project) => project.id === 'h029-psychology')!;
+
+const tracks = [
+  {
+    index: '01',
+    en: 'Knowledge Engineering',
+    zh: '知识库工程',
+    statement: '知识不是收藏，是可治理、可复用、可审计的长期资产。',
+    body: '从知识库健康诊断到内容准入、语义拓扑、度量审计、安全归档和 AI 上下文交付，建立一套不依赖某个笔记软件的治理方法。',
+    links: [knowledgeBase, eLife, uRead],
+  },
+  {
+    index: '02',
+    en: 'Investment Discipline',
+    zh: '投资研究',
+    statement: '市场不可预测，但决策过程可以被约束。',
+    body: '把研究、数据校验、风险边界、组合合规和交易复盘写成可执行规则。目标不是预测，而是在情绪与噪声中保持同一套标准。',
+    links: [investment, dualAsset, uVision],
+  },
+  {
+    index: '03',
+    en: 'AI & Agent Research',
+    zh: '智能系统研究',
+    statement: '让 Agent 的能力有结构、有版本、有边界。',
+    body: '研究 Skills、执行器、Harness 与知识上下文之间的关系。既看上游系统如何构建，也尝试把方法做成可以直接调用和验证的包。',
+    links: [uSkill, knowledgeBase],
+  },
+];
+
+const notes = [
+  { project: reading, label: '年度阅读', note: '在奇点与道之间寻找锚点。' },
+  { project: hipDrive, label: '训练研究', note: '从四本书构建送髋跑的技术体系。' },
+  { project: tescreal, label: '思想谱系', note: '七种技术哲学的视觉化指南。' },
+  { project: h029, label: '跨域观察', note: '用 8 个领域、24 个案例讨论心理瓶颈。' },
+];
+---
+
+<BaseLayout
+  title="思考与研究 | 朱宝 ZHUBAO"
+  description="朱宝的知识工程、投资纪律与 AI 研究笔记：把知识当作持续运行的信息系统，把决策过程变成可执行规则。"
+>
+  <section class="page-hero page-hero--dark think-hero">
+    <div class="shell">
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="/">首页</a><span class="sep">/</span><span>思考</span>
+      </nav>
+      <div class="page-hero-title">
+        <h1>Knowledge should<br /><em>compound.</em></h1>
+        <span class="page-hero-index">THINK / 02</span>
+      </div>
+      <div class="page-hero-grid">
+        <p class="page-hero-intro">
+          思考如果只停留在笔记里，就会变成另一种收藏。这里展示的是三条被反复运行、检验和修正的研究线：知识工程、投资纪律与 AI / Agent 系统。
+        </p>
+        <div class="page-hero-meta">
+          <div class="hero-fact"><strong>03</strong><span>研究轨道</span></div>
+          <div class="hero-fact"><strong>02</strong><span>书稿项目</span></div>
+          <div class="hero-fact"><strong>01</strong><span>共同方法：可验证</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section think-operating">
+    <div class="shell">
+      <div class="think-operating-head" data-reveal>
+        <p class="eyebrow">Operating Principle / 从信息到行动</p>
+        <h2>知识的价值，<br /><em>不在拥有，而在连接与调用。</em></h2>
+      </div>
+
+      <div class="knowledge-flow" data-reveal aria-label="知识处理的四个阶段">
+        <div class="flow-step">
+          <span>O / OBSERVE</span>
+          <h3>观测</h3>
+          <p>确认边界、清点现状、记录缺失。没有证据，不进入下一步。</p>
+        </div>
+        <div class="flow-step">
+          <span>E / EVALUATE</span>
+          <h3>评估</h3>
+          <p>定义口径、验证来源、检查重复与冲突。把假设和事实分开。</p>
+        </div>
+        <div class="flow-step">
+          <span>S / SOLIDIFY</span>
+          <h3>固化</h3>
+          <p>建立结构、版本与基线，让一次性的判断成为可复用的方法。</p>
+        </div>
+        <div class="flow-step">
+          <span>A / ACTIVATE</span>
+          <h3>调用</h3>
+          <p>给 Agent 与未来的自己提供带来源、权限和边界的上下文。</p>
+        </div>
+      </div>
+
+      <p class="flow-note">
+        OESA 来自《知识库工程学》的实践框架；它同时适用于笔记、投资研究与 AI 能力建设。
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--paper-alt think-tracks">
+    <div class="shell">
+      <header class="section-head">
+        <div class="section-index"><span>01</span><i aria-hidden="true"></i></div>
+        <div class="section-title">
+          <p class="eyebrow">Research Tracks / 三条主线</p>
+          <h2>把方法论变成可运行的规则。</h2>
+        </div>
+        <div class="section-aside">
+          <p class="section-note">
+            研究方向不是主题标签。每一条线都应该能指向一个项目、一套规则或一个可以被复跑的结果。
+          </p>
+        </div>
+      </header>
+
+      <div class="track-list">
+        {
+          tracks.map((track) => (
+            <article class="track-row" data-reveal>
+              <div class="track-index">
+                <span>{track.index}</span>
+                <i aria-hidden="true"></i>
+              </div>
+              <div class="track-title">
+                <p class="track-en">{track.en}</p>
+                <h3>{track.zh}</h3>
+                <p class="track-statement">{track.statement}</p>
+              </div>
+              <p class="track-body">{track.body}</p>
+              <div class="track-links">
+                {track.links.map((project) => (
+                  <a href={`/work/${project.slug}/`}>
+                    <span>{project.name}</span>
+                    <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section publications-section think-publications">
+    <div class="shell">
+      <header class="section-head section-head--dark">
+        <div class="section-index"><span>02</span><i aria-hidden="true"></i></div>
+        <div class="section-title">
+          <p class="eyebrow">Manuscripts / 两本书稿</p>
+          <h2>写下来，是为了<br />让方法接受时间的检验。</h2>
+        </div>
+        <div class="section-aside">
+          <p class="section-note">
+            两本书稿与各自的开源 Skill 互为验证：书提供完整架构，Skill 让方法真正运行，并暴露边界。
+          </p>
+        </div>
+      </header>
+
+      <div class="publications-grid">
+        {
+          publications.map((publication) => (
+            <article class="publication" data-reveal>
+              <div class={`book-cover ${publication.coverClass}`} aria-hidden="true">
+                <div class="book-cover-top">
+                  <span>ZHUBAO / {publication.index}</span>
+                  <span>MANUSCRIPT</span>
+                </div>
+                <h3>{publication.title.split('').slice(0, 3).join('')}<br />{publication.title.split('').slice(3).join('')}</h3>
+                <div class="book-cover-bottom">
+                  <span>朱宝 著</span>
+                  <span>{publication.type}</span>
+                </div>
+              </div>
+              <div>
+                <div class="publication-meta">
+                  <span>{publication.index} / {publication.type}</span>
+                  <span class="pub-status">{publication.status}</span>
+                </div>
+                <h3>{publication.title}</h3>
+                <p class="publication-subtitle">{publication.subtitle}</p>
+                <p class="publication-desc">{publication.description}</p>
+                <div class="publication-facts">
+                  {publication.facts.map((fact) => <span>{fact}</span>)}
+                </div>
+                <a class="text-link" href={publication.href} target="_blank" rel="noreferrer">
+                  {publication.linkLabel} <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+      <p class="publications-note">
+        书稿状态以作者公开信息为准。没有可核实的出版社与 ISBN，因此不标注“已出版”。
+      </p>
+    </div>
+  </section>
+
+  <section class="section think-notes">
+    <div class="shell">
+      <header class="section-head">
+        <div class="section-index"><span>03</span><i aria-hidden="true"></i></div>
+        <div class="section-title">
+          <p class="eyebrow">Reading & Field Notes</p>
+          <h2>阅读、训练与观察现场记录。</h2>
+        </div>
+        <div class="section-aside">
+          <p class="section-note">不是书单，是主题研究留下的公开痕迹。</p>
+          <a class="text-link" href="https://github.com/zhubao315?tab=repositories" target="_blank" rel="noreferrer">
+            GitHub archive <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
+          </a>
+        </div>
+      </header>
+
+      <div class="notes-table">
+        {
+          notes.map(({ project, label, note }, index) => (
+            <a class="notes-row" href={`/work/${project.slug}/`} data-reveal>
+              <span class="notes-index">{String(index + 1).padStart(2, '0')}</span>
+              <strong>{project.name}</strong>
+              <span class="notes-label">{label}</span>
+              <span class="notes-note">{note}</span>
+              <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="think-quote">
+    <div class="shell--narrow">
+      <p class="eyebrow">A working belief</p>
+      <blockquote>
+        “先修尺子，再量库；先建闸门，再谈规模。”
+      </blockquote>
+      <p class="quote-source">— Knowledge Base Engineering / 设计原则</p>
+      <a class="button button--ghost" href="/work/knowledge-base-engineering/">
+        查看知识库工程 <ArrowUpRight size={16} stroke-width={1.5} aria-hidden="true" />
+      </a>
+    </div>
+  </section>
+</BaseLayout>
