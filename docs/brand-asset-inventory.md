@@ -1,6 +1,6 @@
 # ZHUBAO Brand Asset Inventory
 
-**Version:** 2.0 · 2026-11  
+**Version:** 2.1 · 2026-11 · Midnight Signal  
 **Public root:** `public/`  
 **Brand root:** `public/brand/`
 
@@ -23,6 +23,15 @@
 | PWA | `public/icon-192.png`, `icon-512.png` | PNG | 192 / 512 | Manifest |
 
 All logo files are native vector except the listed PNG derivatives. The wordmark is converted from Manrope 800 to SVG paths; no bitmap is embedded in an SVG.
+
+### Midnight Signal edition spec (V2.1)
+
+- Chip: Deep Navy `#0B1D33`（inverse 版本 `#13263D`）· Z path: Arctic White `#F7FAFF`
+- Standard memory nodes: BUILD `#38BDF8`（左上）+ THINK `#FBBF24`（右上），其余节点为 Arctic White
+- Four-direction edition（仅 avatar）: `#38BDF8` / `#FBBF24` / `#34D399` / `#FB7185`
+- Favicon/PWA/OG background: Midnight `#07111F`（manifest `background_color` 同步）
+- OG 图（`public/og-default.png`）：深空底、青色 eyebrow、四向色面板，由 `node scripts/generate-assets.mjs` 渲染
+- 视觉核对表：`docs/screenshots/brand-logo-sheet.jpg`
 
 Regenerate:
 
@@ -48,6 +57,8 @@ python3 scripts/generate-brand-images.py
 ```
 
 The originals live in `src/assets/brand/` and are imported by `src/data/brand.ts`, so Astro resizes and re-encodes them (WebP) at build time. They are **not** in `public/` and never ship as raw 1024px PNGs.
+
+**V2.1 status:** the four current fields are still the warm-paper V2.0 generations. `scripts/generate-brand-images.py` now carries the midnight-base prompts; regeneration runs before the HOME page stage and the old paper fields are replaced in place. No paper field may appear on any page after the migration completes.
 
 Rules:
 

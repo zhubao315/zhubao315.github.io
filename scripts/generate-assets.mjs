@@ -17,13 +17,14 @@ const font = (packagePath) => {
 const manrope = font('@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2');
 const instrument = font('@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2');
 
+// Midnight Signal mark: navy chip, arctic Z, cyan + gold memory nodes.
 const iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="12" fill="#0B1D33"/>
-  <path d="M15 17H49L15 47H49" fill="none" stroke="#F7F3EA" stroke-width="7" stroke-linejoin="miter"/>
-  <rect x="11" y="13" width="8" height="8" fill="#F7F3EA"/>
+  <path d="M15 17H49L15 47H49" fill="none" stroke="#F7FAFF" stroke-width="7" stroke-linejoin="miter"/>
+  <rect x="11" y="13" width="8" height="8" fill="#38BDF8"/>
   <rect x="45" y="13" width="8" height="8" fill="#FBBF24"/>
-  <rect x="11" y="43" width="8" height="8" fill="#F7F3EA"/>
-  <rect x="45" y="43" width="8" height="8" fill="#F7F3EA"/>
+  <rect x="11" y="43" width="8" height="8" fill="#F7FAFF"/>
+  <rect x="45" y="43" width="8" height="8" fill="#F7FAFF"/>
 </svg>`;
 
 fs.writeFileSync(path.join(publicDir, 'favicon.svg'), `${iconSvg}\n`);
@@ -62,12 +63,11 @@ const manifest = {
   description: 'Build systems, engineer knowledge, measure life, create things — the personal brand and digital portfolio of ZHUBAO.',
   start_url: '/',
   display: 'standalone',
-  background_color: '#F7F3EA',
-  theme_color: '#0B1D33',
+  background_color: '#07111F',
+  theme_color: '#07111F',
   lang: 'zh-CN',
   icons: [
     { src: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-    { src: '/icon-512.png', sizes: '512x512', type: 'image/png' },
     { src: '/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
   ],
 };
@@ -84,52 +84,56 @@ const ogHtml = `<!doctype html>
 html, body { width: 1200px; height: 630px; }
 body {
   display: flex; flex-direction: column;
-  background: #F7F3EA; color: #0B1D33;
+  background: #07111F; color: #F7FAFF;
   font-family: Manrope, 'Noto Sans CJK SC', sans-serif;
   padding: 30px 42px 26px;
   overflow: hidden;
   position: relative;
 }
 body::before {
-  content: ''; position: fixed; inset: 0; pointer-events: none; opacity: .05;
-  background-image: radial-gradient(#0B1D33 .7px, transparent .7px);
+  content: ''; position: fixed; inset: 0; pointer-events: none; opacity: .5;
+  background-image: radial-gradient(rgba(247,250,255,.07) .7px, transparent .7px);
   background-size: 8px 8px;
 }
 body::after {
   content: ''; position: absolute; right: -90px; bottom: -120px;
-  width: 420px; height: 420px; border: 1px solid rgba(11,29,51,.12);
+  width: 420px; height: 420px; border: 1px solid rgba(247,250,255,.08);
   transform: rotate(18deg);
 }
-.top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid rgba(11,29,51,.2); font: 600 11px/1.4 monospace; letter-spacing: .15em; text-transform: uppercase; }
+.top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid rgba(247,250,255,.18); font: 600 11px/1.4 monospace; letter-spacing: .15em; text-transform: uppercase; color: #B7C3D4; }
 .brand { display: flex; gap: 12px; align-items: center; }
 .mark { width: 34px; height: 34px; display: block; }
 .mark svg { width: 34px; height: 34px; display: block; }
 .main { flex: 1; display: grid; grid-template-columns: 1fr 316px; gap: 42px; padding: 34px 0 26px; }
-.eyebrow { font: 500 10px/1.4 monospace; letter-spacing: .13em; text-transform: uppercase; color: #5A697D; }
-h1 { margin-top: 15px; font-size: 69px; line-height: .9; font-weight: 700; letter-spacing: -.072em; }
+.eyebrow { font: 500 10px/1.4 monospace; letter-spacing: .13em; text-transform: uppercase; color: #38BDF8; }
+h1 { margin-top: 15px; font-size: 69px; line-height: .9; font-weight: 700; letter-spacing: -.072em; color: #F7FAFF; }
 h1 em { font-family: Instrument, 'Noto Serif CJK SC', serif; font-weight: 400; letter-spacing: -.03em; }
-.lede { max-width: 600px; margin-top: 20px; font-size: 16px; line-height: 1.65; color: #465166; }
+.lede { max-width: 600px; margin-top: 20px; font-size: 16px; line-height: 1.65; color: #A8B6C8; }
 .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
-.tags span { border: 1px solid rgba(11,29,51,.22); padding: 5px 9px; font: 500 9.5px/1.4 monospace; letter-spacing: .055em; color: #5A697D; text-transform: uppercase; }
-.panel { position: relative; display: flex; flex-direction: column; background: #0B1D33; color: #F7F3EA; padding: 20px; box-shadow: 12px 12px 0 #E7DDCC; z-index: 1; }
-.panel-top { display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid rgba(247,243,234,.16); font: 10px/1.4 monospace; letter-spacing: .1em; color: #94A3B8; text-transform: uppercase; }
+.tags span { border: 1px solid rgba(247,250,255,.18); padding: 5px 9px; font: 500 9.5px/1.4 monospace; letter-spacing: .055em; color: #94A3B8; text-transform: uppercase; }
+.panel { position: relative; display: flex; flex-direction: column; background: #13263D; color: #F7FAFF; padding: 20px; box-shadow: 12px 12px 0 #0B1D33; z-index: 1; }
+.panel-top { display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid rgba(247,250,255,.16); font: 10px/1.4 monospace; letter-spacing: .1em; color: #94A3B8; text-transform: uppercase; }
 .panel-list { margin-top: 4px; }
-.panel-row { display: grid; grid-template-columns: 24px 1fr auto; gap: 9px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid rgba(247,243,234,.13); }
+.panel-row { display: grid; grid-template-columns: 24px 1fr auto; gap: 9px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid rgba(247,250,255,.10); }
 .panel-row small { color: #94A3B8; font: 9px/1 monospace; }
 .panel-row strong { font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 .panel-row span { display: block; margin-top: 2px; color: #94A3B8; font-size: 9px; letter-spacing: .02em; }
-.panel-row i { font-style: normal; color: #FBBF24; font-family: monospace; font-size: 11px; }
-.panel-foot { margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(247,243,234,.16); display: flex; justify-content: space-between; color: #94A3B8; font: 8.5px/1.5 monospace; letter-spacing: .08em; }
-.bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 13px; border-top: 1px solid rgba(11,29,51,.2); font: 600 10.5px/1.4 monospace; letter-spacing: .12em; text-transform: uppercase; color: #5A697D; }
-.bottom strong { color: #0B1D33; font-size: 11.5px; letter-spacing: .14em; }
+.panel-row i { font-style: normal; font-family: monospace; font-size: 11px; }
+.panel-row.build i { color: #38BDF8; }
+.panel-row.think i { color: #FBBF24; }
+.panel-row.measure i { color: #34D399; }
+.panel-row.create i { color: #FB7185; }
+.panel-foot { margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(247,250,255,.16); display: flex; justify-content: space-between; color: #94A3B8; font: 8.5px/1.5 monospace; letter-spacing: .08em; }
+.bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 13px; border-top: 1px solid rgba(247,250,255,.18); font: 600 10.5px/1.4 monospace; letter-spacing: .12em; text-transform: uppercase; color: #94A3B8; }
+.bottom strong { color: #F7FAFF; font-size: 11.5px; letter-spacing: .14em; }
 .status { display: flex; align-items: center; gap: 8px; }
-.dot { width: 6px; height: 6px; border-radius: 50%; background: #63D6A3; box-shadow: 0 0 0 4px rgba(99,214,163,.12); }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #34D399; box-shadow: 0 0 0 4px rgba(52,211,153,.14); }
 </style>
 </head>
 <body>
   <div class="top">
     <div class="brand">
-      <span class="mark"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0B1D33"/><path d="M15 17H49L15 47H49" fill="none" stroke="#F7F3EA" stroke-width="7" stroke-linejoin="miter"/><rect x="11" y="13" width="8" height="8" fill="#F7F3EA"/><rect x="45" y="13" width="8" height="8" fill="#FBBF24"/><rect x="11" y="43" width="8" height="8" fill="#F7F3EA"/><rect x="45" y="43" width="8" height="8" fill="#F7F3EA"/></svg></span>
+      <span class="mark"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0B1D33"/><path d="M15 17H49L15 47H49" fill="none" stroke="#F7FAFF" stroke-width="7" stroke-linejoin="miter"/><rect x="11" y="13" width="8" height="8" fill="#38BDF8"/><rect x="45" y="13" width="8" height="8" fill="#FBBF24"/><rect x="11" y="43" width="8" height="8" fill="#F7FAFF"/><rect x="45" y="43" width="8" height="8" fill="#F7FAFF"/></svg></span>
       <span>ZHUBAO / PERSONAL BRAND SYSTEM</span>
     </div>
     <span>BEIJING · 39.9°N / 116.4°E</span>
@@ -144,10 +148,10 @@ h1 em { font-family: Instrument, 'Noto Serif CJK SC', serif; font-weight: 400; l
     <aside class="panel">
       <div class="panel-top"><span>Z-Grid</span><span>04 / directions</span></div>
       <div class="panel-list">
-        <div class="panel-row"><small>01</small><div><strong>Build</strong><span>构建系统</span></div><i>↗</i></div>
-        <div class="panel-row"><small>02</small><div><strong>Think</strong><span>工程知识</span></div><i>↗</i></div>
-        <div class="panel-row"><small>03</small><div><strong>Measure</strong><span>量化生活</span></div><i>↗</i></div>
-        <div class="panel-row"><small>04</small><div><strong>Create</strong><span>创造作品</span></div><i>↗</i></div>
+        <div class="panel-row build"><small>01</small><div><strong>Build</strong><span>构建系统</span></div><i>↗</i></div>
+        <div class="panel-row think"><small>02</small><div><strong>Think</strong><span>工程知识</span></div><i>↗</i></div>
+        <div class="panel-row measure"><small>03</small><div><strong>Measure</strong><span>量化生活</span></div><i>↗</i></div>
+        <div class="panel-row create"><small>04</small><div><strong>Create</strong><span>创造作品</span></div><i>↗</i></div>
       </div>
       <div class="panel-foot"><span>BUILDING IN PUBLIC</span><span>2026 / 11</span></div>
     </aside>
@@ -171,4 +175,4 @@ await page.evaluate(() => document.fonts.ready);
 await page.screenshot({ path: path.join(publicDir, 'og-default.png'), type: 'png' });
 await browser.close();
 
-console.log('Generated favicon.ico, favicon.svg, PNG icons, site.webmanifest, og-default.png');
+console.log('Generated favicon.ico, favicon.svg, PNG icons, site.webmanifest, og-default.png (Midnight Signal)');

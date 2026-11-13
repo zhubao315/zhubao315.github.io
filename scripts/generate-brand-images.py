@@ -24,22 +24,22 @@ PROMPTS = {
         "flat vector aesthetic, precise geometry, generous negative space, no text, no letters, no watermark"
     ),
     "field-think": (
-        "Minimal abstract knowledge network on warm paper background #F7F3EA, "
-        "deep navy #0B1D33 thin concentric circles and connected nodes, signal gold #FBBF24 accent, "
-        "editorial research journal cover, flat vector aesthetic, precise geometry, "
+        "Minimal abstract knowledge network on midnight black background #07111F, "
+        "arctic white #F7FAFF and deep navy thin concentric circles and connected nodes, signal gold #FBBF24 accent, "
+        "editorial research journal cover, dark tech editorial, flat vector aesthetic, precise geometry, "
         "generous negative space, no text, no letters, no watermark"
     ),
     "field-measure": (
-        "Minimal abstract topographic contour and long-term data trace, warm paper background #F7F3EA, "
-        "deep navy #0B1D33 contour lines, mint green #63D6A3 accent, fine measurement ticks and a rising line, "
-        "editorial data art, flat vector aesthetic, generous negative space, "
+        "Minimal abstract topographic contour and long-term data trace on midnight black background #07111F, "
+        "cool slate contour lines, emerald #34D399 rising line accent, fine measurement ticks, "
+        "dark editorial data art, flat vector aesthetic, generous negative space, "
         "no text, no letters, no numbers, no watermark"
     ),
     "field-create": (
-        "Minimal abstract geometric composition on warm paper background #F7F3EA, "
-        "deep navy #0B1D33 and coral #F97362 overlapping shapes, modular grid, one signal gold #FBBF24 accent, "
-        "editorial art poster, flat vector aesthetic, precise geometry, generous negative space, "
-        "no text, no letters, no watermark"
+        "Minimal abstract geometric composition on midnight black background #07111F, "
+        "deep navy #0B1D33 and coral rose #FB7185 overlapping shapes, cyan #38BDF8 thin rules, modular grid, "
+        "one signal gold #FBBF24 accent, dark editorial art poster, flat vector aesthetic, precise geometry, "
+        "generous negative space, no text, no letters, no watermark"
     ),
 }
 
