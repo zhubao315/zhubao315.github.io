@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292 244" role="img" aria-label="ZHUBAO">
+<defs>
+  <linearGradient id="w-t" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#F7FAFF"/><stop offset="1" stop-color="#C9D6E4"/>
+  </linearGradient>
+  <linearGradient id="w-b" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#DFE8F3"/><stop offset="1" stop-color="#B7C6DA"/>
+  </linearGradient>
+</defs>
+<g transform="translate(0 0) scale(1)">
+  <polygon points="227,0 285,0 41,244 -17,244" fill="#FFFFFF"/>
+  <polygon points="0,0 182,0 232,50 0,50" fill="url(#w-t)"/>
+  <polygon points="120,194 238,194 238,244 70,244" fill="url(#w-b)"/>
+  <rect x="1" y="1" width="52" height="52" rx="3" fill="#F7FAFF"/>
+  <rect x="231" y="1" width="52" height="52" rx="3" fill="#F7FAFF"/>
+  <rect x="1" y="191" width="52" height="52" rx="3" fill="#F7FAFF"/>
+  <rect x="231" y="191" width="52" height="52" rx="3" fill="#F7FAFF"/>
+</g>
+</svg>

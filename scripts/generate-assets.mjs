@@ -17,24 +17,15 @@ const font = (packagePath) => {
 const manrope = font('@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2');
 const instrument = font('@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2');
 
-// Midnight Signal mark: navy chip, arctic Z, cyan + gold memory nodes.
-const iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#0B1D33"/>
-  <path d="M15 17H49L15 47H49" fill="none" stroke="#F7FAFF" stroke-width="7" stroke-linejoin="miter"/>
-  <rect x="11" y="13" width="8" height="8" fill="#38BDF8"/>
-  <rect x="45" y="13" width="8" height="8" fill="#FBBF24"/>
-  <rect x="11" y="43" width="8" height="8" fill="#F7FAFF"/>
-  <rect x="45" y="43" width="8" height="8" fill="#F7FAFF"/>
-</svg>`;
+// Icon set ownership: scripts/slice-logo.mjs is the single source of truth (it
+// slices the approved identity board). Here we only reuse that master for the
+// OG image, and refresh the PNG set from it so both scripts stay consistent.
+const iconMaster = path.join(publicDir, 'brand', 'zhubao-appicon-512.png');
+const iconSvg = fs.readFileSync(path.join(publicDir, 'favicon.svg'), 'utf8');
 
-fs.writeFileSync(path.join(publicDir, 'favicon.svg'), `${iconSvg}\n`);
-
-const iconPngs = await Promise.all([
-  sharp(Buffer.from(iconSvg)).resize(32, 32).png().toBuffer(),
-  sharp(Buffer.from(iconSvg)).resize(180, 180).png().toBuffer(),
-  sharp(Buffer.from(iconSvg)).resize(192, 192).png().toBuffer(),
-  sharp(Buffer.from(iconSvg)).resize(512, 512).png().toBuffer(),
-]);
+const iconPngs = await Promise.all(
+  [32, 180, 192, 512].map((size) => sharp(iconMaster).resize(size, size).png().toBuffer()),
+);
 fs.writeFileSync(path.join(publicDir, 'favicon-32.png'), iconPngs[0]);
 fs.writeFileSync(path.join(publicDir, 'apple-touch-icon.png'), iconPngs[1]);
 fs.writeFileSync(path.join(publicDir, 'icon-192.png'), iconPngs[2]);
@@ -102,8 +93,8 @@ body::after {
 }
 .top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid rgba(247,250,255,.18); font: 600 11px/1.4 monospace; letter-spacing: .15em; text-transform: uppercase; color: #B7C3D4; }
 .brand { display: flex; gap: 12px; align-items: center; }
-.mark { width: 34px; height: 34px; display: block; }
-.mark svg { width: 34px; height: 34px; display: block; }
+.mark { display: block; }
+.mark svg { width: auto; height: 36px; display: block; }
 .main { flex: 1; display: grid; grid-template-columns: 1fr 316px; gap: 42px; padding: 34px 0 26px; }
 .eyebrow { font: 500 10px/1.4 monospace; letter-spacing: .13em; text-transform: uppercase; color: #38BDF8; }
 h1 { margin-top: 15px; font-size: 69px; line-height: .9; font-weight: 700; letter-spacing: -.072em; color: #F7FAFF; }
@@ -133,7 +124,7 @@ h1 em { font-family: Instrument, 'Noto Serif CJK SC', serif; font-weight: 400; l
 <body>
   <div class="top">
     <div class="brand">
-      <span class="mark"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0B1D33"/><path d="M15 17H49L15 47H49" fill="none" stroke="#F7FAFF" stroke-width="7" stroke-linejoin="miter"/><rect x="11" y="13" width="8" height="8" fill="#38BDF8"/><rect x="45" y="13" width="8" height="8" fill="#FBBF24"/><rect x="11" y="43" width="8" height="8" fill="#F7FAFF"/><rect x="45" y="43" width="8" height="8" fill="#F7FAFF"/></svg></span>
+      <span class="mark">${iconSvg.replace('<svg ', '<svg width="44" height="44" ')}</span>
       <span>ZHUBAO / PERSONAL BRAND SYSTEM</span>
     </div>
     <span>BEIJING · 39.9°N / 116.4°E</span>

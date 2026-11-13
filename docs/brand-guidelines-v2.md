@@ -3,7 +3,7 @@
 **Brand:** ZHUBAO / 朱宝  
 **Positioning:** Personal Brand & Digital Portfolio  
 **System name:** Midnight Signal / 深空信号视觉体系（承载 Z-Grid 四向系统）  
-**Version:** 2.1 · 2026-11（取代 2.0 暖纸色方案，内容架构不变）  
+**Version:** 2.1 · 2026-11（取代 2.0 暖纸色方案，内容架构不变；V2.2 起 Logo 生产资产改为定稿效果图切图版，矢量版转入 `public/brand/vector/`）  
 **Source of truth:** this document, `src/styles/global.css` tokens, `src/styles/brand-v2.css`, `public/brand/`
 
 ---
@@ -85,42 +85,49 @@ V2.0（Z-Grid · 暖纸编辑风）验证了四向内容与 Z 字系统图，但
 
 ---
 
-## 3. Z-Grid logo · Midnight edition
+## 3. Z-Grid logo · Midnight Signal 3D bar edition
 
-The mark remains a continuous **Z path** visiting four nodes（Z-Grid 概念不变）：
+The mark is a dimensional **Z** assembled from architectural bars（2026-11 客户定稿版，矢量重绘自品牌提案板）：
 
 ```
-BUILD ●────────● THINK
-       ╲      ╱
-        ╲    ╱
-         ╲  ╱
-MEASURE ●──╱──● CREATE
+BUILD ●▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔● THINK
+       ╲  gradient bars ╲
+        ╲   white diagonal╲
+MEASURE ●______________● CREATE
 ```
 
-V2.1 重新定义表现方式：
+- 顶部横条：电光蓝渐变 `#2B73F6 → #86BDFD`，右上端 45° 斜切。
+- 底部横条：电光蓝渐变 `#2563EB → #0F3A8C`，左上端 45° 斜切。
+- 白色对角笔画（`#FFFFFF → #DDE9F7`）压在两横条之下，从 **THINK 节点**（右上）连到 **MEASURE 节点**（左下），45°。
+- 对角右侧带一层深海军蓝阴影楔（`#0B3358` 渐隐），构成“层叠建筑”深度；这是标志唯一允许的阴影。
+- 四个角部方形节点即四个方向：BUILD `#38BDF8`（左上）、THINK `#FBBF24`（右上）、MEASURE `#34D399`（左下）、CREATE `#FB7185`（右下）。
+- 单位网格：节点 52u、横条高 50u、对角宽 58u、总画布 292 × 244。
+- 变体：彩色符号 / 反白版 / 单色版（黑）/ 单色反白版（白）/ 横向组合 / 纵向组合。
+- 标志**不放在圆角芯片里**（favicon / PWA / app 图标除外，芯片 `#0B1D33`）。
 
-- 深色场景：Z 路径与三角节点为 **Arctic White**，右下节点为电光蓝，右上节点为研究金。
-- 浅色场景：Z 路径为 **Deep Navy**（次要场合 Electric Blue），节点色规则同上。
-- 四个节点即四个方向：`#38BDF8` / `#FBBF24` / `#34D399` / `#FB7185`（四色版仅在系统图与头像使用；常规版保持白/深蓝 + 金色记忆点，避免小尺寸下碎裂）。
-- 深色背景配白色文字标，浅色背景配深蓝文字标。
-- 禁止：大面积彩虹渐变、玻璃质感、复杂 3D、闪电图标替代、外发光。
+The mark is **not** a lightning bolt, an arrow, a letter in a generic rounded square, or four separate icons glued together.
 
-### Lockups
+### Production assets（V2.2 切图版）
+
+站点 Header、Footer、favicon、OG、头像一律使用**定稿效果图的切图版**（`scripts/slice-logo.mjs` 从 `docs/brand-identity-board.png` 切出，柔和阴影按色彩距离渐隐抠底）。同名 `.svg` 是位图的光栅包装，避免老链接失效；`public/brand/vector/` 保存手绘矢量版，用于印刷与无限放大。
 
 | Asset | Use |
 |---|---|
-| `zhubao-symbol.svg` | App icon、社交头像、小尺寸品牌标记 |
-| `zhubao-symbol-mono.svg` | 单色印刷、浮雕、favicon 兜底 |
-| `zhubao-horizontal.svg` | 浅色背景的 Header、文档、演示 |
-| `zhubao-horizontal-inverse.svg` | 深色背景、Footer、OG 面板 |
-| `zhubao-stacked.svg` / `-inverse` | 封面、扉页、周边 |
-| `zhubao-avatar.svg` / `-1024.png` | 社交头像（四向节点色完整版） |
-| `favicon.svg` / `.ico` / PNG set | 浏览器与 PWA（深空底 + 白 Z + 金节点） |
+| `zhubao-symbol.png` / `.svg` | 独立图形标志：Header 标记、图标与头像母版 |
+| `zhubao-horizontal.png` / `.svg` | 网站横向 Logo（含 ZHUBAO + 朱宝词标）：Footer |
+| `zhubao-stacked.png` / `.svg` | 纵向组合：封面、扉页、海报 |
+| `zhubao-white.png` / `.svg` | 深色背景反白版 |
+| `zhubao-mono.png` / `.svg` | 单色版（黑，浅底） |
+| `zhubao-mono-reverse.png` / `.svg` | 单色反白版（白，深底） |
+| `zhubao-appicon-512.png` / `zhubao-avatar-1024.png` | App 图标母版 / 社交头像 |
+| `favicon.svg` / `.ico` / PNG set | 浏览器与 PWA（标志 + 深蓝圆角芯片） |
+| `brand-logo-guide.pdf` | Logo 使用规范（A4 三页，`/brand/brand-logo-guide.pdf`） |
+| `vector/zhubao-horizontal-inverse.svg` | 深底矢量横版（演示、印刷） |
 
 ### Clear space and minimum size
 
-- Clear space ≥ 一个节点宽（符号的 1/8）。
-- 符号最小 **16px** 数字 / **8mm** 印刷；横版最小 **120px** / **32mm**。
+- Clear space ≥ 一个节点宽（符号的 1/5.6）。
+- 符号最小 **24px** 数字 / **8mm** 印刷；横版最小 **140px** / **38mm**；竖版 **80px** / **24mm**。
 - 不拉伸、不旋转、不加描边渐变阴影、不放Busy 照片上（需垫实底）。
 
 ---

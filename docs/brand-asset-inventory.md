@@ -8,38 +8,52 @@
 
 ## 1. Logo family
 
-| Asset | Path | Format | Size / viewBox | Use |
+V2.2 起，**生产资产是从定稿效果图切出的位图**（`docs/brand-identity-board.png`，1536×1024），站点 Header / Footer / favicon / OG 全部使用这一套；手绘矢量版退居 `public/brand/vector/` 作为印刷与放大的备份源。同名 `.svg` 是位图的光栅包装（`<image>` 内嵌 base64 PNG），保证「引用 `.svg` 的老链接」不破。
+
+| Asset | Path | Format | Size | Use |
 |---|---|---|---|---|
-| Symbol | `public/brand/zhubao-symbol.svg` | SVG | 64 × 64 | Header mark, app icon |
-| Symbol mono | `public/brand/zhubao-symbol-mono.svg` | SVG | 64 × 64 | Single-colour print |
-| Horizontal | `public/brand/zhubao-horizontal.svg` | SVG | ~249 × 72 | Light backgrounds, documents |
-| Horizontal inverse | `public/brand/zhubao-horizontal-inverse.svg` | SVG | ~249 × 72 | Navy fields, footer |
-| Stacked | `public/brand/zhubao-stacked.svg` | SVG | ~240 × 152 | Covers, title pages |
-| Stacked inverse | `public/brand/zhubao-stacked-inverse.svg` | SVG | ~240 × 152 | Dark covers |
-| Social avatar | `public/brand/zhubao-avatar.svg` + `zhubao-avatar-1024.png` | SVG / PNG | 1024 × 1024 | Profile image |
-| Symbol PNG | `public/brand/zhubao-symbol-512.png` | PNG | 512 × 512 | Slide decks, favicons |
+| Symbol | `public/brand/zhubao-symbol.png` (+同名 .svg) | PNG RGBA | 592 × 530 | Header 标记、图标母版、头像母版 |
+| Horizontal | `public/brand/zhubao-horizontal.png` (+.svg) | PNG RGBA | 984 × 224 | 网站横向 Logo（Footer lockup） |
+| Stacked | `public/brand/zhubao-stacked.png` (+.svg) | PNG RGBA | 344 × 314 | 纵向组合：封面、扉页 |
+| White | `public/brand/zhubao-white.png` (+.svg) | PNG RGBA | 346 × 306 | 深色背景反白版 |
+| Mono | `public/brand/zhubao-mono.png` (+.svg) | PNG RGBA | 252 × 262 | 单色版（黑，浅底） |
+| Mono reverse | `public/brand/zhubao-mono-reverse.png` (+.svg) | PNG RGBA | 260 × 270 | 单色反白（白，深底） |
+| App icon master | `public/brand/zhubao-appicon-512.png` | PNG | 512 × 512 | 图标母版（标志 + 深蓝圆角芯片） |
+| Social avatar | `public/brand/zhubao-avatar-1024.png` | PNG | 1024 × 1024 | GitHub / 社交头像 |
 | Favicon | `public/favicon.svg`, `favicon.ico`, `favicon-32.png` | SVG / ICO / PNG | 16–32 | Browser |
 | Apple touch | `public/apple-touch-icon.png` | PNG | 180 × 180 | iOS home screen |
 | PWA | `public/icon-192.png`, `icon-512.png` | PNG | 192 / 512 | Manifest |
+| Logo guide | `public/brand/brand-logo-guide.pdf` | PDF | A4 × 3 | Logo 使用规范 |
 
-All logo files are native vector except the listed PNG derivatives. The wordmark is converted from Manrope 800 to SVG paths; no bitmap is embedded in an SVG.
+### Vector backup（`public/brand/vector/`）
 
-### Midnight Signal edition spec (V2.1)
+| Asset | viewBox | Use |
+|---|---|---|
+| `zhubao-symbol.svg` | 292 × 244 | 印刷、无限放大、二次编辑 |
+| `zhubao-white.svg` | 292 × 244 | 矢量反白 |
+| `zhubao-mono.svg` | 292 × 244 | `currentColor` 单色剪影 |
+| `zhubao-horizontal.svg` | 255 × 88 | 浅底矢量横版（Manrope 800 转 path + 朱宝） |
+| `zhubao-horizontal-inverse.svg` | 255 × 88 | 深底矢量横版 |
+| `zhubao-stacked.svg` | 240 × 196 | 矢量竖版 |
 
-- Chip: Deep Navy `#0B1D33`（inverse 版本 `#13263D`）· Z path: Arctic White `#F7FAFF`
-- Standard memory nodes: BUILD `#38BDF8`（左上）+ THINK `#FBBF24`（右上），其余节点为 Arctic White
-- Four-direction edition（仅 avatar）: `#38BDF8` / `#FBBF24` / `#34D399` / `#FB7185`
-- Favicon/PWA/OG background: Midnight `#07111F`（manifest `background_color` 同步）
-- OG 图（`public/og-default.png`）：深空底、青色 eyebrow、四向色面板，由 `node scripts/generate-assets.mjs` 渲染
+### Midnight Signal edition spec (V2.2)
+
+- 切图主资产保留效果图的**渐变立体 Z**（顶条 `#2B73F6→#86BDFD`、底条 `#2563EB→#0F3A8C`、白色对角、深海军蓝阴影楔），四角节点即四向色。
+- 抠底：按色彩距离生成 alpha（板底 `#020F1D` / 白磁贴 `#FAFBFC`），柔和阴影自然渐隐，无硬边残留。
+- Favicon / PWA / app icon = 符号合成到 Deep Navy `#0B1D33` 圆角芯片；avatar 背景 Midnight `#07111F`（manifest `background_color` 同步）。
+- OG 图（`public/og-default.png`）：深空底、青色 eyebrow、四向色面板，由 `node scripts/generate-assets.mjs` 渲染。
 - 视觉核对表：`docs/screenshots/brand-logo-sheet.jpg`
 
 Regenerate:
 
 ```bash
-/tmp/fontenv/bin/python scripts/build-brand-assets.py
+node scripts/slice-logo.mjs                    # 板图 → 生产资产 + 图标组（sharp，需 ensureAlpha）
+/tmp/fontenv/bin/python scripts/build-brand-assets.py   # 矢量备份 → public/brand/vector/
+node scripts/build-brand-guide.mjs             # brand-logo-guide.pdf
+node scripts/screenshot-brand-sheet.mjs        # 核对表截图
 ```
 
-The script requires `fonttools`, `brotli`, `rsvg-convert`, and ImageMagick.
+⚠️ 板图是 3 通道 RGB PNG：sharp 必须先 `.ensureAlpha().raw()`，否则 alpha 会写进蓝通道（症状：金色变粉、单色版变黄）。
 
 ## 2. Generated brand fields
 
@@ -122,7 +136,11 @@ Direction marks are custom SVG and receive colour from the parent (`currentColor
 
 | Task | Command |
 |---|---|
-| Regenerate logo SVGs and PNG/ICO derivatives | `/tmp/fontenv/bin/python scripts/build-brand-assets.py` (needs `fonttools`, `brotli`, `rsvg-convert`, ImageMagick) |
+| Slice the identity board into production logo assets + icon set | `node scripts/slice-logo.mjs` |
+| Rebuild the vector logo backup family | `/tmp/fontenv/bin/python scripts/build-brand-assets.py` (needs `fonttools`, `brotli`) |
+| Rebuild `brand-logo-guide.pdf` | `node scripts/build-brand-guide.mjs` |
+| Recapture the brand contact sheet | `node scripts/screenshot-brand-sheet.mjs` |
+| Recapture the logo-in-application sheet | `npm run preview -- --port 4321` in one shell, then `node scripts/screenshot-brand-application.mjs` |
 | Regenerate the four brand fields | `python3 scripts/generate-brand-images.py` (local Qwen-Image-2.1) |
 | Regenerate OG image, favicon set, manifest | `node scripts/generate-assets.mjs` |
 | Recapture `docs/screenshots/` | `npm run preview -- --port 4321` in one shell, then `npm run screenshots` |
