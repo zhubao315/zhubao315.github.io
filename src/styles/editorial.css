@@ -16,7 +16,7 @@
   position: absolute;
   right: -1vw;
   bottom: -5vw;
-  color: rgba(247, 243, 234, 0.035);
+  color: rgba(247, 250, 255, 0.035);
   font-family: var(--display);
   font-size: clamp(12rem, 31vw, 34rem);
   font-weight: 700;
@@ -85,7 +85,7 @@
 }
 
 .flow-step > span {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   font-family: var(--mono);
   font-size: 0.52rem;
   letter-spacing: 0.09em;
@@ -156,7 +156,7 @@
 }
 
 .track-index span {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   font-family: var(--mono);
   font-size: 0.58rem;
 }
@@ -223,7 +223,7 @@
 
 .track-links a:hover {
   padding-left: 4px;
-  color: var(--gold-deep);
+  color: var(--electric-ink);
 }
 
 .track-links svg {
@@ -274,7 +274,7 @@
 }
 
 .notes-label {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   font-family: var(--mono);
   font-size: 0.5rem;
   letter-spacing: 0.06em;
@@ -294,7 +294,7 @@
 }
 
 .notes-row:hover svg {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   transform: translate(2px, -2px);
 }
 
@@ -313,7 +313,7 @@
   top: -4vw;
   left: 50%;
   transform: translateX(-50%);
-  color: rgba(11, 29, 51, 0.055);
+  color: rgba(16, 24, 40, 0.055);
   font-family: var(--serif);
   font-size: clamp(18rem, 42vw, 46rem);
   line-height: 1;
@@ -380,7 +380,7 @@
   background: var(--paper-3);
   box-shadow:
     16px 16px 0 var(--paper-3),
-    0 34px 70px -46px rgba(11, 29, 51, 0.42);
+    0 34px 70px -46px rgba(16, 24, 40, 0.42);
 }
 
 .explore-media-label {
@@ -468,7 +468,7 @@
   position: absolute;
   right: -3vw;
   top: 2vw;
-  color: rgba(247, 243, 234, 0.024);
+  color: rgba(247, 250, 255, 0.024);
   font-family: var(--display);
   font-size: clamp(10rem, 23vw, 26rem);
   font-weight: 700;
@@ -553,7 +553,7 @@
   width: 27px;
   height: 27px;
   background: rgba(7, 17, 30, 0.72);
-  border: 1px solid rgba(247, 243, 234, 0.16);
+  border: 1px solid rgba(247, 250, 255, 0.16);
   color: var(--accent);
   font-family: var(--mono);
   font-size: 0.5rem;
@@ -588,7 +588,7 @@
 
 .life-card-body > p {
   margin-top: 13px;
-  color: rgba(247, 243, 234, 0.6);
+  color: rgba(247, 250, 255, 0.6);
   font-size: 0.73rem;
   line-height: 1.8;
 }
@@ -668,7 +668,7 @@
   position: absolute;
   left: 16px;
   bottom: 14px;
-  color: rgba(247, 243, 234, 0.46);
+  color: rgba(247, 250, 255, 0.46);
   font-family: var(--mono);
   font-size: 0.46rem;
   letter-spacing: 0.08em;
@@ -776,7 +776,7 @@
   left: 20px;
   padding: 7px 10px;
   background: rgba(7, 17, 30, 0.76);
-  border: 1px solid rgba(247, 243, 234, 0.18);
+  border: 1px solid rgba(247, 250, 255, 0.18);
   color: var(--gold);
   font-family: var(--mono);
   font-size: 0.49rem;
@@ -812,7 +812,7 @@
 .film-quote {
   max-width: 430px;
   margin-top: 25px;
-  color: rgba(247, 243, 234, 0.82);
+  color: rgba(247, 250, 255, 0.82);
   font-family: var(--serif);
   font-size: clamp(1.1rem, 1.6vw, 1.35rem);
   font-style: italic;

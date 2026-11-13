@@ -1,22 +1,18 @@
-# ZHUBAO Brand Guidelines V2.0
+# ZHUBAO Brand Guidelines V2.1
 
 **Brand:** ZHUBAO / 朱宝  
 **Positioning:** Personal Brand & Digital Portfolio  
-**System name:** Z-Grid / 四向生长的数字人生系统  
-**Version:** 2.0 · 2026-11  
-**Source of truth:** this document, `src/styles/brand-v2.css`, `src/components/`, `public/brand/`
+**System name:** Midnight Signal / 深空信号视觉体系（承载 Z-Grid 四向系统）  
+**Version:** 2.1 · 2026-11（取代 2.0 暖纸色方案，内容架构不变）  
+**Source of truth:** this document, `src/styles/global.css` tokens, `src/styles/brand-v2.css`, `public/brand/`
 
 ---
 
-## 1. Why this system exists
+## 1. Why the system moved to Midnight Signal
 
-The first version of the site proved the editorial direction: warm paper, deep navy, oversized type, numbered sections, evidence labels. It also exposed three limits:
+V2.0（Z-Grid · 暖纸编辑风）验证了四向内容与 Z 字系统图，但米白/暖纸基底读起来像复古出版物，弱化了这个网站真正承载的东西：AI 工程、知识系统、长期数据与数字创造。V2.1 保留全部内容与信息架构，只重建视觉基底：
 
-1. The lightning/arrow mark read as an AI product, not a person who builds, studies, measures and creates.
-2. The four directions existed as content categories but not as a reusable visual language.
-3. The tagline said “Build / Engineer / Explore”, while the site also contained Measure and Create.
-
-V2.0 resolves those limits without replacing the content architecture or the Astro stack.
+> **深空蓝黑为品牌主场景，极地冷白为阅读场景，电光蓝为品牌记忆点，四向信号色为分类语言。**
 
 ### Brand idea
 
@@ -31,31 +27,67 @@ V2.0 resolves those limits without replacing the content architecture or the Ast
 
 > BUILDER · RESEARCHER · RECORDER
 
-The identity line describes a posture, not a job title. The four directions describe the work.
+### Visual keywords
+
+**Modern · Intelligent · Technical · Editorial · Geometric · Dynamic**
+
+严禁回退：米白色、奶油色、暖纸色、米黄色、复古纸张质感、大面积紫色霓虹、赛博朋克、随意彩虹渐变、过度玻璃拟态、模板化 SaaS UI。
 
 ---
 
-## 2. The four directions
+## 2. Colour system
 
-| # | Code | Chinese | Territory | Accent |
+### 2.1 Brand core
+
+| Token | Value | Role |
+|---|---|---|
+| `--canvas` | `#07111F` Midnight Black | 全站画布：Hero、Header、Footer、重点展示区 |
+| `--navy` | `#0B1D33` Deep Navy | 品牌主色、深色面板 |
+| `--navy-3` | `#13263D` Dark Surface | 数据面板、深色卡片 |
+| `--electric` | `#2563EB` Electric Blue | 品牌强调：链接、交互态、焦点、记忆点 |
+| `--sky` | `#38BDF8` Signal Cyan | 科技辅助、BUILD 方向色 |
+
+### 2.2 Arctic neutrals（冷白中性，绝无暖底）
+
+| Token | Value | Role |
+|---|---|---|
+| `--paper` / `--surface-light` | `#F7FAFF` Arctic White | 浅色阅读区底、深底上的文字 |
+| `--paper-2` | `#EEF2F7` Cool Gray | 浅区面板 |
+| `--paper-3` | `#D9E1EC` Border | 冷边界 |
+| `--ink` | `#101828` | 浅区正文 |
+| `--muted` | `#667085` | 次级文字 |
+| `--line` | `rgba(16,24,40,*)` | 浅区分隔线 |
+| `--line-dark` | `rgba(247,250,255,*)` | 深区分隔线 |
+
+### 2.3 Four direction signals
+
+| # | Code | 中文 | Territory | Signal |
 |---|---|---|---|---|
-| 01 | BUILD | 构建系统 | AI, Agent, Skills, software architecture, cloud-native infrastructure | Sky `#38BDF8` |
-| 02 | THINK | 工程知识 | Knowledge engineering, investment research, psychology, reading | Gold `#FBBF24` |
-| 03 | MEASURE | 量化生活 | Health, running, cycling, hiking, long-term personal data | Mint `#63D6A3` |
-| 04 | CREATE | 创造作品 | Digital products, personality exploration, original animation, visual experiments | Coral `#F97362` |
+| 01 | BUILD | 构建系统 | AI、Agent、Skills、软件架构、云原生 | `#38BDF8` 工程科技蓝 |
+| 02 | THINK | 工程知识 | 知识工程、投资研究、心理、阅读 | `#FBBF24` 研究金 |
+| 03 | MEASURE | 量化生活 | 健康、跑步、骑行、长期个人数据 | `#34D399` 成长绿 |
+| 04 | CREATE | 创造作品 | 数字产品、人格探索、原创动画、视觉实验 | `#FB7185` 创意珊瑚 |
 
-Rules:
+### 2.4 Usage ratio & rules
 
-- The four directions are **one system**, not four independent brands. They always appear in the order BUILD → THINK → MEASURE → CREATE.
-- Accent colour is a classifier, not decoration. A page may show all four in the system map, but a single content block uses one accent.
-- Direction labels are bilingual: English code in display/mono type, Chinese name in body type.
-- A direction is never used as a claim of seniority, revenue, or audience size.
+| 色域 | 占比 | 用途 |
+|---|---|---|
+| 深空蓝黑系 | ~40% | Hero、导航、Footer、四方向系统图、重点展示区 |
+| 极地冷白系 | ~30% | 作品档案、文章阅读、研究内容、数据说明 |
+| 深蓝灰面板 | ~20% | 卡片、数据面板、辅助区（深色区内） |
+| 电光蓝 + 方向色 | ~10% | 品牌标识、交互、分类标记、重点数据 |
+
+- 深浅必须**成节奏交替**，不允许全站纯黑，也不允许全站纯白。
+- 方向色是分类器，不是装饰：一个内容块只使用一个方向色；系统图可同时出现四色。
+- 方向色不用于小号正文（对比度不足），只用于标记、规则线、标签、大号数字。
+- 电光蓝是**唯一全站交互强调色**（hover/focus/链接），方向色不承担交互语义。
+- 旧暖色 `#F7F3EA` / `#EFE8DA` / `#E7DDCC` 及其 rgba 派生已全部清除，任何新代码不得重新引入。
 
 ---
 
-## 3. Z-Grid logo concept
+## 3. Z-Grid logo · Midnight edition
 
-The mark is a continuous **Z path** that visits four nodes:
+The mark remains a continuous **Z path** visiting four nodes（Z-Grid 概念不变）：
 
 ```
 BUILD ●────────● THINK
@@ -65,135 +97,115 @@ BUILD ●────────● THINK
 MEASURE ●──╱──● CREATE
 ```
 
-- The top bar is the shared starting edge (systems).
-- The diagonal is the connective work (knowledge moving between domains).
-- The bottom bar is the shared output edge (life and works).
-- Four square nodes mark the four directions. The top-right node is signal gold; the rest are paper on navy.
-- A faint 4 × 4 grid sits behind the path. It disappears at favicon size; the Z and four nodes remain.
+V2.1 重新定义表现方式：
 
-The mark is **not** a lightning bolt, an arrow, a letter in a generic rounded square, or four separate icons glued together.
+- 深色场景：Z 路径与三角节点为 **Arctic White**，右下节点为电光蓝，右上节点为研究金。
+- 浅色场景：Z 路径为 **Deep Navy**（次要场合 Electric Blue），节点色规则同上。
+- 四个节点即四个方向：`#38BDF8` / `#FBBF24` / `#34D399` / `#FB7185`（四色版仅在系统图与头像使用；常规版保持白/深蓝 + 金色记忆点，避免小尺寸下碎裂）。
+- 深色背景配白色文字标，浅色背景配深蓝文字标。
+- 禁止：大面积彩虹渐变、玻璃质感、复杂 3D、闪电图标替代、外发光。
 
 ### Lockups
 
 | Asset | Use |
 |---|---|
-| `zhubao-symbol.svg` | App icon, social avatar, small brand mark |
-| `zhubao-symbol-mono.svg` | Single-colour print, embossing, favicon fallback |
-| `zhubao-horizontal.svg` | Header, documents, presentations on light fields |
-| `zhubao-horizontal-inverse.svg` | Dark fields, footer, OG panel |
-| `zhubao-stacked.svg` | Covers, title pages, merchandise |
-| `zhubao-stacked-inverse.svg` | Dark covers and end cards |
-| `zhubao-avatar.svg` / `-1024.png` | Social profile image |
-| `favicon.svg` / `.ico` / PNG set | Browser and PWA |
+| `zhubao-symbol.svg` | App icon、社交头像、小尺寸品牌标记 |
+| `zhubao-symbol-mono.svg` | 单色印刷、浮雕、favicon 兜底 |
+| `zhubao-horizontal.svg` | 浅色背景的 Header、文档、演示 |
+| `zhubao-horizontal-inverse.svg` | 深色背景、Footer、OG 面板 |
+| `zhubao-stacked.svg` / `-inverse` | 封面、扉页、周边 |
+| `zhubao-avatar.svg` / `-1024.png` | 社交头像（四向节点色完整版） |
+| `favicon.svg` / `.ico` / PNG set | 浏览器与 PWA（深空底 + 白 Z + 金节点） |
 
 ### Clear space and minimum size
 
-- Clear space: at least the width of one node (1/8 of the symbol) on every side.
-- Minimum symbol size: **16 px** digital, **8 mm** print.
-- Minimum horizontal lockup width: **120 px** digital, **32 mm** print.
-- Do not stretch, rotate, outline, add gradients, add shadows, or place the mark on a busy photo without a solid field.
+- Clear space ≥ 一个节点宽（符号的 1/8）。
+- 符号最小 **16px** 数字 / **8mm** 印刷；横版最小 **120px** / **32mm**。
+- 不拉伸、不旋转、不加描边渐变阴影、不放Busy 照片上（需垫实底）。
 
 ---
 
-## 4. Visual keywords
-
-**Editorial Architecture · Modular Geometry · Digital Craft · Measured Life**
-
-What that means in practice:
-
-- **Editorial:** numbered sections, rules, captions, pull quotes, asymmetric columns, generous margins.
-- **Architecture:** visible grids, nodes, paths, dimensions, index numbers, technical labels.
-- **Craft:** real project evidence, careful typography, restrained motion, no template filler.
-- **Measured:** data snapshots, dates, source notes, boundaries, long time horizons.
-
-Avoid: neon cyberpunk, purple gradient SaaS, glassmorphism, floating 3D blobs, stock “AI brain” imagery, fake dashboards, fake user counts.
-
----
-
-## 5. Layout system
+## 4. Layout system
 
 | Token | Value | Use |
 |---|---|---|
-| Shell | `1320px` | Maximum content width |
-| Gutter | `clamp(20px, 4vw, 56px)` | Page edge |
-| Grid | 12 columns | Desktop composition |
-| Hero split | 7 : 5 | Statement : Z-Grid |
-| Feature split | 8 : 4 / 4 : 8 | Alternating project media |
-| Section padding | `clamp(76px, 9vw, 136px)` | Default rhythm |
-| Tight padding | `clamp(54px, 6vw, 88px)` | Dense indexes |
-| Rule | `1px` | Section and table separators |
-| Radius | `0` default; `2px` for controls; `12px` only for the app icon | Geometry stays architectural |
+| Shell | `1320px` | 最大内容宽 |
+| Gutter | `clamp(20px, 4vw, 56px)` | 页边 |
+| Grid | 12 columns | 桌面构成 |
+| Hero split | 7 : 5 | 宣言 : Z-Grid 系统图 |
+| Feature split | 8 : 4 / 4 : 8 | 交替项目媒体 |
+| Section padding | `clamp(76px, 9vw, 136px)` | 默认节奏 |
+| Rule | `1px` | 分隔线 |
+| Radius | `0` default; `2px` controls; `12px` app icon only | 几何保持建筑感 |
 
-Breakpoints: `1200 / 1000 / 900 / 768 / 640 / 480px`. Test at 1440, 1280, 768, 390, 375.
+Breakpoints: `1200 / 1000 / 900 / 768 / 640 / 480px`。验证宽度：1920 / 1440 / 1280 / 1024 / 768 / 430 / 390 / 375。
 
-### Page personalities
+### Zone rhythm（V2.1 新增）
 
-| Page | Personality | Lead element |
+| Zone | 背景 | 文字 |
 |---|---|---|
-| HOME | Brand portal | Z-Grid system map + six flagship projects |
-| WORK | Technical archive | Index rail, filters, evidence cards, provenance |
-| THINK | Research journal | Masthead, tracks, methodology, manuscripts |
-| EXPLORE | Field notes | Generated fields, life data, film, lab |
-| ABOUT | Working philosophy | Portrait file, principles, timeline, boundaries |
+| Header / Footer | `--canvas` + blur | `--paper` |
+| Hero、四方向系统图 | `--canvas` / `--navy` 渐变 | `--paper` |
+| 作品档案、阅读、研究、数据说明 | `--surface-light` | `--ink` |
+| 深色区内的卡片/面板 | `--navy-3` | `--paper` / `--muted-light` |
 
-Shared shell and tokens; different pacing and density. Do not clone the homepage into every route.
+---
+
+## 5. Typography
+
+- 标题：Manrope（display）+ Instrument Serif（引文、宣言、编辑感大标题）。
+- 正文：Inter。
+- 代码、索引、状态、日期：Monospace。
+- 字号阶梯与 V2.0 一致（见 `docs/brand-typography.md`）。
 
 ---
 
 ## 6. Components
 
-- **Header:** 78px; symbol + wordmark; bilingual nav; active gold rule; GitHub/X; `BJ / UTC+8`; native `<details>` mobile menu with Escape.
-- **Section header:** index + rule, eyebrow + headline, note + optional link. Dark variant for navy fields.
-- **Buttons:** navy fill / paper text; light variant on dark; ghost with 1px rule. Minimum height 50px.
-- **Text link:** mono label, bottom rule, arrow translates on hover.
-- **Status label:** dot + Chinese label; colour is semantic, not decorative.
-- **Project card:** media (real cover or abstract visual study), index, category, status, source, summary, stack, case link.
-- **Direction card:** generated field image, direction mark, code, Chinese name, description, link.
-- **Data snapshot:** value + unit + source + date. A number without a source is not displayed.
-- **Footer:** inverse lockup, statement, four direction links, index, connect, colophon.
+- **Header:** 78px，`--canvas` 86% + blur；符号 + 词标 + `Z-GRID` 标签；双语导航；active 用 BUILD 青色规则线；GitHub/X；`BJ / UTC+8`；原生 `<details>` 移动菜单含 Escape。
+- **Section header:** index + rule，eyebrow + headline，note + link；深/浅两版。
+- **Buttons:** 电光蓝实底 / Arctic 文字为主按钮；深底用反白按钮；ghost 1px。最小高 50px。
+- **Project card:** 浅区白面板（`#FFFFFF` + `--paper-3` 边界）；深区 navy-3 面板。真实封面或抽象视觉研究（标 `VISUAL STUDY · NOT A PRODUCT SCREENSHOT`）。
+- **Direction card:** 深空场图 + 方向信号色。
+- **Data snapshot:** value + unit + source + date。没有来源的数字不上页。
+- **Footer:** `--canvas`，inverse lockup，四向链接，colophon。
 
 ---
 
 ## 7. Motion
 
-- One entrance pattern: `opacity 0 → 1`, `translateY(24px) → 0`, `0.8s` custom ease-out.
-- Stagger in 45–120ms increments via `--reveal-delay`.
-- Hover: 0.2–0.35s; arrows translate 2–4px; images scale ≤ 1.03.
-- No parallax, scroll-jacking, autoplay video, or loading choreography.
-- `prefers-reduced-motion: reduce` disables all of the above.
+- 入场：`opacity 0→1` + `translateY(24px)→0`，0.8s ease-out；45–120ms stagger。
+- Hover 0.2–0.35s；箭头位移 2–4px；图片缩放 ≤ 1.03。
+- 允许新增：节点信号色的微弱呼吸/连线描画（仅在 Hero 系统图，尊重 reduced-motion）。
+- 禁止：视差、滚动劫持、自动播放视频、加载编排。`prefers-reduced-motion` 全部关闭。
 
 ---
 
 ## 8. Responsive principles
 
-- Mobile is a **re-composition**, not a shrink.
-- Z-Grid becomes a 2 × 2 direction grid below 768px; the diagonal diagram is not squeezed.
-- Hero statement keeps 4 lines but reduces to `clamp(2.7rem, 11vw, 4.2rem)`.
-- Work index becomes single-column cards; filters scroll horizontally without page overflow.
-- Tables become stacked rows that keep name, source and status.
-- Touch targets ≥ 44px. No hover-only information.
-- No fixed full-screen background images or heavy blur on mobile.
+- 移动端是**重新编排**，不是缩放。
+- Z-Grid 在 <768px 变 2×2 方向网格；Hero 宣言保持 4 行。
+- 作品单列；筛选轨横向滚动而页面不溢出。
+- 触控目标 ≥ 44px；无 hover-only 信息；移动端不加固定全屏背景与重模糊。
 
 ---
 
 ## 9. Application checklist
 
-Before shipping a page:
-
-- [ ] One `<h1>`, one clear page statement.
-- [ ] Four directions use the correct order, colour and icon.
-- [ ] Every number has a source and a snapshot date.
-- [ ] Original / modified / research is visible where relevant.
-- [ ] Logo uses the new Z-Grid asset, not the old lightning mark.
-- [ ] Focus states, reduced motion and mobile menu still work.
-- [ ] Build, link check and Playwright pass.
-- [ ] Screenshots at 1440 and 390 updated.
+- [ ] 页面无任何暖色（米白/奶油/暖纸）出现。
+- [ ] 深浅分区节奏正确，纯黑/纯白不铺满全站。
+- [ ] 四向色顺序、色值、图标正确。
+- [ ] 数字有来源与快照日期；original / modified / research 可见。
+- [ ] Logo 使用 Midnight edition 资产。
+- [ ] Focus、reduced-motion、移动菜单可用。
+- [ ] Build、link check、Playwright 全绿；1440 与 390 截图更新。
 
 ---
 
 ## 10. Governance
 
-- Brand tokens live in `src/styles/global.css`; V2 component rules live in `src/styles/brand-v2.css`.
-- Generated fields live in `public/brand/` and are documented in `docs/brand-asset-inventory.md`.
-- A new accent colour requires a semantic role, a contrast check, and an update to this document.
-- A new logo variant requires a native SVG source and a mono test at 16px.
+- 品牌 Token 在 `src/styles/global.css :root`；品牌层规则在 `src/styles/brand-v2.css`。
+- 场图深空版在 `src/assets/brand/`，来源与提示词见 `docs/brand-asset-inventory.md`。
+- 新增强调色必须先定义语义角色 + 对比度检查 + 更新本文档。
+- 新 Logo 变体必须原生 SVG + 16px 单色测试。
+- 旧暖色仅允许出现在历史文档（V2.0 记录）中，代码内一律禁止。

@@ -4,27 +4,42 @@
    ========================================================= */
 
 :root {
-  --paper: #f7f3ea;
-  --paper-2: #efe8da;
-  --paper-3: #e7ddcc;
-  --navy: #0b1d33;
-  --navy-2: #07111e;
-  --navy-3: #122842;
-  --ink: #111827;
-  --muted: #5a697d;
+  /* Midnight Signal core */
+  --canvas: #07111f;
+  --paper: #f7faff;      /* Arctic White — light surfaces & text on dark */
+  --paper-2: #eef2f7;    /* Cool Gray panels */
+  --paper-3: #d9e1ec;    /* Cool borders */
+  --navy: #0b1d33;       /* Brand deep navy */
+  --navy-2: #07111f;     /* = canvas */
+  --navy-3: #13263d;     /* Dark Surface */
+  --surface-light: #f7faff;
+  --ink: #101828;
+  --muted: #667085;
   --muted-light: #94a3b8;
+
+  /* Brand accents */
+  --electric: #2563eb;     /* Electric Blue — interaction & memory point */
+  --electric-ink: #1d4ed8; /* Text-safe electric on light surfaces */
+  --electric-hi: #60a5fa;
   --sky: #38bdf8;
-  --sky-deep: #0b83b5;
+  --sky-deep: #1d4ed8;
   --gold: #fbbf24;
-  --gold-deep: #8a6100;
-  --coral: #f97362;
-  --lime: #c9ed6b;
-  --green: #63d6a3;
-  --orange: #f5a34b;
-  --line: rgba(11, 29, 51, 0.14);
-  --line-strong: rgba(11, 29, 51, 0.3);
-  --line-dark: rgba(247, 243, 234, 0.16);
-  --line-dark-strong: rgba(247, 243, 234, 0.32);
+  --gold-deep: #1d4ed8;
+
+  /* Four direction signals */
+  --build: #38bdf8;
+  --think: #fbbf24;
+  --measure: #34d399;
+  --create: #fb7185;
+  --coral: #fb7185;
+  --lime: #34d399;
+  --green: #34d399;
+  --orange: #fb7185;
+
+  --line: rgba(16, 24, 40, 0.14);
+  --line-strong: rgba(16, 24, 40, 0.3);
+  --line-dark: rgba(247, 250, 255, 0.16);
+  --line-dark-strong: rgba(247, 250, 255, 0.32);
   --serif: 'Instrument Serif', 'Noto Serif CJK SC', 'Songti SC', serif;
   --sans: 'Inter Variable', 'Noto Sans CJK SC', 'Source Han Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   --display: 'Manrope Variable', 'Inter Variable', 'Noto Sans CJK SC', 'PingFang SC', sans-serif;
@@ -49,7 +64,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: var(--paper);
+  background: var(--canvas);
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
@@ -70,8 +85,8 @@ body::before {
 }
 
 ::selection {
-  background: var(--gold);
-  color: var(--navy);
+  background: var(--electric);
+  color: var(--paper);
 }
 
 img,
@@ -127,7 +142,7 @@ h4 {
 }
 
 :focus-visible {
-  outline: 2px solid var(--sky-deep);
+  outline: 2px solid var(--electric-ink);
   outline-offset: 4px;
 }
 
@@ -234,8 +249,8 @@ h4 {
 }
 
 .text-link:hover {
-  border-color: var(--gold-deep);
-  color: var(--gold-deep);
+  border-color: var(--electric-ink);
+  color: var(--electric-ink);
   gap: 11px;
 }
 
@@ -359,7 +374,7 @@ button:hover .arrow {
 }
 
 .site-header.is-scrolled {
-  background: rgba(247, 243, 234, 0.9);
+  background: rgba(247, 250, 255, 0.9);
   border-bottom-color: var(--line);
   backdrop-filter: blur(18px);
 }
@@ -593,7 +608,7 @@ button:hover .arrow {
 }
 
 .mobile-link.is-active .mobile-label {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
 }
 
 .mobile-panel-foot {
@@ -1056,7 +1071,7 @@ button:hover .arrow {
   content: '';
   position: absolute;
   inset: 8px;
-  border: 1px solid rgba(247, 243, 234, 0.07);
+  border: 1px solid rgba(247, 250, 255, 0.07);
   pointer-events: none;
 }
 
@@ -1075,7 +1090,7 @@ button:hover .arrow {
   height: 48px;
   flex: none;
   border-radius: 50%;
-  border: 1px solid rgba(247, 243, 234, 0.26);
+  border: 1px solid rgba(247, 250, 255, 0.26);
   object-fit: cover;
   object-position: 50% 20%;
   transform: scale(1.02);
@@ -1509,7 +1524,7 @@ button:hover .arrow {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  color: rgba(247, 243, 234, 0.68);
+  color: rgba(247, 250, 255, 0.68);
   font-family: var(--mono);
   font-size: 0.58rem;
   letter-spacing: 0.12em;
@@ -1535,7 +1550,7 @@ button:hover .arrow {
 .perfect-copy p {
   max-width: 470px;
   margin-top: 18px;
-  color: rgba(247, 243, 234, 0.74);
+  color: rgba(247, 250, 255, 0.74);
   font-size: 0.88rem;
   line-height: 1.8;
 }
@@ -1615,7 +1630,7 @@ button:hover .arrow {
 }
 
 .featured-title a:hover {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
 }
 
 .section--dark .featured-title a:hover,
@@ -1642,7 +1657,7 @@ button:hover .arrow {
 }
 
 .section--dark .featured-summary {
-  color: rgba(247, 243, 234, 0.68);
+  color: rgba(247, 250, 255, 0.68);
 }
 
 .featured-stats {
@@ -1729,7 +1744,7 @@ button:hover .arrow {
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.08em;
-  color: rgba(11, 29, 51, 0.18);
+  color: rgba(16, 24, 40, 0.18);
   pointer-events: none;
 }
 
@@ -1744,12 +1759,12 @@ button:hover .arrow {
   overflow: hidden;
   border: 1px solid var(--line);
   background: #fff;
-  box-shadow: 0 28px 60px -30px rgba(11, 29, 51, 0.28);
+  box-shadow: 0 28px 60px -30px rgba(16, 24, 40, 0.28);
 }
 
 .project-media--hero .media-frame {
   border-color: var(--line);
-  box-shadow: 0 34px 80px -45px rgba(11, 29, 51, 0.42);
+  box-shadow: 0 34px 80px -45px rgba(16, 24, 40, 0.42);
 }
 
 .media-chrome {
@@ -1758,15 +1773,15 @@ button:hover .arrow {
   gap: 6px;
   min-height: 31px;
   padding: 0 12px;
-  border-bottom: 1px solid rgba(11, 29, 51, 0.1);
-  background: #f1ede5;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+  background: #dfe6ee;
 }
 
 .media-chrome span {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: rgba(11, 29, 51, 0.2);
+  background: rgba(16, 24, 40, 0.2);
 }
 
 .media-chrome span:nth-child(1) {
@@ -1835,8 +1850,8 @@ button:hover .arrow {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(247, 243, 234, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(247, 243, 234, 0.055) 1px, transparent 1px);
+    linear-gradient(rgba(247, 250, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 250, 255, 0.055) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: linear-gradient(140deg, rgba(0, 0, 0, 0.85), transparent 67%);
   pointer-events: none;
@@ -1886,7 +1901,7 @@ button:hover .arrow {
 
 .skill-flow span {
   padding: 7px 10px;
-  border: 1px solid rgba(247, 243, 234, 0.28);
+  border: 1px solid rgba(247, 250, 255, 0.28);
 }
 
 .skill-flow i {
@@ -1961,7 +1976,7 @@ button:hover .arrow {
   font-family: var(--serif);
   font-size: 13rem;
   line-height: 1;
-  color: rgba(11, 29, 51, 0.055);
+  color: rgba(16, 24, 40, 0.055);
   pointer-events: none;
 }
 
@@ -2012,7 +2027,7 @@ button:hover .arrow {
 }
 
 .kbe-stack b {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   font-family: var(--mono);
   font-size: 0.48rem;
   font-weight: 400;
@@ -2032,8 +2047,8 @@ button:hover .arrow {
   position: relative;
   overflow: hidden;
   background: #0a1f44;
-  color: #e8c84c;
-  border: 1px solid rgba(232, 200, 76, 0.18);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.18);
   min-height: 100%;
 }
 
@@ -2048,14 +2063,14 @@ button:hover .arrow {
   align-items: center;
   gap: 9px;
   padding: 22px 24px 16px;
-  color: #f0e5c9;
+  color: #fde68a;
   font-family: var(--mono);
   font-size: 0.58rem;
   letter-spacing: 0.08em;
 }
 
 .investment-rules i {
-  color: #c9a227;
+  color: #eab308;
   font-style: normal;
 }
 
@@ -2064,7 +2079,7 @@ button:hover .arrow {
   flex-wrap: wrap;
   gap: 8px 20px;
   padding: 16px 24px 22px;
-  border-top: 1px solid rgba(232, 200, 76, 0.16);
+  border-top: 1px solid rgba(251, 191, 36, 0.16);
   color: #8b9bb3;
   font-family: var(--mono);
   font-size: 0.5rem;
@@ -2077,7 +2092,7 @@ button:hover .arrow {
   position: relative;
   padding: clamp(18px, 2.8vw, 32px);
   background: #06101c;
-  border: 1px solid rgba(247, 243, 234, 0.12);
+  border: 1px solid rgba(247, 250, 255, 0.12);
   color: var(--paper);
   overflow: hidden;
 }
@@ -2105,7 +2120,7 @@ button:hover .arrow {
   overflow: hidden;
   min-height: 0;
   background: #0b1d33;
-  border: 1px solid rgba(247, 243, 234, 0.12);
+  border: 1px solid rgba(247, 250, 255, 0.12);
 }
 
 .quant-collage figure:first-child {
@@ -2131,7 +2146,7 @@ button:hover .arrow {
   bottom: 8px;
   padding: 3px 6px;
   background: rgba(7, 17, 30, 0.72);
-  color: rgba(247, 243, 234, 0.76);
+  color: rgba(247, 250, 255, 0.76);
   font-family: var(--mono);
   font-size: 0.46rem;
   letter-spacing: 0.08em;
@@ -2163,7 +2178,7 @@ button:hover .arrow {
   position: absolute;
   right: 10px;
   bottom: 25px;
-  color: rgba(247, 243, 234, 0.48);
+  color: rgba(247, 250, 255, 0.48);
   font-family: var(--mono);
   font-size: 0.4rem;
   letter-spacing: 0.04em;
@@ -2305,7 +2320,7 @@ button:hover .arrow {
   z-index: 1;
   min-height: 95px;
   margin-top: 15px;
-  color: rgba(247, 243, 234, 0.65);
+  color: rgba(247, 250, 255, 0.65);
   font-size: 0.73rem;
   line-height: 1.8;
 }
@@ -2363,7 +2378,7 @@ button:hover .arrow {
 
 .universe-row:hover {
   padding-left: 8px;
-  color: var(--gold-deep);
+  color: var(--electric-ink);
 }
 
 .universe-index {
@@ -2414,7 +2429,7 @@ button:hover .arrow {
 
 .universe-row:hover svg {
   transform: translate(2px, -2px);
-  color: var(--gold-deep);
+  color: var(--electric-ink);
 }
 
 .universe-aside {
@@ -2432,7 +2447,7 @@ button:hover .arrow {
 }
 
 .universe-aside .universe-big span {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
 }
 
 .universe-aside p {
@@ -2462,7 +2477,7 @@ button:hover .arrow {
   position: absolute;
   right: 2vw;
   top: -4vw;
-  color: rgba(247, 243, 234, 0.028);
+  color: rgba(247, 250, 255, 0.028);
   font-family: var(--display);
   font-size: clamp(10rem, 24vw, 27rem);
   font-weight: 700;
@@ -2601,7 +2616,7 @@ button:hover .arrow {
 
 .publication-desc {
   margin-top: 15px;
-  color: rgba(247, 243, 234, 0.63);
+  color: rgba(247, 250, 255, 0.63);
   font-size: 0.74rem;
   line-height: 1.8;
 }
@@ -2706,7 +2721,7 @@ button:hover .arrow {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  color: rgba(247, 243, 234, 0.65);
+  color: rgba(247, 250, 255, 0.65);
   font-family: var(--mono);
   font-size: 0.52rem;
   letter-spacing: 0.06em;
@@ -2898,7 +2913,7 @@ button:hover .arrow {
   position: absolute;
   right: -1vw;
   bottom: -8vw;
-  color: rgba(11, 29, 51, 0.035);
+  color: rgba(16, 24, 40, 0.035);
   font-family: 'Noto Serif CJK SC', var(--serif);
   font-size: clamp(13rem, 34vw, 36rem);
   font-weight: 600;

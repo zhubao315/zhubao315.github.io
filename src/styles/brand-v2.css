@@ -8,21 +8,21 @@
 :root {
   --build: #38bdf8;
   --think: #fbbf24;
-  --measure: #63d6a3;
-  --create: #f97362;
+  --measure: #34d399;
+  --create: #fb7185;
 
   /* Legacy aliases kept so older components keep working. */
   --sky: var(--build);
   --gold: var(--think);
   --green: var(--measure);
   --coral: var(--create);
-  --lime: #c9ed6b;
-  --orange: #f5a34b;
+  --lime: var(--measure);
+  --orange: var(--create);
 
-  --grid-line: rgba(11, 29, 51, 0.08);
-  --grid-line-dark: rgba(247, 243, 234, 0.09);
+  --grid-line: rgba(16, 24, 40, 0.07);
+  --grid-line-dark: rgba(247, 250, 255, 0.09);
   --brand-shadow: 14px 14px 0 var(--paper-3);
-  --brand-shadow-dark: 14px 14px 0 rgba(7, 17, 30, 0.35);
+  --brand-shadow-dark: 14px 14px 0 rgba(4, 10, 20, 0.55);
 }
 
 /* ---------------------------------------------------------
@@ -37,7 +37,7 @@
   width: 34px;
   height: 34px;
   background: transparent;
-  color: var(--navy);
+  color: var(--paper);
   transition: transform 0.35s var(--ease-out);
 }
 
@@ -63,12 +63,52 @@
 .brand-system {
   margin-left: 2px;
   padding: 3px 5px 2px;
-  border: 1px solid var(--line);
-  color: var(--gold-deep);
+  border: 1px solid var(--line-dark);
+  color: var(--build);
   font-family: var(--mono);
   font-size: 0.46rem;
   letter-spacing: 0.12em;
   line-height: 1;
+}
+
+/* ---------------------------------------------------------
+   Midnight Signal structural guard (stage 2)
+   Dark canvas + dark header; light reading canvas inside main.
+   Feature zones are darkened zone-by-zone in later stages.
+   --------------------------------------------------------- */
+
+main {
+  background: var(--surface-light);
+  color: var(--ink);
+}
+
+.site-header,
+.site-header.is-scrolled {
+  background: rgba(7, 17, 31, 0.86);
+  border-bottom-color: var(--line-dark);
+  backdrop-filter: blur(18px);
+}
+
+.site-header .brand-word {
+  color: var(--paper);
+}
+
+.site-header .brand-cn {
+  border-left-color: var(--line-dark);
+  color: var(--muted-light);
+}
+
+.site-header .nav-link {
+  color: var(--muted-light);
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link.is-active {
+  color: var(--paper);
+}
+
+.site-header .nav-link::after {
+  background: var(--build);
 }
 
 /* ---------------------------------------------------------
@@ -156,7 +196,7 @@
 
 .hero-identity-row .hero-identity-code {
   margin-left: auto;
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   font-family: var(--mono);
   font-size: 0.54rem;
   letter-spacing: 0.12em;
@@ -361,7 +401,7 @@
   inset: 0;
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--accent) 16%, transparent), transparent 52%),
-    linear-gradient(0deg, rgba(11, 29, 51, 0.035), transparent 55%);
+    linear-gradient(0deg, rgba(16, 24, 40, 0.035), transparent 55%);
   opacity: 0.9;
   transition: opacity 0.3s var(--ease);
 }
@@ -380,7 +420,7 @@
 }
 
 .zgrid-cell:hover {
-  background: #fffdf8;
+  background: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -552,15 +592,15 @@
 }
 
 .direction-zh {
-  color: rgba(247, 243, 234, 0.72);
+  color: rgba(247, 250, 255, 0.72);
 }
 
 .direction-desc {
-  color: rgba(247, 243, 234, 0.7);
+  color: rgba(247, 250, 255, 0.7);
 }
 
 .direction-link {
-  border-top-color: rgba(247, 243, 234, 0.22);
+  border-top-color: rgba(247, 250, 255, 0.22);
 }
 
 /* ---------------------------------------------------------
@@ -596,8 +636,8 @@
   z-index: -1;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(11, 29, 51, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(11, 29, 51, 0.1) 1px, transparent 1px);
+    linear-gradient(to right, rgba(16, 24, 40, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 24, 40, 0.1) 1px, transparent 1px);
   background-size: 25% 25%;
   opacity: 0.5;
 }
@@ -1051,7 +1091,7 @@
 }
 
 .about-system-item:hover {
-  background: #fffdf8;
+  background: #ffffff;
   box-shadow: inset 0 -2px 0 var(--accent);
 }
 

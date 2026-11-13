@@ -58,7 +58,7 @@
 }
 
 .filter-button:hover span {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
 }
 
 .filter-button.is-active {
@@ -86,7 +86,7 @@
   min-height: 46px;
   padding: 0 14px;
   border: 1px solid var(--line);
-  background: #fcf9f3;
+  background: #ffffff;
   color: var(--muted);
   transition: border-color 0.2s var(--ease);
 }
@@ -115,7 +115,7 @@
   min-height: 46px;
   padding: 0 10px 0 13px;
   border: 1px solid var(--line);
-  background: #fcf9f3;
+  background: #ffffff;
 }
 
 .select-field > span {
@@ -183,7 +183,7 @@
   min-width: 0;
   border: 1px solid var(--line);
   border-top: 2px solid var(--accent);
-  background: #fcf9f3;
+  background: #ffffff;
   overflow: hidden;
   transition:
     transform 0.35s var(--ease),
@@ -235,7 +235,7 @@
 .project-card:hover {
   transform: translateY(-4px);
   border-color: color-mix(in srgb, var(--accent) 70%, var(--line));
-  box-shadow: 0 20px 46px -32px rgba(11, 29, 51, 0.42);
+  box-shadow: 0 20px 46px -32px rgba(16, 24, 40, 0.42);
 }
 
 .project-card-media {
@@ -351,7 +351,7 @@
 }
 
 .project-title-row h3 a:hover {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
 }
 
 .project-name-zh {
@@ -555,7 +555,7 @@
 }
 
 .research-area {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   font-family: var(--mono);
   font-size: 0.52rem;
   letter-spacing: 0.05em;
@@ -576,7 +576,7 @@
 }
 
 .research-row:hover svg {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   transform: translate(2px, -2px);
 }
 
@@ -670,7 +670,7 @@
 .project-hero-tagline {
   max-width: 620px;
   margin-top: 20px;
-  color: rgba(247, 243, 234, 0.72);
+  color: rgba(247, 250, 255, 0.72);
   font-family: var(--serif);
   font-size: clamp(1.2rem, 2vw, 1.7rem);
   font-style: italic;
@@ -721,7 +721,7 @@
 
 .project-hero-description {
   max-width: 760px;
-  color: rgba(247, 243, 234, 0.72);
+  color: rgba(247, 250, 255, 0.72);
   font-size: 0.9rem;
   line-height: 1.85;
 }
@@ -790,7 +790,7 @@
   background:
     linear-gradient(135deg, rgba(56, 189, 248, 0.08), transparent 42%),
     linear-gradient(315deg, rgba(251, 191, 36, 0.11), transparent 45%),
-    #fbf8f1;
+    #ffffff;
   overflow: hidden;
 }
 
@@ -799,8 +799,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(11, 29, 51, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11, 29, 51, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(16, 24, 40, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 24, 40, 0.05) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: linear-gradient(120deg, rgba(0, 0, 0, 0.8), transparent 70%);
 }
@@ -822,7 +822,7 @@
 
 .placeholder-category {
   margin-top: 16px;
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   font-family: var(--mono);
   font-size: 0.6rem;
   letter-spacing: 0.08em;
@@ -884,7 +884,7 @@
 
 .case-kicker {
   margin-bottom: 15px;
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   font-family: var(--mono);
   font-size: 0.56rem;
   letter-spacing: 0.12em;
@@ -926,7 +926,7 @@
 
 .approach-step > span {
   padding-top: 3px;
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   font-family: var(--mono);
   font-size: 0.58rem;
   letter-spacing: 0.06em;
@@ -970,7 +970,7 @@
   position: absolute;
   top: 14px;
   left: 0;
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   font-size: 0.68rem;
 }
 
@@ -996,7 +996,7 @@
 }
 
 .source-note > span {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   font-family: var(--mono);
   font-size: 0.52rem;
   letter-spacing: 0.12em;
@@ -1108,7 +1108,7 @@
 }
 
 .sidebar-links a:hover {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
 }
 
 .sidebar-note {
@@ -1164,7 +1164,7 @@
 }
 
 .related-card > span:first-child {
-  color: var(--gold-deep);
+  color: var(--electric-ink);
   font-family: var(--mono);
   font-size: 0.49rem;
   letter-spacing: 0.08em;

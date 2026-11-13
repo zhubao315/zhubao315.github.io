@@ -1,134 +1,84 @@
-# ZHUBAO Brand Color System
+# ZHUBAO · Midnight Signal 色彩系统
 
-**Version:** 2.0 · 2026-11  
-**Implementation:** `src/styles/global.css` (`:root`) and `src/styles/brand-v2.css`
+**Version:** 2.1 · 2026-11  
+**Owner token file:** `src/styles/global.css`（`:root`）+ `src/styles/brand-v2.css`（方向别名与品牌层）
+
+Midnight Signal 的色彩叙事：**深空是场景，冷白是阅读，电光蓝是记忆，四向色是语言。**
 
 ---
 
-## 1. Core palette
+## 1. 品牌核心色
 
-| Token | Value | Role | Never use it for |
+| Token | HEX | 名称 | 用途 | 关键对比 |
+|---|---|---|---|---|
+| `--canvas` | `#07111F` | Midnight Black | 全站画布、Header、Hero、Footer | `--paper` 于其上 17.9:1 |
+| `--navy` | `#0B1D33` | Deep Navy | 品牌主色、深色面板、浅色区上的深字 | 白字 14.0:1 |
+| `--navy-3` | `#13263D` | Dark Surface | 深色区卡片、数据面板 | 白字 11.9:1 |
+| `--electric` | `#2563EB` | Electric Blue | 链接、hover、focus、主按钮 | 白字 5.2:1；于 canvas 2.4:1（仅作大色块/图形，不做小字） |
+| `--electric-ink` | `#1D4ED8` | Electric (text) | 浅区文字级电光蓝 | `#F7FAFF` 上 ≈ 5.7:1 |
+| `--electric-hi` | `#60A5FA` | Electric light | 深区 hover、图标 | 于 navy 6.0:1 |
+| `--sky` | `#38BDF8` | Signal Cyan | 科技辅助、BUILD | 于 navy 8.6:1 |
+
+## 2. 极地中性色（禁止暖底回归）
+
+| Token | HEX | 用途 |
+|---|---|---|
+| `--paper` / `--surface-light` | `#F7FAFF` | 浅区阅读底；深区文字（Arctic White，偏蓝冷白） |
+| `#FFFFFF` | 纯白 | 浅区卡片面（与 F7FAFF 拉开一档） |
+| `--paper-2` | `#EEF2F7` | 浅区面板 / hover |
+| `--paper-3` / `--line` 实色版 | `#D9E1EC` | 边框 |
+| `--ink` | `#101828` | 浅区正文 |
+| `--muted` | `#667085` | 浅区次级 |
+| `--muted-light` | `#94A3B8` | 深区次级、mono 标签 |
+| `--line` | `rgba(16,24,40,.14/.30)` | 浅区分隔 |
+| `--line-dark` | `rgba(247,250,255,.16/.32)` | 深区分隔 |
+
+**已清除（任何代码不得再出现）：** `#F7F3EA`、`#EFE8DA`、`#E7DDCC`、`#FCF9F3`、`#FFFDF8`、`#FBF8F1`、`#F1EDE5`、`#F0E5C9`、`#8A6100`、`rgba(247,243,234,*)`、`rgba(232,200,76,*)`。
+
+## 3. 四向信号色
+
+| 方向 | Token | HEX | 语义 |
 |---|---|---|---|
-| `--navy` | `#0B1D33` | Primary dark field, headings, brand mark | Long body copy on paper |
-| `--navy-2` | `#07111E` | Cinematic / footer field | Small labels without contrast check |
-| `--navy-3` | `#122842` | Raised dark surface, hover | Page background |
-| `--paper` | `#F7F3EA` | Default canvas | Text on navy (use `--paper` only at large sizes? No: it passes AA) |
-| `--paper-2` | `#EFE8DA` | Alternate band | Body text |
-| `--paper-3` | `#E7DDCC` | Rules, quiet fills, offset shadows | Text |
-| `--ink` | `#111827` | Primary body text | Dark backgrounds |
-| `--muted` | `#5A697D` | Secondary text on paper | Large display headlines |
-| `--muted-light` | `#94A3B8` | Secondary text on navy | Body copy on paper |
-| `--gold` | `#FBBF24` | Signal accent, links on dark | Small body text on paper |
-| `--gold-deep` | `#8A6100` | Link hover / small gold text on paper | Fills |
+| BUILD | `--build`（`--sky` 别名） | `#38BDF8` | 工程科技蓝 |
+| THINK | `--think`（`--gold` 别名） | `#FBBF24` | 研究金 |
+| MEASURE | `--measure`（`--green` 别名） | `#34D399` | 成长绿（V2.1 起取代 `#63D6A3`） |
+| CREATE | `--create`（`--coral` 别名） | `#FB7185` | 创意珊瑚（V2.1 起取代 `#F97362`） |
 
-## 2. Direction palette
+规则：方向色用于标记、图标描边、规则线、标签底色、大号数字；**不用于小号正文**。四色在深空底上均 ≥ 4.5:1（`#34D399` 7.4:1、`#FB7185` 5.2:1 于 `#0B1D33`）。
 
-| Direction | Token | Value | Field treatment |
-|---|---|---|---|
-| BUILD | `--build` | `#38BDF8` | Navy field + sky lines |
-| THINK | `--think` | `#FBBF24` | Paper field + navy/gold network |
-| MEASURE | `--measure` | `#63D6A3` | Paper field + mint trace |
-| CREATE | `--create` | `#F97362` | Paper field + coral geometry |
+## 4. 占比与节奏
 
-Legacy aliases remain for compatibility: `--sky`, `--gold`, `--green`, `--coral`, `--lime`, `--orange`.
-
-### Semantic mapping
-
-| Content | Direction |
-|---|---|
-| AI & Agent, infrastructure | BUILD |
-| Knowledge, investment, research | THINK |
-| Health, running, cycling, hiking | MEASURE |
-| Product, personality, animation, visual | CREATE |
-
-A project category maps to one direction. Do not assign a second accent “for variety”.
-
-## 3. Neutrals and lines
-
-| Token | Value | Use |
+| 色域 | 占比 | 场景 |
 |---|---|---|
-| `--line` | `rgba(11,29,51,.14)` | Default rule on paper |
-| `--line-strong` | `rgba(11,29,51,.30)` | Emphasized rule |
-| `--line-dark` | `rgba(247,243,234,.16)` | Rule on navy |
-| `--line-dark-strong` | `rgba(247,243,234,.32)` | Emphasized rule on navy |
-| `--paper-2` | `#EFE8DA` | Alternate section band |
-| `--paper-3` | `#E7DDCC` | Offset shadow, quiet fill |
+| 深空蓝黑系 | 40% | Header、Hero、系统图、重点展示、Footer |
+| 极地冷白系 | 30% | 作品档案、文章、研究、数据说明 |
+| 深蓝灰面板 | 20% | 深色区卡片与数据面板 |
+| 电光蓝 + 四向色 | 10% | 标识、交互、分类、重点数据 |
 
-## 4. Status colours
+深浅区交替出现，形成“观测 → 阅读 → 观测”的节奏；连续两个浅色大区之间必须出现深色带。
 
-| Status | Dot | Text |
+## 5. 状态语义色
+
+| 状态 | 色 | 备注 |
 |---|---|---|
-| 持续建设 / Active | `#63D6A3` | `--ink` or `--paper` |
-| 原型阶段 / Prototype | `#FBBF24` | `--ink` or `--paper` |
-| 实验探索 / Experiment | `#38BDF8` | `--ink` or `--paper` |
-| 历史归档 / Archived | `#94A3B8` | `--muted` |
+| 上线/活跃 | `#34D399` | 与 MEASURE 同源 |
+| 原型/进行中 | `#FBBF24` | 与 THINK 同源 |
+| 归档/暂停 | `#94A3B8` | 中性 |
+| 研究（来源） | `#38BDF8` | 与 BUILD 同源 |
 
-Status dots are 6–7px. They are not used as the only signal: the text label is always present.
+## 6. 无障碍要点
 
-## 5. Contrast
+- 小字只允许：`--ink`/`#101828` 于浅底（≥ 14:1）、`--paper`/`--muted-light` 于深底、`--electric-ink` 于浅底（5.7:1）、`#60A5FA` 于深底（6:1）。
+- 焦点环：浅区 2px `--electric`；深区 2px `--electric-hi`，outline-offset 2px。
+- 方向色与状态色永远伴随文字标签出现，不单靠颜色传达。
+- 选中态 `::selection`：`--electric` 底 + `--paper` 字。
 
-Measured with the WCAG relative-luminance formula:
+## 7. 迁移映射（V2.0 → V2.1）
 
-| Pair | Ratio | Verdict |
-|---|---|---|
-| `#111827` on `#F7F3EA` | 16.02:1 | AAA body |
-| `#0B1D33` on `#F7F3EA` | 15.32:1 | AAA headings |
-| `#5A697D` on `#F7F3EA` | 5.05:1 | AA body |
-| `#5A697D` on `#EFE8DA` | 4.59:1 | AA body |
-| `#F7F3EA` on `#0B1D33` | 15.32:1 | AAA body |
-| `#94A3B8` on `#0B1D33` | 6.62:1 | AA body |
-| `#FBBF24` on `#0B1D33` | 10.16:1 | AAA links |
-| `#8A6100` on `#F7F3EA` | 5.00:1 | AA small links |
-| `#38BDF8` on `#0B1D33` | 7.92:1 | AA large/labels |
-| `#63D6A3` on `#0B1D33` | 9.43:1 | AA large/labels |
-| `#F97362` on `#0B1D33` | 6.19:1 | AA large/labels |
-
-Rules:
-
-- Small body text on paper uses `--ink` or `--muted`; never `--gold`, `--build`, `--measure` or `--create`.
-- On navy, `--paper`, `--muted-light` and `--gold` are safe. Direction accents are for marks, rules, labels and large numbers.
-- Focus ring: `--sky-deep` on paper, `--gold` on navy. 2px, 4px offset.
-
-## 6. Data visualisation
-
-| Role | Colour |
-|---|---|
-| Primary series | `--navy` |
-| Secondary series | `--muted` |
-| Highlight / current | `--gold` |
-| Health / recovery | `--measure` |
-| Movement / running | `--build` |
-| Creative / annotation | `--create` |
-| Missing data | `--paper-3` with a diagonal hatch, never zero |
-
-Data rules:
-
-1. Missing is missing. Do not fill gaps with zero or interpolate silently.
-2. One chart, one accent. The rest is navy/muted.
-3. Label the unit, the period, the source and the snapshot date.
-4. Avoid red/green as the only encoding; pair with shape or label.
-
-## 7. Generated field images
-
-The four `src/assets/brand/field-*.png` images are abstract colour fields, not screenshots:
-
-- They use the palette above with no text.
-- They are decorative: `alt=""`, `aria-hidden` where appropriate.
-- Overlay text always sits on a solid or scrim layer, never directly on a busy area.
-- A field image never replaces a real project screenshot or implies a product UI.
-
-## 8. CSS usage
-
-```css
-/* Direction-aware block */
-[data-accent='build'] { --accent: var(--build); }
-[data-accent='think'] { --accent: var(--think); }
-[data-accent='measure'] { --accent: var(--measure); }
-[data-accent='create'] { --accent: var(--create); }
-
-/* On navy, tint only the mark and rule */
-.direction-card { --accent: var(--build); }
-.direction-card .mark { color: var(--accent); }
 ```
-
-Do not introduce a new hex value in a page stylesheet. Add a token here first.
+#F7F3EA → #F7FAFF      #EFE8DA → #EEF2F7      #E7DDCC → #D9E1EC
+#FCF9F3/#FBF8F1/#FFFDF8 → #FFFFFF              #F1EDE5 → #DFE6EE
+#8A6100 (gold-deep) → #1D4ED8 (electric-ink)   #0B83B5 (sky-deep) → #1D4ED8
+#63D6A3 → #34D399      #F97362 → #FB7185       #C9ED6B → #34D399   #F5A34B → #FB7185
+rgba(247,243,234,α) → rgba(247,250,255,α)      rgba(11,29,51,α) → rgba(16,24,40,α)
+```
