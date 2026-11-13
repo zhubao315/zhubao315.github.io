@@ -23,11 +23,18 @@ const featuredCount = workProjects.filter((project) => project.featured).length;
   title="作品与实验 | 朱宝 ZHUBAO"
   description="浏览朱宝的 AI 与 Agent 工程、数字产品、知识工程、投资研究、量化生活与创意作品。原创项目、二次开发与上游研究被明确区分。"
 >
-  <section class="page-hero">
+  <section class="page-hero page-hero--brand">
     <div class="shell">
       <nav class="breadcrumb" aria-label="面包屑">
         <a href="/">首页</a><span class="sep">/</span><span>作品</span>
       </nav>
+
+      <div class="page-masthead">
+        <span><i aria-hidden="true"></i> WORK ARCHIVE / 2024—2026</span>
+        <span>ORIGINAL · MODIFIED · UPSTREAM RESEARCH</span>
+        <span>SNAPSHOT {site.lastVerified}</span>
+      </div>
+
       <div class="page-hero-title">
         <h1>Systems, products<br /><em>& experiments.</em></h1>
         <span class="page-hero-index">INDEX / 01—{String(workProjects.length).padStart(2, '0')}</span>
@@ -41,6 +48,14 @@ const featuredCount = workProjects.filter((project) => project.featured).length;
           <div class="hero-fact"><strong>{researchProjects.length}</strong><span>上游研究样本</span></div>
           <div class="hero-fact"><strong>{site.lastVerified}</strong><span>最后核验</span></div>
         </div>
+      </div>
+
+      <div class="work-register" aria-label="作品档案统计">
+        <span><b>{workProjects.filter((project) => project.sourceType === 'original').length}</b> 原创</span>
+        <span><b>{workProjects.filter((project) => project.sourceType === 'modified').length}</b> 二次开发</span>
+        <span><b>{workProjects.filter((project) => project.sourceType === 'research').length}</b> 研究样本</span>
+        <span><b>{workProjects.filter((project) => project.status === 'active').length}</b> 持续建设</span>
+        <span class="work-register-note">每个项目都标注来源、状态与最后核验日期</span>
       </div>
     </div>
   </section>
@@ -78,6 +93,16 @@ const featuredCount = workProjects.filter((project) => project.featured).length;
               <option value="prototype">原型阶段</option>
               <option value="experiment">实验探索</option>
               <option value="archived">历史归档</option>
+            </select>
+          </label>
+
+          <label class="select-field">
+            <span>来源</span>
+            <select data-project-source>
+              <option value="all">全部</option>
+              <option value="original">原创项目</option>
+              <option value="modified">二次开发</option>
+              <option value="research">上游研究</option>
             </select>
           </label>
 
@@ -154,6 +179,7 @@ const featuredCount = workProjects.filter((project) => project.featured).length;
     const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-project-card]'));
     const categoryButtons = Array.from(filterRoot.querySelectorAll<HTMLButtonElement>('[data-filter-category]'));
     const statusSelect = filterRoot.querySelector<HTMLSelectElement>('[data-project-status]');
+    const sourceSelect = filterRoot.querySelector<HTMLSelectElement>('[data-project-source]');
     const searchInput = filterRoot.querySelector<HTMLInputElement>('[data-project-search]');
     const resetButton = filterRoot.querySelector<HTMLButtonElement>('[data-filter-reset]');
     const count = filterRoot.querySelector<HTMLElement>('[data-filter-count]');
@@ -177,13 +203,15 @@ const featuredCount = workProjects.filter((project) => project.featured).length;
     const applyFilters = () => {
       const query = (searchInput?.value ?? '').trim().toLowerCase();
       const status = statusSelect?.value ?? 'all';
+      const source = sourceSelect?.value ?? 'all';
       let visible = 0;
 
       cards.forEach((card) => {
         const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
         const matchesStatus = status === 'all' || card.dataset.status === status;
+        const matchesSource = source === 'all' || card.dataset.source === source;
         const matchesQuery = !query || (card.dataset.search ?? '').includes(query);
-        const show = matchesCategory && matchesStatus && matchesQuery;
+        const show = matchesCategory && matchesStatus && matchesSource && matchesQuery;
         card.hidden = !show;
         if (show) visible += 1;
       });
@@ -200,11 +228,13 @@ const featuredCount = workProjects.filter((project) => project.featured).length;
     });
 
     statusSelect?.addEventListener('change', applyFilters);
+    sourceSelect?.addEventListener('change', applyFilters);
     searchInput?.addEventListener('input', applyFilters);
 
     resetButton?.addEventListener('click', () => {
       setCategory('all');
       if (statusSelect) statusSelect.value = 'all';
+      if (sourceSelect) sourceSelect.value = 'all';
       if (searchInput) searchInput.value = '';
       applyFilters();
       searchInput?.focus();

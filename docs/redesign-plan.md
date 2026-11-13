@@ -3,7 +3,8 @@
 **Project:** `zhubao315/zhubao315.github.io`  
 **Production target:** https://zhubao315.github.io  
 **Content snapshot:** 2026-11-11  
-**Status:** implemented and verified locally; production deployment is recorded in the test report.
+**Design system:** V2.0 · Z-Grid  
+**Status:** V1 implemented and deployed; V2 implemented and verified locally.
 
 ## 1. The brief
 
@@ -133,7 +134,7 @@ Identity facts live in `src/data/site.ts` and are limited to public GitHub metad
 
 **Goal:** answer “who is this, what have they built, and how do they work?” in one scroll.
 
-1. **Hero.** Oversized three-line statement, a short Chinese introduction, four verified facts, and a dark system-map panel linking to the four directions.
+1. **Hero.** Four-line brand statement, a short Chinese introduction, an identity row, five verified facts, a ticker, and the **Z-Grid system map** — a 2 × 2 board with a continuous Z path, four direction marks, and a central `Z` core.
 2. **Selected Work 01–06.** Six flagship projects with deliberately different visual treatments:
    - MBTI64 — browser-framed product screenshot, 8/4 split
    - uSkill — dark capability diagram, reversed 4/8 composition
@@ -141,7 +142,7 @@ Identity facts live in `src/data/site.ts` and are limited to public GitHub metad
    - Investment Discipline — narrow reversed composition with a typographic banner
    - Quantified Life — three-panel data collage plus a terrain card
    - Perfect Me — full-bleed cinematic still with an overlay title
-3. **Four Directions.** Dark section with one card per working line.
+3. **Four Directions.** Dark section with four generated field images, 24px direction marks, and semantic accents BUILD / THINK / MEASURE / CREATE.
 4. **Project Universe.** Six additional projects plus a repository snapshot: 61 public, 24 non-Fork, 37 Fork/upstream.
 5. **Publications.** Two manuscripts, explicitly labeled as in-progress and not published.
 6. **Quantified Life.** One health dashboard image and four live site entries.
@@ -150,9 +151,11 @@ Identity facts live in `src/data/site.ts` and are limited to public GitHub metad
 
 ### 7.2 WORK
 
+- Page masthead: archive range, provenance categories, snapshot date.
 - Hero with project count, research count, and verification date.
-- Category filters, text search, status selector, reset, and query-string support (`?filter=agent`).
-- 18 project cards with generated visual treatments.
+- A **provenance register** derived from `projects.ts`: original, modified, research, active counts.
+- Category filters, text search, status selector, **source selector**, reset, and query-string support (`?filter=agent`).
+- 18 project cards with real covers, designed visuals, or abstract visual studies.
 - A separate upstream research section labeled “研究，不等同于原创”.
 - Cards expose category, status, source type, and a direct case-study link.
 
@@ -168,11 +171,11 @@ Identity facts live in `src/data/site.ts` and are limited to public GitHub metad
 
 ### 7.4 THINK
 
-Three research tracks — Knowledge Engineering, Investment Discipline, AI & Agent Research — followed by notes, manuscripts, and a bridge back to the work index. The page is an editorial argument, not a list of blog posts.
+A dark research-journal masthead (`ZHUBAO RESEARCH / VOL. 02`), a generated knowledge-network field study, then three research tracks — Knowledge Engineering, Investment Discipline, AI & Agent Research — followed by notes, manuscripts, and a bridge back to the work index. The page is an editorial argument, not a list of blog posts.
 
 ### 7.5 EXPLORE
 
-Three long-horizon explorations:
+A field-notes masthead and a generated longitudinal-trace cover, then three long-horizon explorations:
 
 1. Personality: MBTI64 as a live product.
 2. Quantified life: health, running, cycling, and hiking sites with snapshot metrics and a clear source note.
@@ -180,8 +183,10 @@ Three long-horizon explorations:
 
 ### 7.6 ABOUT
 
+- Page masthead framing identity, philosophy, principles, and boundaries.
 - Portrait card using the public GitHub avatar with an explicit provenance note.
 - Working statement and signature.
+- **Z-Grid philosophy panel:** the symbol, the four-direction system, and the shared “verifiable” constraint.
 - Four operating principles.
 - Verified public record: 61 repositories, 1,039 health days, 8,157 derived activities, 72,533 derived kilometres, two manuscripts.
 - Timeline limited to publicly supportable anchors.
@@ -195,7 +200,7 @@ Three long-horizon explorations:
 
 - Astro 7.4.10, static output, directory-format trailing slashes.
 - TypeScript and Astro components.
-- Native CSS split by concern: `global.css`, `work.css`, `editorial.css`, `about.css`, `responsive.css`.
+- Native CSS split by concern: `global.css`, `brand-v2.css`, `work.css`, `editorial.css`, `about.css`, `responsive.css`.
 - `@astrojs/sitemap` with noindex routes filtered.
 - Self-hosted Fontsource fonts and local Lucide icons.
 - Playwright for browser tests and a Node link checker for built HTML.
@@ -210,6 +215,8 @@ Three long-horizon explorations:
 
 ## 9. Delivery sequence
 
+### V1 — rebuild
+
 1. Audit the generated repository and record what is verifiable.
 2. Define the content manifest and claim boundaries.
 3. Build the design tokens, layout, and shared components.
@@ -221,6 +228,19 @@ Three long-horizon explorations:
 9. Capture desktop/mobile screenshots and audit external URLs.
 10. Commit, push, configure Pages, deploy, and verify production routes.
 
+### V2 — Z-Grid brand system
+
+1. **Brand strategy.** Positioning, four directions, voice, visual keywords, page personalities. Deliverables in `docs/brand-*.md`.
+2. **Logo.** Native-SVG Z-Grid symbol, horizontal/stacked/inverse lockups, mono mark, avatar, favicon and PWA derivatives.
+3. **Icons.** 24 × 24, 1.5px direction marks; Lucide retained for functional icons.
+4. **Tokens.** Direction tokens, legacy aliases, contrast checks, V2 override layer.
+5. **Shared components.** Header, footer, hero system map, direction cards, page masthead, provenance register.
+6. **HOME.** Four-line statement, Z-Grid map, identity/fact bars, six flagship projects, four generated direction fields.
+7. **WORK.** Masthead, provenance register, source filter, abstract covers for projects without real screenshots.
+8. **THINK / EXPLORE / ABOUT.** Research-journal and field-notes mastheads, generated field covers, Z-Grid philosophy panel.
+9. **Social and docs.** New OG image, manifest, brand documentation, design-system update.
+10. **Verification.** Build, link check, Playwright, 1440/1280/768/390/375 overflow checks, screenshot refresh.
+
 ## 10. Risks and mitigations
 
 | Risk | Mitigation |
@@ -231,6 +251,9 @@ Three long-horizon explorations:
 | Screenshots of third-party sites age | Use them as snapshots; link to live sources |
 | External links rot | Link audit recorded; fix or remove dead demo links |
 | Large type breaks mobile layouts | Explicit 390/375 tests and dedicated responsive rules |
+| Generated brand fields could read as product UI | Marked `alt=""`, used only behind scrims, labelled `VISUAL STUDY · NOT A PRODUCT SCREENSHOT` where used as a cover |
+| Direction accents fail contrast as small text on paper | Accents restricted to marks, rules, labels and large numerals; body text stays ink/muted |
+| Brand layer drifts from the V1 stylesheet | V2 rules isolated in `brand-v2.css`, loaded last; legacy tokens kept as aliases |
 | GitHub Pages branch/action mismatch | Workflow documented; Pages must be switched to GitHub Actions |
 | Deployment credentials leak | Token kept outside the repository; remote URLs contain no credentials |
 

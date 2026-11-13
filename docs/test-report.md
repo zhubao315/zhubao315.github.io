@@ -350,7 +350,7 @@ The deployed sitemap contains no `/tags/`, `/categories/`, `/archives/` (includi
 - Deployed pages use the new title, canonical URL, stylesheet, and `noindex` metadata.
 - The legacy branch build is no longer the Pages source.
 
-## 12. Sign-off
+## 12. Sign-off (V1)
 
 Local build and test verification: **passed**.  
 Production deployment and route verification: **passed**.
@@ -361,3 +361,99 @@ Launch checklist:
 - [x] Set Pages source to GitHub Actions.
 - [x] Confirm the deploy workflow succeeds.
 - [x] Verify production routes and update this section.
+
+## 13. Brand system V2.0 verification (2026-11-13)
+
+Scope: the Z-Grid brand layer — logo family, direction icons, tokens, shared components, page-level templates, generated fields, OG image, manifest, and documentation. No project facts, URLs, or routes changed.
+
+### 13.1 Environment
+
+| Item | Value |
+|---|---|
+| OS | Linux (x86_64) |
+| Node.js | 22.23.4 |
+| npm | 10.9.9 |
+| Astro | 7.4.10 |
+| Playwright | 1.65.0 |
+| Browser | Chromium (system build used via `PLAYWRIGHT_CHROMIUM_EXECUTABLE`) |
+| Preview server | `http://127.0.0.1:4321` |
+
+### 13.2 Static checks
+
+| Command | Result |
+|---|---|
+| `npm run check` | 0 errors, 0 warnings, 0 hints (33 files) |
+| `npm run build` | 32 page(s) built, no warnings |
+| `npm run test:links` | `Link check passed: 1297 internal references across 32 HTML files.` |
+
+The link count rose from 1,121 to 1,297 because the four-direction rails, mastheads, philosophy panel and per-card media links were added. No reference is broken.
+
+### 13.3 Playwright suite
+
+```text
+32 passed (11.8s)
+```
+
+All V1 assertions still pass, including the homepage's six `.featured-piece` blocks (two `--reverse`, one `--perfect`), the 18 `[data-project-card]` cards, the compatibility `noindex` entries, and the Escape-to-close mobile menu.
+
+Two assertions were **added**, not relaxed:
+
+- status filter → 3 visible cards for `原型阶段`;
+- new **source filter** → `原创项目` keeps 18 cards, `上游研究` yields 0 cards plus the empty state, and reset restores 18.
+
+### 13.4 Responsive QA
+
+Measured as `documentElement.scrollWidth - clientWidth` after a full scroll pass:
+
+| Route | 1440 | 1280 | 768 | 390 | 375 |
+|---|---|---|---|---|---|
+| `/` | 0 | 0 | 0 | 0 | 0 |
+| `/work/` | 0 | 0 | 0 | 0 | 0 |
+| `/think/` | 0 | 0 | 0 | 0 | 0 |
+| `/explore/` | 0 | 0 | 0 | 0 | 0 |
+| `/about/` | 0 | 0 | 0 | 0 | 0 |
+| `/work/mbti64/` | 0 | 0 | 0 | 0 | 0 |
+| `/2022-07-05/hello-world/` | 0 | 0 | 0 | 0 | 0 |
+
+Mobile checks confirmed separately: the Z-Grid board stays 2 × 2 (never squeezed into a row), the hero statement wraps to four lines without a broken word, the filter rail scrolls horizontally while the page does not, and both select labels stay visible at 390px.
+
+### 13.5 Visual assets
+
+| Asset | Status |
+|---|---|
+| `public/brand/*.svg` (symbol, mono, horizontal, inverse, stacked, avatar) | Native vector; wordmark converted to paths, no embedded bitmap |
+| `public/favicon.svg`, `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` | Regenerated from the Z-Grid mark; legible at 16px |
+|  `src/assets/brand/field-*.png` (4) | Generated with Qwen-Image-2.1, 1024 × 1024, no text; imported by `src/data/brand.ts` and re-encoded by Astro (WebP, responsive widths), so raw PNGs never ship |
+| `public/og-default.png` | Regenerated: new mark, four-line statement, Z-Grid direction panel |
+| `public/site.webmanifest` | Regenerated with the V2 name and description |
+
+Reproduce with `python3 scripts/generate-brand-images.py`, `/tmp/fontenv/bin/python scripts/build-brand-assets.py`, and `node scripts/generate-assets.mjs`.
+
+### 13.6 Screenshots
+
+`docs/screenshots/` was fully recaptured from the V2 build with the new helper:
+
+```bash
+npm run preview -- --port 4321   # separate shell
+npm run screenshots
+```
+
+Twenty files cover desktop and mobile for HOME, WORK, THINK, EXPLORE, ABOUT, the MBTI64 case study, a compatibility page, the 404, plus above-the-fold crops at 1440 / 768 / 390 and the open mobile menu.
+
+### 13.7 Known limitations (V2)
+
+- Production deployment of V2 has not run yet; the numbers above are local preview results.
+- Playwright's pinned browser build was unavailable in this environment, so a system Chromium was supplied through `PLAYWRIGHT_CHROMIUM_EXECUTABLE`. CI uses the pinned download.
+- No automated axe/WCAG audit, and no physical screen-reader pass.
+- Firefox and WebKit were not exercised.
+- The generated brand fields are intentionally abstract; they are not product imagery and must never be presented as such.
+
+### 13.8 Sign-off (V2)
+
+Local build, diagnostics, link check, Playwright suite, and responsive QA for the Z-Grid brand layer: **passed**.
+
+Remaining before production:
+
+- [ ] Commit and push the V2 branch to `main`.
+- [ ] Confirm the deploy workflow succeeds.
+- [ ] Re-verify `/`, `/work/`, `/think/`, `/explore/`, `/about/`, favicon, OG image, and manifest on the live host.

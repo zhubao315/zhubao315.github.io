@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import { ArrowUpRight } from '@lucide/astro';
+import { brandFields } from '../data/brand';
 import { projects, publications } from '../data/projects';
 
 const knowledgeBase = projects.find((project) => project.id === 'knowledge-base-engineering')!;
@@ -54,24 +56,45 @@ const notes = [
   title="思考与研究 | 朱宝 ZHUBAO"
   description="朱宝的知识工程、投资纪律与 AI 研究笔记：把知识当作持续运行的信息系统，把决策过程变成可执行规则。"
 >
-  <section class="page-hero page-hero--dark think-hero">
+  <section class="page-hero page-hero--dark page-hero--brand think-hero">
     <div class="shell">
       <nav class="breadcrumb" aria-label="面包屑">
         <a href="/">首页</a><span class="sep">/</span><span>思考</span>
       </nav>
+
+      <div class="page-masthead page-masthead--dark">
+        <span><i aria-hidden="true"></i> ZHUBAO RESEARCH / VOL. 02</span>
+        <span>KNOWLEDGE · INVESTMENT · AGENT SYSTEMS</span>
+        <span>NO CITATION WITHOUT A SOURCE</span>
+      </div>
+
       <div class="page-hero-title">
         <h1>Knowledge should<br /><em>compound.</em></h1>
         <span class="page-hero-index">THINK / 02</span>
       </div>
-      <div class="page-hero-grid">
-        <p class="page-hero-intro">
-          思考如果只停留在笔记里，就会变成另一种收藏。这里展示的是三条被反复运行、检验和修正的研究线：知识工程、投资纪律与 AI / Agent 系统。
-        </p>
-        <div class="page-hero-meta">
-          <div class="hero-fact"><strong>03</strong><span>研究轨道</span></div>
-          <div class="hero-fact"><strong>02</strong><span>书稿项目</span></div>
-          <div class="hero-fact"><strong>01</strong><span>共同方法：可验证</span></div>
+      <div class="think-hero-body">
+        <div>
+          <p class="page-hero-intro">
+            思考如果只停留在笔记里，就会变成另一种收藏。这里展示的是三条被反复运行、检验和修正的研究线：知识工程、投资纪律与 AI / Agent 系统。
+          </p>
+          <div class="page-hero-meta">
+            <div class="hero-fact"><strong>03</strong><span>研究轨道</span></div>
+            <div class="hero-fact"><strong>02</strong><span>书稿项目</span></div>
+            <div class="hero-fact"><strong>01</strong><span>共同方法：可验证</span></div>
+          </div>
         </div>
+        <figure class="page-art think-hero-art">
+          <Image
+            src={brandFields.think}
+            alt=""
+            widths={[440, 620, 880]}
+            sizes="(max-width: 1000px) 90vw, 292px"
+            loading="eager"
+            quality={78}
+            format="webp"
+          />
+          <figcaption><span>FIELD STUDY / 02</span><span>KNOWLEDGE NETWORK</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>

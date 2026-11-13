@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import DirectionMark from '../components/DirectionMark.astro';
 import { ArrowUpRight, ArrowRight } from '@lucide/astro';
-import { principles, site } from '../data/site';
+import { directions, principles, site } from '../data/site';
 import { lifeSites } from '../data/projects';
 
 const totalActivities = 2037 + 5776 + 344;
@@ -90,11 +91,18 @@ const timeline = [
   description="朱宝的个人工作档案：AI 与 Agent 系统、数字产品、知识工程、投资研究与量化生活。这里记录方法、证据、边界与持续建设中的作品。"
   type="profile"
 >
-  <section class="page-hero about-hero">
+  <section class="page-hero about-hero page-hero--brand">
     <div class="shell">
       <nav class="breadcrumb" aria-label="面包屑">
         <a href="/">首页</a><span class="sep">/</span><span>关于</span>
       </nav>
+
+      <div class="page-masthead">
+        <span><i aria-hidden="true"></i> PROFILE / PERSONAL ARCHIVE</span>
+        <span>IDENTITY · PHILOSOPHY · PRINCIPLES · BOUNDARIES</span>
+        <span>SNAPSHOT {site.lastVerified}</span>
+      </div>
+
       <div class="page-hero-title">
         <h1>Still building.<br /><em>Still becoming.</em></h1>
         <span class="page-hero-index">PROFILE / 04</span>
@@ -177,6 +185,40 @@ const timeline = [
               X / Twitter <ArrowUpRight size={15} stroke-width={1.5} aria-hidden="true" />
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about-system">
+    <div class="shell">
+      <div class="about-system-panel" data-reveal>
+        <div class="about-system-lead">
+          <p class="eyebrow">Brand Philosophy / Z-Grid</p>
+          <h2>四个方向，<br /><em>一个持续生长的系统。</em></h2>
+          <p class="about-system-copy">
+            BUILD、THINK、MEASURE、CREATE 不是四个并列的标签，而是同一套方法的四个出口：把想法做成系统，把知识变成资产，把生活记录成数据，把经验做成作品。它们共享同一条路径，也共享同一条底线——可验证。
+          </p>
+          <div class="about-system-mark">
+            <img src="/brand/zhubao-symbol.svg" alt="ZHUBAO Z-Grid 标志" width="88" height="88" />
+            <span>Z-GRID / FOUR DIRECTIONS<br />EST. 2011 — STILL BUILDING</span>
+          </div>
+        </div>
+
+        <div class="about-system-grid">
+          {
+            directions.map((direction) => (
+              <a class="about-system-item" href={direction.href} data-accent={direction.accent}>
+                <span class="about-system-top">
+                  <span>{direction.index}</span>
+                  <DirectionMark type={direction.code as 'BUILD' | 'THINK' | 'MEASURE' | 'CREATE'} />
+                </span>
+                <strong>{direction.code}</strong>
+                <span class="about-system-zh">{direction.title}</span>
+                <p>{direction.description}</p>
+              </a>
+            ))
+          }
         </div>
       </div>
     </div>

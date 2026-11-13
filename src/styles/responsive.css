@@ -655,7 +655,7 @@
   }
 
   .filter-tools {
-    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-columns: minmax(0, 1fr) auto auto auto;
   }
 
   .project-card-body {
@@ -1132,6 +1132,10 @@
 
   .select-field {
     justify-content: space-between;
+  }
+
+  .filter-reset {
+    grid-column: 1 / -1;
   }
 
   .project-grid {
@@ -1733,7 +1737,7 @@
   }
 
   .select-field > span {
-    display: none;
+    font-size: 0.5rem;
   }
 
   .project-card-body {

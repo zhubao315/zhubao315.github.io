@@ -1,13 +1,13 @@
 ---
 import { ArrowUpRight } from '@lucide/astro';
-import { nav, site } from '../data/site';
+import { directions, nav, site } from '../data/site';
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
   <div class="shell footer-top">
-    <p class="footer-kicker"><span class="pulse-dot" aria-hidden="true"></span> KEEP BUILDING / KEEP EXPLORING</p>
+    <p class="footer-kicker"><span class="pulse-dot" aria-hidden="true"></span> KEEP BUILDING / KEEP MEASURING</p>
     <div class="footer-statement">
       <h2>Ideas become systems.<br /><em>Systems become assets.</em></h2>
       <a class="footer-contact" href={site.github} target="_blank" rel="noreferrer">
@@ -19,9 +19,19 @@ const year = new Date().getFullYear();
 
   <div class="shell footer-grid">
     <div class="footer-brand">
-      <p class="footer-logo">ZHUBAO<span>.</span></p>
-      <p class="footer-cn">朱宝的个人数字作品集</p>
-      <p class="footer-tagline">AI Systems · Product Engineering<br />Knowledge Engineering · Quantified Life</p>
+      <a class="footer-lockup" href="/" aria-label="ZHUBAO · 首页">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="12" fill="#F7F3EA" />
+          <path d="M15 17H49L15 47H49" fill="none" stroke="#0B1D33" stroke-width="7" stroke-linejoin="miter" />
+          <rect x="11" y="13" width="8" height="8" fill="#0B1D33" />
+          <rect x="45" y="13" width="8" height="8" fill="#FBBF24" />
+          <rect x="11" y="43" width="8" height="8" fill="#0B1D33" />
+          <rect x="45" y="43" width="8" height="8" fill="#0B1D33" />
+        </svg>
+        <span>ZHUBAO<span class="footer-dot">.</span></span>
+      </a>
+      <p class="footer-cn">朱宝的个人数字品牌门户</p>
+      <p class="footer-tagline">Build Systems. Engineer Knowledge.<br />Measure Life. Create Things.</p>
     </div>
 
     <nav class="footer-nav" aria-label="页脚导航">
@@ -48,6 +58,21 @@ const year = new Date().getFullYear();
       <p class="footer-label">COLOPHON</p>
       <p>Built with Astro + TypeScript.<br />Designed and maintained by ZHUBAO.</p>
       <p class="footer-verified">Facts verified · {site.lastVerified}</p>
+    </div>
+  </div>
+
+  <div class="shell footer-directions">
+    <p class="footer-label">FOUR DIRECTIONS / Z-GRID</p>
+    <div>
+      {
+        directions.map((direction) => (
+          <a href={direction.href} data-accent={direction.accent}>
+            <span>{direction.index}</span>
+            <strong>{direction.code}</strong>
+            <em>{direction.title}</em>
+          </a>
+        ))
+      }
     </div>
   </div>
 

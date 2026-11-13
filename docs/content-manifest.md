@@ -99,6 +99,9 @@ No ISBN, publisher, print run, sales figure, award, or release date is claimed.
 | Project covers | Public project sites / repositories | Not presented as commissioned art |
 | Fonts | Fontsource packages (Inter, Manrope, Instrument Serif) | Self-hosted at build time |
 | Icons | Lucide / local SVG | Local components |
+| ZHUBAO logo | Authored for this site as native SVG (`scripts/build-brand-assets.py`); wordmark outlines taken from the self-hosted Manrope variable font | No bitmap embedded in SVG; single-colour variant tested at 16px |
+| Brand field images | Generated locally with Qwen-Image-2.1 (`scripts/generate-brand-images.py`), abstract, no text | Decorative only, always behind a scrim; labelled `VISUAL STUDY · NOT A PRODUCT SCREENSHOT` when used as a card cover |
+| OG / PWA images | Rendered locally by `scripts/generate-assets.mjs` from the brand mark and `src/data/site.ts` | Counts are the same verified snapshot shown on the site |
 
 The portrait is explicitly labeled “PUBLIC AVATAR” on the About page; it is not presented as a commissioned portrait.
 

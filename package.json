@@ -14,7 +14,8 @@
     "check": "astro check",
     "test": "playwright test",
     "test:links": "node scripts/check-links.mjs",
-    "test:all": "npm run build && npm run test:links && npm test"
+    "test:all": "npm run build && npm run test:links && npm test",
+    "screenshots": "node scripts/capture-screenshots.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

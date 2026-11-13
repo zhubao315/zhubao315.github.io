@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import type { Project } from '../data/projects';
+import { brandFields, categoryField } from '../data/brand';
+import { categoryMeta, type Project } from '../data/projects';
 import uskillLogo from '../assets/projects/uskill-logo.svg';
 import investmentBanner from '../assets/projects/investment-banner.svg';
 import healthImage from '../assets/projects/health.webp';
@@ -15,6 +16,9 @@ interface Props {
 }
 
 const { project, mode = 'card', class: className = '' } = Astro.props;
+const category = categoryMeta[project.category];
+const abstractField = brandFields[categoryField[project.category] ?? 'think'];
+const monogram = project.name.replace(/[^A-Za-z0-9]/g, '').slice(0, 2).toUpperCase();
 const sizes =
   mode === 'hero'
     ? '(max-width: 900px) 100vw, 1200px'
@@ -162,5 +166,26 @@ const quantImages: { image: ImageMetadata; label: string; alt: string }[] = [
         />
       </div>
     )
+  }
+
+  {
+    !project.cover &&
+      !['uskill', 'knowledge-base-engineering', 'investment-discipline', 'quantified-life'].includes(project.id) && (
+        <div class="abstract-cover" data-accent={category.accent}>
+          <Image
+            src={abstractField}
+            alt=""
+            widths={widths}
+            sizes={sizes}
+            loading={loading}
+            quality={72}
+            format="webp"
+          />
+          <span class="abstract-cover-grid" aria-hidden="true" />
+          <span class="abstract-cover-monogram" aria-hidden="true">{monogram}</span>
+          <span class="abstract-cover-label">{category.label} / {category.labelZh}</span>
+          <span class="abstract-cover-note">VISUAL STUDY · NOT A PRODUCT SCREENSHOT</span>
+        </div>
+      )
   }
 </div>

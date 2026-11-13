@@ -144,6 +144,19 @@ test.describe('work index', () => {
     await page.goto('/work/?filter=agent', { waitUntil: 'networkidle' });
     await expect(page.locator('[data-filter-category="agent"]')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('[data-project-card]:visible')).toHaveCount(2);
+
+    await page.locator('[data-filter-reset]').click();
+    await page.locator('[data-project-status]').selectOption('prototype');
+    await expect(page.locator('[data-project-card]:visible')).toHaveCount(3);
+
+    await page.locator('[data-filter-reset]').click();
+    await page.locator('[data-project-source]').selectOption('original');
+    await expect(page.locator('[data-project-card]:visible')).toHaveCount(18);
+    await page.locator('[data-project-source]').selectOption('research');
+    await expect(page.locator('[data-project-card]:visible')).toHaveCount(0);
+    await expect(page.locator('[data-empty-state]')).toBeVisible();
+    await page.locator('[data-filter-reset]').click();
+    await expect(page.locator('[data-project-card]:visible')).toHaveCount(18);
   });
 });
 

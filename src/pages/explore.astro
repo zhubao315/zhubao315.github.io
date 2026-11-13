@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import { ArrowUpRight } from '@lucide/astro';
 import { projects, lifeSites, categoryMeta, statusMeta } from '../data/projects';
+import { brandFields } from '../data/brand';
 import mbtiCover from '../assets/projects/mbti64.webp';
 import perfectmeCover from '../assets/projects/perfectme.webp';
 
@@ -18,24 +19,45 @@ const creativeProjects = [animeSkill, memoir, uprompt];
   title="探索 | 朱宝 ZHUBAO"
   description="探索人格、数字生活、健康运动与 AI 创意：MBTI64、量化生活四个数据站点、原创 2D 微动漫《满分的我》。"
 >
-  <section class="page-hero explore-hero">
+  <section class="page-hero explore-hero page-hero--brand">
     <div class="shell">
       <nav class="breadcrumb" aria-label="面包屑">
         <a href="/">首页</a><span class="sep">/</span><span>探索</span>
       </nav>
+
+      <div class="page-masthead">
+        <span><i aria-hidden="true"></i> FIELD NOTES / 03</span>
+        <span>PERSONALITY · QUANTIFIED LIFE · CREATIVE</span>
+        <span>SNAPSHOT 2026-11-11</span>
+      </div>
+
       <div class="page-hero-title">
         <h1>Life,<br /><em>observed.</em></h1>
         <span class="page-hero-index">EXPLORE / 03</span>
       </div>
-      <div class="page-hero-grid">
-        <p class="page-hero-intro">
-          人格如何形成，身体如何变化，数据如何记住时间，故事如何被看见。探索页收录三个长期方向：人格探索、量化生活与 AI 创意。
-        </p>
-        <div class="page-hero-meta">
-          <div class="hero-fact"><strong>64</strong><span>人格类型</span></div>
-          <div class="hero-fact"><strong>4</strong><span>生活数据站点</span></div>
-          <div class="hero-fact"><strong>11+ yrs</strong><span>最长记录跨度</span></div>
+      <div class="explore-hero-body">
+        <div>
+          <p class="page-hero-intro">
+            人格如何形成，身体如何变化，数据如何记住时间，故事如何被看见。探索页收录三个长期方向：人格探索、量化生活与 AI 创意。
+          </p>
+          <div class="page-hero-meta">
+            <div class="hero-fact"><strong>64</strong><span>人格类型</span></div>
+            <div class="hero-fact"><strong>4</strong><span>生活数据站点</span></div>
+            <div class="hero-fact"><strong>11+ yrs</strong><span>最长记录跨度</span></div>
+          </div>
         </div>
+        <figure class="page-art explore-hero-art">
+          <Image
+            src={brandFields.measure}
+            alt=""
+            widths={[440, 620, 880]}
+            sizes="(max-width: 1000px) 90vw, 292px"
+            loading="eager"
+            quality={78}
+            format="webp"
+          />
+          <figcaption><span>FIELD STUDY / 03</span><span>LONGITUDINAL TRACE</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>

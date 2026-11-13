@@ -34,13 +34,9 @@ const searchText = [
   data-featured={project.featured}
   data-search={searchText}
 >
-  {
-    project.featured && (
-      <a class="project-card-media" href={`/work/${project.slug}/`} aria-label={`查看 ${project.name} 案例`}>
-        <ProjectMedia project={project} />
-      </a>
-    )
-  }
+  <a class="project-card-media" href={`/work/${project.slug}/`} aria-label={`查看 ${project.name} 案例`}>
+    <ProjectMedia project={project} />
+  </a>
   <div class="project-card-body">
     <div class="project-card-topline">
       <span class="project-index">{index}</span>

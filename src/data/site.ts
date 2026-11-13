@@ -1,7 +1,7 @@
 export const site = {
   name: 'ZHUBAO',
   nameZh: '朱宝',
-  title: '朱宝 ZHUBAO | AI 工程 · 数字产品 · 知识工程',
+  title: '朱宝 ZHUBAO | 构建系统 · 工程知识 · 量化生活 · 创造作品',
   description:
     '朱宝的个人数字作品集：AI 与 Agent 工程、数字产品、知识工程、投资研究，以及由长期运动与健康数据构成的量化生活实践。',
   url: 'https://zhubao315.github.io',
@@ -12,8 +12,9 @@ export const site = {
   x: 'https://x.com/zhubao315',
   avatar: '/images/avatar.webp',
   ogImage: '/og-default.png',
-  tagline: 'Build Systems. Engineer Knowledge. Explore Life.',
-  taglineZh: '把想法变成系统，把知识沉淀为资产，把生活记录成可持续的实践。',
+  tagline: 'Build Systems. Engineer Knowledge. Measure Life. Create Things.',
+  taglineZh: '构建系统 · 工程知识 · 量化生活 · 创造作品',
+  statement: '把想法变成系统，把知识沉淀为资产，把生活记录成可持续的实践。',
   repoCount: 61,
   nonForkCount: 24,
   forkCount: 37,
@@ -28,7 +29,20 @@ export const nav = [
   { label: '关于', en: 'ABOUT', href: '/about/' },
 ];
 
-export const directions = [
+export type BrandFieldKey = 'build' | 'think' | 'measure' | 'create';
+
+export interface Direction {
+  code: 'BUILD' | 'THINK' | 'MEASURE' | 'CREATE';
+  index: string;
+  title: string;
+  en: string;
+  description: string;
+  href: string;
+  accent: BrandFieldKey;
+  field: BrandFieldKey;
+}
+
+export const directions: Direction[] = [
   {
     code: 'BUILD',
     index: '01',
@@ -36,16 +50,18 @@ export const directions = [
     en: 'Build Systems',
     description: 'AI、Agent、Skills、软件架构与云原生基础设施。把方法做成可运行、可治理的系统。',
     href: '/work/?filter=agent',
-    accent: 'sky',
+    accent: 'build',
+    field: 'build',
   },
   {
     code: 'THINK',
     index: '02',
-    title: '探索认知',
+    title: '工程知识',
     en: 'Engineer Knowledge',
-    description: '知识工程、投资研究与持续学习。让信息经过结构、证据与纪律，变成可调用的资产。',
+    description: '知识工程、投资研究、心理学与持续学习。让信息经过结构、证据与纪律，变成可调用的资产。',
     href: '/think/',
-    accent: 'gold',
+    accent: 'think',
+    field: 'think',
   },
   {
     code: 'MEASURE',
@@ -54,16 +70,18 @@ export const directions = [
     en: 'Measure Life',
     description: '健康、跑步、骑行与徒步。用十多年的个人数据，记录身体与时间的关系。',
     href: '/explore/#quantified-life',
-    accent: 'cyan',
+    accent: 'measure',
+    field: 'measure',
   },
   {
     code: 'CREATE',
     index: '04',
     title: '创造作品',
     en: 'Create Things',
-    description: '数字产品、人格探索与 AI 动画。把抽象的想法变成可以体验、观看和分享的作品。',
+    description: '数字产品、人格探索与原创动画。把抽象的想法变成可以体验、观看和分享的作品。',
     href: '/explore/',
-    accent: 'coral',
+    accent: 'create',
+    field: 'create',
   },
 ];
 
