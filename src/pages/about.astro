@@ -224,6 +224,81 @@ const timeline = [
     </div>
   </section>
 
+  <section class="section section--paper-alt about-brand">
+    <div class="shell">
+      <div class="about-brand-head">
+        <p class="eyebrow">Brand System / CIS 1.0 · ACTIVE 2.0</p>
+        <h2>一套识别，<br /><em>两种应用场景。</em></h2>
+        <p class="about-brand-lead">
+          ZHUBAO 是母品牌：一套贯穿官网、GitHub、出版物、数据报告与线下场景的识别系统。
+          ACTIVE 是运营品牌：四个运动与健康站点共用同一套头部、导航与设计 Token，同时保留各自的数据专业性。
+        </p>
+      </div>
+
+      <div class="about-brand-grid">
+        <article class="about-brand-card" data-reveal>
+          <div class="about-brand-card-top"><span>CIS 1.0</span><span>MIDNIGHT SIGNAL</span></div>
+          <h3>One identity.<br /><em>Multiple expressions.</em></h3>
+          <p class="about-brand-slogan">Build Systems. Engineer Knowledge. Measure Life. Create Things.</p>
+
+          <p class="about-brand-label">LOGO / 品牌板严格切图</p>
+          <div class="about-brand-slices">
+            <figure><img src="/brand/slices/symbol-panel.png" alt="Z-Grid 符号" loading="lazy" /><figcaption>符号</figcaption></figure>
+            <figure><img src="/brand/slices/horizontal-lockup.png" alt="横向组合标" loading="lazy" /><figcaption>横向组合</figcaption></figure>
+            <figure><img src="/brand/slices/stacked-lockup.png" alt="纵向组合标" loading="lazy" /><figcaption>纵向组合</figcaption></figure>
+            <figure><img src="/brand/slices/mono-light.png" alt="浅底单色版" loading="lazy" /><figcaption>浅底单色</figcaption></figure>
+          </div>
+
+          <p class="about-brand-label">COLOR / 主品牌色与方向色</p>
+          <div class="about-brand-colors">
+            <span style="background:#07111F" title="Midnight #07111F"></span>
+            <span style="background:#0B1D33" title="Deep Navy #0B1D33"></span>
+            <span style="background:#2563EB" title="Electric Blue #2563EB"></span>
+            <span style="background:#38BDF8" title="Signal Cyan #38BDF8"></span>
+            <span style="background:#F7FAFF" title="Arctic White #F7FAFF"></span>
+            <span style="background:#94A3B8" title="Cool Gray #94A3B8"></span>
+            <i></i>
+            <span style="background:#38BDF8" title="BUILD"></span>
+            <span style="background:#FBBF24" title="THINK"></span>
+            <span style="background:#34D399" title="MEASURE"></span>
+            <span style="background:#FB7185" title="CREATE"></span>
+          </div>
+
+          <p class="about-brand-copy">
+            完整资料库覆盖 CI 理念、VI 视觉、SI 场景、数字媒体、演示与报告、出版物、子项目延展、动态识别与资产治理九组资产。
+            Logo 不做重绘：全部版本都由已确认品牌板按像素坐标直接裁切，附源图与裁切清单。
+          </p>
+          <div class="about-brand-links">
+            <a class="text-link text-link--small" href="/brand/slices/CONTACT-SHEET.png">切图总览 <span aria-hidden="true">↗</span></a>
+            <a class="text-link text-link--small" href="/brand/slices/SOURCE.png">品牌板源图 <span aria-hidden="true">↗</span></a>
+            <a class="text-link text-link--small" href="/brand/slices/manifest.json">裁切坐标 <span aria-hidden="true">↗</span></a>
+            <a class="text-link text-link--small" href="/brand/brand-logo-guide.pdf">品牌指南 PDF <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="about-brand-card about-brand-card--active" data-reveal style="--reveal-delay:100ms">
+          <div class="about-brand-card-top"><span>ACTIVE 2.0</span><span>FOUR DISCIPLINES</span></div>
+          <h3>One brand.<br /><em>Four disciplines.</em></h3>
+          <p class="about-brand-slogan">用数据记录每一次前进。</p>
+          <p class="about-brand-copy">
+            健康、跑步、骑行、徒步四站使用相同的品牌头部、四站导航、内容宽度、卡片与页脚；顶部只保留站点导航与主题切换，源码入口放在页脚。
+            统一的是视觉语言与浏览体验，不是数据指标。
+          </p>
+          <div class="about-brand-sites">
+            <a href="https://zhubao315.github.io/running/" style="--accent:#D9F36A"><strong>RUNNING</strong><span>跑步</span></a>
+            <a href="https://zhubao315.github.io/cycling/" style="--accent:#FBBF24"><strong>CYCLING</strong><span>骑行</span></a>
+            <a href="https://zhubao315.github.io/hiking/" style="--accent:#34D399"><strong>HIKING</strong><span>徒步</span></a>
+            <a href="https://zhubao315.github.io/health/" style="--accent:#38BDF8"><strong>HEALTH</strong><span>健康</span></a>
+          </div>
+          <p class="about-brand-note">
+            规范源：<a href="https://github.com/zhubao315/active-watch">github.com/zhubao315/active-watch</a>。
+            四站保留跑步配速与 PB、骑行均速与爬升、徒步季节与海拔、健康恢复与基线等全部专业算法。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="section section--dark about-principles">
     <div class="shell">
       <header class="section-head section-head--dark" data-reveal>
@@ -406,4 +481,37 @@ const timeline = [
       </div>
     </div>
   </section>
+
+  <style>
+    .about-brand-head { max-width: 720px; }
+    .about-brand-head h2 { margin-top: 16px; font-family: var(--display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600; line-height: 1.04; letter-spacing: -0.04em; }
+    .about-brand-head h2 em { font-family: 'Instrument Serif', serif; font-weight: 400; color: var(--build); }
+    .about-brand-lead { margin-top: 18px; color: var(--muted); line-height: 1.8; }
+    .about-brand-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 38px; }
+    .about-brand-card { padding: 24px; border: 1px solid var(--line); background: var(--paper); }
+    .about-brand-card--active { background: var(--paper-2); }
+    .about-brand-card-top { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.1em; }
+    .about-brand-card h3 { margin-top: 24px; font-family: var(--display); font-size: clamp(1.4rem, 2.2vw, 2rem); font-weight: 600; line-height: 1.06; letter-spacing: -0.035em; }
+    .about-brand-card h3 em { font-family: 'Instrument Serif', serif; font-weight: 400; color: var(--build); }
+    .about-brand-slogan { margin: 12px 0 26px; color: var(--muted); font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.04em; line-height: 1.7; }
+    .about-brand-label { margin: 22px 0 10px; color: var(--muted); font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .about-brand-slices { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+    .about-brand-slices figure { margin: 0; border: 1px solid var(--line); background: var(--navy); }
+    .about-brand-slices img { display: block; width: 100%; height: 64px; object-fit: contain; padding: 6px; }
+    .about-brand-slices figcaption { padding: 6px; color: var(--muted-light); font-size: 0.58rem; text-align: center; border-top: 1px solid var(--line-dark); }
+    .about-brand-colors { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
+    .about-brand-colors span { width: 28px; height: 18px; border: 1px solid var(--line); }
+    .about-brand-colors i { width: 12px; }
+    .about-brand-copy { margin-top: 26px; color: var(--muted); font-size: 0.78rem; line-height: 1.8; }
+    .about-brand-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 20px; }
+    .about-brand-sites { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 26px; }
+    .about-brand-sites a { --accent: var(--build); display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 12px 14px; border: 1px solid var(--line); background: var(--paper); color: var(--navy); text-decoration: none; }
+    .about-brand-sites a:hover { border-color: var(--accent); }
+    .about-brand-sites strong { color: var(--accent); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; }
+    .about-brand-sites span { color: var(--muted); font-size: 0.72rem; }
+    .about-brand-note { margin-top: 20px; color: var(--muted); font-size: 0.72rem; line-height: 1.7; }
+    .about-brand-note a { color: var(--build); }
+    @media (max-width: 900px) { .about-brand-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .about-brand-slices { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  </style>
 </BaseLayout>
