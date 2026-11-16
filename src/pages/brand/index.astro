@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="ZHUBAO CIS 1.0 · 品牌资产库" description="ZHUBAO Midnight Signal 品牌识别系统：CI / VI / SI 全量资料、严格切图 Logo 与智能体调用提示词。">
+  <section class="hero">
+    <div class="shell">
+      <p class="kicker">ZHUBAO CIS 1.0 · MIDNIGHT SIGNAL · 2026-11-16</p>
+      <h1>One Identity.<br /><em>Multiple Expressions.</em></h1>
+      <p class="lede">ZHUBAO（朱宝）个人品牌识别系统全量资料。Logo 采用品牌板**严格切图**最终版（零重绘）；四站运营品牌 ACTIVE 2.0 见 <a href="https://github.com/zhubao315/active-watch">active-watch</a>。</p>
+      <div class="cta-row">
+        <a class="cta" href="/brand/AGENT-PROMPT.md">AGENT-PROMPT.md — 智能体入口 ↗</a>
+        <a class="cta ghost" href="/brand/README.md">CIS 1.0 全量库说明 ↗</a>
+      </div>
+    </div>
+    <img class="hero-mark" src="/brand/slices/symbol-hero.png" alt="Z-Grid 品牌标志（品牌板严格切图）" />
+  </section>
+
+  <section class="shell block">
+    <h2>01 · 最终 Logo 切图</h2>
+    <p class="lede">全部从同一张品牌板按像素坐标直接裁切，无重绘、无改色。坐标与 SHA256 见 <a href="/brand/slices/manifest.json">manifest.json</a>，源图见 <a href="/brand/slices/SOURCE.png">SOURCE.png</a>。</p>
+    <div class="grid">
+      <figure><img src="/brand/slices/symbol-panel.png" alt="Z-Grid 符号" /><figcaption>符号 · Panel A</figcaption></figure>
+      <figure><img src="/brand/slices/horizontal-lockup.png" alt="横向组合标" /><figcaption>横向组合 · Panel B</figcaption></figure>
+      <figure><img src="/brand/slices/stacked-lockup.png" alt="纵向组合标" /><figcaption>纵向组合 · Panel C</figcaption></figure>
+      <figure><img src="/brand/slices/mono-light.png" alt="浅底单色版" /><figcaption>浅底单色 · Panel D</figcaption></figure>
+      <figure><img src="/brand/slices/mono-dark.png" alt="深底单色版" /><figcaption>深底单色 · Panel D</figcaption></figure>
+      <figure><img src="/brand/slices/reverse-lockup.png" alt="反白版" /><figcaption>反白组合 · Panel E</figcaption></figure>
+    </div>
+    <p class="ci-links"><a href="/brand/slices/README.md">切图包说明</a> · <a href="/brand/slices/CONTACT-SHEET.png">总览图</a> · <a href="/brand/01-LOGO/logo-guidelines.md">Logo 使用规范</a></p>
+  </section>
+
+  <section class="shell block">
+    <h2>02 · CIS 全量资料</h2>
+    <div class="cards">
+      {[
+        ['00-CI', '品牌战略 · 故事 · 语言 · 定位', '/brand/00-CI/brand-strategy.md'],
+        ['02-VI', '色彩 · 字体 · 令牌 · 图标 · 图形', '/brand/02-VI/design-tokens/zhubao-tokens.css'],
+        ['03-DIGITAL', '官网 · GitHub · 社交 · 视频', '/brand/03-DIGITAL/'],
+        ['04-DOCUMENTS', 'PPT 16 母版 · 数据报告', '/brand/04-DOCUMENTS/powerpoint/ppt-spec.md'],
+        ['05-PUBLISHING', '书籍封面 · 内页 · 电子书', '/brand/05-PUBLISHING/'],
+        ['06-PRODUCTS', '六个子项目 · Dashboard', '/brand/06-PRODUCTS/'],
+        ['07-SI', '演讲背景 · 名片 · 空间 · 周边', '/brand/07-SI/'],
+        ['08-MOTION', 'Logo 动画 · 分镜参数', '/brand/08-MOTION/logo-animation-storyboard.md'],
+        ['10-DOCUMENTATION', '索引 · 总则 · 日志 · 验收', '/brand/10-DOCUMENTATION/asset-inventory.md'],
+      ].map(([code, desc, href]) => (
+        <a class="card" href={href}><b>{code}</b><span>{desc}</span></a>
+      ))}
+    </div>
+  </section>
+
+  <section class="shell block">
+    <h2>03 · 智能体调用</h2>
+    <p class="lede">把 <code>/brand/AGENT-PROMPT.md</code> 中的 SYSTEM PROMPT 全文交给任意智能体，再附加本次任务。提示词内含权威切图 URL、颜色令牌、四站 ACTIVE 2.0 边界与自检清单。</p>
+    <p class="ci-links"><a href="/brand/AGENT-PROMPT.md">获取提示词 ↗</a> · <a href="/brand/10-DOCUMENTATION/usage-rules.md">使用总则</a> · <a href="/brand/10-DOCUMENTATION/changelog.md">变更日志</a></p>
+  </section>
+
+<style>
+  .hero { position: relative; padding: 88px 0 56px; overflow: hidden; }
+  .hero h1 { font-size: clamp(40px, 6vw, 72px); margin: 16px 0; }
+  .hero h1 em { color: #38bdf8; font-style: normal; }
+  .lede { max-width: 720px; color: #94a3b8; line-height: 1.75; }
+  .lede a { color: #38bdf8; }
+  .hero-mark { position: absolute; right: 4%; top: 70px; width: min(28vw, 300px); opacity: .92; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .cta { display: inline-block; padding: 13px 20px; border: 1.5px solid #2563eb; border-radius: 10px; color: #f7faff; font-weight: 700; text-decoration: none; }
+  .cta.ghost { border-color: rgba(148,163,184,.5); color: #cbd6e6; }
+  .block { padding: 60px 0 8px; }
+  .block h2 { font-size: 24px; margin-bottom: 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  figure { margin: 0; padding: 18px; background: #0b1d33; border-radius: 12px; }
+  figure img { display: block; max-width: 100%; max-height: 110px; object-fit: contain; margin: 0 auto 10px; }
+  figcaption { color: #94a3b8; font-size: 13px; text-align: center; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .card { display: flex; flex-direction: column; gap: 6px; padding: 16px; background: #0b1d33; border-radius: 12px; text-decoration: none; color: #f7faff; }
+  .card b { color: #38bdf8; font-family: ui-monospace, monospace; }
+  .card span { color: #94a3b8; font-size: 14px; }
+  .ci-links { color: #94a3b8; margin-top: 18px; }
+  .ci-links a { color: #38bdf8; text-decoration: none; }
+  code { color: #cbd6e6; }
+</style>
+</BaseLayout>

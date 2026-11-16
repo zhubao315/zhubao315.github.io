@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+<defs>
+  <pattern id="gvc" width="48" height="48" patternUnits="userSpaceOnUse">
+    <rect width="48" height="48" fill="#07111F"/>
+    <rect x="0" y="0" width="1.5" height="1.5" fill="#2563EB"/>
+    <path d="M0 48V0H48" fill="none" stroke="#94A3B8" stroke-width=".6" opacity=".1"/>
+  </pattern>
+  <radialGradient id="glowvc" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#2563EB" stop-opacity=".28"/><stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowcvc" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#38BDF8" stop-opacity=".18"/><stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+  </radialGradient>
+</defs><rect width="1920" height="1080" fill="url(#gvc)"/><rect width="1920" height="1080" fill="#07111F" opacity=".35"/>
+  <ellipse cx="1600" cy="250" rx="700" ry="500" fill="url(#glowvc)" opacity=".8"/>
+  <polygon points="300,120 520,120 90,960 -130,960" fill="#F7FAFF" opacity=".03"/>
+  <g transform="translate(1700,92) scale(0.9)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/>
+  <rect x="12" y="8" width="72" height="12" fill="#2563EB"/><rect x="12" y="76" width="72" height="12" fill="#2563EB"/>
+  <rect x="0" y="8" width="12" height="12" fill="#38BDF8"/><rect x="84" y="8" width="12" height="12" fill="#FBBF24"/>
+  <rect x="0" y="76" width="12" height="12" fill="#34D399"/><rect x="84" y="76" width="12" height="12" fill="#FB7185"/></g>
+  <text x="1700" y="212" font-family="Inter" font-weight="800" font-size="20" letter-spacing="3" fill="#94A3B8">ZHUBAO</text>
+  <text x="1700" y="240" font-family="Noto Sans CJK SC" font-size="15" fill="#94A3B8" opacity=".7">朱宝 · 个人品牌</text>
+  <rect x="0.0" y="1070" width="456.96" height="4" fill="#38BDF8" opacity=".85"/><rect x="480.0" y="1070" width="456.96" height="4" fill="#FBBF24" opacity=".85"/><rect x="960.0" y="1070" width="456.96" height="4" fill="#34D399" opacity=".85"/><rect x="1440.0" y="1070" width="456.96" height="4" fill="#FB7185" opacity=".85"/>
+</svg>

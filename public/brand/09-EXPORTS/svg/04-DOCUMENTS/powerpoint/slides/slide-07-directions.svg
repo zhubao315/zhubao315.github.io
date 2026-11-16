@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+<defs>
+  <pattern id="gp7" width="48" height="48" patternUnits="userSpaceOnUse">
+    <rect width="48" height="48" fill="#07111F"/>
+    <rect x="0" y="0" width="1.5" height="1.5" fill="#2563EB"/>
+    <path d="M0 48V0H48" fill="none" stroke="#94A3B8" stroke-width=".6" opacity=".1"/>
+  </pattern>
+  <radialGradient id="glowp7" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#2563EB" stop-opacity=".28"/><stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowcp7" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#38BDF8" stop-opacity=".18"/><stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+  </radialGradient>
+</defs><rect width="1280" height="720" fill="url(#gp7)"/><rect width="1280" height="1280" fill="#07111F" opacity=".35"/><rect x="0" y="0" width="1280" height="5" fill="#2563EB" opacity=".9"/><g transform="translate(1188,28) scale(0.4167)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/>
+  <rect x="12" y="8" width="72" height="12" fill="#2563EB"/><rect x="12" y="76" width="72" height="12" fill="#2563EB"/>
+  <rect x="0" y="8" width="12" height="12" fill="#38BDF8"/><rect x="84" y="8" width="12" height="12" fill="#FBBF24"/>
+  <rect x="0" y="76" width="12" height="12" fill="#34D399"/><rect x="84" y="76" width="12" height="12" fill="#FB7185"/></g><text x="1180" y="44" text-anchor="end" font-family="Inter" font-weight="800" font-size="15" letter-spacing="3" fill="#94A3B8">ZHUBAO · 朱宝</text><text x="64" y="92" font-family="Inter" font-weight="900" font-size="40" fill="#F7FAFF">FOUR DIRECTIONS</text><text x="64" y="126" font-family="Noto Sans CJK SC" font-size="18" fill="#94A3B8">四大方向</text><rect x="64" y="142" width="44" height="4" fill="#2563EB"/><text x="64" y="700" font-family="Noto Sans Mono" font-size="13" fill="#94A3B8">07 / 16</text><line x1="64" y1="668" x2="1216" y2="668" stroke="#94A3B8" stroke-width="1" opacity=".25"/><rect x="64" y="190" width="580" height="200" rx="12" fill="#0B1D33" stroke="#38BDF8" stroke-width="1.5" stroke-opacity=".55"/>
+  <rect x="92" y="220" width="16" height="16" fill="#38BDF8"/>
+  <text x="122" y="234" font-family="Inter" font-weight="900" font-size="24" letter-spacing="3" fill="#F7FAFF">BUILD</text>
+  <text x="122" y="270" font-family="Noto Sans CJK SC" font-weight="700" font-size="19" fill="#38BDF8">构建系统</text>
+  <text x="92" y="320" font-family="Noto Sans CJK SC" font-size="16" fill="#CBD6E6">AI · Agent · Skills · 一句话项目说明</text>
+  <text x="92" y="354" font-family="Noto Sans Mono" font-size="14" fill="#94A3B8">01 / ZHUBAO MASTER BRAND</text><rect x="660" y="190" width="580" height="200" rx="12" fill="#0B1D33" stroke="#FBBF24" stroke-width="1.5" stroke-opacity=".55"/>
+  <rect x="688" y="220" width="16" height="16" fill="#FBBF24"/>
+  <text x="718" y="234" font-family="Inter" font-weight="900" font-size="24" letter-spacing="3" fill="#F7FAFF">THINK</text>
+  <text x="718" y="270" font-family="Noto Sans CJK SC" font-weight="700" font-size="19" fill="#FBBF24">工程知识</text>
+  <text x="688" y="320" font-family="Noto Sans CJK SC" font-size="16" fill="#CBD6E6">知识工程 · 投资研究 · 一句话项目说明</text>
+  <text x="688" y="354" font-family="Noto Sans Mono" font-size="14" fill="#94A3B8">02 / ZHUBAO MASTER BRAND</text><rect x="64" y="416" width="580" height="200" rx="12" fill="#0B1D33" stroke="#34D399" stroke-width="1.5" stroke-opacity=".55"/>
+  <rect x="92" y="446" width="16" height="16" fill="#34D399"/>
+  <text x="122" y="460" font-family="Inter" font-weight="900" font-size="24" letter-spacing="3" fill="#F7FAFF">MEASURE</text>
+  <text x="122" y="496" font-family="Noto Sans CJK SC" font-weight="700" font-size="19" fill="#34D399">量化生活</text>
+  <text x="92" y="546" font-family="Noto Sans CJK SC" font-size="16" fill="#CBD6E6">健康 · 跑步 · 骑行 · 一句话项目说明</text>
+  <text x="92" y="580" font-family="Noto Sans Mono" font-size="14" fill="#94A3B8">03 / ZHUBAO MASTER BRAND</text><rect x="660" y="416" width="580" height="200" rx="12" fill="#0B1D33" stroke="#FB7185" stroke-width="1.5" stroke-opacity=".55"/>
+  <rect x="688" y="446" width="16" height="16" fill="#FB7185"/>
+  <text x="718" y="460" font-family="Inter" font-weight="900" font-size="24" letter-spacing="3" fill="#F7FAFF">CREATE</text>
+  <text x="718" y="496" font-family="Noto Sans CJK SC" font-weight="700" font-size="19" fill="#FB7185">创造作品</text>
+  <text x="688" y="546" font-family="Noto Sans CJK SC" font-size="16" fill="#CBD6E6">数字产品 · 视觉创作 · 一句话项目说明</text>
+  <text x="688" y="580" font-family="Noto Sans Mono" font-size="14" fill="#94A3B8">04 / ZHUBAO MASTER BRAND</text>
+</svg>

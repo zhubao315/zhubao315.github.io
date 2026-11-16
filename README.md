@@ -167,3 +167,12 @@ Read [`docs/audit.md`](docs/audit.md) for the full inventory and decisions.
 ## License and attribution
 
 The site’s design, writing, and original project imagery are personal work. Third-party project names, logos, and screenshots remain the property of their respective owners and are used for identification and commentary. The public GitHub avatar is cropped and toned for use as a small identity mark.
+
+
+## CIS 1.0 · ZHUBAO brand asset library
+
+Published at `/brand/` (from `public/brand/`): full CI/VI/SI library — strategy docs, color tokens, typography, icons, patterns, digital templates, 16 presentation masters, publishing/data/SI/motion templates and governance docs.
+
+- **Final logo = strict pixel slices** from the approved identity board: `/brand/slices/` (source board, manifest with crop boxes + SHA256, 15 slices). No redrawn vector logo is authoritative.
+- **Agent entry:** `/brand/AGENT-PROMPT.md` (strict-slice rules + asset map).
+- The four ACTIVE sport/health sites run the separate **ACTIVE 2.0** system in `zhubao315/active-watch`.

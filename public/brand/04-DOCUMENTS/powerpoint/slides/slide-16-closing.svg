@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+<defs>
+  <pattern id="gc16" width="48" height="48" patternUnits="userSpaceOnUse">
+    <rect width="48" height="48" fill="#07111F"/>
+    <rect x="0" y="0" width="1.5" height="1.5" fill="#2563EB"/>
+    <path d="M0 48V0H48" fill="none" stroke="#94A3B8" stroke-width=".6" opacity=".1"/>
+  </pattern>
+  <radialGradient id="glowc16" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#2563EB" stop-opacity=".28"/><stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowcc16" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#38BDF8" stop-opacity=".18"/><stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+  </radialGradient>
+</defs><rect width="1280" height="720" fill="url(#gc16)"/><ellipse cx="640" cy="300" rx="640" ry="460" fill="url(#glowc16)"/>
+  <g transform="translate(508,130) scale(2.75)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/>
+  <rect x="12" y="8" width="72" height="12" fill="#2563EB"/><rect x="12" y="76" width="72" height="12" fill="#2563EB"/>
+  <rect x="0" y="8" width="12" height="12" fill="#38BDF8"/><rect x="84" y="8" width="12" height="12" fill="#FBBF24"/>
+  <rect x="0" y="76" width="12" height="12" fill="#34D399"/><rect x="84" y="76" width="12" height="12" fill="#FB7185"/></g>
+  <g transform="translate(640,480) scale(1.0)" text-anchor="middle">
+  <text x="0" y="0" font-family="Inter" font-weight="900" font-size="58" letter-spacing="12" fill="#F7FAFF">ZHUBAO</text>
+  <line x1="-122" y1="26" x2="-44" y2="26" stroke="#94A3B8" stroke-width="2"/>
+  <text x="0" y="35" font-family="Noto Sans CJK SC" font-weight="700" font-size="27" letter-spacing="7" fill="#94A3B8">朱宝</text>
+  <line x1="44" y1="26" x2="122" y2="26" stroke="#94A3B8" stroke-width="2"/></g>
+  <text x="640" y="560" text-anchor="middle" font-family="Noto Sans CJK SC" font-size="22" fill="#CBD6E6">谢谢 · 欢迎交流</text>
+  <text x="640" y="600" text-anchor="middle" font-family="Noto Sans Mono" font-size="17" fill="#94A3B8">zhubao315.github.io · github.com/zhubao315</text>
+  <rect x="0.0" y="712" width="304.64" height="4" fill="#38BDF8" opacity=".85"/><rect x="320.0" y="712" width="304.64" height="4" fill="#FBBF24" opacity=".85"/><rect x="640.0" y="712" width="304.64" height="4" fill="#34D399" opacity=".85"/><rect x="960.0" y="712" width="304.64" height="4" fill="#FB7185" opacity=".85"/>
+</svg>

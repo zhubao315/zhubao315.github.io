@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+<defs>
+  <pattern id="pbsc" width="48" height="48" patternUnits="userSpaceOnUse">
+    <rect width="48" height="48" fill="#07111F"/>
+    <path d="M0 48V0H48" fill="none" stroke="#94A3B8" stroke-width=".5" opacity=".07"/>
+  </pattern>
+  <radialGradient id="pgsc" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#2563EB" stop-opacity=".2"/><stop offset="100%" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
+</defs><rect width="1080" height="1350" fill="url(#pbsc)"/><rect width="1080" height="1350" fill="url(#pgsc)"/><rect width="1080" height="8" fill="#34D399"/>
+  <g transform="translate(80,80) scale(1.0)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/>
+  <rect x="12" y="8" width="72" height="12" fill="#2563EB"/><rect x="12" y="76" width="72" height="12" fill="#2563EB"/>
+  <rect x="0" y="8" width="12" height="12" fill="#38BDF8"/><rect x="84" y="8" width="12" height="12" fill="#FBBF24"/>
+  <rect x="0" y="76" width="12" height="12" fill="#34D399"/><rect x="84" y="76" width="12" height="12" fill="#FB7185"/></g>
+  <text x="210" y="118" font-family="Inter" font-weight="800" font-size="24" letter-spacing="3" fill="#F7FAFF">ZHUBAO · MEASURE</text>
+  <text x="80" y="320" font-family="Noto Sans CJK SC" font-weight="900" font-size="52" fill="#F7FAFF">{RUN / RIDE / HIKE · 月报}</text>
+  <text x="80" y="372" font-family="Noto Sans Mono" font-size="20" fill="#94A3B8">20XX-XX</text>
+  <rect x="80" y="460" width="920" height="140" rx="10" fill="#0B1D33"/><text x="116" y="512" font-family="Noto Sans CJK SC" font-size="17" fill="#94A3B8">距离</text><text x="116" y="576" font-family="Inter" font-weight="900" font-size="44" fill="#34D399">XXXX<tspan font-size="18" fill="#94A3B8"> 单位</tspan></text><rect x="80" y="630" width="920" height="140" rx="10" fill="#0B1D33"/><text x="116" y="682" font-family="Noto Sans CJK SC" font-size="17" fill="#94A3B8">时长</text><text x="116" y="746" font-family="Inter" font-weight="900" font-size="44" fill="#38BDF8">XXXX<tspan font-size="18" fill="#94A3B8"> 单位</tspan></text><rect x="80" y="800" width="920" height="140" rx="10" fill="#0B1D33"/><text x="116" y="852" font-family="Noto Sans CJK SC" font-size="17" fill="#94A3B8">配速 / 功率</text><text x="116" y="916" font-family="Inter" font-weight="900" font-size="44" fill="#FBBF24">XXXX<tspan font-size="18" fill="#94A3B8"> 单位</tspan></text>
+  <line x1="80" y1="1200" x2="1000" y2="1200" stroke="#94A3B8" stroke-width="1" opacity=".3"/>
+  <text x="80" y="1246" font-family="Noto Sans Mono" font-size="17" fill="#94A3B8">zhubao315.github.io · 数据来自个人真实记录</text>
+</svg>

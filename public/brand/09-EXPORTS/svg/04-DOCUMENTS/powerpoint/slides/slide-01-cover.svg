@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+<defs>
+  <pattern id="gc1" width="48" height="48" patternUnits="userSpaceOnUse">
+    <rect width="48" height="48" fill="#07111F"/>
+    <rect x="0" y="0" width="1.5" height="1.5" fill="#2563EB"/>
+    <path d="M0 48V0H48" fill="none" stroke="#94A3B8" stroke-width=".6" opacity=".1"/>
+  </pattern>
+  <radialGradient id="glowc1" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#2563EB" stop-opacity=".28"/><stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowcc1" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#38BDF8" stop-opacity=".18"/><stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+  </radialGradient>
+</defs><rect width="1280" height="720" fill="url(#gc1)"/><ellipse cx="330" cy="300" rx="520" ry="430" fill="url(#glowc1)"/>
+  <g transform="translate(210,120) scale(3.0)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/>
+  <rect x="12" y="8" width="72" height="12" fill="#2563EB"/><rect x="12" y="76" width="72" height="12" fill="#2563EB"/>
+  <rect x="0" y="8" width="12" height="12" fill="#38BDF8"/><rect x="84" y="8" width="12" height="12" fill="#FBBF24"/>
+  <rect x="0" y="76" width="12" height="12" fill="#34D399"/><rect x="84" y="76" width="12" height="12" fill="#FB7185"/></g>
+  <g transform="translate(880,280) scale(1.15)" text-anchor="middle">
+  <text x="0" y="0" font-family="Inter" font-weight="900" font-size="58" letter-spacing="12" fill="#F7FAFF">ZHUBAO</text>
+  <line x1="-122" y1="26" x2="-44" y2="26" stroke="#94A3B8" stroke-width="2"/>
+  <text x="0" y="35" font-family="Noto Sans CJK SC" font-weight="700" font-size="27" letter-spacing="7" fill="#94A3B8">朱宝</text>
+  <line x1="44" y1="26" x2="122" y2="26" stroke="#94A3B8" stroke-width="2"/></g>
+  <text x="880" y="356" text-anchor="middle" font-family="Noto Sans CJK SC" font-weight="700" font-size="34" fill="#F7FAFF">{演示文稿标题}</text>
+  <text x="880" y="400" text-anchor="middle" font-family="Noto Sans CJK SC" font-size="19" fill="#CBD6E6">{副标题 · 场合 · 日期}</text>
+  <text x="880" y="520" text-anchor="middle" font-family="Inter" font-size="18" letter-spacing="1.5" fill="#CBD6E6">Build Systems · Engineer Knowledge · Measure Life · Create Things</text>
+  <line x1="80" y1="656" x2="1200" y2="656" stroke="#94A3B8" stroke-width="1" opacity=".3"/>
+  <text x="80" y="692" font-family="Inter" font-weight="700" font-size="14" letter-spacing="4" fill="#94A3B8">ZHUBAO PRESENTATION IDENTITY · 16:9</text>
+</svg>

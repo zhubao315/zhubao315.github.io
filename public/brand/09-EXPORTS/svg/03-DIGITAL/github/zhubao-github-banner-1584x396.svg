@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
+<defs>
+  <pattern id="ggh" width="48" height="48" patternUnits="userSpaceOnUse">
+    <rect width="48" height="48" fill="#07111F"/>
+    <rect x="0" y="0" width="1.5" height="1.5" fill="#2563EB"/>
+    <path d="M0 48V0H48" fill="none" stroke="#94A3B8" stroke-width=".6" opacity=".1"/>
+  </pattern>
+  <radialGradient id="glowgh" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#2563EB" stop-opacity=".28"/><stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowcgh" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#38BDF8" stop-opacity=".18"/><stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+  </radialGradient>
+</defs><rect width="1584" height="396" fill="url(#ggh)"/><ellipse cx="230" cy="198" rx="380" ry="320" fill="url(#glowgh)"/>
+  <g transform="translate(100,108) scale(2.0)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/>
+  <rect x="12" y="8" width="72" height="12" fill="#2563EB"/><rect x="12" y="76" width="72" height="12" fill="#2563EB"/>
+  <rect x="0" y="8" width="12" height="12" fill="#38BDF8"/><rect x="84" y="8" width="12" height="12" fill="#FBBF24"/>
+  <rect x="0" y="76" width="12" height="12" fill="#34D399"/><rect x="84" y="76" width="12" height="12" fill="#FB7185"/></g>
+  <g transform="translate(500,200) scale(0.88)" text-anchor="middle">
+  <text x="0" y="0" font-family="Inter" font-weight="900" font-size="58" letter-spacing="12" fill="#F7FAFF">ZHUBAO</text>
+  <line x1="-122" y1="26" x2="-44" y2="26" stroke="#94A3B8" stroke-width="2"/>
+  <text x="0" y="35" font-family="Noto Sans CJK SC" font-weight="700" font-size="27" letter-spacing="7" fill="#94A3B8">朱宝</text>
+  <line x1="44" y1="26" x2="122" y2="26" stroke="#94A3B8" stroke-width="2"/></g>
+  <text x="520" y="318" text-anchor="middle" font-family="Inter" font-size="19" letter-spacing="1" fill="#CBD6E6">Build Systems · Engineer Knowledge · Measure Life · Create Things</text>
+  <text x="520" y="352" text-anchor="middle" font-family="Noto Sans CJK SC" font-size="16" fill="#94A3B8">构建系统 · 工程知识 · 量化生活 · 创造作品</text>
+  <g transform="translate(1060,112.0) scale(0.92)">
+  <rect x="0" y="0" width="16" height="16" fill="#38BDF8"/>
+  <text x="30" y="13" font-family="Inter" font-weight="800" font-size="17" letter-spacing="2.5" fill="#F7FAFF">BUILD</text>
+  <text x="30" y="39" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">构建系统 · AI · Agent · Skills</text></g><g transform="translate(1060,169.04) scale(0.92)">
+  <rect x="0" y="0" width="16" height="16" fill="#FBBF24"/>
+  <text x="30" y="13" font-family="Inter" font-weight="800" font-size="17" letter-spacing="2.5" fill="#F7FAFF">THINK</text>
+  <text x="30" y="39" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">工程知识 · 知识工程 · 投资研究</text></g><g transform="translate(1060,226.07999999999998) scale(0.92)">
+  <rect x="0" y="0" width="16" height="16" fill="#34D399"/>
+  <text x="30" y="13" font-family="Inter" font-weight="800" font-size="17" letter-spacing="2.5" fill="#F7FAFF">MEASURE</text>
+  <text x="30" y="39" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">量化生活 · 健康 · 跑步 · 骑行</text></g><g transform="translate(1060,283.12) scale(0.92)">
+  <rect x="0" y="0" width="16" height="16" fill="#FB7185"/>
+  <text x="30" y="13" font-family="Inter" font-weight="800" font-size="17" letter-spacing="2.5" fill="#F7FAFF">CREATE</text>
+  <text x="30" y="39" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">创造作品 · 数字产品 · 视觉创作</text></g>
+  <rect x="0.0" y="390" width="376.992" height="4" fill="#38BDF8" opacity=".85"/><rect x="396.0" y="390" width="376.992" height="4" fill="#FBBF24" opacity=".85"/><rect x="792.0" y="390" width="376.992" height="4" fill="#34D399" opacity=".85"/><rect x="1188.0" y="390" width="376.992" height="4" fill="#FB7185" opacity=".85"/>
+</svg>

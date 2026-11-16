@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
+<defs>
+  <pattern id="gsbperf" width="48" height="48" patternUnits="userSpaceOnUse">
+    <rect width="48" height="48" fill="#07111F"/>
+    <rect x="0" y="0" width="1.5" height="1.5" fill="#2563EB"/>
+    <path d="M0 48V0H48" fill="none" stroke="#94A3B8" stroke-width=".6" opacity=".1"/>
+  </pattern>
+  <radialGradient id="glowsbperf" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#2563EB" stop-opacity=".28"/><stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowcsbperf" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#38BDF8" stop-opacity=".18"/><stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+  </radialGradient>
+</defs><rect width="1584" height="396" fill="url(#gsbperf)"/><ellipse cx="210" cy="198" rx="360" ry="320" fill="url(#glowsbperf)" opacity=".8"/>
+  <g transform="translate(90,98) scale(2.0833)"><rect x="0" y="8" width="96" height="12" fill="#F7FAFF"/><rect x="0" y="76" width="96" height="12" fill="#F7FAFF"/><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/></g>
+  <rect x="90" y="98" width="200" height="200" fill="none"/>
+  <rect x="90" y="98" width="200" height="6" fill="#FB7185"/>
+  <text x="350" y="170" font-family="Inter" font-weight="900" font-size="66" letter-spacing="3" fill="#F7FAFF">Perfect Me</text>
+  <text x="350" y="226" font-family="Noto Sans CJK SC" font-weight="700" font-size="27" fill="#FB7185">自我塑造实验</text>
+  <text x="350" y="280" font-family="Noto Sans CJK SC" font-size="19" fill="#CBD6E6">动态几何与人格生成实验</text>
+  <rect x="1290" y="120" width="210" height="54" rx="27" fill="none" stroke="#94A3B8" stroke-opacity=".5" stroke-width="1.5"/>
+  <g transform="translate(1310,133) scale(0.23)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/>
+  <rect x="12" y="8" width="72" height="12" fill="#2563EB"/><rect x="12" y="76" width="72" height="12" fill="#2563EB"/>
+  <rect x="0" y="8" width="12" height="12" fill="#38BDF8"/><rect x="84" y="8" width="12" height="12" fill="#FBBF24"/>
+  <rect x="0" y="76" width="12" height="12" fill="#34D399"/><rect x="84" y="76" width="12" height="12" fill="#FB7185"/></g>
+  <text x="1344" y="154" font-family="Inter" font-weight="800" font-size="15" letter-spacing="1.6" fill="#F7FAFF">A ZHUBAO PROJECT</text>
+  <rect x="1290" y="196" width="105" height="40" rx="6" fill="#FB7185" opacity=".16" stroke="#FB7185" stroke-width="1.2"/>
+  <text x="1342" y="222" text-anchor="middle" font-family="Inter" font-weight="800" font-size="15" letter-spacing="2" fill="#FB7185">CREATE</text>
+  <text x="1290" y="286" font-family="Noto Sans Mono" font-size="15" fill="#94A3B8">project.github.io</text>
+  <rect x="0.0" y="390" width="376.992" height="4" fill="#38BDF8" opacity=".85"/><rect x="396.0" y="390" width="376.992" height="4" fill="#FBBF24" opacity=".85"/><rect x="792.0" y="390" width="376.992" height="4" fill="#34D399" opacity=".85"/><rect x="1188.0" y="390" width="376.992" height="4" fill="#FB7185" opacity=".85"/>
+</svg>

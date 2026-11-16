@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" >
+<rect width="200" height="48" rx="24" fill="#0B1D33"/><rect width="200" height="48" rx="24" fill="none" stroke="#38BDF8" stroke-width="2"/>
+  <circle cx="28" cy="24" r="6" fill="#38BDF8"/>
+  <text x="46" y="30" font-family="Inter" font-weight="800" font-size="17" letter-spacing="2" fill="#F7FAFF">BUILD</text>
+  <text x="120" y="30" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">构建系统</text>
+</svg>

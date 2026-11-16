@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 920" >
+<rect width="1680" height="920" fill="#07111F"/><text x="64" y="86" font-family="Inter" font-weight="900" font-size="34" letter-spacing="2" fill="#F7FAFF">ZHUBAO COLOR SYSTEM</text>
+  <text x="64" y="122" font-family="Noto Sans CJK SC" font-size="18" fill="#94A3B8">色彩体系 · Midnight Signal</text>
+  <rect x="64" y="146" width="56" height="5" fill="#2563EB"/><text x="64" y="230" font-family="Inter" font-weight="700" font-size="16" letter-spacing="3" fill="#94A3B8">PRIMARY · 主品牌色</text><text x="640" y="230" font-family="Inter" font-weight="700" font-size="16" letter-spacing="3" fill="#94A3B8">NEUTRAL · 辅助色</text><text x="1040" y="230" font-family="Inter" font-weight="700" font-size="16" letter-spacing="3" fill="#94A3B8">DIRECTION · 四方向识别色（节点）</text><g>
+    <rect x="64" y="270" width="88" height="88" rx="10" fill="#07111F" stroke="rgba(148,163,184,.35)" stroke-width="1"/>
+    <text x="64" y="384" font-family="Inter" font-weight="700" font-size="15" fill="#F7FAFF">Midnight</text>
+    <text x="64" y="406" font-family="Inter" font-size="14" fill="#94A3B8">#07111F</text>
+    <text x="64" y="428" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">深空蓝黑</text>
+  </g><g>
+    <rect x="194" y="270" width="88" height="88" rx="10" fill="#0B1D33" stroke="rgba(148,163,184,.35)" stroke-width="1"/>
+    <text x="194" y="384" font-family="Inter" font-weight="700" font-size="15" fill="#F7FAFF">Deep Navy</text>
+    <text x="194" y="406" font-family="Inter" font-size="14" fill="#94A3B8">#0B1D33</text>
+    <text x="194" y="428" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">深海军蓝</text>
+  </g><g>
+    <rect x="324" y="270" width="88" height="88" rx="10" fill="#2563EB" stroke="rgba(148,163,184,.35)" stroke-width="1"/>
+    <text x="324" y="384" font-family="Inter" font-weight="700" font-size="15" fill="#F7FAFF">Electric Blue</text>
+    <text x="324" y="406" font-family="Inter" font-size="14" fill="#94A3B8">#2563EB</text>
+    <text x="324" y="428" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">电光蓝</text>
+  </g><g>
+    <rect x="454" y="270" width="88" height="88" rx="10" fill="#38BDF8" stroke="rgba(148,163,184,.35)" stroke-width="1"/>
+    <text x="454" y="384" font-family="Inter" font-weight="700" font-size="15" fill="#F7FAFF">Signal Cyan</text>
+    <text x="454" y="406" font-family="Inter" font-size="14" fill="#94A3B8">#38BDF8</text>
+    <text x="454" y="428" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">信号青</text>
+  </g><rect x="64" y="430" width="500" height="1.5" fill="#94A3B8" opacity=".25"/><g>
+    <rect x="640" y="270" width="88" height="88" rx="10" fill="#F7FAFF" stroke="rgba(148,163,184,.35)" stroke-width="1"/>
+    <text x="640" y="384" font-family="Inter" font-weight="700" font-size="15" fill="#F7FAFF">Arctic White</text>
+    <text x="640" y="406" font-family="Inter" font-size="14" fill="#94A3B8">#F7FAFF</text>
+    <text x="640" y="428" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">极地冷白</text>
+  </g><g>
+    <rect x="770" y="270" width="88" height="88" rx="10" fill="#94A3B8" stroke="rgba(148,163,184,.35)" stroke-width="1"/>
+    <text x="770" y="384" font-family="Inter" font-weight="700" font-size="15" fill="#F7FAFF">Cool Gray</text>
+    <text x="770" y="406" font-family="Inter" font-size="14" fill="#94A3B8">#94A3B8</text>
+    <text x="770" y="428" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">冷灰</text>
+  </g><g>
+    <rect x="1040" y="270" width="88" height="88" rx="10" fill="#38BDF8" stroke="rgba(148,163,184,.35)" stroke-width="1"/>
+    <text x="1040" y="384" font-family="Inter" font-weight="700" font-size="15" fill="#F7FAFF">BUILD</text>
+    <text x="1040" y="406" font-family="Inter" font-size="14" fill="#94A3B8">#38BDF8</text>
+    <text x="1040" y="428" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">构建系统</text>
+  </g><g>
+    <rect x="1170" y="270" width="88" height="88" rx="10" fill="#FBBF24" stroke="rgba(148,163,184,.35)" stroke-width="1"/>
+    <text x="1170" y="384" font-family="Inter" font-weight="700" font-size="15" fill="#F7FAFF">THINK</text>
+    <text x="1170" y="406" font-family="Inter" font-size="14" fill="#94A3B8">#FBBF24</text>
+    <text x="1170" y="428" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">工程知识</text>
+  </g><g>
+    <rect x="1300" y="270" width="88" height="88" rx="10" fill="#34D399" stroke="rgba(148,163,184,.35)" stroke-width="1"/>
+    <text x="1300" y="384" font-family="Inter" font-weight="700" font-size="15" fill="#F7FAFF">MEASURE</text>
+    <text x="1300" y="406" font-family="Inter" font-size="14" fill="#94A3B8">#34D399</text>
+    <text x="1300" y="428" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">量化生活</text>
+  </g><g>
+    <rect x="1430" y="270" width="88" height="88" rx="10" fill="#FB7185" stroke="rgba(148,163,184,.35)" stroke-width="1"/>
+    <text x="1430" y="384" font-family="Inter" font-weight="700" font-size="15" fill="#F7FAFF">CREATE</text>
+    <text x="1430" y="406" font-family="Inter" font-size="14" fill="#94A3B8">#FB7185</text>
+    <text x="1430" y="428" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">创造作品</text>
+  </g><rect x="64" y="600" width="1552" height="1.5" fill="#94A3B8" opacity=".25"/>
+  <text x="64" y="660" font-family="Noto Sans CJK SC" font-weight="700" font-size="18" fill="#F7FAFF">配色纪律</text>
+  <text x="64" y="696" font-family="Noto Sans CJK SC" font-size="16" fill="#94A3B8">主品牌用深空蓝黑 · 阅读场景用极地冷白 · 技术强调用电光蓝与信号青 · 四方向各用专属识别色</text>
+  <text x="64" y="728" font-family="Noto Sans CJK SC" font-size="16" fill="#94A3B8">禁止：米白 / 奶油色 / 暖纸色 · 禁止四方向色平均铺满 · 禁止将渐变作为 Logo 必要组成</text>
+  <rect x="64" y="770" width="72" height="7" fill="#38BDF8"/><rect x="64" y="785" width="72" height="7" fill="#FBBF24"/><rect x="64" y="800" width="72" height="7" fill="#34D399"/><rect x="64" y="815" width="72" height="7" fill="#FB7185"/>
+  <text x="160" y="782" font-family="Noto Sans CJK SC" font-size="15" fill="#94A3B8">四方向识别色仅用于对应内容域，不做装饰性平铺</text>
+  <text x="160" y="812" font-family="Inter" font-size="14" fill="#94A3B8">Direction colors mark content domains, never decorative fills</text>
+</svg>

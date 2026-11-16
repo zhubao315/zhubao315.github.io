@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 1260">
+<rect width="1680" height="1260" fill="#F7FAFF"/><text x="64" y="84" font-family="Inter" font-weight="900" font-size="34" fill="#07111F">ZHUBAO LOGO USAGE</text>
+  <text x="64" y="118" font-family="Noto Sans CJK SC" font-size="17" fill="#475569">Logo 使用规范 · 安全距离 / 最小尺寸 / 背景 / 禁止用法 · 网格单位 u = 12（8×8 体系）</text>
+  <rect x="64" y="138" width="56" height="5" fill="#2563EB"/>
+  <text x="64" y="196" font-family="Noto Sans CJK SC" font-weight="700" font-size="18" fill="#07111F">安全距离 Clear Space — 四周 ≥ 1u（节点边长）</text>
+  <rect x="64" y="230" width="352" height="352" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="7 6"/>
+  <rect x="112" y="278" width="256" height="256" fill="#07111F" rx="8"/>
+  <rect x="112" y="278" width="256" height="256" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+  <g transform="translate(112,278) scale(2.6667)"><rect x="0" y="8" width="96" height="12" fill="#0B1D33"/><rect x="0" y="76" width="96" height="12" fill="#0B1D33"/>
+    <polygon points="70,19 96,19 40,77 14,77" fill="#0B1D33"/></g>
+  <text x="72" y="266" font-family="Inter" font-size="13" fill="#2563EB">≥1u</text>
+  <text x="64" y="640" font-family="Noto Sans CJK SC" font-weight="700" font-size="18" fill="#07111F">最小尺寸 Minimum Size</text>
+  <text x="64" y="670" font-family="Noto Sans CJK SC" font-size="15" fill="#475569">数字屏幕：图形 16px / 组合标 120px 宽 · 印刷：图形 6mm / 组合标 36mm 宽</text>
+  <g transform="translate(64,724) scale(0.1667)"><rect x="0" y="8" width="96" height="12" fill="#0B1D33"/><rect x="0" y="76" width="96" height="12" fill="#0B1D33"/>
+    <polygon points="70,19 96,19 40,77 14,77" fill="#0B1D33"/></g> <g transform="translate(100,708) scale(0.3333)"><rect x="0" y="8" width="96" height="12" fill="#0B1D33"/><rect x="0" y="76" width="96" height="12" fill="#0B1D33"/>
+    <polygon points="70,19 96,19 40,77 14,77" fill="#0B1D33"/></g> <g transform="translate(160,692) scale(0.5)"><rect x="0" y="8" width="96" height="12" fill="#0B1D33"/><rect x="0" y="76" width="96" height="12" fill="#0B1D33"/>
+    <polygon points="70,19 96,19 40,77 14,77" fill="#0B1D33"/></g> <g transform="translate(256,660) scale(0.8333)"><rect x="0" y="8" width="96" height="12" fill="#0B1D33"/><rect x="0" y="76" width="96" height="12" fill="#0B1D33"/>
+    <polygon points="70,19 96,19 40,77 14,77" fill="#0B1D33"/></g>
+  <text x="64" y="770" font-family="Inter" font-size="13" fill="#475569">16px</text><text x="104" y="770" font-family="Inter" font-size="13" fill="#475569">32px</text><text x="172" y="770" font-family="Inter" font-size="13" fill="#475569">48px</text><text x="272" y="770" font-family="Inter" font-size="13" fill="#475569">80px</text>
+  <rect x="500" y="180" width="1116" height="460" rx="16" fill="#07111F"/>
+  <text x="532" y="228" font-family="Noto Sans CJK SC" font-weight="700" font-size="18" fill="#F7FAFF">背景 Background</text>
+  <g transform="translate(532,260) scale(2.0)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/>
+    <rect x="12" y="8" width="72" height="12" fill="#2563EB"/><rect x="12" y="76" width="72" height="12" fill="#2563EB"/>
+    <rect x="0" y="8" width="12" height="12" fill="#38BDF8"/><rect x="84" y="8" width="12" height="12" fill="#FBBF24"/>
+    <rect x="0" y="76" width="12" height="12" fill="#34D399"/><rect x="84" y="76" width="12" height="12" fill="#FB7185"/></g>
+  <rect x="1010" y="260" width="280" height="192" rx="10" fill="#F7FAFF"/><g transform="translate(1092,292) scale(1.1667)"><rect x="0" y="8" width="96" height="12" fill="#0B1D33"/><rect x="0" y="76" width="96" height="12" fill="#0B1D33"/>
+    <polygon points="70,19 96,19 40,77 14,77" fill="#0B1D33"/></g>
+  <text x="1044" y="492" font-family="Inter" font-size="14" fill="#94A3B8" text-anchor="start" >浅色背景 → 单色版</text>
+  <rect x="1320" y="260" width="260" height="192" rx="10" fill="none" stroke="#94A3B8" stroke-dasharray="6 6"/>
+  <text x="1350" y="330" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">复杂背景 →</text><text x="1350" y="358" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">加暗色底板或</text><text x="1350" y="386" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">使用单色版</text>
+  <text x="532" y="620" font-family="Noto Sans CJK SC" font-size="14" fill="#94A3B8">优先：深空蓝黑 #07111F / 极地冷白上的单色版 · 次选：深海军蓝卡片 #0B1D33</text>
+  <text x="500" y="720" font-family="Inter" font-weight="900" font-size="26" fill="#07111F">禁止用法 MISUSE</text><rect x="500" y="760" width="340" height="230" rx="14" fill="#EDF3FB"/>
+  <g transform="translate(610,835) scale(2.25,1.125)"><g><rect x="0" y="8" width="96" height="12" fill="#0B1D33"/><rect x="0" y="76" width="96" height="12" fill="#0B1D33"/>
+    <polygon points="70,19 96,19 40,77 14,77" fill="#0B1D33"/></g></g>
+  <line x1="810" y1="784" x2="824" y2="798" stroke="#FB7185" stroke-width="4"/><line x1="824" y1="784" x2="810" y2="798" stroke="#FB7185" stroke-width="4"/>
+  <text x="524" y="966" font-family="Noto Sans CJK SC" font-weight="700" font-size="15" fill="#07111F">不得拉伸 / 压扁</text><rect x="888" y="760" width="340" height="230" rx="14" fill="#EDF3FB"/>
+  <g transform="translate(965,800) rotate(12) scale(1.6)"><g><rect x="0" y="8" width="96" height="12" fill="#0B1D33"/><rect x="0" y="76" width="96" height="12" fill="#0B1D33"/>
+    <polygon points="70,19 96,19 40,77 14,77" fill="#0B1D33"/></g></g>
+  <line x1="1198" y1="784" x2="1212" y2="798" stroke="#FB7185" stroke-width="4"/><line x1="1212" y1="784" x2="1198" y2="798" stroke="#FB7185" stroke-width="4"/>
+  <text x="912" y="966" font-family="Noto Sans CJK SC" font-weight="700" font-size="15" fill="#07111F">不得旋转倾斜</text><rect x="1276" y="760" width="340" height="230" rx="14" fill="#EDF3FB"/>
+  <g transform="translate(1369,798) scale(1.6)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/><rect x="12" y="8" width="72" height="12" fill="#64748B"/><rect x="12" y="76" width="72" height="12" fill="#64748B"/><rect x="0" y="8" width="12" height="12" fill="#64748B"/><rect x="84" y="8" width="12" height="12" fill="#64748B"/><rect x="0" y="76" width="12" height="12" fill="#64748B"/><rect x="84" y="76" width="12" height="12" fill="#64748B"/></g>
+  <line x1="1586" y1="784" x2="1600" y2="798" stroke="#FB7185" stroke-width="4"/><line x1="1600" y1="784" x2="1586" y2="798" stroke="#FB7185" stroke-width="4"/>
+  <text x="1300" y="966" font-family="Noto Sans CJK SC" font-weight="700" font-size="15" fill="#07111F">不得改变节点颜色</text><rect x="500" y="1020" width="340" height="230" rx="14" fill="#EDF3FB"/>
+  <g transform="translate(593,1058) scale(1.6)" filter="url(#sh)"><g><rect x="0" y="8" width="96" height="12" fill="#0B1D33"/><rect x="0" y="76" width="96" height="12" fill="#0B1D33"/>
+    <polygon points="70,19 96,19 40,77 14,77" fill="#0B1D33"/></g></g>
+  <line x1="810" y1="1044" x2="824" y2="1058" stroke="#FB7185" stroke-width="4"/><line x1="824" y1="1044" x2="810" y2="1058" stroke="#FB7185" stroke-width="4"/>
+  <text x="524" y="1226" font-family="Noto Sans CJK SC" font-weight="700" font-size="15" fill="#07111F">不得添加投影或发光</text><rect x="888" y="1020" width="340" height="230" rx="14" fill="#EDF3FB"/>
+  <g transform="translate(981,1058) scale(1.6)"><g><rect x="0" y="8" width="96" height="12" fill="#0B1D33" stroke="#07111F" stroke-width="3"/><rect x="0" y="76" width="96" height="12" fill="#0B1D33" stroke="#07111F" stroke-width="3"/>
+    <polygon points="70,19 96,19 40,77 14,77" fill="#0B1D33" stroke="#07111F" stroke-width="3"/></g></g>
+  <line x1="1198" y1="1044" x2="1212" y2="1058" stroke="#FB7185" stroke-width="4"/><line x1="1212" y1="1044" x2="1198" y2="1058" stroke="#FB7185" stroke-width="4"/>
+  <text x="912" y="1226" font-family="Noto Sans CJK SC" font-weight="700" font-size="15" fill="#07111F">不得添加描边轮廓</text><rect x="1276" y="1020" width="340" height="230" rx="14" fill="#EDF3FB"/>
+  <g transform="translate(1369,1058)"><g transform="scale(1.6)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/>
+    <rect x="12" y="8" width="72" height="12" fill="#2563EB"/><rect x="12" y="76" width="72" height="12" fill="#2563EB"/>
+    <rect x="0" y="8" width="12" height="12" fill="#38BDF8"/><rect x="84" y="8" width="12" height="12" fill="#FBBF24"/>
+    <rect x="0" y="76" width="12" height="12" fill="#34D399"/><rect x="84" y="76" width="12" height="12" fill="#FB7185"/></g></g><circle cx="1500" cy="1150" r="46" fill="#FBBF24" opacity=".85"/>
+  <line x1="1586" y1="1044" x2="1600" y2="1058" stroke="#FB7185" stroke-width="4"/><line x1="1600" y1="1044" x2="1586" y2="1058" stroke="#FB7185" stroke-width="4"/>
+  <text x="1300" y="1226" font-family="Noto Sans CJK SC" font-weight="700" font-size="15" fill="#07111F">不得遮挡或裁切主体</text><defs><filter id="sh" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="6" dy="10" stdDeviation="8" flood-color="#0B1D33" flood-opacity="0.6"/></filter></defs>
+</svg>
