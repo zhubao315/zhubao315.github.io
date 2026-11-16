@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+<rect width="1600" height="900" fill="#07111F"/><rect width="1600" height="10" fill="#2563EB"/><rect x="1544" y="0" width="10" height="10" fill="#38BDF8"/><rect x="1556" y="0" width="10" height="10" fill="#FBBF24"/><rect x="1568" y="0" width="10" height="10" fill="#34D399"/><rect x="1580" y="0" width="10" height="10" fill="#FB7185"/><text x="150" y="210" font-family="Inter" font-weight="900" font-size="120" fill="#2563EB">“</text>
+  <text x="150" y="330" font-family="Noto Sans CJK SC" font-weight="700" font-size="64" fill="#F7FAFF">{观点金句 · 第 1 行}</text>
+  <text x="150" y="420" font-family="Noto Sans CJK SC" font-weight="700" font-size="64" fill="#F7FAFF">{观点金句 · 第 2 行}</text>
+  <line x1="150" y1="700" x2="1450" y2="700" stroke="#94A3B8" stroke-width="1" opacity=".3"/>
+  <g transform="translate(150,760) scale(0.8333)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/>
+  <rect x="12" y="8" width="72" height="12" fill="#2563EB"/><rect x="12" y="76" width="72" height="12" fill="#2563EB"/>
+  <rect x="0" y="8" width="12" height="12" fill="#38BDF8"/><rect x="84" y="8" width="12" height="12" fill="#FBBF24"/>
+  <rect x="0" y="76" width="12" height="12" fill="#34D399"/><rect x="84" y="76" width="12" height="12" fill="#FB7185"/></g>
+  <text x="260" y="812" font-family="Inter" font-weight="800" font-size="26" letter-spacing="3" fill="#F7FAFF">ZHUBAO · 朱宝</text>
+  <text x="1450" y="812" text-anchor="end" font-family="Noto Sans Mono" font-size="20" fill="#94A3B8">@zhubao315</text>
+</svg>

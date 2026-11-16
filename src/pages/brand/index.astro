@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+
+const colors = [
+  { hex: '#07111F', name: 'Midnight', zh: '深空蓝黑', role: '主背景' },
+  { hex: '#0B1D33', name: 'Deep Navy', zh: '深海军蓝', role: '卡片/次级背景' },
+  { hex: '#2563EB', name: 'Electric Blue', zh: '电光蓝', role: '技术强调' },
+  { hex: '#38BDF8', name: 'Signal Cyan', zh: '信号青', role: '信息强调' },
+  { hex: '#F7FAFF', name: 'Arctic White', zh: '极地冷白', role: '阅读场景' },
+  { hex: '#94A3B8', name: 'Cool Gray', zh: '冷灰', role: '次要文本' },
+];
+const dirs = [
+  { hex: '#38BDF8', code: 'BUILD', zh: '构建系统', desc: '工程 · AI · Agent · Skills · 系统架构' },
+  { hex: '#FBBF24', code: 'THINK', zh: '工程知识', desc: '知识工程 · 投资研究 · 认知方法论' },
+  { hex: '#34D399', code: 'MEASURE', zh: '量化生活', desc: '健康 · 跑步 · 骑行 · 徒步 · 数据' },
+  { hex: '#FB7185', code: 'CREATE', zh: '创造作品', desc: '数字产品 · 人格探索 · 动画 · 视觉' },
+];
+const logos = [
+  { href: '/brand/zhubao-symbol.svg', name: '符号 Symbol', note: '深底彩色 · 母版 96×96' },
+  { href: '/brand/zhubao-horizontal.svg', name: '横向组合（反白）', note: '深色背景页眉/页脚' },
+  { href: '/brand/zhubao-stacked.svg', name: '纵向组合（反白）', note: '居中构图' },
+  { href: '/brand/zhubao-mono.svg', name: '单色 Navy', note: '浅色背景必用' },
+  { href: '/brand/zhubao-white.svg', name: '纯白符号', note: '单色反白' },
+  { href: '/brand/vector/zhubao-horizontal-inverse.svg', name: '横向（浅底版）', note: '矢量族完整族谱' },
+];
+const docs = [
+  { href: '/brand/AGENT-PROMPT.md', name: 'AGENT-PROMPT.md', zh: '智能体直接调用提示词（入口）' },
+  { href: '/brand/00-CI/brand-strategy.md', name: 'brand-strategy.md', zh: '品牌战略' },
+  { href: '/brand/00-CI/brand-story.md', name: 'brand-story.md', zh: '品牌故事' },
+  { href: '/brand/00-CI/brand-language.md', name: 'brand-language.md', zh: '品牌语言与文案库' },
+  { href: '/brand/00-CI/brand-positioning.md', name: 'brand-positioning.md', zh: '品牌定位' },
+  { href: '/brand/01-LOGO/logo-guidelines.md', name: 'logo-guidelines.md', zh: 'Logo 使用规范' },
+  { href: '/brand/02-VI/design-tokens/zhubao-tokens.css', name: 'zhubao-tokens.css', zh: '设计令牌' },
+  { href: '/brand/02-VI/icons/icon-map.md', name: 'icon-map.md', zh: '四方向图标映射' },
+  { href: '/brand/04-DOCUMENTS/powerpoint/ppt-spec.md', name: 'ppt-spec.md', zh: '16 页演示母版规范' },
+  { href: '/brand/08-MOTION/logo-animation-storyboard.md', name: 'logo-animation-storyboard.md', zh: 'Logo 动画分镜' },
+  { href: '/brand/10-DOCUMENTATION/usage-rules.md', name: 'usage-rules.md', zh: '使用总则' },
+  { href: '/brand/10-DOCUMENTATION/asset-inventory.md', name: 'asset-inventory.md', zh: '全量资产索引' },
+  { href: '/brand/brand-logo-guide.pdf', name: 'brand-logo-guide.pdf', zh: '品牌指南 PDF（色板/字体/规范板）' },
+];
+---
+
+<BaseLayout title="品牌系统 BRAND · ZHUBAO" description="ZHUBAO · Midnight Signal 品牌识别系统：CI / VI / SI 全量资产、设计令牌与智能体调用提示词。">
+  <section class="hero">
+    <div class="shell">
+      <p class="kicker">MIDNIGHT SIGNAL · BRAND SYSTEM v1.0</p>
+      <h1>One Identity.<br /><em>Multiple Expressions.</em></h1>
+      <p class="lede">ZHUBAO（朱宝）个人品牌识别系统：一套 CI / VI / SI 资产体系，覆盖官网、GitHub、出版物、数据报告、演示与周边。任何新项目按同一语法扩展，同时保留子品牌独立识别。</p>
+      <a class="prompt-cta" href="/brand/AGENT-PROMPT.md">
+        AGENT-PROMPT.md — 智能体直接调用入口 <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <div class="hero-mark" aria-hidden="true">
+      <svg viewBox="0 0 96 96" role="img" aria-label="Z-Grid">
+        <polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF" />
+        <rect x="12" y="8" width="72" height="12" fill="#2563EB" /><rect x="12" y="76" width="72" height="12" fill="#2563EB" />
+        <rect x="0" y="8" width="12" height="12" fill="#38BDF8" /><rect x="84" y="8" width="12" height="12" fill="#FBBF24" />
+        <rect x="0" y="76" width="12" height="12" fill="#34D399" /><rect x="84" y="76" width="12" height="12" fill="#FB7185" />
+      </svg>
+    </div>
+  </section>
+
+  <section class="shell block">
+    <h2>01 · CI 理念识别</h2>
+    <p class="block-lede">品牌定位、使命、价值观与语言体系。四方向闭环：判断（THINK）→ 构建（BUILD）→ 表达（CREATE）→ 校准（MEASURE）。</p>
+    <div class="dirs">
+      {dirs.map((d) => (
+        <a class="dir" href="/brand/00-CI/brand-strategy.md" style={`--dc:${d.hex}`}>
+          <b>{d.code}</b>
+          <span>{d.zh}</span>
+          <small>{d.desc}</small>
+        </a>
+      ))}
+    </div>
+    <p class="ci-links">
+      手册：<a href="/brand/00-CI/brand-strategy.md">战略</a> · <a href="/brand/00-CI/brand-story.md">故事</a> · <a href="/brand/00-CI/brand-language.md">语言库</a> · <a href="/brand/00-CI/brand-positioning.md">定位</a>
+    </p>
+  </section>
+
+  <section class="shell block">
+    <h2>02 · VI 视觉识别</h2>
+    <div class="swatches">
+      {colors.map((c) => (
+        <div class="sw" style={`--c:${c.hex}`}>
+          <i></i>
+          <b>{c.name}</b>
+          <code>{c.hex}</code>
+          <small>{c.zh} · {c.role}</small>
+        </div>
+      ))}
+    </div>
+    <div class="logos">
+      {logos.map((l) => (
+        <a class="logo" href={l.href}>
+          <img src={l.href} alt={l.name} loading="lazy" />
+          <b>{l.name}</b>
+          <small>{l.note}</small>
+        </a>
+      ))}
+    </div>
+    <p class="ci-links">
+      规范：<a href="/brand/01-LOGO/logo-guidelines.md">Logo 使用</a> · <a href="/brand/02-VI/design-tokens/zhubao-tokens.css">设计令牌 CSS</a> · <a href="/brand/02-VI/icons/icon-map.md">图标映射</a> · <a href="/brand/brand-logo-guide.pdf">品牌指南 PDF</a>
+    </p>
+  </section>
+
+  <section class="shell block agent" id="agent">
+    <h2>03 · 智能体调用入口</h2>
+    <p class="block-lede">
+      任何编码 / 设计智能体，把 <a href="/brand/AGENT-PROMPT.md"><code>AGENT-PROMPT.md</code></a> 全文作为前置提示词，再附一句本次任务即可产出合规资产。
+      该提示词内置：几何母版常量、颜色 Token、SVG 内联代码、占位符红线、Asset Map（本域可直接抓取的 URL）与自检清单。
+    </p>
+    <pre><code># 示例调用
+SYSTEM: &lt;粘贴 /brand/AGENT-PROMPT.md 中的 SYSTEM PROMPT 块&gt;
+USER:   按本规范生成 1200×630 文章 OG 图，标题占位。</code></pre>
+    <p class="ci-links">
+      <a class="cta" href="/brand/AGENT-PROMPT.md">获取 AGENT-PROMPT.md ↗</a>
+      · <a href="/brand/10-DOCUMENTATION/asset-inventory.md">资产索引（159+ 项）</a>
+      · <a href="/brand/10-DOCUMENTATION/usage-rules.md">使用总则</a>
+      · <a href="/brand/10-DOCUMENTATION/changelog.md">变更日志</a>
+      · 源码：<a href="https://github.com/zhubao315/zhubao315.github.io/tree/main/public/brand">public/brand</a>
+    </p>
+  </section>
+
+  <section class="shell block">
+    <h2>04 · SI 与扩展应用</h2>
+    <p class="block-lede">演示背景、视频会议背景、活动海报、名片与周边、Logo 动画、六份子项目 Banner（uSkill · 知识库工程学 · 投资的纪律 · 健康与运动 · MBTI64 · Perfect Me）、量化生活 Dashboard 与出版模板，全部位于 <code>/brand/</code> 对应编号目录。</p>
+    <p class="ci-links">动画（浏览器直接播放）：<a href="/brand/08-MOTION/logo-animation/zhubao-logo-animation-16x9.svg">16:9</a> · <a href="/brand/08-MOTION/logo-animation/zhubao-logo-animation-1x1.svg">1:1</a> · <a href="/brand/08-MOTION/logo-animation/zhubao-logo-animation-9x16.svg">9:16</a></p>
+  </section>
+
+<style>
+  .hero { position: relative; padding: 96px 0 64px; overflow: hidden; }
+  .hero h1 { font-size: clamp(40px, 6vw, 76px); margin: 18px 0; letter-spacing: -0.01em; }
+  .hero h1 em { color: var(--zb-cyan, #38bdf8); font-style: normal; }
+  .lede { max-width: 640px; color: var(--zb-gray, #94a3b8); font-size: 18px; line-height: 1.7; }
+  .prompt-cta { display: inline-block; margin-top: 28px; padding: 14px 22px; border: 1.5px solid #2563eb; border-radius: 10px; color: #f7faff; font-weight: 700; text-decoration: none; }
+  .prompt-cta:hover { background: #2563eb; }
+  .hero-mark { position: absolute; right: 4%; top: 60px; width: min(30vw, 340px); opacity: 0.9; }
+  .block { padding: 72px 0 8px; }
+  .block h2 { font-size: 26px; letter-spacing: 0.04em; margin-bottom: 20px; }
+  .block-lede { color: var(--zb-gray, #94a3b8); max-width: 860px; line-height: 1.75; margin-bottom: 28px; }
+  .dirs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .dir { display: block; padding: 18px; border: 1px solid color-mix(in srgb, var(--dc) 55%, transparent); border-radius: 12px; text-decoration: none; color: #f7faff; }
+  .dir b { color: var(--dc); letter-spacing: 0.12em; }
+  .dir span { display: block; margin: 6px 0 4px; font-weight: 700; }
+  .dir small { color: var(--zb-gray, #94a3b8); }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .sw i { display: block; height: 64px; border-radius: 10px; background: var(--c); border: 1px solid rgba(148, 163, 184, 0.3); margin-bottom: 8px; }
+  .sw b { font-size: 15px; } .sw code { display: block; color: var(--zb-gray, #94a3b8); font-size: 13px; }
+  .sw small { color: var(--zb-gray, #94a3b8); font-size: 12px; }
+  .logos { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin-bottom: 28px; }
+  .logo { display: block; padding: 18px; background: #0b1d33; border-radius: 12px; text-decoration: none; color: #f7faff; }
+  .logo img { height: 56px; max-width: 100%; object-fit: contain; margin-bottom: 12px; }
+  .logo small { display: block; color: var(--zb-gray, #94a3b8); margin-top: 4px; }
+  .ci-links { color: var(--zb-gray, #94a3b8); margin: 18px 0 0; }
+  .ci-links a { color: #38bdf8; text-decoration: none; } .ci-links a:hover { text-decoration: underline; }
+  .agent pre { background: #0b1d33; border-radius: 12px; padding: 22px; overflow-x: auto; font-size: 14px; line-height: 1.7; }
+  .agent code { color: #cbd6e6; }
+  .cta { color: #38bdf8; font-weight: 700; text-decoration: none; }
+</style>
+</BaseLayout>
