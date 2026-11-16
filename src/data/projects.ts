@@ -69,6 +69,8 @@ export interface Project {
   demoUrl?: string;
   demoLabel?: string;
   extraLinks?: { label: string; href: string }[];
+  reportUrl?: string;
+  reportLabel?: string;
   cover?: ImageMetadata;
   coverAlt?: string;
   metrics?: ProjectMetric[];
@@ -152,6 +154,8 @@ export const projects: Project[] = [
       '面向 Agent 的技能基础设施：把零散 SOP 转换为结构化 Skills，提供 Schema、CLI、Python 接口、原生执行器与版本化治理。',
     tech: ['Python 3.10+', 'YAML / JSON Schema', 'CLI', 'OpenAI-compatible APIs'],
     githubUrl: 'https://github.com/zhubao315/uSkill',
+    reportUrl: '/think/uskill-2-audit/',
+    reportLabel: 'uSkill 2.0 审计：方向正确，但还不是平台',
     metrics: [
       { value: '4', label: '项能力属性', note: '可驾驭 / 复用 / 调用 / 迭代' },
       { value: 'v1.1', label: '当前版本', note: 'AI 转换与原生执行器' },
@@ -186,6 +190,7 @@ export const projects: Project[] = [
       boundaries: [
         '当前公开文档站点未上线，使用说明以 GitHub 仓库 README 为准。',
         'V1.1 的 AI 转换与执行器仍标记为 Beta，适用边界以仓库说明为准。',
+        '2026-11-12 的公开仓库审计给出 58/100：执行器尚未兑现 timeout / retry / interrupt、工具权限与组合技能调度。',
       ],
     },
     lastVerified: '2026-11-11',

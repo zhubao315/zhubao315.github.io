@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectMedia from '../../components/ProjectMedia.astro';
 import { ArrowUpRight, ArrowLeft, ArrowRight } from '@lucide/astro';
+import '../../styles/report.css';
 import {
   projects,
   featuredProjects,
@@ -202,6 +203,20 @@ const projectSchema = {
                 <span>SOURCE NOTE</span>
                 <p>{project.sourceNote}</p>
               </aside>
+            )}
+
+            {project.reportUrl && (
+              <a class="project-report" href={project.reportUrl} aria-label={project.reportLabel}>
+                <span class="project-report-score" aria-hidden="true">
+                  <strong>58</strong><span>/100</span>
+                </span>
+                <span class="project-report-copy">
+                  <span>Field report / 2026-11-12</span>
+                  <strong>{project.reportLabel}</strong>
+                  <small>四个 P0、五个隐蔽问题，以及从 SOP 工具到技能工程平台的升级路线。</small>
+                </span>
+                <ArrowUpRight size={18} stroke-width={1.4} aria-hidden="true" />
+              </a>
             )}
 
             {

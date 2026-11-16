@@ -227,6 +227,7 @@ Not yet covered: a full automated axe/WCAG audit, screen-reader testing on physi
 | `src/styles/global.css` | Tokens, resets, shared layout, header/footer, homepage, featured work |
 | `src/styles/work.css` | Work index, filters, project cards, case-study template |
 | `src/styles/editorial.css` | Think and Explore editorial layouts |
+| `src/styles/report.css` | Long-form field report: audit page, Think teaser, project report callout |
 | `src/styles/about.css` | About profile, record, timeline, capabilities, boundaries |
 | `src/styles/responsive.css` | Breakpoint and reduced-motion overrides |
 | `src/layouts/BaseLayout.astro` | Metadata, fonts, global scripts, skip link, JSON-LD |

@@ -24,7 +24,7 @@ No employer, client, revenue, user count, investment return, or production SLA i
 | # | Project | Type | Status | Public evidence | Boundary |
 |---|---|---|---|---|---|
 | 01 | MBTI64 | Original product | Active | 120 questions; 64 types; 254 repository tests; 7 rarity tiers | Entertainment/self-exploration, not diagnosis |
-| 02 | uSkill | Original infrastructure | Active | v1.1; Schema, CLI, Python API, native executor | AI conversion/executor marked Beta |
+| 02 | uSkill | Original infrastructure | Active | v1.1; Schema, CLI, Python API, native executor | AI conversion/executor marked Beta; 2026-11-12 repository audit scored 58/100 |
 | 03 | Knowledge Base Engineering | Original knowledge system | Active | v1.2.0; 8 governance modules; 25 fixture tests | Tests are fixtures, not a 10k-document production benchmark |
 | 04 | Investment Discipline | Original research system | Active | 8 task modes; 45 structural checks; 63 unit tests; 3 smoke flows | No stock picking, prediction, or return promise |
 | 05 | Quantified Life | Original data practice | Active | 1,039 health days; 2,037 runs / 24,548 km; 5,776 rides / 45,291 km; 344 hikes / 2,694 km | Snapshots change; live sites are the source of truth |
@@ -124,3 +124,4 @@ The portrait is explicitly labeled “PUBLIC AVATAR” on the About page; it is 
 - No claim that a Fork is original work.
 - No claim that a fixture test proves production scale.
 - No claim that inaccessible legacy writing was recovered.
+- No claim that the uSkill audit score is an automated benchmark. The 58/100 figure published at `/think/uskill-2-audit/` is a subjective engineering judgment dated 2026-11-12, which is later than the 2026-11-11 project snapshot above.

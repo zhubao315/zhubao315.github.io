@@ -18,6 +18,7 @@ const requiredRoutes = [
   '2022/07/05/zhubao315/index.html',
   'work/index.html',
   'think/index.html',
+  'think/uskill-2-audit/index.html',
   'explore/index.html',
   '404.html',
 ];

@@ -4,6 +4,7 @@ const primaryRoutes = [
   '/',
   '/work/',
   '/think/',
+  '/think/uskill-2-audit/',
   '/explore/',
   '/about/',
   '/work/mbti64/',
@@ -144,6 +145,26 @@ test.describe('work index', () => {
     await page.goto('/work/?filter=agent', { waitUntil: 'networkidle' });
     await expect(page.locator('[data-filter-category="agent"]')).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('[data-project-card]:visible')).toHaveCount(2);
+  });
+});
+
+test.describe('uSkill audit report', () => {
+  test('renders the scorecard, blockers, and report links', async ({ page }) => {
+    await page.goto('/think/uskill-2-audit/', { waitUntil: 'networkidle' });
+
+    await expect(page.locator('h1')).toContainText('方向正确');
+    await expect(page.locator('nav[aria-label="报告目录"] a')).toHaveCount(8);
+    await expect(page.locator('.score-row')).toHaveCount(8);
+    await expect(page.locator('.blocker-card')).toHaveCount(4);
+    await expect(page.locator('.minor-row')).toHaveCount(5);
+    await expect(page.locator('.audit-hero')).toContainText('58');
+
+    await page.goto('/work/uskill/', { waitUntil: 'networkidle' });
+    await expect(page.locator('.project-report')).toHaveAttribute('href', '/think/uskill-2-audit/');
+
+    await page.goto('/think/', { waitUntil: 'networkidle' });
+    await expect(page.locator('.audit-teaser')).toContainText('uSkill 2.0');
+    await expect(page.locator('.audit-teaser-link')).toHaveAttribute('href', '/think/uskill-2-audit/');
   });
 });
 

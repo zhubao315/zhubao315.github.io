@@ -1,0 +1,630 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ArrowUpRight, ArrowRight, ArrowDown } from '@lucide/astro';
+import '../../styles/report.css';
+import {
+  auditMeta,
+  scores,
+  verdicts,
+  modules,
+  blockers,
+  overviewIssues,
+  trends,
+  layers,
+  phases,
+  qualityMetrics,
+  releaseGates,
+} from '../../data/audit';
+
+const toc = [
+  { id: 'scorecard', label: '评分与判断' },
+  { id: 'inventory', label: '现状盘点' },
+  { id: 'blockers', label: '四个 P0' },
+  { id: 'overlooked', label: '隐蔽问题' },
+  { id: 'context', label: '2026 年的边界' },
+  { id: 'architecture', label: '2.0 架构' },
+  { id: 'roadmap', label: '迭代路线' },
+  { id: 'quality', label: '评测与验收' },
+];
+
+const experiments = [
+  {
+    code: 'A',
+    title: 'No-Skill Baseline',
+    zh: '无技能基线',
+    body: '不提供技能时，Agent 在真实任务上的完成情况。没有这个基线，所谓提升无法成立。',
+  },
+  {
+    code: 'B',
+    title: 'Skill-assisted',
+    zh: '技能辅助',
+    body: '加载候选技能后，在相同模型、工具与参数下执行同一批任务。',
+  },
+  {
+    code: 'C',
+    title: 'Skill-selection',
+    zh: '技能选择',
+    body: '检查 Agent 是否在正确场景选中技能，以及是否发生误触发或错误组合。',
+  },
+];
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'uSkill 2.0 审计：方向正确，但还不是平台',
+  description:
+    '基于 2026-11-12 公开主分支的 uSkill 工程审计：58/100，四个 P0 问题，以及从 SOP 工具升级为 Agent Skill Engineering Platform 的架构与路线。',
+  datePublished: '2026-11-12',
+  dateModified: '2026-11-12',
+  inLanguage: 'zh-CN',
+  articleSection: 'AI & Agent Research',
+  author: { '@type': 'Person', name: '朱宝', url: 'https://zhubao315.github.io' },
+  about: {
+    '@type': 'SoftwareSourceCode',
+    name: 'uSkill',
+    codeRepository: auditMeta.repoUrl,
+    programmingLanguage: 'Python',
+  },
+  mainEntityOfPage: 'https://zhubao315.github.io/think/uskill-2-audit/',
+};
+---
+
+<BaseLayout
+  title="uSkill 2.0 审计：方向正确，但还不是平台 | 朱宝 ZHUBAO"
+  description="基于公开主分支的 uSkill 工程审计：58/100，四个 P0 问题，以及从 SOP 工具升级为 Agent Skill Engineering Platform 的架构与路线。"
+  type="article"
+  image="/og-uskill-audit.jpg"
+>
+  <article class="audit-page">
+    <header class="audit-hero">
+      <div class="shell">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="/">首页</a><span class="sep">/</span>
+          <a href="/think/">思考</a><span class="sep">/</span>
+          <span>uSkill 2.0 审计</span>
+        </nav>
+
+        <div class="audit-hero-grid">
+          <div class="audit-hero-copy" data-reveal>
+            <p class="eyebrow">Field Report 01 / Agent Skill Engineering</p>
+            <h1>方向正确，<br />但还不是<br /><em>平台。</em></h1>
+            <p class="audit-hero-intro">
+              uSkill 已经有 Schema、SOP 转换、执行器和索引，但它距离自己声称的“全生命周期驾驭”仍有结构性差距。
+              我的判断不是推倒重来，而是把它从 SOP 工具升级为 <strong>Agent Skill Engineering Platform</strong>。
+            </p>
+            <div class="audit-hero-actions">
+              <a class="button button--light" href="#scorecard">
+                阅读审计 <ArrowDown size={16} stroke-width={1.5} aria-hidden="true" />
+              </a>
+              <a
+                class="text-link"
+                href={auditMeta.repoUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                zhubao315/uSkill <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+
+          <aside class="audit-score-card" aria-label="总体工程评分">
+            <div class="audit-score-ring" style={`--score:${auditMeta.overall}`}>
+              <div class="audit-score-inner">
+                <strong>{auditMeta.overall}</strong>
+                <span>/ 100</span>
+              </div>
+            </div>
+            <p class="audit-score-caption">Engineering score</p>
+            <p class="audit-score-note">主观工程评分，不是自动化基准测试</p>
+            <div class="audit-score-foot">
+              <span><i aria-hidden="true"></i> PUBLIC MAIN</span>
+              <span>{auditMeta.date}</span>
+            </div>
+          </aside>
+        </div>
+
+        <dl class="audit-meta">
+          <div><dt>对象</dt><dd>{auditMeta.repo}</dd></div>
+          <div><dt>范围</dt><dd>{auditMeta.scope}</dd></div>
+          <div><dt>基准</dt><dd>{auditMeta.date}</dd></div>
+          <div><dt>性质</dt><dd>{auditMeta.nature}</dd></div>
+        </dl>
+
+        <div class="audit-hero-foot" aria-label="审计关键词">
+          <span>KEEP / 驾驭工程</span>
+          <span>KEEP / SOP 溯源</span>
+          <span>FIX / 开放标准</span>
+          <span>FIX / 真实执行</span>
+          <span>FIX / 独立评测</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="audit-verdict" aria-labelledby="verdict-title">
+      <div class="shell">
+        <div class="audit-verdict-lead" data-reveal>
+          <p class="eyebrow">Verdict / 先给结论</p>
+          <h2 id="verdict-title">
+            方向是对的。<br />
+            但实现能力与<span class="audit-nowrap">项目定位</span>之间，<br />
+            <em>还有明显差距。</em>
+          </h2>
+          <p>
+            uSkill 不应该继续做一个“把 SOP 转成 YAML”的工具。它真正值得发展的是技能资产的工程化：
+            可定义、可发现、可调用、可执行、可验证、可追溯、可治理、可持续进化。
+          </p>
+        </div>
+
+        <div class="verdict-grid">
+          {
+            verdicts.map((group) => (
+              <div class:list={['verdict-card', `verdict-card--${group.label.toLowerCase()}`]} data-reveal>
+                <div class="verdict-head">
+                  <span>{group.label}</span>
+                  <strong>{group.title}</strong>
+                </div>
+                <ul>
+                  {group.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+
+        <p class="audit-note">
+          最值得保留的不是某个文件，而是 <strong>control</strong> 和 <strong>source</strong> 这两个设计：
+          技能不仅描述“做什么”，还试图记录执行边界和来源。把它们发展成真正的治理层，比再定义一套格式更有价值。
+        </p>
+      </div>
+    </section>
+
+    <div class="audit-main">
+      <div class="shell audit-layout">
+        <aside class="audit-rail">
+          <div class="audit-rail-sticky">
+            <p class="audit-rail-label">CONTENTS</p>
+            <nav aria-label="报告目录">
+              {
+                toc.map((item, index) => (
+                  <a href={`#${item.id}`}>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    {item.label}
+                  </a>
+                ))
+              }
+            </nav>
+            <div class="audit-rail-meta">
+              <span>{auditMeta.overall} / 100</span>
+              <span>PUBLIC MAIN</span>
+              <span>{auditMeta.date}</span>
+            </div>
+            <a class="text-link text-link--small" href={auditMeta.repoUrl} target="_blank" rel="noreferrer">
+              Repository <ArrowUpRight size={14} stroke-width={1.4} aria-hidden="true" />
+            </a>
+          </div>
+        </aside>
+
+        <div class="audit-body">
+          <section class="audit-section" id="scorecard" aria-labelledby="scorecard-title">
+            <header class="audit-section-head" data-reveal>
+              <p class="eyebrow"><span>01</span> / Scorecard</p>
+              <h2 id="scorecard-title">58 分不是失败，<br /><em>是定位图。</em></h2>
+              <p>
+                评分用来定位问题，不用来排名。总分按项目定位、代码结构、标准与执行的权重综合，不是八项算术平均。
+                总分落后于项目定位，主要不是因为代码写得少，而是因为标准、运行时与评测这三块还没有形成可验证的闭环。
+              </p>
+            </header>
+
+            <div class="score-list">
+              {
+                scores.map((item) => (
+                  <div class="score-row" data-reveal>
+                    <span class="score-index">{item.index}</span>
+                    <div class="score-copy">
+                      <div class="score-name">
+                        <strong>{item.label}</strong>
+                        <span>{item.en}</span>
+                      </div>
+                      <p>{item.note}</p>
+                    </div>
+                    <div class="score-bar" aria-hidden="true">
+                      <span style={`width:${item.score}%`}></span>
+                    </div>
+                    <strong class="score-value">{item.score}</strong>
+                  </div>
+                ))
+              }
+            </div>
+
+            <div class="audit-callout">
+              <span class="audit-callout-label">READING THE SCORE</span>
+              <p>
+                定位 82、执行 32、评测 28——这三个数字之间的落差，就是升级的重点。
+                继续补文档不会把 32 分变成 60 分；只有真实执行与独立评测才会。
+              </p>
+            </div>
+          </section>
+
+          <section class="audit-section" id="inventory" aria-labelledby="inventory-title">
+            <header class="audit-section-head" data-reveal>
+              <p class="eyebrow"><span>02</span> / Inventory</p>
+              <h2 id="inventory-title">先承认它<br /><em>已经有什么。</em></h2>
+              <p>
+                仓库不是空壳。它已经有一套 Python 核心、YAML 资产、转换器、索引器、CLI 与 CI。
+                问题不是“什么都没有”，而是能力之间没有接成一条可执行、可验证的链路。
+              </p>
+            </header>
+
+            <div class="module-list">
+              <div class="module-head" aria-hidden="true">
+                <span>NO.</span><span>MODULE</span><span>EXISTING</span><span>ASSESSMENT</span>
+              </div>
+              {
+                modules.map((module) => (
+                  <div class="module-row" data-reveal>
+                    <span class="module-code">{module.code}</span>
+                    <strong class="module-name">
+                      {module.name}
+                      <i class:list={['module-dot', `module-dot--${module.tone}`]} aria-hidden="true"></i>
+                    </strong>
+                    <span class="module-present">{module.present}</span>
+                    <span class="module-assessment">{module.assessment}</span>
+                  </div>
+                ))
+              }
+            </div>
+
+            <div class="keep-note">
+              <div>
+                <p class="eyebrow">Keep / 不要丢掉</p>
+                <h3>技能不只是 Prompt，<br />它还有边界与来源。</h3>
+              </div>
+              <p>
+                <strong>control</strong> 记录执行约束，<strong>source</strong> 记录能力来源。
+                这两个字段现在还不够强，但方向比大多数“技能市场”更接近工程治理。
+                升级时保留它们，并把它们从声明变成运行时行为。
+              </p>
+            </div>
+          </section>
+
+          <section class="audit-section" id="blockers" aria-labelledby="blockers-title">
+            <header class="audit-section-head" data-reveal>
+              <p class="eyebrow"><span>03</span> / Blockers</p>
+              <h2 id="blockers-title">四个必须<br /><em>先修的结构性问题。</em></h2>
+              <p>
+                这些问题跨过了“功能缺失”的边界：它们让项目声明与真实行为不一致。
+                在补新功能之前，先把这些基础修复，否则后续能力只会放大不可信。
+              </p>
+            </header>
+
+            <div class="blocker-list">
+              {
+                blockers.map((blocker) => (
+                  <article class="blocker-card" data-reveal>
+                    <div class="blocker-number">
+                      <span>{blocker.index}</span>
+                      <small>{blocker.severity}</small>
+                    </div>
+                    <div class="blocker-content">
+                      <h3>{blocker.title}</h3>
+                      <p class="blocker-summary">{blocker.summary}</p>
+                      {blocker.snippet && (
+                        <pre tabindex="0" aria-label={`${blocker.title} 的代码或结构示意`}><code>{blocker.snippet}</code></pre>
+                      )}
+                      <ul class="blocker-evidence">
+                        {blocker.evidence.map((item) => <li>{item}</li>)}
+                      </ul>
+                      <div class="blocker-fix">
+                        <span>FIX</span>
+                        <p>{blocker.action}</p>
+                      </div>
+                    </div>
+                  </article>
+                ))
+              }
+            </div>
+          </section>
+
+          <section class="audit-section" id="overlooked" aria-labelledby="overlooked-title">
+            <header class="audit-section-head" data-reveal>
+              <p class="eyebrow"><span>04</span> / Overlooked</p>
+              <h2 id="overlooked-title">还有五个<br /><em>不会被 demo 暴露的问题。</em></h2>
+              <p>
+                它们不影响一次演示，却会在规模化导入、跨平台使用和长期维护时集中出现。
+                这些问题也不适合靠“再加一个 Agent”解决。
+              </p>
+            </header>
+
+            <ol class="minor-list">
+              {
+                overviewIssues.map((issue) => (
+                  <li class="minor-row" data-reveal>
+                    <div class="minor-index">
+                      <span>{issue.index}</span>
+                      <small>{issue.label}</small>
+                    </div>
+                    <div class="minor-content">
+                      <h3>{issue.title}</h3>
+                      <p>{issue.body}</p>
+                      <div class="minor-action">
+                        <span>ACTION</span>
+                        <p>{issue.action}</p>
+                      </div>
+                    </div>
+                  </li>
+                ))
+              }
+            </ol>
+
+            <div class="audit-callout audit-callout--warning">
+              <span class="audit-callout-label">DO NOT</span>
+              <p>
+                不要因为一份 SOP 里有十个编号段落，就生成十个技能。原子操作、约束、条件、决策和完整工作流应该被区分建模；
+                技能数量不是质量指标。
+              </p>
+            </div>
+          </section>
+
+          <section class="audit-section" id="context" aria-labelledby="context-title">
+            <header class="audit-section-head" data-reveal>
+              <p class="eyebrow"><span>05</span> / Context</p>
+              <h2 id="context-title">2026 年的五个变化，<br /><em>决定升级的边界。</em></h2>
+              <p>
+                趋势不是让你把架构做得更大，而是让你更清楚地决定：哪些交给开放标准，哪些由 uSkill 自己负责。
+              </p>
+            </header>
+
+            <div class="trend-grid">
+              {
+                trends.map((trend) => (
+                  <article class="trend-card" data-reveal>
+                    <div class="trend-top">
+                      <span>{trend.index}</span>
+                      <span>{trend.en}</span>
+                    </div>
+                    <h3>{trend.title}</h3>
+                    <p>{trend.body}</p>
+                    {trend.link && (
+                      <a href={trend.link} target="_blank" rel="noreferrer">
+                        {trend.linkLabel} <ArrowUpRight size={14} stroke-width={1.4} aria-hidden="true" />
+                      </a>
+                    )}
+                  </article>
+                ))
+              }
+            </div>
+
+            <blockquote class="audit-pullquote">
+              <p>“一个 Skill 是否有用，不能由生成它的模型自证。”</p>
+              <cite>— 评测原则 / 不是营销口号</cite>
+            </blockquote>
+          </section>
+
+          <section class="audit-section" id="architecture" aria-labelledby="architecture-title">
+            <header class="audit-section-head" data-reveal>
+              <p class="eyebrow"><span>06</span> / Target architecture</p>
+              <h2 id="architecture-title">不是重做 Agent 框架，<br /><em>而是补齐技能工程。</em></h2>
+              <p>
+                保留 Python 核心与历史 YAML，把标准、执行、治理与评测拆成清晰的层。
+                所有入口共用同一个运行时，避免每个 Adapter 重新实现一套执行逻辑。
+              </p>
+            </header>
+
+            <div class="architecture-panel" data-reveal>
+              <div class="architecture-head">
+                <p class="eyebrow">uSkill 2.0 / Positioning</p>
+                <h3>Agent Skill<br /><em>Engineering Platform</em></h3>
+                <p>Open Standards · Governed Runtime · Evidence-based Evolution</p>
+              </div>
+
+              <div class="layer-grid">
+                {
+                  layers.map((layer) => (
+                    <div class="layer-card">
+                      <span>{layer.index}</span>
+                      <div>
+                        <h4>{layer.title}</h4>
+                        <small>{layer.zh}</small>
+                      </div>
+                      <p>{layer.body}</p>
+                    </div>
+                  ))
+                }
+              </div>
+
+              <div class="architecture-bottom">
+                <div class="standard-note">
+                  <p class="eyebrow">Two-layer standard</p>
+                  <h4>开放标准负责可移植，<br />Manifest 负责可治理。</h4>
+                  <p>
+                    不把自定义字段塞进官方 Frontmatter。SKILL.md 保持标准兼容，uSkill 的增强契约放在独立的
+                    <code>uskill.yaml</code>。
+                  </p>
+                </div>
+                <pre tabindex="0" aria-label="推荐的技能目录结构"><code>skills/code-review/
+├── SKILL.md          # portable
+├── uskill.yaml       # manifest
+├── references/
+│   └── review-policy.md
+├── scripts/
+│   └── static_check.py
+└── evals/
+    └── cases.yaml</code></pre>
+              </div>
+            </div>
+
+            <div class="decision-grid">
+              <div class="decision-card" data-reveal>
+                <span>01</span>
+                <h3>一个运行时</h3>
+                <p>OpenAI、OpenAI-compatible、MCP、LangChain、CLI 与 SDK 都是入口。执行、权限、状态与追踪只在核心运行时实现一次。</p>
+              </div>
+              <div class="decision-card" data-reveal>
+                <span>02</span>
+                <h3>工具不属于技能</h3>
+                <p>技能声明依赖哪些工具以及允许的边界；运行时通过 Tool Registry 管理权限、超时、审批与审计。不要把 allowed-tools 当作唯一安全边界。</p>
+              </div>
+              <div class="decision-card" data-reveal>
+                <span>03</span>
+                <h3>生成不等于发布</h3>
+                <p>AI Creator 只产生候选。候选必须经过静态校验、触发评测、任务评测与人工审核，才能进入 Published 状态。</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="audit-section" id="roadmap" aria-labelledby="roadmap-title">
+            <header class="audit-section-head" data-reveal>
+              <p class="eyebrow"><span>07</span> / Roadmap</p>
+              <h2 id="roadmap-title">五个阶段，<br /><em>不要同时开工。</em></h2>
+              <p>
+                先修工程基础，再接开放标准，然后补运行时与评测。技能市场、复杂编辑器与语义搜索都应该排在这条链路之后。
+              </p>
+            </header>
+
+            <ol class="phase-list">
+              {
+                phases.map((phase) => (
+                  <li class="phase-row" data-reveal>
+                    <div class:list={['phase-marker', `phase-marker--${phase.priority.toLowerCase()}`]}>
+                      <span>{phase.index}</span>
+                      <small>{phase.priority}</small>
+                    </div>
+                    <div class="phase-content">
+                      <div class="phase-head">
+                        <h3>{phase.title}</h3>
+                        <span>{phase.en}</span>
+                      </div>
+                      <p>{phase.focus}</p>
+                      <div class="phase-acceptance">
+                        <span>ACCEPTANCE</span>
+                        <p>{phase.acceptance}</p>
+                      </div>
+                    </div>
+                  </li>
+                ))
+              }
+            </ol>
+
+            <div class="sequence-note">
+              <span>SEQUENCE</span>
+              <p>0 → 1 → 2 → 3 → 4</p>
+              <small>不要把这五阶段同时交给多个 Agent 并发修改同一套文件。</small>
+            </div>
+          </section>
+
+          <section class="audit-section" id="quality" aria-labelledby="quality-title">
+            <header class="audit-section-head" data-reveal>
+              <p class="eyebrow"><span>08</span> / Evidence</p>
+              <h2 id="quality-title">发布之前，<br /><em>先证明它真的有用。</em></h2>
+              <p>
+                uSkill 应该回答的核心问题不是“能不能生成 YAML”，而是“加载这个技能后，Agent 的任务完成率是否提高”。
+                没有对照实验，就没有发布依据。
+              </p>
+            </header>
+
+            <div class="experiment-grid">
+              {
+                experiments.map((experiment) => (
+                  <div class="experiment-card" data-reveal>
+                    <span>{experiment.code}</span>
+                    <h3>{experiment.title}</h3>
+                    <small>{experiment.zh}</small>
+                    <p>{experiment.body}</p>
+                  </div>
+                ))
+              }
+            </div>
+
+            <div class="metric-table" role="table" aria-label="技能评测指标">
+              <div class="metric-head" role="row">
+                <span role="columnheader">METRIC</span>
+                <span role="columnheader">指标</span>
+                <span role="columnheader">含义</span>
+              </div>
+              {
+                qualityMetrics.map((item) => (
+                  <div class="metric-row" role="row">
+                    <strong role="cell">{item.metric}</strong>
+                    <span role="cell">{item.zh}</span>
+                    <span role="cell">{item.meaning}</span>
+                  </div>
+                ))
+              }
+            </div>
+
+            <div class="gate-panel">
+              <div>
+                <p class="eyebrow">Initial release gate / 建议</p>
+                <h3>初始门槛应该是<br />可配置策略，不是行业标准。</h3>
+              </div>
+              <ul>
+                {releaseGates.map((gate) => <li>{gate}</li>)}
+              </ul>
+            </div>
+
+            <div class="audit-callout">
+              <span class="audit-callout-label">EVIDENCE RULE</span>
+              <p>
+                SkillsBench 显示整理过的 Skills 平均带来 16.2 个百分点的提升，但领域差异明显，部分任务甚至出现负向影响；
+                模型自行生成的 Skills 平均没有收益。所以，uSkill 的每个正式技能都需要自己的测试样本、独立验证器与版本记录。
+              </p>
+            </div>
+          </section>
+
+          <section class="audit-section audit-boundary" aria-labelledby="boundary-title">
+            <header class="audit-section-head" data-reveal>
+              <p class="eyebrow">Method / 审计边界</p>
+              <h2 id="boundary-title">这是一张快照，<br /><em>不是终审判决。</em></h2>
+            </header>
+            <div class="boundary-grid">
+              <div>
+                <h3>依据</h3>
+                <p>
+                  基于 {auditMeta.date} 的公开主分支、README、Schema、核心代码、技能样本、测试与 CI 配置。
+                  外部生态信息来自 Agent Skills 规范、AAIF 公告与 SkillsBench 论文。
+                </p>
+              </div>
+              <div>
+                <h3>限制</h3>
+                <p>
+                  评分是主观工程判断，不是自动化基准；没有运行完整生产负载，也没有验证所有外部链接与平台安装路径。
+                  具体问题以修复时的源码与实际行为为准。
+                </p>
+              </div>
+              <div>
+                <h3>结论有效期</h3>
+                <p>
+                  这些问题都可以被修复。下一次审计应该看的是：标准校验是否通过、Runtime 是否可恢复、评测是否能复跑，
+                  而不是 README 是否写得更长。
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="audit-close">
+      <div class="shell audit-close-inner" data-reveal>
+        <p class="eyebrow">Final judgment / 最后一句话</p>
+        <h2>先让技能可验证，<br /><em>再让技能可规模化。</em></h2>
+        <p>
+          uSkill 最值得做的，不是再创造一套与 Agent Skills 竞争的格式，而是在开放标准之上，
+          建立一套真正有执行能力、有安全边界、有质量证据的 Skill 工程体系。
+        </p>
+        <div class="audit-close-actions">
+          <a class="button button--light" href={auditMeta.repoUrl} target="_blank" rel="noreferrer">
+            GitHub repository <ArrowUpRight size={16} stroke-width={1.5} aria-hidden="true" />
+          </a>
+          <a class="button button--ghost-light" href="/work/uskill/">
+            返回 uSkill 项目 <ArrowRight size={16} stroke-width={1.5} aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</BaseLayout>

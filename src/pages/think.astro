@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { ArrowUpRight } from '@lucide/astro';
+import '../styles/report.css';
 import { projects, publications } from '../data/projects';
+import { auditMeta } from '../data/audit';
 
 const knowledgeBase = projects.find((project) => project.id === 'knowledge-base-engineering')!;
 const eLife = projects.find((project) => project.id === 'e-life-method')!;
@@ -73,6 +75,26 @@ const notes = [
           <div class="hero-fact"><strong>01</strong><span>共同方法：可验证</span></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="audit-teaser" aria-labelledby="audit-teaser-title">
+    <div class="shell audit-teaser-inner">
+      <div class="audit-teaser-score" aria-label={`总体工程评分 ${auditMeta.overall} 分，满分 100 分`}>
+        <strong>{auditMeta.overall}</strong><span>/100</span>
+      </div>
+      <div class="audit-teaser-copy">
+        <p class="eyebrow">New Field Report / {auditMeta.date}</p>
+        <h2 id="audit-teaser-title">
+          <a href="/think/uskill-2-audit/">uSkill 2.0：方向正确，但还不是平台。</a>
+        </h2>
+      </div>
+      <p class="audit-teaser-note">
+        基于公开主分支的仓库审计：四个 P0、五个隐蔽问题，以及从 SOP 工具升级为技能工程平台的路线。
+      </p>
+      <a class="audit-teaser-link" href="/think/uskill-2-audit/">
+        阅读审计 <ArrowUpRight size={14} stroke-width={1.4} aria-hidden="true" />
+      </a>
     </div>
   </section>
 

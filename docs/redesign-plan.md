@@ -50,9 +50,9 @@ The redesign has to solve three problems at once:
 | Content integrity | All public claims map to a repository, site, or metadata source | Met through `src/data/projects.ts` and `docs/content-manifest.md` |
 | Six flagship projects | Homepage shows exactly six, each with a distinct treatment | Met |
 | Compatibility | Every legacy URL returns 200 and explains its status | Met |
-| Build | Reproducible static build from source | 32 pages built |
-| Links | All internal references resolve | 1,121 references checked |
-| Responsive | No horizontal overflow at five target widths | 32 Playwright tests pass |
+| Build | Reproducible static build from source | 33 pages built |
+| Links | All internal references resolve | 1,170 references checked |
+| Responsive | No horizontal overflow at five target widths | 34 Playwright tests pass |
 | Performance/privacy | No third-party runtime requests | Fonts and icons are local |
 | Deployment | Push to `main` builds and deploys through Pages | Workflow included; production verification recorded in `test-report.md` |
 
@@ -85,6 +85,7 @@ The full specification is in `docs/design-system.md`.
 | WORK | `/work/` | Complete index of 18 projects and 10 upstream research samples, with filters |
 | Case study | `/work/[slug]/` | Context, approach, evidence, links, boundaries, verification date |
 | THINK | `/think/` | Knowledge engineering, investment discipline, AI/Agent research, manuscripts |
+| Field report | `/think/uskill-2-audit/` | Long-form repository audit: scorecard, P0 blockers, target architecture, roadmap, release gates |
 | EXPLORE | `/explore/` | Personality exploration, quantified life, and creative work |
 | ABOUT | `/about/` | Working statement, principles, verified record, trajectory, capabilities, boundaries |
 

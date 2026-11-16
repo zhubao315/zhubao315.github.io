@@ -16,6 +16,7 @@ The site is a static Astro build: warm editorial design, bilingual content, veri
 | `/work/` | Filterable index of 18 projects plus 10 upstream research samples |
 | `/work/[slug]/` | 18 case studies with status, source type, evidence, links, and boundaries |
 | `/think/` | Knowledge engineering, investment discipline, AI/Agent research, manuscripts |
+| `/think/uskill-2-audit/` | Field report: uSkill 2.0 repository audit, scorecard, P0 blockers, architecture, roadmap, release gates |
 | `/explore/` | Personality, quantified life, and creative work |
 | `/about/` | Working statement, principles, verified record, timeline, capabilities, boundaries |
 | `/404.html` | Designed recovery page |
@@ -126,18 +127,20 @@ Full details: [`docs/design-system.md`](docs/design-system.md).
 
 ## Quality
 
-Verified locally on 2026-11-11:
+Verified locally on 2026-11-12:
 
 ```text
-astro check        0 errors, 0 warnings, 0 hints (33 files)
-astro build        32 pages
-link check         1,121 references across 32 HTML files, 0 broken
-playwright         32 passed
+astro check        0 errors, 0 warnings, 0 hints (35 files)
+astro build        33 pages
+link check         1,170 references across 33 HTML files, 0 broken
+playwright         34 passed
 responsive         1440 / 1280 / 768 / 390 / 375px, no overflow
-sitemap            23 indexable URLs, noindex routes excluded
+sitemap            24 indexable URLs, noindex routes excluded
 external audit     44 / 45 URLs HTTP 200 (X.com unreachable)
 production         23 / 23 sitemap URLs HTTP 200, 0 broken images
 ```
+
+The production row reflects the last deploy, which does not yet include the uSkill audit report. The 24th indexable URL is verified locally only.
 
 The full matrix, limitations, and reproduction commands are in [`docs/test-report.md`](docs/test-report.md). The pre-rebuild repository audit is in [`docs/audit.md`](docs/audit.md).
 

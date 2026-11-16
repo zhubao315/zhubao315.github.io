@@ -2,20 +2,20 @@
 
 **Project:** ZHUBAO · Personal Digital Portfolio  
 **Repository:** `zhubao315/zhubao315.github.io`  
-**Verification date:** 2026-11-11 (local), 2026-11-12 (production)  
-**Content snapshot:** 2026-11-11
+**Verification date:** 2026-11-12 (local), 2026-11-12 (production)  
+**Content snapshot:** 2026-11-12
 
 ## 1. Summary
 
 | Check | Result |
 |---|---|
-| Type/diagnostics (`astro check`) | 0 errors, 0 warnings, 0 hints across 33 files |
-| Production build | 32 HTML pages generated |
-| Internal link check | 1,121 references across 32 HTML files, 0 broken |
-| Required compatibility routes | All 14 required files present |
-| Playwright suite | 32 passed, 0 failed |
+| Type/diagnostics (`astro check`) | 0 errors, 0 warnings, 0 hints across 35 files |
+| Production build | 33 HTML pages generated |
+| Internal link check | 1,170 references across 33 HTML files, 0 broken |
+| Required compatibility routes | All 15 required files present |
+| Playwright suite | 34 passed, 0 failed |
 | Responsive QA | No horizontal overflow at 1440 / 1280 / 768 / 390 / 375px |
-| Sitemap | 23 indexable URLs; compatibility and 404 routes excluded |
+| Sitemap | 24 indexable URLs; compatibility and 404 routes excluded |
 | Image loading | No broken images on `/`, `/explore/`, `/about/` |
 | External URL audit | 44 of 45 URLs returned 200; X.com unreachable from this environment |
 | Production deployment | GitHub Actions build and deploy succeeded; 23/23 sitemap URLs return 200 |
@@ -49,7 +49,7 @@ npm run check
 Result:
 
 ```text
-Result (33 files):
+Result (35 files):
 - 0 errors
 - 0 warnings
 - 0 hints
@@ -65,15 +65,16 @@ npm run build
 
 Result:
 
-- 32 pages built in under one second after image-cache warm-up.
+- 33 pages built in under one second after image-cache warm-up.
 - Output written to `dist/`.
 - `sitemap-index.xml` and `sitemap-0.xml` generated.
 - No build warnings or missing assets.
 
-The 32 HTML files comprise:
+The 33 HTML files comprise:
 
 - 6 primary pages: `/`, `/work/`, `/think/`, `/explore/`, `/about/`, `/404.html`
 - 18 project case studies under `/work/[slug]/`
+- 1 field report: `/think/uskill-2-audit/`
 - 8 compatibility/supplemental pages under `/tags/`, `/categories/`, `/archives/`, `/archives/2022/`, `/archives/2022/07/`, `/2022/07/05/`, and the two 2022 article paths
 
 ### 3.3 Internal links
@@ -87,18 +88,18 @@ npm run test:links
 Result:
 
 ```text
-Link check passed: 1121 internal references across 32 HTML files.
+Link check passed: 1170 internal references across 33 HTML files.
 ```
 
 The checker verifies:
 
-- All 14 required routes exist.
+- All 15 required routes exist.
 - Every root-relative `href` resolves to a file or directory index in `dist/`.
 - External, mail, phone, fragment, and data links are skipped.
 
 ### 3.4 Sitemap and indexability
 
-`sitemap-0.xml` contains 23 URLs: the six primary indexable pages and 18 project case studies, minus the 404 and supplemental routes. Specifically excluded:
+`sitemap-0.xml` contains 24 URLs: the six primary indexable pages, 18 project case studies, and the uSkill audit field report, minus the 404 and supplemental routes. Specifically excluded:
 
 - `/tags/`
 - `/categories/`
@@ -121,17 +122,18 @@ npx playwright test
 Result:
 
 ```text
-32 passed (5.8s)
+34 passed (5.8s)
 ```
 
 ### 4.2 Coverage
 
 | Suite | Tests | What is asserted |
 |---|---|---|
-| Required routes | 16 | HTTP 200; one `<h1>`; `lang="zh-CN"`; canonical URL; title and description present; no horizontal overflow; 404 is noindex |
-| Responsive QA widths | 5 | 15 primary routes fit at 1440, 1280, 768, 390, and 375px |
+| Required routes | 17 | HTTP 200; one `<h1>`; `lang="zh-CN"`; canonical URL; title and description present; no horizontal overflow; 404 is noindex |
+| Responsive QA widths | 5 | 16 primary routes fit at 1440, 1280, 768, 390, and 375px |
 | Homepage | 2 | Exactly six featured projects; all six names present; one cinematic treatment; two reversed compositions; no broken images on `/`, `/explore/`, `/about/` |
 | Work index | 1 | 18 cards; category filter returns 2 Agent projects; reset restores 18; search for “MBTI” returns 1; `?filter=agent` sets the active filter |
+| uSkill audit report | 1 | Report route renders the scorecard, the four P0 blockers, and the outbound report links |
 | Navigation / compatibility | 8 | Mobile menu opens and closes with Escape; seven compatibility pages are noindex and contain the compatibility explanation |
 
 The primary-route list is:
@@ -140,6 +142,7 @@ The primary-route list is:
 /
 /work/
 /think/
+/think/uskill-2-audit/
 /explore/
 /about/
 /work/mbti64/
@@ -156,7 +159,7 @@ The primary-route list is:
 
 ### 4.3 Responsive matrix
 
-The same 15 routes were checked at each width:
+The same 16 routes were checked at each width:
 
 | Width | Viewport height | Result |
 |---|---|---|
@@ -190,6 +193,16 @@ All public URLs in `src/data/` were checked with a 25-second timeout and redirec
 The X handle `zhubao315` is taken from public GitHub profile metadata. The site does not depend on X being reachable; the link is presented as a public profile link.
 
 No dead demo link is shown for uSkill: its documentation URL returned 404 during the audit, so only the GitHub repository is linked.
+
+The five external references published in the uSkill audit report (`src/data/audit.ts`) were checked separately on 2026-11-12:
+
+| Reference | Status |
+|---|---|
+| `github.com/zhubao315/uSkill` | 200 |
+| `agentskills.io/specification` | 200 |
+| `modelcontextprotocol.io` | 200 |
+| `arxiv.org/abs/2602.12670` (SkillsBench) | 200 |
+| `platform.openai.com/docs/api-reference/responses` | 403 to automated requests (bot protection) |
 
 ## 6. Content and claim audit
 
@@ -237,6 +250,8 @@ Screenshots are stored in `docs/screenshots/`:
 | Home | `home.jpg`, `home-1440-above-the-fold.jpg` | `home-mobile.jpg`, `home-390-above-the-fold.jpg` |
 | Work | `work.jpg` | `work-mobile.jpg` |
 | Think | `think.jpg` | `think-mobile.jpg` |
+| Think audit teaser | `think-audit-teaser.jpg` | — |
+| uSkill audit report | `audit-report.jpg` | `audit-report-mobile.jpg` |
 | Explore | `explore.jpg` | `explore-mobile.jpg` |
 | About | `about.jpg` | `about-mobile.jpg` |
 | MBTI64 case study | `project-mbti64.jpg` | `project-mbti64-mobile.jpg` |
@@ -256,7 +271,8 @@ Visual checks covered:
 - stable two-column to one-column transitions,
 - mobile menu legibility and close affordance,
 - dark/light section rhythm,
-- footer and 404 composition.
+- footer and 404 composition,
+- the audit report's scorecard, P0 cards, architecture diagram, and roadmap in both widths.
 
 ## 9. Reproducing the checks
 
@@ -350,10 +366,38 @@ The deployed sitemap contains no `/tags/`, `/categories/`, `/archives/` (includi
 - Deployed pages use the new title, canonical URL, stylesheet, and `noindex` metadata.
 - The legacy branch build is no longer the Pages source.
 
-## 12. Sign-off
+## 12. Addendum — uSkill 2.0 audit report (2026-11-12)
+
+A new field report, `/think/uskill-2-audit/`, was added after the 2026-11-11 verification pass. It publishes the uSkill repository audit (58/100, four P0 blockers, five overlooked engineering problems, 2026 standards context, target 2.0 architecture, phased roadmap, and release gates).
+
+### Local verification
+
+| Check | Result |
+|---|---|
+| `npm run build` | 33 pages, 0 errors |
+| `npm run test:links` | 1,170 internal references across 33 HTML files, 0 broken |
+| `npx playwright test` | 34 passed, 0 failed |
+| Required routes | 17 passed, including `/think/uskill-2-audit/` |
+| Responsive QA | Report route has no horizontal overflow at 1440 / 1280 / 768 / 390 / 375px |
+| Sitemap | 24 indexable URLs; the report is included |
+| Open Graph | `og:image` points to `/og-uskill-audit.jpg` (1200×630, 69 KB) |
+
+### Content integrity
+
+- The 58/100 score is labelled a subjective engineering judgment, not an automated benchmark.
+- The four P0 blockers and five overlooked problems each carry a concrete reproduction basis or code-level rationale; none are presented as measured results.
+- External references were re-checked on 2026-11-12: `agentskills.io/specification`, `modelcontextprotocol.io`, and the SkillsBench paper (arXiv 2602.12670) return 200. `platform.openai.com/docs/api-reference/responses` returns 403 to automated requests from this environment (bot protection, not a dead page), so it is not counted as a verified 200.
+- The uSkill case study carries an explicit boundary stating that the 2026-11-12 audit found 58/100 and that timeout/retry/interrupt handling, tool permissions, and composite scheduling remain incomplete.
+
+### Deployment status
+
+**Not deployed.** The report page is verified locally only. The deployed `sitemap-0.xml` still lists 23 URLs, and `/think/uskill-2-audit/` is not yet reachable on https://zhubao315.github.io. Production rows elsewhere in this report continue to describe the 2026-11-12 deployment and are unchanged.
+
+## 13. Sign-off
 
 Local build and test verification: **passed**.  
-Production deployment and route verification: **passed**.
+Production deployment and route verification: **passed** for the 2026-11-12 deploy.  
+uSkill audit report: verified locally, **pending deployment**.
 
 Launch checklist:
 
