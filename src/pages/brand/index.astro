@@ -1,82 +1,351 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import DirectionMark from '../../components/DirectionMark.astro';
+import { directions, site } from '../../data/site';
+
+const colors = [
+  { hex: '#07111F', name: 'Midnight', zh: '深空蓝黑', role: '主背景' },
+  { hex: '#0B1D33', name: 'Deep Navy', zh: '深海军蓝', role: '次级背景' },
+  { hex: '#2563EB', name: 'Electric Blue', zh: '电光蓝', role: '技术强调' },
+  { hex: '#38BDF8', name: 'Signal Cyan', zh: '信号青', role: '信息强调' },
+  { hex: '#F7FAFF', name: 'Arctic White', zh: '极地冷白', role: '阅读场景' },
+  { hex: '#94A3B8', name: 'Cool Gray', zh: '冷灰', role: '次要文本' },
+];
+const library = [
+  { code: '01', en: 'CI / IDENTITY', zh: '品牌理念', desc: '定位、使命、价值观、品牌故事与语言体系。', href: '' },
+  { code: '02', en: 'VI / SYSTEM', zh: '视觉规范', desc: '色彩、字体、网格、图形、图标与设计令牌。', href: '/brand/02-VI/colors/zhubao-palette-board.svg' },
+  { code: '03', en: 'DIGITAL', zh: '数字媒体', desc: '官网、GitHub、社交、头像、分享图与视频资产。', href: '/brand/03-DIGITAL/website/zhubao-og-image-1200x630.png' },
+  { code: '04', en: 'DOCUMENTS', zh: '演示与报告', desc: '16 页可编辑演示母版与数据报告模板。', href: '/brand/04-DOCUMENTS/reports/zhubao-annual-report-cover.png' },
+  { code: '05', en: 'PUBLISHING', zh: '出版物', desc: '封面、封底、书脊、内页跨页与电子书模板。', href: '/brand/05-PUBLISHING/book-cover/zhubao-book-front-cover.png' },
+  { code: '06', en: 'PRODUCTS', zh: '子项目延展', desc: '六个项目 Banner 与量化生活 Dashboard。', href: '/brand/06-PRODUCTS/quantified-life/zhubao-ql-dashboard-1440x900.svg' },
+  { code: '07', en: 'SI / SPACE', zh: '空间与场景', desc: '演讲背景、会议背景、活动海报、名片与周边。', href: '/brand/07-SI/presentation/zhubao-presentation-backdrop-3840x2160.svg' },
+  { code: '08', en: 'MOTION', zh: '动态识别', desc: 'Logo 构建动画三种画幅与四方向动效规范。', href: '/brand/08-MOTION/logo-animation/zhubao-logo-animation-16x9.svg' },
+  { code: '09', en: 'GOVERNANCE', zh: '资产管理', desc: '索引、使用总则、变更日志与质量验收报告。', href: '/brand/brand-logo-guide.pdf' },
+];
+const slices = [
+  { src: '/brand/slices/symbol-panel.png', name: 'Z-Grid 符号', code: 'SYMBOL', use: '界面标识 / Favicon' },
+  { src: '/brand/slices/horizontal-lockup.png', name: '横向组合', code: 'HORIZONTAL', use: '页眉 / 页脚 / Banner' },
+  { src: '/brand/slices/stacked-lockup.png', name: '纵向组合', code: 'STACKED', use: '居中构图 / 启动画面' },
+  { src: '/brand/slices/reverse-lockup.png', name: '反白组合', code: 'REVERSE', use: '深色背景' },
+];
+const activeSites = [
+  { code: 'RUNNING', zh: '跑步', accent: '#D9F36A', href: 'https://zhubao315.github.io/running/' },
+  { code: 'CYCLING', zh: '骑行', accent: '#FBBF24', href: 'https://zhubao315.github.io/cycling/' },
+  { code: 'HIKING', zh: '徒步', accent: '#34D399', href: 'https://zhubao315.github.io/hiking/' },
+  { code: 'HEALTH', zh: '健康', accent: '#38BDF8', href: 'https://zhubao315.github.io/health/' },
+];
 ---
 
-<BaseLayout title="ZHUBAO CIS 1.0 · 品牌资产库" description="ZHUBAO Midnight Signal 品牌识别系统：CI / VI / SI 全量资料、严格切图 Logo 与智能体调用提示词。">
-  <section class="hero">
+<BaseLayout
+  title="品牌系统 | 朱宝 ZHUBAO"
+  description="ZHUBAO CIS 1.0 与 ACTIVE 2.0：品牌标志、四方向体系、色彩规范、全量资产与四站统一体验。"
+  type="website"
+>
+  <section class="page-hero page-hero--brand brand-hero">
     <div class="shell">
-      <p class="kicker">ZHUBAO CIS 1.0 · MIDNIGHT SIGNAL · 2026-11-16</p>
-      <h1>One Identity.<br /><em>Multiple Expressions.</em></h1>
-      <p class="lede">ZHUBAO（朱宝）个人品牌识别系统全量资料。Logo 采用品牌板**严格切图**最终版（零重绘）；四站运营品牌 ACTIVE 2.0 见 <a href="https://github.com/zhubao315/active-watch">active-watch</a>。</p>
-      <div class="cta-row">
-        <a class="cta" href="/brand/AGENT-PROMPT.md">AGENT-PROMPT.md — 智能体入口 ↗</a>
-        <a class="cta ghost" href="/brand/README.md">CIS 1.0 全量库说明 ↗</a>
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="/">首页</a><span class="sep">/</span><span>品牌</span>
+      </nav>
+      <div class="page-masthead">
+        <span><i aria-hidden="true"></i> BRAND SYSTEM / 05</span>
+        <span>ZHUBAO CIS 1.0 · ACTIVE 2.0</span>
+        <span>SNAPSHOT {site.lastVerified}</span>
+      </div>
+      <div class="page-hero-title">
+        <h1>One identity.<br /><em>Multiple expressions.</em></h1>
+        <span class="page-hero-index">BRAND / 05</span>
+      </div>
+      <div class="page-hero-grid">
+        <p class="page-hero-intro">
+          一套识别，多种表达。ZHUBAO 不是网站角落里的一个图标，而是一套贯穿官网、GitHub、出版物、数据报告与线下场景的个人品牌操作系统。
+          这里同时说明两套体系：<strong>CIS 1.0</strong> 是母品牌的完整识别资产，<strong>ACTIVE 2.0</strong> 是四个运动与健康站点的运营规范。
+        </p>
+        <div class="page-hero-meta">
+          <div class="hero-fact"><strong>01</strong><span>母品牌系统</span></div>
+          <div class="hero-fact"><strong>04</strong><span>核心方向</span></div>
+          <div class="hero-fact"><strong>02</strong><span>运营品牌体系</span></div>
+        </div>
+      </div>
+      <figure class="brand-hero-art">
+        <img src="/brand/slices/symbol-hero.png" alt="Z-Grid 品牌标志，严格裁切自已确认的品牌板" width="630" height="560" />
+        <figcaption><span>Z-GRID / FINAL SLICE</span><span>SOURCE · APPROVED IDENTITY BOARD</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--dark brand-identity">
+    <div class="shell">
+      <SectionHeader
+        index="01"
+        eyebrow="Identity / Midnight Signal"
+        title="在足够深的夜色里，稳定地发出信号。"
+        note="Build Systems. Engineer Knowledge. Measure Life. Create Things."
+        dark
+      />
+      <div class="brand-identity-grid">
+        <div class="brand-identity-quote">
+          <p class="eyebrow">BRIDGE / 01</p>
+          <h2>Build. Think.<br /><em>Measure. Create.</em></h2>
+          <p class="brand-identity-sub">
+            BUILD 把想法构建成系统；THINK 把知识沉淀为资产；MEASURE 用数据记录和改善生活；CREATE 持续创造有价值的作品。四者构成一条闭环：判断 → 构建 → 表达 → 校准。
+          </p>
+          <p class="brand-identity-slogan">构建系统 · 工程知识 · 量化生活 · 创造作品</p>
+        </div>
+        <aside class="zgrid" aria-label="Z-Grid 四方向系统图">
+          <div class="zgrid-head"><span>Z-GRID / FOUR DIRECTIONS</span><span>04 / 04</span></div>
+          <div class="zgrid-board">
+            <svg class="zgrid-trace" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M6 6H94L6 94H94" /><circle cx="6" cy="6" r="1.6" /><circle cx="94" cy="6" r="1.6" /><circle cx="6" cy="94" r="1.6" /><circle cx="94" cy="94" r="1.6" />
+            </svg>
+            {
+              directions.map((direction) => (
+                <div class="zgrid-cell" data-accent={direction.accent}>
+                  <span class="zgrid-cell-top"><span>{direction.index}</span><DirectionMark type={direction.code as 'BUILD' | 'THINK' | 'MEASURE' | 'CREATE'} /></span>
+                  <span class="zgrid-cell-code">{direction.code}</span>
+                  <span class="zgrid-cell-zh">{direction.title}</span>
+                  <span class="zgrid-cell-en">{direction.en}</span>
+                </div>
+              ))
+            }
+            <span class="zgrid-core" aria-hidden="true">Z</span>
+          </div>
+          <div class="zgrid-foot"><span><span class="live-dot" aria-hidden="true"></span> ONE IDENTITY</span><span>LAST VERIFIED / {site.lastVerified}</span></div>
+        </aside>
       </div>
     </div>
-    <img class="hero-mark" src="/brand/slices/symbol-hero.png" alt="Z-Grid 品牌标志（品牌板严格切图）" />
   </section>
 
-  <section class="shell block">
-    <h2>01 · 最终 Logo 切图</h2>
-    <p class="lede">全部从同一张品牌板按像素坐标直接裁切，无重绘、无改色。坐标与 SHA256 见 <a href="/brand/slices/manifest.json">manifest.json</a>，源图见 <a href="/brand/slices/SOURCE.png">SOURCE.png</a>。</p>
-    <div class="grid">
-      <figure><img src="/brand/slices/symbol-panel.png" alt="Z-Grid 符号" /><figcaption>符号 · Panel A</figcaption></figure>
-      <figure><img src="/brand/slices/horizontal-lockup.png" alt="横向组合标" /><figcaption>横向组合 · Panel B</figcaption></figure>
-      <figure><img src="/brand/slices/stacked-lockup.png" alt="纵向组合标" /><figcaption>纵向组合 · Panel C</figcaption></figure>
-      <figure><img src="/brand/slices/mono-light.png" alt="浅底单色版" /><figcaption>浅底单色 · Panel D</figcaption></figure>
-      <figure><img src="/brand/slices/mono-dark.png" alt="深底单色版" /><figcaption>深底单色 · Panel D</figcaption></figure>
-      <figure><img src="/brand/slices/reverse-lockup.png" alt="反白版" /><figcaption>反白组合 · Panel E</figcaption></figure>
+  <section class="section brand-logo">
+    <div class="shell">
+      <SectionHeader
+        index="02"
+        eyebrow="Logo / Strict Slices"
+        title="从同一张品牌板，切出全部标志。"
+        note="最终 Logo 不做重绘：每个版本都是已确认品牌板的直接像素裁切。"
+      />
+      <div class="brand-slice-grid">
+        {
+          slices.map((item) => (
+            <figure class="brand-slice" data-reveal>
+              <div class="brand-slice-media"><img src={item.src} alt={item.name} loading="lazy" /></div>
+              <figcaption>
+                <span class="brand-slice-code">{item.code}</span>
+                <strong>{item.name}</strong>
+                <span>{item.use}</span>
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+      <div class="brand-source-note">
+        <p>平面符号、3D 主视觉、单色黑白、Favicon、深浅背景应用示例与中英文字标均来自同一份母版。</p>
+        <div class="brand-source-links">
+          <a class="text-link text-link--small" href="/brand/slices/SOURCE.png">查看源图 <span aria-hidden="true">↗</span></a>
+          <a class="text-link text-link--small" href="/brand/slices/manifest.json">裁切坐标与哈希 <span aria-hidden="true">↗</span></a>
+          <a class="text-link text-link--small" href="/brand/slices/CONTACT-SHEET.png">全部切片总览 <span aria-hidden="true">↗</span></a>
+          <a class="text-link text-link--small" href="/brand/brand-logo-guide.pdf">品牌指南 PDF <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
     </div>
-    <p class="ci-links"><a href="/brand/slices/README.md">切图包说明</a> · <a href="/brand/slices/CONTACT-SHEET.png">总览图</a> · <a href="/brand/01-LOGO/logo-guidelines.md">Logo 使用规范</a></p>
   </section>
 
-  <section class="shell block">
-    <h2>02 · CIS 全量资料</h2>
-    <div class="cards">
-      {[
-        ['00-CI', '品牌战略 · 故事 · 语言 · 定位', '/brand/00-CI/brand-strategy.md'],
-        ['02-VI', '色彩 · 字体 · 令牌 · 图标 · 图形', '/brand/02-VI/design-tokens/zhubao-tokens.css'],
-        ['03-DIGITAL', '官网 · GitHub · 社交 · 视频', '/brand/03-DIGITAL/website/zhubao-og-image-1200x630.png'],
-        ['04-DOCUMENTS', 'PPT 16 母版 · 数据报告', '/brand/04-DOCUMENTS/powerpoint/ppt-spec.md'],
-        ['05-PUBLISHING', '书籍封面 · 内页 · 电子书', '/brand/05-PUBLISHING/book-cover/zhubao-book-front-cover.png'],
-        ['06-PRODUCTS', '六个子项目 · Dashboard', '/brand/06-PRODUCTS/quantified-life/zhubao-ql-dashboard-1440x900.svg'],
-        ['07-SI', '演讲背景 · 名片 · 空间 · 周边', '/brand/07-SI/presentation/zhubao-presentation-backdrop-3840x2160.svg'],
-        ['08-MOTION', 'Logo 动画 · 分镜参数', '/brand/08-MOTION/logo-animation-storyboard.md'],
-        ['10-DOCUMENTATION', '索引 · 总则 · 日志 · 验收', '/brand/10-DOCUMENTATION/asset-inventory.md'],
-      ].map(([code, desc, href]) => (
-        <a class="card" href={href}><b>{code}</b><span>{desc}</span></a>
-      ))}
+  <section class="section brand-palette">
+    <div class="shell">
+      <SectionHeader
+        index="03"
+        eyebrow="Color / Midnight Signal"
+        title="深空蓝黑为底，四种信号定向。"
+        note="主品牌色用于结构；阅读场景用极地冷白；四方向色只标记对应内容域。"
+      />
+      <div class="brand-color-grid">
+        {
+          colors.map((color) => (
+            <div class="brand-color" data-reveal>
+              <span class="brand-color-chip" style={`background:${color.hex}`} aria-hidden="true"></span>
+              <div><strong>{color.name}</strong><span>{color.zh} · {color.role}</span></div>
+              <code>{color.hex}</code>
+            </div>
+          ))
+        }
+      </div>
+      <div class="brand-direction-colors">
+        {
+          directions.map((direction) => (
+            <div class="brand-direction-color" data-accent={direction.accent}>
+              <span class="brand-direction-bar" aria-hidden="true"></span>
+              <strong>{direction.code}</strong><span>{direction.title}</span>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </section>
 
-  <section class="shell block">
-    <h2>03 · 智能体调用</h2>
-    <p class="lede">把 <code>/brand/AGENT-PROMPT.md</code> 中的 SYSTEM PROMPT 全文交给任意智能体，再附加本次任务。提示词内含权威切图 URL、颜色令牌、四站 ACTIVE 2.0 边界与自检清单。</p>
-    <p class="ci-links"><a href="/brand/AGENT-PROMPT.md">获取提示词 ↗</a> · <a href="/brand/10-DOCUMENTATION/usage-rules.md">使用总则</a> · <a href="/brand/10-DOCUMENTATION/changelog.md">变更日志</a></p>
+  <section class="section brand-library">
+    <div class="shell">
+      <SectionHeader
+        index="04"
+        eyebrow="CIS 1.0 / Full Library"
+        title="九组资产，一套系统。"
+        note="CI 理念、VI 视觉、SI 场景，以及数字、出版、动态与资产治理。"
+      />
+      <div class="lab-grid">
+        {
+          library.map((item) => (
+            <div class="lab-card" data-reveal>
+              <div class="lab-top"><span>{item.code} / CIS</span><span>ZHUBAO</span></div>
+              <h3>{item.en}</h3>
+              <p class="lab-zh">{item.zh}</p>
+              <p>{item.desc}</p>
+              {item.href && <a class="text-link text-link--small" href={item.href}>查看示例资产 <span aria-hidden="true">↗</span></a>}
+            </div>
+          ))
+        }
+      </div>
+    </div>
   </section>
+
+  <section class="section section--deep brand-agent">
+    <div class="shell">
+      <SectionHeader
+        index="05"
+        eyebrow="Agent Ready / Prompt System"
+        title="让智能体按同一套规范产出。"
+        note="提示词已内置最终切图 URL、色彩令牌与红线规则。复制即可使用，不需要下载文件。"
+        dark
+      />
+      <div class="brand-agent-grid">
+        <ol class="brand-agent-steps">
+          <li><span>01</span><strong>复制品牌提示词</strong><p>包含 Logo 硬规则、品牌文本、Token、资产地图与自检清单。</p></li>
+          <li><span>02</span><strong>附加本次任务</strong><p>例如：生成 1200×630 文章封面，主标题占位，使用最终 Logo 切图。</p></li>
+          <li><span>03</span><strong>按红线验收</strong><p>无重绘、无改色、深浅底版本正确、32px 仍可识别。</p></li>
+        </ol>
+        <div class="brand-agent-console">
+          <div class="brand-agent-console-top"><span>SYSTEM PROMPT / CIS 1.0</span><span>READY</span></div>
+          <pre><code># ZHUBAO CIS 1.0 — UNIVERSAL BRAND AGENT
+# Z-Grid · Midnight Signal · CI / VI / SI
+
+LOGO  = /brand/slices/*.png（唯一权威，禁止重绘）
+TOKEN = #07111F #0B1D33 #2563EB #38BDF8 #F7FAFF #94A3B8
+DIR   = BUILD #38BDF8 / THINK #FBBF24
+        MEASURE #34D399 / CREATE #FB7185
+
+任务：按本规范生成 [资产类型]，保持 Z-Grid 几何与比例，
+文字用真实字体排版，数据未知用 XXXX 占位并标注「示例」。</code></pre>
+          <button class="button" id="copy-brand-prompt" type="button">复制完整提示词 <span aria-hidden="true">↗</span></button>
+          <p class="brand-agent-note" id="copy-brand-status">完整提示词约 3 KB，点击按钮复制。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section brand-active">
+    <div class="shell">
+      <SectionHeader
+        index="06"
+        eyebrow="ACTIVE 2.0 / Four Disciplines"
+        title="一个品牌，四个专业模块。"
+        note="四个运动与健康站点共用 Header、导航、Token 与页脚；顶部无 GitHub 入口。"
+      />
+      <div class="brand-active-grid">
+        {
+          activeSites.map((item) => (
+            <a class="brand-active-card" href={item.href} style={`--accent:${item.accent}`} data-reveal>
+              <span class="brand-active-top"><span>ACTIVE / 02</span><span>↗</span></span>
+              <strong>{item.code}</strong>
+              <span class="brand-active-zh">{item.zh}</span>
+            </a>
+          ))
+        }
+      </div>
+      <p class="brand-active-note">
+        ACTIVE 2.0 的规范源在 <a href="https://github.com/zhubao315/active-watch">github.com/zhubao315/active-watch</a>。四站保持各自的数据算法与运动特色，统一的是视觉语言与浏览体验。
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const button = document.getElementById('copy-brand-prompt');
+  const status = document.getElementById('copy-brand-status');
+  button?.addEventListener('click', async () => {
+    try {
+      const response = await fetch('/brand/AGENT-PROMPT.md');
+      const text = await response.text();
+      await navigator.clipboard.writeText(text);
+      if (status) status.textContent = '已复制完整提示词，可直接粘贴给智能体。';
+      button.textContent = '已复制 ✓';
+    } catch {
+      if (status) status.textContent = '复制失败，请检查浏览器剪贴板权限。';
+    }
+  });
+</script>
 
 <style>
-  .hero { position: relative; padding: 88px 0 56px; overflow: hidden; }
-  .hero h1 { font-size: clamp(40px, 6vw, 72px); margin: 16px 0; }
-  .hero h1 em { color: #38bdf8; font-style: normal; }
-  .lede { max-width: 720px; color: #94a3b8; line-height: 1.75; }
-  .lede a { color: #38bdf8; }
-  .hero-mark { position: absolute; right: 4%; top: 70px; width: min(28vw, 300px); opacity: .92; }
-  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-  .cta { display: inline-block; padding: 13px 20px; border: 1.5px solid #2563eb; border-radius: 10px; color: #f7faff; font-weight: 700; text-decoration: none; }
-  .cta.ghost { border-color: rgba(148,163,184,.5); color: #cbd6e6; }
-  .block { padding: 60px 0 8px; }
-  .block h2 { font-size: 24px; margin-bottom: 16px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-  figure { margin: 0; padding: 18px; background: #0b1d33; border-radius: 12px; }
-  figure img { display: block; max-width: 100%; max-height: 110px; object-fit: contain; margin: 0 auto 10px; }
-  figcaption { color: #94a3b8; font-size: 13px; text-align: center; }
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
-  .card { display: flex; flex-direction: column; gap: 6px; padding: 16px; background: #0b1d33; border-radius: 12px; text-decoration: none; color: #f7faff; }
-  .card b { color: #38bdf8; font-family: ui-monospace, monospace; }
-  .card span { color: #94a3b8; font-size: 14px; }
-  .ci-links { color: #94a3b8; margin-top: 18px; }
-  .ci-links a { color: #38bdf8; text-decoration: none; }
-  code { color: #cbd6e6; }
+  .brand-hero .page-hero-grid { position: relative; z-index: 1; }
+  @media (min-width: 901px) { .brand-hero .page-hero-index { display: none; } }
+  .brand-hero-art { position: absolute; right: 5vw; top: 210px; width: min(29vw, 360px); margin: 0; }
+  .brand-hero-art img { display: block; width: 100%; height: auto; }
+  .brand-hero-art figcaption { display: flex; justify-content: space-between; gap: 10px; margin-top: 8px; color: var(--muted); font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.08em; }
+  .brand-identity-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 420px); gap: clamp(28px, 5vw, 72px); align-items: center; }
+  .brand-identity-quote h2 { margin-top: 18px; font-family: var(--display); font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 600; line-height: 1.03; letter-spacing: -0.04em; }
+  .brand-identity-quote h2 em { font-family: 'Instrument Serif', serif; font-weight: 400; font-style: italic; color: var(--build); }
+  .brand-identity-sub { max-width: 46ch; margin-top: 22px; color: #c9d6e8; line-height: 1.8; }
+  .brand-identity-slogan { margin-top: 22px; color: var(--muted-light); font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; }
+  .brand-slice-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .brand-slice { margin: 0; border: 1px solid var(--line); background: var(--paper-2); }
+  .brand-slice-media { display: grid; place-items: center; min-height: 190px; padding: 22px; background: var(--navy); }
+  .brand-slice-media img { max-width: 100%; height: auto; object-fit: contain; }
+  .brand-slice figcaption { display: flex; flex-direction: column; gap: 5px; padding: 14px 16px; }
+  .brand-slice-code { color: var(--build); font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.1em; }
+  .brand-slice figcaption strong { font-size: 0.95rem; }
+  .brand-slice figcaption span:last-child { color: var(--muted); font-size: 0.65rem; }
+  .brand-source-note { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.78rem; }
+  .brand-source-note p { margin: 0; }
+  .brand-source-links { display: flex; flex-wrap: wrap; gap: 16px; }
+  .brand-color-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .brand-color { display: grid; grid-template-columns: 36px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px; background: var(--paper); }
+  .brand-color-chip { width: 36px; height: 36px; border: 1px solid var(--line); }
+  .brand-color strong, .brand-color span { display: block; }
+  .brand-color strong { font-size: 0.9rem; }
+  .brand-color span { margin-top: 3px; color: var(--muted); font-size: 0.68rem; }
+  .brand-color code { color: var(--muted); font-family: var(--mono); font-size: 0.62rem; }
+  .brand-direction-colors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
+  .brand-direction-color { --accent: var(--build); padding: 14px 16px; border: 1px solid var(--line); background: var(--paper-2); }
+  .brand-direction-color[data-accent='think'] { --accent: var(--think); }
+  .brand-direction-color[data-accent='measure'] { --accent: var(--measure); }
+  .brand-direction-color[data-accent='create'] { --accent: var(--create); }
+  .brand-direction-bar { display: block; width: 100%; height: 4px; margin-bottom: 12px; background: var(--accent); }
+  .brand-direction-color strong { display: block; color: var(--accent); font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; }
+  .brand-direction-color span { color: var(--muted); font-size: 0.72rem; }
+  .brand-agent-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 72px); }
+  .brand-agent-steps { list-style: none; margin: 0; padding: 0; }
+  .brand-agent-steps li { display: grid; grid-template-columns: 44px 1fr; gap: 4px 14px; padding: 18px 0; border-bottom: 1px solid var(--line-dark); }
+  .brand-agent-steps li > span { grid-row: span 2; color: var(--build); font-family: var(--mono); font-size: 0.72rem; }
+  .brand-agent-steps strong { font-size: 0.95rem; }
+  .brand-agent-steps p { margin: 0; color: var(--muted-light); font-size: 0.78rem; line-height: 1.7; }
+  .brand-agent-console { padding: 18px; border: 1px solid var(--line-dark); background: rgba(4, 12, 24, 0.55); }
+  .brand-agent-console-top { display: flex; justify-content: space-between; color: var(--muted-light); font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.1em; }
+  .brand-agent-console pre { overflow-x: auto; margin: 18px 0; padding: 16px; background: rgba(2, 8, 20, 0.7); color: #cbd6e6; font-family: var(--mono); font-size: 0.68rem; line-height: 1.75; }
+  .brand-agent-note { margin: 12px 0 0; color: var(--muted-light); font-size: 0.68rem; }
+  .brand-active-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .brand-active-card { --accent: var(--build); display: flex; flex-direction: column; gap: 8px; padding: 20px; border: 1px solid var(--line); background: var(--paper-2); color: var(--navy); text-decoration: none; transition: transform 0.3s var(--ease), background 0.3s var(--ease); }
+  .brand-active-card:hover { transform: translateY(-3px); background: var(--paper); }
+  .brand-active-top { display: flex; justify-content: space-between; color: var(--muted); font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.1em; }
+  .brand-active-card strong { color: var(--accent); font-family: var(--mono); font-size: 0.95rem; letter-spacing: 0.08em; }
+  .brand-active-zh { font-size: 0.78rem; }
+  .brand-active-note { margin-top: 20px; color: var(--muted); font-size: 0.76rem; }
+  .brand-active-note a { color: var(--build); }
+
+  @media (max-width: 900px) {
+    .brand-hero-art { position: static; width: min(100%, 360px); margin-top: 28px; }
+    .brand-identity-grid, .brand-agent-grid { grid-template-columns: 1fr; }
+    .brand-slice-grid, .brand-active-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .brand-color-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .brand-direction-colors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 560px) {
+    .brand-slice-grid, .brand-active-grid, .brand-color-grid { grid-template-columns: 1fr; }
+  }
 </style>
-</BaseLayout>
