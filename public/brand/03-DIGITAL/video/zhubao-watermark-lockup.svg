@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 96">
-<g opacity=".85"><g transform="translate(0,8) scale(1.0)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/>
-  <rect x="12" y="8" width="72" height="12" fill="#2563EB"/><rect x="12" y="76" width="72" height="12" fill="#2563EB"/>
-  <rect x="0" y="8" width="12" height="12" fill="#38BDF8"/><rect x="84" y="8" width="12" height="12" fill="#FBBF24"/>
-  <rect x="0" y="76" width="12" height="12" fill="#34D399"/><rect x="84" y="76" width="12" height="12" fill="#FB7185"/></g><text x="120" y="52" font-family="Inter" font-weight="800" font-size="30" letter-spacing="4" fill="#F7FAFF">ZHUBAO</text><text x="120" y="80" font-family="Noto Sans CJK SC" font-weight="700" font-size="18" letter-spacing="6" fill="#94A3B8">朱宝</text></g>
-</svg>

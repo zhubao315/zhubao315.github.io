@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 1850" width="210" height="1850">
-<rect width="210" height="1850" fill="#07111F"/><rect y="0" width="210" height="10" fill="#2563EB"/><g transform="translate(63,80) scale(0.95)"><polygon points="70,19 96,19 40,77 14,77" fill="#F7FAFF"/>
-  <rect x="12" y="8" width="72" height="12" fill="#2563EB"/><rect x="12" y="76" width="72" height="12" fill="#2563EB"/>
-  <rect x="0" y="8" width="12" height="12" fill="#38BDF8"/><rect x="84" y="8" width="12" height="12" fill="#FBBF24"/>
-  <rect x="0" y="76" width="12" height="12" fill="#34D399"/><rect x="84" y="76" width="12" height="12" fill="#FB7185"/></g><text x="105" y="330" text-anchor="middle" writing-mode="tb" font-family="Noto Sans CJK SC" font-weight="700" font-size="34" letter-spacing="10" fill="#F7FAFF">{书名}</text><text x="105" y="1450" text-anchor="middle" writing-mode="tb" font-family="Inter" font-weight="800" font-size="24" letter-spacing="6" fill="#94A3B8">ZHUBAO</text><rect x="63" y="1740" width="84" height="6" fill="#2563EB"/>
-</svg>

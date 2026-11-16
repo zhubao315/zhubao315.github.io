@@ -18,7 +18,6 @@ The site is a static Astro build: warm editorial design, bilingual content, veri
 | `/think/` | Knowledge engineering, investment discipline, AI/Agent research, manuscripts |
 | `/explore/` | Personality, quantified life, and creative work |
 | `/about/` | Working statement, principles, verified record, timeline, capabilities, boundaries |
-| `/brand/` | Midnight Signal brand system: CI/VI/SI asset library and agent-callable prompt |
 | `/404.html` | Designed recovery page |
 
 ### Preserved URLs
@@ -168,16 +167,3 @@ Read [`docs/audit.md`](docs/audit.md) for the full inventory and decisions.
 ## License and attribution
 
 The site’s design, writing, and original project imagery are personal work. Third-party project names, logos, and screenshots remain the property of their respective owners and are used for identification and commentary. The public GitHub avatar is cropped and toned for use as a small identity mark.
-
-
-## Brand system (v1.0.0 · 2026-11-16)
-
-The full CIS asset library lives in **`public/brand/`** (also served at `/brand/`):
-CI strategy/story/language, true-vector Z-Grid logo masters (symbol / horizontal / stacked / reverse / mono / favicon),
-color tokens, typography specimen, 4-direction icons, patterns, digital templates, 16 editable presentation masters,
-publishing & data-report templates, sub-brand banners, SI backdrops, motion SVG and asset governance docs.
-
-- **Agent entry point:** [`public/brand/AGENT-PROMPT.md`](public/brand/AGENT-PROMPT.md) — paste the `SYSTEM PROMPT` block into any coding/design agent, then add the task. Includes inline Z-Grid SVG, color tokens, asset map URLs, hard rules and a self-check list.
-- **Site-level integration:** Header/Footer logos, `favicon.svg/.ico`, icon set, `apple-touch-icon`, `og-default.png`, avatar WebP — all derived from the vector master.
-- **Geometry source of truth:** `public/brand/tools/zb.py` (generator mirror; the scripts target the original workspace `/oc/zhubao-brand`).
-- **Logo geometry:** 8×8 grid (u=12 / 96 canvas), 45° diagonal polygon(70,19 96,19 40,77 14,77), four 12×12 nodes, two 72×12 bars. Never regenerate the logo with image models.

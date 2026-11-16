@@ -27,7 +27,6 @@ export const nav = [
   { label: '思考', en: 'THINK', href: '/think/' },
   { label: '探索', en: 'EXPLORE', href: '/explore/' },
   { label: '关于', en: 'ABOUT', href: '/about/' },
-  { label: '品牌', en: 'BRAND', href: '/brand/' },
 ];
 
 export type BrandFieldKey = 'build' | 'think' | 'measure' | 'create';
