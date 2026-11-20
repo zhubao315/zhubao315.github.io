@@ -445,20 +445,64 @@ export const projects: Project[] = [
     id: 'uread',
     slug: 'uread',
     name: 'uRead',
-    nameZh: '深度阅读与知识沉淀',
+    nameZh: 'Personal Reading Library',
     category: 'knowledge',
     status: 'active',
     sourceType: 'original',
     featured: false,
-    tagline: '让每一次阅读，都留下可生长的沉淀。',
-    summary: '围绕读书笔记、精选书单与知识卡片构建的轻量阅读产品。',
+    tagline: '让读过的书，留下值得反复阅读的内容。READ · REFLECT · REVISIT。',
+    summary:
+      '从文字书库升级为有视觉识别的阅读发现平台：1595 篇笔记、39 份书单、1818 条书籍记录。',
     description:
-      '一个基于 GitHub Pages 与 Agent-friendly 结构化资产的深度阅读笔记产品，尝试把阅读输入、结构化沉淀、原子化复用与体系化联动连成闭环。',
-    tech: ['TypeScript', 'React', 'Tailwind CSS', 'GitHub Pages'],
+      '一个 Personal Reading Library：公开门户与本地工作台共用同一站点。前者把私有 Obsidian 仓库中的阅读沉淀发布为只读档案，后者用 IndexedDB 管理自己的资料、笔记、卡片与书单。',
+    tech: ['TypeScript', 'React 19', 'Vite 8', 'Tailwind CSS', 'IndexedDB', 'GitHub Pages', 'foliate-js'],
     githubUrl: 'https://github.com/zhubao315/uRead',
     demoUrl: 'https://zhubao315.github.io/uRead/',
     demoLabel: '在线体验',
-    lastVerified: '2026-11-11',
+    extraLinks: [
+      { label: '中文 README', href: 'https://github.com/zhubao315/uRead/blob/main/README.md' },
+      { label: 'English README', href: 'https://github.com/zhubao315/uRead/blob/main/README.en.md' },
+    ],
+    metrics: [
+      { value: '1,595', label: '公开读书笔记', note: '全量公开范围，截至 2026-11-20' },
+      { value: '39', label: '推荐书单', note: '另有 10 个主题阅读栏目' },
+      { value: '1,818', label: '书籍记录', note: '每条都有确定性主题视觉' },
+    ],
+    caseStudy: {
+      context: [
+        '阅读档案很容易停在“把笔记列出来”：内容很多，却难以通过视觉快速理解这里有什么、这本书讲什么、这份书单适合谁。uRead 的目标是把文字书库变成有品牌识别的阅读发现平台。',
+        '项目有两条刻意分开的线：公开门户只读、可分享、不含任何 token；本地工作台用 IndexedDB 保存八类个人数据。公开笔记不进本地 store，本地数据也不进公开产物。',
+      ],
+      approach: [
+        {
+          index: '01',
+          title: '先建媒体系统，再谈配图',
+          body: '独立清单 + Schema + 统一解析组件管理图片，明确区分真实出版封面与 uRead 主题视觉。1868 → 1818 本书记录全部由书籍 ID 派生确定性 SVG 封面，不批量抓取外部封面服务。',
+        },
+        {
+          index: '02',
+          title: '让速度成为体验的一部分',
+          body: '用 1.5 MB 轻量索引替代 22 MB 全量正文，详情按单篇加载、相关笔记后台补取；移除阻塞渲染的外部字体，首屏实测 226 ms / 2.79 MB。',
+        },
+        {
+          index: '03',
+          title: '真实边界写进产品，而不是藏在文档里',
+          body: '没有 WAV 时也提供设备原生语音「收听」，不造假播放器；TTS 服务停机就如实说明；发布审批基线拦截未批准变更；全量公开的不可回收风险在 README 中明确警示。',
+        },
+      ],
+      evidence: [
+        '内容基线（2026-11-20）：1595 篇公开笔记、10 个主题、39 份书单、1818 条书籍记录、2 本有权分发的电子书。',
+        '媒体产物：1818 张书籍主题视觉 + 49 张主题/书单 16:9 视觉；统一 MediaImage 组件负责比例、懒加载与一次性 fallback。',
+        '质量口径：单元测试 226 passed / 1 skipped（32 文件）、E2E 25、全量门禁 37/37、严格发布检查与内容对账通过。',
+        '两个同步工作流：笔记每天、书单每周一；版本未变时跳过提交与部署，不制造空提交。',
+      ],
+      boundaries: [
+        '当前公开范围是整个 07-SOURCES/71-书籍 目录全量公开，已发布内容可能被搜索引擎或他人缓存，无法保证收回。',
+        '不做 AI 摘要、知识抽取、推荐、RAG / 向量检索、云端同步与浏览器直连私库。',
+        'TTS 服务停机，无新音频；朗读依赖设备原生语音，音色与断句由浏览器决定；书籍主题视觉不冒充出版封面。',
+      ],
+    },
+    lastVerified: '2026-11-20',
   },
   {
     id: 'uvision',
