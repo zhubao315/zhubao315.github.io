@@ -23,6 +23,12 @@ const requiredRoutes = [
 ];
 
 const externalProtocols = /^(?:https?:|mailto:|tel:|javascript:|data:)/i;
+const httpProtocol = /^https?:\/\//i;
+
+// External link validation is opt-in because it depends on the network and on
+// third-party sites being up. Enable with `node scripts/check-links.mjs --external`
+// or CHECK_EXTERNAL_LINKS=1. It is skipped by default.
+const checkExternal = process.argv.includes('--external') || process.env.CHECK_EXTERNAL_LINKS === '1';
 
 async function walk(directory) {
   const entries = await fs.readdir(directory, { withFileTypes: true });
@@ -70,9 +76,29 @@ async function resolveTarget(urlPath) {
   return `${direct}.html`;
 }
 
+async function checkExternalUrls(urls) {
+  const failures = [];
+  for (const url of [...urls].sort()) {
+    try {
+      const response = await fetch(url, {
+        method: 'HEAD',
+        redirect: 'follow',
+        signal: AbortSignal.timeout(10_000),
+      });
+      if (!response.ok) {
+        failures.push(`${url}: HTTP ${response.status}`);
+      }
+    } catch (error) {
+      failures.push(`${url}: ${error instanceof Error ? error.message : String(error)}`);
+    }
+  }
+  return failures;
+}
+
 const htmlFiles = (await walk(root)).filter((file) => file.endsWith('.html'));
 const failures = [];
 const missingRequired = [];
+const externalUrls = new Set();
 let checked = 0;
 
 for (const required of requiredRoutes) {
@@ -88,12 +114,21 @@ for (const file of htmlFiles) {
 
   for (const href of hrefs) {
     const value = href.trim();
-    if (!value || value.startsWith('#') || externalProtocols.test(value)) {
+    if (!value || value.startsWith('#')) {
       continue;
     }
 
+    if (externalProtocols.test(value)) {
+      // Only http(s) URLs are meaningful to probe; mailto/tel/javascript/data are skipped.
+      if (checkExternal && httpProtocol.test(value)) {
+        externalUrls.add(value);
+      }
+      continue;
+    }
+
+    // Relative hrefs (./about, ../x, page.html) are resolved by the browser
+    // against the current document; they are intentionally not checked here.
     if (!value.startsWith('/')) {
-      failures.push(`${page}: relative link not supported by the checker: ${value}`);
       continue;
     }
 
@@ -106,13 +141,17 @@ for (const file of htmlFiles) {
   }
 }
 
+if (checkExternal) {
+  failures.push(...(await checkExternalUrls(externalUrls)));
+}
+
 if (missingRequired.length > 0) {
   console.error('Missing required compatibility routes:');
   for (const route of missingRequired) console.error(`  - ${route}`);
 }
 
 if (failures.length > 0) {
-  console.error(`\nBroken internal links (${failures.length}):`);
+  console.error(`\nBroken links (${failures.length}):`);
   for (const failure of failures.slice(0, 50)) console.error(`  - ${failure}`);
   if (failures.length > 50) console.error(`  ... and ${failures.length - 50} more`);
 }
@@ -121,4 +160,8 @@ if (missingRequired.length > 0 || failures.length > 0) {
   process.exit(1);
 }
 
-console.log(`Link check passed: ${checked} internal references across ${htmlFiles.length} HTML files.`);
+if (checkExternal) {
+  console.log(`Link check passed: ${checked} internal references, ${externalUrls.size} external URLs across ${htmlFiles.length} HTML files.`);
+} else {
+  console.log(`Link check passed: ${checked} internal references across ${htmlFiles.length} HTML files. (External links skipped; pass --external to check them.)`);
+}

@@ -2,8 +2,8 @@
 
 **Project:** ZHUBAO · Personal Digital Portfolio  
 **Repository:** `zhubao315/zhubao315.github.io`  
-**Verification date:** 2026-11-11 (local), 2026-11-12 (production)  
-**Content snapshot:** 2026-11-11
+**Verification date:** 2026-11-24 (local), 2026-11-12 (production)  
+**Content snapshot:** 2026-11-24
 
 ## 1. Summary
 

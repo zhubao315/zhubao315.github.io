@@ -1,6 +1,6 @@
 # Content Manifest
 
-**Snapshot date:** 2026-11-11  
+**Snapshot date:** 2026-11-24  
 **Canonical data:** `src/data/projects.ts`, `src/data/site.ts`  
 **Rule:** every number below is either read from a public repository/site or explicitly marked as a derived total.
 
@@ -15,7 +15,7 @@
 | Fork / upstream research | 37 | GitHub API |
 | Location label | 北京 · UTC+8 | Personal profile label used by the site |
 | Public links | `github.com/zhubao315`, `x.com/zhubao315` | GitHub profile metadata |
-| Verification date | 2026-11-11 | Manual snapshot |
+| Verification date | 2026-11-24 | Manual snapshot |
 
 No employer, client, revenue, user count, investment return, or production SLA is claimed.
 

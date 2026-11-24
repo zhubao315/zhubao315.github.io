@@ -174,7 +174,7 @@ It can invert for dark sections. This component creates most of the page rhythm 
 A thin register above each inner-page hero:
 
 ```
-● WORK ARCHIVE / 2024—2026     ORIGINAL · MODIFIED · UPSTREAM RESEARCH     SNAPSHOT 2026-11-11
+● WORK ARCHIVE / 2024—2026     ORIGINAL · MODIFIED · UPSTREAM RESEARCH     SNAPSHOT 2026-11-24
 ```
 
 It uses mono type, a top and bottom rule, and a gold dot. The dark variant uses `--line-dark` and `--muted-light`.

@@ -1,0 +1,3 @@
+# Python dependencies for scripts/build-brand-assets.py (wordmark -> SVG paths).
+# Pinned for reproducible generated assets.
+fonttools==4.56.0

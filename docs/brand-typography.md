@@ -50,7 +50,7 @@ Use `text-wrap: balance` on headings. Never use tracking below `-0.08em`; it clo
 |---|---|
 | “把想法变成系统。” | “致力于打造世界领先的……” |
 | “持续建设 / 原型阶段 / 实验探索” | “行业首创 / 颠覆式创新” |
-| “数据快照 2026-11-11” | “实时大数据” without a source |
+| “数据快照 2026-11-24” | “实时大数据” without a source |
 | “书稿 / manuscript” | “已出版 / 畅销书” without evidence |
 
 ## 4. Numerals and data

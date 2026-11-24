@@ -2,7 +2,7 @@
 
 **Project:** `zhubao315/zhubao315.github.io`  
 **Production target:** https://zhubao315.github.io  
-**Content snapshot:** 2026-11-11  
+**Content snapshot:** 2026-11-24  
 **Design system:** V2.0 · Z-Grid  
 **Status:** V1 implemented and deployed; V2 implemented and verified locally.
 

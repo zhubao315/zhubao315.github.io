@@ -3,6 +3,8 @@
 > 早期重绘的矢量 Logo 已从发布目录移除，请勿使用；四站运行的是 ACTIVE 2.0 品牌系统（`zhubao315/active-watch`）。
 > 来源板：`slices/SOURCE.png` · 裁切坐标与哈希：`slices/manifest.json`。
 
+> **重复二进制说明**：`SOURCE.png`、`CONTACT-SHEET.png` 以及 `favicon-*.png` 等文件在 `01-LOGO/` 与 `slices/` 下**逐字节相同**（SHA256 一致，见 `slices/manifest.json`）。这些是同一权威切图集的两处拷贝；后续应集中去重（保留一份并由 manifest 引用），但不要删除或改动二进制文件，也不要修改 manifest 哈希。
+
 # ZHUBAO Brand Identity System
 
 > **MIDNIGHT SIGNAL · BRAND SYSTEM**
