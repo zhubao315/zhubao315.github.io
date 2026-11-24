@@ -263,7 +263,7 @@ const nowItems = [
         index="03"
         eyebrow="Project Universe / Index"
         title="更多方法、研究与实验。"
-        note="主站不罗列全部 61 个仓库。这里展示能代表方法论广度的项目；Fork 与上游研究在作品页单独标注。"
+        note="主站不罗列全部 {site.repoCount} 个仓库。这里展示能代表方法论广度的项目；Fork 与上游研究在作品页单独标注。"
         link="/work/"
         linkLabel="进入完整项目索引"
       />
@@ -375,7 +375,7 @@ const nowItems = [
             />
             <div class="life-media-caption">
               <span><span class="live-dot" aria-hidden="true"></span> DAILY SYNC / HEALTH</span>
-              <span>DATA SNAPSHOT · 2026-11-11</span>
+              <span>DATA SNAPSHOT · {site.lastVerified}</span>
             </div>
           </a>
           <p class="life-snapshot">
@@ -402,7 +402,7 @@ const nowItems = [
             }
           </div>
           <p class="life-snapshot">
-            SNAPSHOT · 2026-11-11. 不同站点独立更新，数字会随时间增长；以各站点实时页面为最终事实源。
+            SNAPSHOT · {site.lastVerified}. 不同站点独立更新，数字会随时间增长；以各站点实时页面为最终事实源。
           </p>
         </div>
       </div>

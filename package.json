@@ -15,7 +15,9 @@
     "test": "playwright test",
     "test:links": "node scripts/check-links.mjs",
     "test:all": "npm run build && npm run test:links && npm test",
-    "screenshots": "node scripts/capture-screenshots.mjs"
+    "screenshots": "node scripts/capture-screenshots.mjs",
+    "sync:github": "node scripts/sync-github-data.mjs",
+    "sync:github:check": "node scripts/sync-github-data.mjs --check"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

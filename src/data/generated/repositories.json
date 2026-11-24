@@ -1,0 +1,4163 @@
+[
+  {
+    "name": "AgentTuning",
+    "full_name": "zhubao315/AgentTuning",
+    "description": "AgentTuning: Enabling Generalized Agent Abilities for LLMs",
+    "homepage": "https://thudm.github.io/AgentTuning/",
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2023-11-06T08:56:02Z",
+    "updated_at": "2023-11-06T08:56:03Z",
+    "pushed_at": "2023-10-31T15:34:43Z",
+    "size_kb": 29350,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 1222,
+    "languages": {
+      "Python": 1267610,
+      "C++": 983097,
+      "HTML": 753650,
+      "JavaScript": 277604,
+      "Makefile": 48943,
+      "CSS": 39662,
+      "Shell": 33632,
+      "CMake": 21852,
+      "TypeScript": 116
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 37
+      },
+      {
+        "name": "C++",
+        "pct": 29
+      },
+      {
+        "name": "HTML",
+        "pct": 22
+      },
+      {
+        "name": "JavaScript",
+        "pct": 8
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": true,
+    "workflow_files": [],
+    "large_files": [
+      {
+        "path": "AgentBench.old/src/tasks/webshop/web_agent_site/envs/chromedriver",
+        "size": 14206504
+      }
+    ],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "ai-agent-master",
+    "full_name": "zhubao315/ai-agent-master",
+    "description": "AI-Agent 平台全生命周期运维技能（标准 Agent Skills 格式，原生 Skillshub 可安装）",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-11-24T03:00:07Z",
+    "updated_at": "2026-11-24T03:02:10Z",
+    "pushed_at": "2026-11-24T03:02:06Z",
+    "size_kb": 90,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 58,
+    "languages": {
+      "Python": 6327,
+      "Shell": 3858,
+      "JavaScript": 2207
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 51
+      },
+      {
+        "name": "Shell",
+        "pct": 31
+      },
+      {
+        "name": "JavaScript",
+        "pct": 18
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/test.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": "skill-v1.0.0",
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-24T03:02:11Z"
+    }
+  },
+  {
+    "name": "ApeRAG",
+    "full_name": "zhubao315/ApeRAG",
+    "description": "ApeRAG: Best choice for building your own Knowledge Graph and for Context Engineering",
+    "homepage": null,
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2025-07-17T06:00:11Z",
+    "updated_at": "2025-07-17T06:00:12Z",
+    "pushed_at": "2025-07-17T03:25:06Z",
+    "size_kb": 33562,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 772,
+    "languages": {
+      "Python": 2445360,
+      "TypeScript": 962571,
+      "PLpgSQL": 343668,
+      "Shell": 27451,
+      "Makefile": 11243,
+      "Less": 5466,
+      "Smarty": 2232,
+      "Dockerfile": 1578,
+      "Mako": 689,
+      "JavaScript": 416,
+      "CSS": 341
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 64
+      },
+      {
+        "name": "TypeScript",
+        "pct": 25
+      },
+      {
+        "name": "PLpgSQL",
+        "pct": 9
+      },
+      {
+        "name": "Shell",
+        "pct": 1
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/auto-approve.yml",
+      ".github/workflows/cherry-pick.yml",
+      ".github/workflows/cicd-pull-request.yml",
+      ".github/workflows/cicd-push.yml",
+      ".github/workflows/e2e-aperag-test.yml",
+      ".github/workflows/e2e-aperag.yml",
+      ".github/workflows/issues-addtoproject.yml",
+      ".github/workflows/issues-labeluserdoc.yml",
+      ".github/workflows/issues-move.yml",
+      ".github/workflows/issues-tagstale.yml",
+      ".github/workflows/milestoneclose.yml",
+      ".github/workflows/pull-request-check.yml",
+      ".github/workflows/pull-request-label-size.yaml",
+      ".github/workflows/pull-request-stats.yml",
+      ".github/workflows/pull-request-user-interaction.yaml",
+      ".github/workflows/release-chart.yml",
+      ".github/workflows/release-create.yml",
+      ".github/workflows/release-image.yml",
+      ".github/workflows/release-version.yml"
+    ],
+    "large_files": [
+      {
+        "path": "tests/e2e_test/graphstorage/graph_storage_test_data.json",
+        "size": 75813011
+      }
+    ],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 19,
+    "last_run": null
+  },
+  {
+    "name": "Auto-GPT",
+    "full_name": "zhubao315/Auto-GPT",
+    "description": "An experimental open-source attempt to make GPT-4 fully autonomous.",
+    "homepage": null,
+    "default_branch": "master",
+    "language": "Python",
+    "fork": true,
+    "parent": null,
+    "license": "MIT",
+    "topics": [],
+    "created_at": "2023-04-11T05:56:08Z",
+    "updated_at": "2023-05-23T10:53:09Z",
+    "pushed_at": "2023-05-23T10:51:20Z",
+    "size_kb": 3436,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 248,
+    "languages": {
+      "Python": 468297,
+      "Dockerfile": 1495,
+      "JavaScript": 804,
+      "Shell": 766,
+      "Batchfile": 532
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 99
+      },
+      {
+        "name": "Dockerfile",
+        "pct": 0
+      },
+      {
+        "name": "JavaScript",
+        "pct": 0
+      },
+      {
+        "name": "Shell",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/benchmarks.yml",
+      ".github/workflows/ci.yml",
+      ".github/workflows/docker-cache-clean.yml",
+      ".github/workflows/docker-ci.yml",
+      ".github/workflows/docker-release.yml",
+      ".github/workflows/documentation-release.yml",
+      ".github/workflows/pr-label.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 7,
+    "last_run": null
+  },
+  {
+    "name": "Awesome-Nano-Banana-images",
+    "full_name": "zhubao315/Awesome-Nano-Banana-images",
+    "description": "A curated collection of fun and creative examples generated with Nano Banana🍌, Gemini-2.5-flash-image based model. We also release Nano-consistent-150K openly to support the community's development of image generation and unified models(click to website to see our blog)",
+    "homepage": "https://picotrex.github.io/Awesome-Nano-Banana-images/",
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2025-09-24T01:26:57Z",
+    "updated_at": "2025-09-24T01:26:57Z",
+    "pushed_at": "2025-09-18T16:32:53Z",
+    "size_kb": 150241,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 178,
+    "languages": {},
+    "top_languages": [],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "ChatDev",
+    "full_name": "zhubao315/ChatDev",
+    "description": "Create Customized Software using Natural Language Idea (through Multi-Agent Collaboration)",
+    "homepage": null,
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2023-09-05T06:05:24Z",
+    "updated_at": "2023-09-05T06:05:24Z",
+    "pushed_at": "2023-09-05T01:14:20Z",
+    "size_kb": 29100,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 489,
+    "languages": {
+      "Python": 326074,
+      "JavaScript": 107461,
+      "CSS": 25446,
+      "HTML": 13086
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 69
+      },
+      {
+        "name": "JavaScript",
+        "pct": 23
+      },
+      {
+        "name": "CSS",
+        "pct": 5
+      },
+      {
+        "name": "HTML",
+        "pct": 3
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "cherry-studio",
+    "full_name": "zhubao315/cherry-studio",
+    "description": "🍒 Cherry Studio is a desktop client that supports for multiple LLM providers.",
+    "homepage": "https://cherry-ai.com",
+    "default_branch": "main",
+    "language": "JavaScript",
+    "fork": true,
+    "parent": null,
+    "license": "NOASSERTION",
+    "topics": [],
+    "created_at": "2025-04-09T03:19:47Z",
+    "updated_at": "2025-04-11T05:55:52Z",
+    "pushed_at": "2025-04-11T05:55:47Z",
+    "size_kb": 20679,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 766,
+    "languages": {
+      "JavaScript": 4796185,
+      "TypeScript": 2010453,
+      "SCSS": 17241,
+      "HTML": 10555,
+      "CSS": 5403,
+      "Swift": 4132,
+      "NSIS": 1715
+    },
+    "top_languages": [
+      {
+        "name": "JavaScript",
+        "pct": 70
+      },
+      {
+        "name": "TypeScript",
+        "pct": 29
+      },
+      {
+        "name": "SCSS",
+        "pct": 0
+      },
+      {
+        "name": "HTML",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/nightly-build.yml",
+      ".github/workflows/pr-ci.yml",
+      ".github/workflows/release.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 3,
+    "last_run": null
+  },
+  {
+    "name": "co-mate",
+    "full_name": "zhubao315/co-mate",
+    "description": "Co-mate is an AI-powered architecture copilot, design and governance tools.",
+    "homepage": null,
+    "default_branch": "master",
+    "language": "Kotlin",
+    "fork": true,
+    "parent": null,
+    "license": "MPL-2.0",
+    "topics": [],
+    "created_at": "2023-06-28T01:28:29Z",
+    "updated_at": "2023-11-30T06:09:37Z",
+    "pushed_at": "2023-07-05T10:01:04Z",
+    "size_kb": 16821,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 338,
+    "languages": {
+      "Kotlin": 225814,
+      "TypeScript": 105134,
+      "Rust": 9503,
+      "JavaScript": 3972,
+      "CSS": 1472,
+      "Java": 561
+    },
+    "top_languages": [
+      {
+        "name": "Kotlin",
+        "pct": 65
+      },
+      {
+        "name": "TypeScript",
+        "pct": 30
+      },
+      {
+        "name": "Rust",
+        "pct": 3
+      },
+      {
+        "name": "JavaScript",
+        "pct": 1
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/cd.yaml",
+      ".github/workflows/ci.yaml"
+    ],
+    "large_files": [
+      {
+        "path": "llm-semantic/src/main/resources/model/model.onnx",
+        "size": 22998413
+      }
+    ],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 2,
+    "last_run": null
+  },
+  {
+    "name": "cube-studio",
+    "full_name": "zhubao315/cube-studio",
+    "description": "cube studio开源云原生一站式机器学习/深度学习/大模型AI平台，支持sso登录，多租户，大数据平台对接，notebook在线开发，拖拉拽任务流pipeline编排，多机多卡分布式训练，超参搜索，推理服务VGPU，边缘计算，serverless，标注平台，自动化标注，数据集管理，大模型微调，vllm大模型推理，llmops，私有知识库，AI模型应用商店，支持模型一键开发/推理/微调，支持国产cpu/gpu/npu芯片，支持RDMA，支持pytorch/tf/mxnet/deepspeed/paddle/colossalai/horovod/spark/ray/volcano分布式",
+    "homepage": null,
+    "default_branch": "master",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "NOASSERTION",
+    "topics": [],
+    "created_at": "2024-06-28T08:56:21Z",
+    "updated_at": "2024-06-28T08:56:21Z",
+    "pushed_at": "2024-06-28T03:42:30Z",
+    "size_kb": 140010,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "MODIFIED",
+    "status": "DORMANT",
+    "file_count": 1604,
+    "languages": {
+      "Jupyter Notebook": 5711859,
+      "Python": 2535748,
+      "TypeScript": 732477,
+      "Less": 153752,
+      "HTML": 128061,
+      "JavaScript": 87904,
+      "Shell": 68080,
+      "CSS": 39589,
+      "Dockerfile": 27229,
+      "Mustache": 18215,
+      "Smarty": 2272,
+      "Mako": 494
+    },
+    "top_languages": [
+      {
+        "name": "Jupyter Notebook",
+        "pct": 60
+      },
+      {
+        "name": "Python",
+        "pct": 27
+      },
+      {
+        "name": "TypeScript",
+        "pct": 8
+      },
+      {
+        "name": "Less",
+        "pct": 2
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "deepseek-harness",
+    "full_name": "zhubao315/deepseek-harness",
+    "description": "DeepSeek Harness: Everything is a Plugin.",
+    "homepage": "https://deepseek.com/harness",
+    "default_branch": "master",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "MIT",
+    "topics": [],
+    "created_at": "2026-08-14T02:13:08Z",
+    "updated_at": "2026-08-14T02:13:08Z",
+    "pushed_at": "2026-08-13T13:00:21Z",
+    "size_kb": 117204,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "MODIFIED",
+    "status": "ACTIVE",
+    "file_count": 7412,
+    "languages": {
+      "TypeScript": 23780553,
+      "CSS": 391961,
+      "Python": 168201,
+      "JavaScript": 130642,
+      "Shell": 16923,
+      "C": 11763,
+      "C++": 6877,
+      "HTML": 425
+    },
+    "top_languages": [
+      {
+        "name": "TypeScript",
+        "pct": 97
+      },
+      {
+        "name": "CSS",
+        "pct": 2
+      },
+      {
+        "name": "Python",
+        "pct": 1
+      },
+      {
+        "name": "JavaScript",
+        "pct": 1
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/build-exe-for-python-sdk.yml",
+      ".github/workflows/ci.yml",
+      ".github/workflows/docs-pages.yml",
+      ".github/workflows/e2b-e2e.yml",
+      ".github/workflows/e2e.yml",
+      ".github/workflows/expected-filenames.yml",
+      ".github/workflows/issue-lifecycle.yml",
+      ".github/workflows/issue-policy.yml",
+      ".github/workflows/landlock-run-release.yml",
+      ".github/workflows/landlock-run.yml",
+      ".github/workflows/pi-ai-provider-e2e.yml",
+      ".github/workflows/python-release.yml",
+      ".github/workflows/release-vendor.yml",
+      ".github/workflows/release.yml",
+      ".github/workflows/sandbox.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 15,
+    "last_run": null
+  },
+  {
+    "name": "DevOpsGPT",
+    "full_name": "zhubao315/DevOpsGPT",
+    "description": "Multi agent system for AI-driven software development. Convert natural language requirements into working software. Supports any development language and extends the existing base code.",
+    "homepage": "http://www.kuafuai.net",
+    "default_branch": "master",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "NOASSERTION",
+    "topics": [],
+    "created_at": "2023-08-08T02:24:03Z",
+    "updated_at": "2023-08-08T02:24:03Z",
+    "pushed_at": "2023-08-07T10:34:00Z",
+    "size_kb": 2114,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 163,
+    "languages": {
+      "Python": 84153,
+      "JavaScript": 59699,
+      "Java": 27413,
+      "Smarty": 13110,
+      "HTML": 6359,
+      "Shell": 2858,
+      "Batchfile": 2386,
+      "CSS": 2119
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 42
+      },
+      {
+        "name": "JavaScript",
+        "pct": 30
+      },
+      {
+        "name": "Java",
+        "pct": 14
+      },
+      {
+        "name": "Smarty",
+        "pct": 7
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": true,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "docker_image_pusher",
+    "full_name": "zhubao315/docker_image_pusher",
+    "description": "使用Github Action将国外的Docker镜像转存到阿里云私有仓库，供国内服务器使用，免费易用",
+    "homepage": null,
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2024-06-25T07:34:22Z",
+    "updated_at": "2024-08-13T08:13:56Z",
+    "pushed_at": "2024-08-13T08:13:53Z",
+    "size_kb": 737,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "MODIFIED",
+    "status": "DORMANT",
+    "file_count": 12,
+    "languages": {},
+    "top_languages": [],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/docker.yaml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": null
+  },
+  {
+    "name": "DockerTarBuilder",
+    "full_name": "zhubao315/DockerTarBuilder",
+    "description": "它是一个工作流。可快速构建指定架构/平台的docker镜像",
+    "homepage": "https://wkdaily.cpolar.cn/archives/gc",
+    "default_branch": "master",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "GPL-3.0",
+    "topics": [],
+    "created_at": "2024-06-19T01:14:35Z",
+    "updated_at": "2024-06-19T01:14:36Z",
+    "pushed_at": "2024-06-18T07:31:37Z",
+    "size_kb": 63,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "MODIFIED",
+    "status": "DORMANT",
+    "file_count": 6,
+    "languages": {},
+    "top_languages": [],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/amd64.yml",
+      ".github/workflows/arm32.yml",
+      ".github/workflows/arm64.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 3,
+    "last_run": null
+  },
+  {
+    "name": "fabric",
+    "full_name": "zhubao315/fabric",
+    "description": "Hyperledger Fabric is an enterprise-grade permissioned distributed ledger framework for developing solutions and applications. Its modular and versatile design satisfies a broad range of industry use cases. It offers a unique approach to consensus that enables performance at scale while preserving privacy.",
+    "homepage": "https://wiki.hyperledger.org/display/fabric",
+    "default_branch": "master",
+    "language": "Go",
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2020-06-20T02:18:00Z",
+    "updated_at": "2025-07-01T09:03:08Z",
+    "pushed_at": "2025-07-01T09:01:49Z",
+    "size_kb": 148254,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 6151,
+    "languages": {
+      "Go": 11881888,
+      "Shell": 69870,
+      "Makefile": 19327,
+      "Dockerfile": 8589
+    },
+    "top_languages": [
+      {
+        "name": "Go",
+        "pct": 99
+      },
+      {
+        "name": "Shell",
+        "pct": 1
+      },
+      {
+        "name": "Makefile",
+        "pct": 0
+      },
+      {
+        "name": "Dockerfile",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/broken-link-checker.yml",
+      ".github/workflows/release.yml",
+      ".github/workflows/scorecard.yml",
+      ".github/workflows/verify-build.yml",
+      ".github/workflows/vulnerability-scan.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 5,
+    "last_run": null
+  },
+  {
+    "name": "fabric-prompt",
+    "full_name": "zhubao315/fabric-prompt",
+    "description": "fabric is an open-source framework for augmenting humans using AI. It provides a modular framework for solving specific problems using a crowdsourced set of AI prompts that can be used anywhere.",
+    "homepage": "https://danielmiessler.com/p/fabric-origin-story",
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "MIT",
+    "topics": [],
+    "created_at": "2024-12-18T06:34:16Z",
+    "updated_at": "2024-12-18T06:34:16Z",
+    "pushed_at": "2024-12-17T22:13:48Z",
+    "size_kb": 175245,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 503,
+    "languages": {
+      "Go": 184296,
+      "Svelte": 56745,
+      "TypeScript": 40200,
+      "Shell": 4152,
+      "JavaScript": 3991,
+      "CSS": 3974,
+      "Batchfile": 3345,
+      "Nix": 3197,
+      "Dockerfile": 809,
+      "HTML": 401
+    },
+    "top_languages": [
+      {
+        "name": "Go",
+        "pct": 61
+      },
+      {
+        "name": "Svelte",
+        "pct": 19
+      },
+      {
+        "name": "TypeScript",
+        "pct": 13
+      },
+      {
+        "name": "Shell",
+        "pct": 1
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/ci.yml",
+      ".github/workflows/patterns.yaml",
+      ".github/workflows/release.yml",
+      ".github/workflows/update-version-and-create-tag.yml"
+    ],
+    "large_files": [
+      {
+        "path": "images/fabric-logo-gif.gif",
+        "size": 44424972
+      },
+      {
+        "path": "web/src/lib/images/fabric-logo.gif",
+        "size": 44424972
+      },
+      {
+        "path": "web/src/lib/images/fabric-logo.png",
+        "size": 44424972
+      },
+      {
+        "path": "web/static/fabric-logo-gif.gif",
+        "size": 44424972
+      },
+      {
+        "path": "web/static/favicon.png",
+        "size": 44424972
+      }
+    ],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 4,
+    "last_run": null
+  },
+  {
+    "name": "FastChat",
+    "full_name": "zhubao315/FastChat",
+    "description": "An open platform for training, serving, and evaluating large language models. Release repo for Vicuna and FastChat-T5.",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "Python",
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2023-06-01T03:13:00Z",
+    "updated_at": "2023-06-08T08:03:51Z",
+    "pushed_at": "2023-06-13T03:02:43Z",
+    "size_kb": 29957,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 151,
+    "languages": {
+      "Python": 385293,
+      "JavaScript": 9991,
+      "HTML": 7669,
+      "Shell": 6688,
+      "CSS": 1822,
+      "Dockerfile": 232
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 94
+      },
+      {
+        "name": "JavaScript",
+        "pct": 2
+      },
+      {
+        "name": "HTML",
+        "pct": 2
+      },
+      {
+        "name": "Shell",
+        "pct": 2
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/python-package.yml"
+    ],
+    "large_files": [
+      {
+        "path": "assets/demo_narrow.gif",
+        "size": 12261733
+      }
+    ],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": null
+  },
+  {
+    "name": "Flowise",
+    "full_name": "zhubao315/Flowise",
+    "description": "Drag & drop UI to build your customized LLM flow using LangchainJS",
+    "homepage": "https://flowiseai.com",
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "MIT",
+    "topics": [],
+    "created_at": "2023-06-06T03:15:00Z",
+    "updated_at": "2023-06-06T03:15:00Z",
+    "pushed_at": "2023-06-06T00:30:10Z",
+    "size_kb": 5487,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 356,
+    "languages": {
+      "JavaScript": 332610,
+      "TypeScript": 314678,
+      "CSS": 10380,
+      "SCSS": 5986,
+      "HTML": 3287,
+      "Dockerfile": 879,
+      "Shell": 194,
+      "Batchfile": 60
+    },
+    "top_languages": [
+      {
+        "name": "JavaScript",
+        "pct": 50
+      },
+      {
+        "name": "TypeScript",
+        "pct": 47
+      },
+      {
+        "name": "CSS",
+        "pct": 2
+      },
+      {
+        "name": "SCSS",
+        "pct": 1
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/main.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": null
+  },
+  {
+    "name": "GitHubPoster",
+    "full_name": "zhubao315/GitHubPoster",
+    "description": "Make everything a GitHub svg poster and Skyline!",
+    "homepage": null,
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "MIT",
+    "topics": [],
+    "created_at": "2023-03-24T06:43:07Z",
+    "updated_at": "2023-03-23T01:55:29Z",
+    "pushed_at": "2023-03-24T00:13:11Z",
+    "size_kb": 150579,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 114,
+    "languages": {
+      "Python": 138667,
+      "Dockerfile": 327
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 100
+      },
+      {
+        "name": "Dockerfile",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/ci.yml",
+      ".github/workflows/release.yml",
+      ".github/workflows/run_poster_generate.yml",
+      ".github/workflows/twitter_backup.yml"
+    ],
+    "large_files": [
+      {
+        "path": "examples/2021_github.stl",
+        "size": 11348784
+      }
+    ],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 4,
+    "last_run": null
+  },
+  {
+    "name": "gpustack",
+    "full_name": "zhubao315/gpustack",
+    "description": "A GPU cluster manager that configures and orchestrates inference engines like vLLM and SGLang for high-performance AI model deployment.",
+    "homepage": "https://gpustack.ai",
+    "default_branch": "main",
+    "language": "Python",
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2026-04-03T09:44:56Z",
+    "updated_at": "2026-04-20T08:49:43Z",
+    "pushed_at": "2026-04-20T08:49:34Z",
+    "size_kb": 189739,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "ACTIVE",
+    "file_count": 996,
+    "languages": {
+      "Python": 3256011,
+      "Jinja": 53463,
+      "Dockerfile": 33650,
+      "Shell": 29938,
+      "PowerShell": 18697,
+      "Mustache": 3290,
+      "Makefile": 1977,
+      "Mako": 667
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 96
+      },
+      {
+        "name": "Jinja",
+        "pct": 2
+      },
+      {
+        "name": "Dockerfile",
+        "pct": 1
+      },
+      {
+        "name": "Shell",
+        "pct": 1
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/backport.yml",
+      ".github/workflows/ci.yml",
+      ".github/workflows/pack.yaml",
+      ".github/workflows/pr.yml",
+      ".github/workflows/translate.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 5,
+    "last_run": null
+  },
+  {
+    "name": "kubesphere",
+    "full_name": "zhubao315/kubesphere",
+    "description": "The container platform tailored for Kubernetes multi-cloud, datacenter, and edge management ⎈ 🖥 ☁️",
+    "homepage": "https://kubesphere.io",
+    "default_branch": "master",
+    "language": "Go",
+    "fork": true,
+    "parent": null,
+    "license": "NOASSERTION",
+    "topics": [],
+    "created_at": "2022-07-05T10:52:29Z",
+    "updated_at": "2026-10-06T17:58:01Z",
+    "pushed_at": "2025-07-17T02:30:06Z",
+    "size_kb": 107802,
+    "stars": 1,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 12298,
+    "languages": {
+      "Go": 2431275,
+      "Shell": 176361,
+      "Mustache": 38762,
+      "Makefile": 6064,
+      "Smarty": 3186,
+      "Dockerfile": 2384,
+      "Open Policy Agent": 1535
+    },
+    "top_languages": [
+      {
+        "name": "Go",
+        "pct": 91
+      },
+      {
+        "name": "Shell",
+        "pct": 7
+      },
+      {
+        "name": "Mustache",
+        "pct": 1
+      },
+      {
+        "name": "Makefile",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/build-multiarch.yaml",
+      ".github/workflows/e2e-test.yml",
+      ".github/workflows/issue_comment_webhook.yml",
+      ".github/workflows/kind/kind.yaml",
+      ".github/workflows/nightly-builds.yml",
+      ".github/workflows/release-drafter.yml",
+      ".github/workflows/sync-helm-chart.yaml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 6,
+    "last_run": null
+  },
+  {
+    "name": "kubezoo",
+    "full_name": "zhubao315/kubezoo",
+    "description": "a lightweight kubernetes multi-tenancy gateway",
+    "homepage": null,
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2025-07-01T08:53:59Z",
+    "updated_at": "2025-07-01T08:53:59Z",
+    "pushed_at": "2024-07-16T09:22:56Z",
+    "size_kb": 1606,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 198,
+    "languages": {
+      "Go": 598764,
+      "Shell": 15411,
+      "Makefile": 4329,
+      "Dockerfile": 1117
+    },
+    "top_languages": [
+      {
+        "name": "Go",
+        "pct": 97
+      },
+      {
+        "name": "Shell",
+        "pct": 2
+      },
+      {
+        "name": "Makefile",
+        "pct": 1
+      },
+      {
+        "name": "Dockerfile",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": false,
+    "has_docs": true,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "langflow",
+    "full_name": "zhubao315/langflow",
+    "description": "⛓️ LangFlow is a UI for LangChain, designed with react-flow to provide an effortless way to experiment and prototype flows.",
+    "homepage": "http://www.logspace.ai",
+    "default_branch": "dev",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "MIT",
+    "topics": [],
+    "created_at": "2023-06-06T03:35:05Z",
+    "updated_at": "2023-06-06T03:35:05Z",
+    "pushed_at": "2023-06-06T03:31:47Z",
+    "size_kb": 43970,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 305,
+    "languages": {
+      "Python": 286280,
+      "TypeScript": 272728,
+      "Shell": 5513,
+      "JavaScript": 4904,
+      "CSS": 2848,
+      "Makefile": 2729,
+      "Dockerfile": 2691,
+      "HTML": 536
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 50
+      },
+      {
+        "name": "TypeScript",
+        "pct": 47
+      },
+      {
+        "name": "Shell",
+        "pct": 1
+      },
+      {
+        "name": "JavaScript",
+        "pct": 1
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/lint.yml",
+      ".github/workflows/release.yml",
+      ".github/workflows/test-lcserve-push.yml",
+      ".github/workflows/test.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 4,
+    "last_run": null
+  },
+  {
+    "name": "leapp",
+    "full_name": "zhubao315/leapp",
+    "description": "library to quickly export and deploy entire inference pipelines",
+    "homepage": "https://nvidia-isaac.github.io/leapp/",
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2026-11-21T11:14:36Z",
+    "updated_at": "2026-11-21T11:14:36Z",
+    "pushed_at": "2026-11-21T11:14:53Z",
+    "size_kb": 3416,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "MODIFIED",
+    "status": "ACTIVE",
+    "file_count": 217,
+    "languages": {
+      "Python": 1762343,
+      "C++": 41740,
+      "CMake": 7051
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 97
+      },
+      {
+        "name": "C++",
+        "pct": 2
+      },
+      {
+        "name": "CMake",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/ci.yml",
+      ".github/workflows/docs.yml",
+      ".github/workflows/publish.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 3,
+    "last_run": null
+  },
+  {
+    "name": "newton",
+    "full_name": "zhubao315/newton",
+    "description": "An open-source, GPU-accelerated physics simulation engine built upon NVIDIA Warp, specifically targeting roboticists and simulation researchers.",
+    "homepage": "https://newton-physics.github.io/newton/stable/",
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2026-11-21T11:13:50Z",
+    "updated_at": "2026-11-21T11:13:50Z",
+    "pushed_at": "2026-11-21T11:14:06Z",
+    "size_kb": 230414,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "MODIFIED",
+    "status": "ACTIVE",
+    "file_count": 1638,
+    "languages": {
+      "Python": 36782407
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": false,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/automated_code_review.yml",
+      ".github/workflows/aws_gpu_benchmarks.yml",
+      ".github/workflows/aws_gpu_tests.yml",
+      ".github/workflows/changelog-preview.yml",
+      ".github/workflows/ci.yml",
+      ".github/workflows/docs-dev.yml",
+      ".github/workflows/docs-release.yml",
+      ".github/workflows/maintainer_approve.yml",
+      ".github/workflows/merge_queue_aws_gpu.yml",
+      ".github/workflows/minimum_deps_tests.yml",
+      ".github/workflows/pr.yml",
+      ".github/workflows/pr_api_changes.yml",
+      ".github/workflows/pr_auto_assign_creator.yml",
+      ".github/workflows/pr_license_check.yml",
+      ".github/workflows/pr_target_aws_gpu_benchmarks.yml",
+      ".github/workflows/pr_target_aws_gpu_tests.yml",
+      ".github/workflows/push_aws_gpu.yml",
+      ".github/workflows/release.yml",
+      ".github/workflows/scheduled_nightly.yml",
+      ".github/workflows/warp_nightly_tests.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 20,
+    "last_run": null
+  },
+  {
+    "name": "open_llama",
+    "full_name": "zhubao315/open_llama",
+    "description": "OpenLLaMA, a permissively licensed open source reproduction of Meta AI’s LLaMA 7B trained on the RedPajama dataset",
+    "homepage": null,
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2023-06-20T02:23:51Z",
+    "updated_at": "2023-06-20T02:23:51Z",
+    "pushed_at": "2023-06-16T05:54:34Z",
+    "size_kb": 1397,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 4,
+    "languages": {},
+    "top_languages": [],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "Open-Assistant",
+    "full_name": "zhubao315/Open-Assistant",
+    "description": "OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.",
+    "homepage": "https://open-assistant.io",
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2023-06-13T03:01:05Z",
+    "updated_at": "2023-06-13T03:01:05Z",
+    "pushed_at": "2023-06-13T01:54:15Z",
+    "size_kb": 47133,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 1547,
+    "languages": {
+      "Python": 1762443,
+      "TypeScript": 685090,
+      "JavaScript": 21241,
+      "Shell": 14985,
+      "Mako": 1052,
+      "HTML": 387,
+      "Dockerfile": 296,
+      "CSS": 100
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 71
+      },
+      {
+        "name": "TypeScript",
+        "pct": 28
+      },
+      {
+        "name": "JavaScript",
+        "pct": 1
+      },
+      {
+        "name": "Shell",
+        "pct": 1
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/build-frontend.yaml",
+      ".github/workflows/build-postgres.yaml",
+      ".github/workflows/deploy-docs-site.yaml",
+      ".github/workflows/deploy-to-node.yaml",
+      ".github/workflows/docker-build.yaml",
+      ".github/workflows/pre-commit.yaml",
+      ".github/workflows/production-deploy.yaml",
+      ".github/workflows/production2-deploy.yaml",
+      ".github/workflows/release.yaml",
+      ".github/workflows/test-api-contract.yaml",
+      ".github/workflows/test-e2e.yaml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 11,
+    "last_run": null
+  },
+  {
+    "name": "openclaude",
+    "full_name": "zhubao315/openclaude",
+    "description": "runs anywhere. uses anything",
+    "homepage": "https://openclaude.gitlawb.com",
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "NOASSERTION",
+    "topics": [],
+    "created_at": "2026-06-10T10:27:12Z",
+    "updated_at": "2026-06-10T10:27:12Z",
+    "pushed_at": "2026-06-10T05:50:58Z",
+    "size_kb": 26725,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "MODIFIED",
+    "status": "ACTIVE",
+    "file_count": 2713,
+    "languages": {
+      "TypeScript": 22547424,
+      "JavaScript": 190831,
+      "Python": 46320,
+      "CSS": 12164,
+      "PowerShell": 5108,
+      "HTML": 2180,
+      "Dockerfile": 1280,
+      "Shell": 967
+    },
+    "top_languages": [
+      {
+        "name": "TypeScript",
+        "pct": 99
+      },
+      {
+        "name": "JavaScript",
+        "pct": 1
+      },
+      {
+        "name": "Python",
+        "pct": 0
+      },
+      {
+        "name": "CSS",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/pr-checks.yml",
+      ".github/workflows/release.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 2,
+    "last_run": null
+  },
+  {
+    "name": "OpenLLM",
+    "full_name": "zhubao315/OpenLLM",
+    "description": "An open platform for operating large language models(LLMs) in production. Fine-tune, serve, deploy, and monitor any LLMs with ease.",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "Python",
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2023-06-13T02:49:47Z",
+    "updated_at": "2024-04-09T07:46:19Z",
+    "pushed_at": "2024-04-09T07:46:14Z",
+    "size_kb": 2176,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 123,
+    "languages": {
+      "Python": 366494,
+      "Shell": 2749
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 99
+      },
+      {
+        "name": "Shell",
+        "pct": 1
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/ci.yml",
+      ".github/workflows/create-releases.yml",
+      ".github/workflows/release-notes.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 3,
+    "last_run": null
+  },
+  {
+    "name": "orawatch",
+    "full_name": "zhubao315/orawatch",
+    "description": null,
+    "homepage": null,
+    "default_branch": "master",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2022-08-05T02:06:41Z",
+    "updated_at": "2022-04-26T01:07:52Z",
+    "pushed_at": "2020-12-23T03:16:16Z",
+    "size_kb": 12,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "EXPERIMENT",
+    "file_count": 3,
+    "languages": {
+      "Shell": 10436,
+      "HTML": 10188
+    },
+    "top_languages": [
+      {
+        "name": "Shell",
+        "pct": 51
+      },
+      {
+        "name": "HTML",
+        "pct": 49
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "piglet-docker",
+    "full_name": "zhubao315/piglet-docker",
+    "description": null,
+    "homepage": null,
+    "default_branch": "master",
+    "language": "Dockerfile",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-04-21T01:53:41Z",
+    "updated_at": "2026-04-21T09:01:32Z",
+    "pushed_at": "2026-04-21T09:01:29Z",
+    "size_kb": 37,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 12,
+    "languages": {
+      "Dockerfile": 6905,
+      "HTML": 5470,
+      "Python": 4843,
+      "Shell": 2874
+    },
+    "top_languages": [
+      {
+        "name": "Dockerfile",
+        "pct": 34
+      },
+      {
+        "name": "HTML",
+        "pct": 27
+      },
+      {
+        "name": "Python",
+        "pct": 24
+      },
+      {
+        "name": "Shell",
+        "pct": 14
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/docker-publish.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-04-21T09:01:59Z"
+    }
+  },
+  {
+    "name": "pigsty",
+    "full_name": "zhubao315/pigsty",
+    "description": "Pigsty - Battery-Included Open-Source Distribution for PostgreSQL",
+    "homepage": "https://pigsty.cc",
+    "default_branch": "master",
+    "language": "Shell",
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2021-11-28T05:56:04Z",
+    "updated_at": "2026-05-09T02:09:04Z",
+    "pushed_at": "2026-05-09T02:07:17Z",
+    "size_kb": 39363,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "ACTIVE",
+    "file_count": 729,
+    "languages": {
+      "Shell": 338906,
+      "Jinja": 253716,
+      "PLpgSQL": 233226,
+      "HCL": 107910,
+      "Python": 79830,
+      "Makefile": 63502,
+      "Ruby": 20733,
+      "Perl": 13256,
+      "Dockerfile": 4847,
+      "TypeScript": 3180,
+      "HTML": 1924
+    },
+    "top_languages": [
+      {
+        "name": "Shell",
+        "pct": 30
+      },
+      {
+        "name": "Jinja",
+        "pct": 23
+      },
+      {
+        "name": "PLpgSQL",
+        "pct": 21
+      },
+      {
+        "name": "HCL",
+        "pct": 10
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/docker.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": null
+  },
+  {
+    "name": "portainer",
+    "full_name": "zhubao315/portainer",
+    "description": "Making Docker and Kubernetes management easy.",
+    "homepage": "https://www.portainer.io",
+    "default_branch": "develop",
+    "language": "TypeScript",
+    "fork": true,
+    "parent": null,
+    "license": "Zlib",
+    "topics": [],
+    "created_at": "2023-02-08T08:58:34Z",
+    "updated_at": "2024-01-15T05:43:46Z",
+    "pushed_at": "2024-01-15T05:42:58Z",
+    "size_kb": 34445,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 3883,
+    "languages": {
+      "TypeScript": 2643134,
+      "Go": 2508248,
+      "JavaScript": 1457130,
+      "HTML": 942361,
+      "CSS": 106662,
+      "Shell": 15496,
+      "Dockerfile": 10648,
+      "Makefile": 4842,
+      "EJS": 2436,
+      "Mustache": 643,
+      "Handlebars": 411
+    },
+    "top_languages": [
+      {
+        "name": "TypeScript",
+        "pct": 34
+      },
+      {
+        "name": "Go",
+        "pct": 33
+      },
+      {
+        "name": "JavaScript",
+        "pct": 19
+      },
+      {
+        "name": "HTML",
+        "pct": 12
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/ci.yaml",
+      ".github/workflows/label-conflcts.yaml",
+      ".github/workflows/lint.yml",
+      ".github/workflows/nightly-security-scan.yml",
+      ".github/workflows/pr-security.yml",
+      ".github/workflows/rebase.yml",
+      ".github/workflows/stale.yml",
+      ".github/workflows/test.yaml",
+      ".github/workflows/validate-openapi-spec.yaml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 8,
+    "last_run": null
+  },
+  {
+    "name": "portainer-templates",
+    "full_name": "zhubao315/portainer-templates",
+    "description": "🚢 400+ 1-click Portainer app templates",
+    "homepage": "https://portainer-templates.as93.net",
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "MIT",
+    "topics": [],
+    "created_at": "2023-06-13T01:30:35Z",
+    "updated_at": "2023-06-13T01:30:35Z",
+    "pushed_at": "2023-06-11T02:32:46Z",
+    "size_kb": 1042,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 22,
+    "languages": {
+      "Python": 6435,
+      "HTML": 1093,
+      "Makefile": 376,
+      "Dockerfile": 143
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 80
+      },
+      {
+        "name": "HTML",
+        "pct": 14
+      },
+      {
+        "name": "Makefile",
+        "pct": 5
+      },
+      {
+        "name": "Dockerfile",
+        "pct": 2
+      }
+    ],
+    "has_readme": false,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/build-template.yml",
+      ".github/workflows/publish-docker.yml",
+      ".github/workflows/sync-mirror.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 3,
+    "last_run": null
+  },
+  {
+    "name": "Python-Core-50-Courses",
+    "full_name": "zhubao315/Python-Core-50-Courses",
+    "description": "Python语言基础50课",
+    "homepage": null,
+    "default_branch": "master",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2023-06-20T01:50:47Z",
+    "updated_at": "2023-06-20T01:50:47Z",
+    "pushed_at": "2023-04-13T06:08:58Z",
+    "size_kb": 25463,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "MODIFIED",
+    "status": "DORMANT",
+    "file_count": 50,
+    "languages": {},
+    "top_languages": [],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "QueryGPT",
+    "full_name": "zhubao315/QueryGPT",
+    "description": "基于Langchain 的自然语言表格数据查询工具 A Natural Language Tabular Data Query Tool based on Langchain",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "Vue",
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2023-07-06T09:41:53Z",
+    "updated_at": "2023-07-20T08:50:11Z",
+    "pushed_at": "2023-07-20T08:50:04Z",
+    "size_kb": 4170,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "MODIFIED",
+    "status": "DORMANT",
+    "file_count": 196,
+    "languages": {
+      "Vue": 154744,
+      "Python": 55373,
+      "TypeScript": 53888,
+      "Less": 29422,
+      "HTML": 1660,
+      "JavaScript": 630,
+      "Shell": 335,
+      "Dockerfile": 286,
+      "Batchfile": 163,
+      "CSS": 59
+    },
+    "top_languages": [
+      {
+        "name": "Vue",
+        "pct": 52
+      },
+      {
+        "name": "Python",
+        "pct": 19
+      },
+      {
+        "name": "TypeScript",
+        "pct": 18
+      },
+      {
+        "name": "Less",
+        "pct": 10
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "stable-diffusion-webui",
+    "full_name": "zhubao315/stable-diffusion-webui",
+    "description": "Stable Diffusion web UI",
+    "homepage": null,
+    "default_branch": "master",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "AGPL-3.0",
+    "topics": [],
+    "created_at": "2023-05-16T03:03:51Z",
+    "updated_at": "2023-05-16T03:03:51Z",
+    "pushed_at": "2023-05-15T18:22:41Z",
+    "size_kb": 30142,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 207,
+    "languages": {
+      "Python": 1359936,
+      "JavaScript": 81644,
+      "HTML": 37027,
+      "CSS": 17424,
+      "Shell": 8347,
+      "Batchfile": 2199
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 90
+      },
+      {
+        "name": "JavaScript",
+        "pct": 5
+      },
+      {
+        "name": "HTML",
+        "pct": 2
+      },
+      {
+        "name": "CSS",
+        "pct": 1
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/on_pull_request.yaml",
+      ".github/workflows/run_tests.yaml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 2,
+    "last_run": null
+  },
+  {
+    "name": "stable-diffusion-webui-docker",
+    "full_name": "zhubao315/stable-diffusion-webui-docker",
+    "description": "Easy Docker setup for Stable Diffusion with user-friendly UI",
+    "homepage": null,
+    "default_branch": "master",
+    "language": "Dockerfile",
+    "fork": true,
+    "parent": null,
+    "license": "NOASSERTION",
+    "topics": [],
+    "created_at": "2023-05-24T06:49:02Z",
+    "updated_at": "2023-05-30T03:24:42Z",
+    "pushed_at": "2023-06-08T02:25:01Z",
+    "size_kb": 283,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 31,
+    "languages": {
+      "Dockerfile": 7732,
+      "Shell": 7222,
+      "Python": 2610
+    },
+    "top_languages": [
+      {
+        "name": "Dockerfile",
+        "pct": 44
+      },
+      {
+        "name": "Shell",
+        "pct": 41
+      },
+      {
+        "name": "Python",
+        "pct": 15
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/docker.yml",
+      ".github/workflows/stale.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": "6.0",
+    "workflow_count": 2,
+    "last_run": null
+  },
+  {
+    "name": "substrate",
+    "full_name": "zhubao315/substrate",
+    "description": "Substrate: The platform for blockchain innovators",
+    "homepage": null,
+    "default_branch": "master",
+    "language": "Rust",
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2021-04-02T11:27:45Z",
+    "updated_at": "2021-12-05T12:27:05Z",
+    "pushed_at": "2026-11-01T06:59:23Z",
+    "size_kb": 207157,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "MODIFIED",
+    "status": "ACTIVE",
+    "file_count": 2683,
+    "languages": {
+      "Rust": 18059238,
+      "WebAssembly": 234034,
+      "Shell": 34919,
+      "Handlebars": 14354,
+      "Dockerfile": 3798,
+      "Python": 2681,
+      "JavaScript": 2105,
+      "EJS": 1373,
+      "Nix": 500
+    },
+    "top_languages": [
+      {
+        "name": "Rust",
+        "pct": 98
+      },
+      {
+        "name": "WebAssembly",
+        "pct": 1
+      },
+      {
+        "name": "Shell",
+        "pct": 0
+      },
+      {
+        "name": "Handlebars",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": false,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/auto-label-issues.yml",
+      ".github/workflows/burnin-label-notification.yml",
+      ".github/workflows/check-D-labels.yml",
+      ".github/workflows/check-labels.yml",
+      ".github/workflows/md-link-check.yml",
+      ".github/workflows/monthly-tag.yml",
+      ".github/workflows/pr-custom-review.yml",
+      ".github/workflows/release-bot.yml",
+      ".github/workflows/release-tagging.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 9,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-01T06:59:07Z"
+    }
+  },
+  {
+    "name": "ulife-os-infra",
+    "full_name": "zhubao315/ulife-os-infra",
+    "description": "uLife OS — Personal Agent OS Skill · 个人智能体操作系统构建与治理技能包（TELOS 身份 / 四层记忆 / 冷启动预算 / MCP-A2A-Skills / 人机接力护栏）",
+    "homepage": "https://zhubao315.github.io/",
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": "MIT",
+    "topics": [],
+    "created_at": "2026-11-19T02:05:05Z",
+    "updated_at": "2026-11-19T03:04:30Z",
+    "pushed_at": "2026-11-19T03:28:18Z",
+    "size_kb": 79,
+    "stars": 1,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 69,
+    "languages": {
+      "Python": 51611
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/ci.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-19T03:28:20Z"
+    }
+  },
+  {
+    "name": "uSkill",
+    "full_name": "zhubao315/uSkill",
+    "description": "uSkills is the controllable, reusable, callable, and evolvable skill foundation for Agents, built with orchestration engineering.",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": "MIT",
+    "topics": [],
+    "created_at": "2026-03-24T10:43:58Z",
+    "updated_at": "2026-04-01T01:29:37Z",
+    "pushed_at": "2026-11-13T10:17:17Z",
+    "size_kb": 2302,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "BUILD",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 131,
+    "languages": {
+      "Python": 377003
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/ci.yml",
+      ".github/workflows/pages.yml",
+      ".github/workflows/release.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": "v0.0.1",
+    "workflow_count": 3,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-13T10:17:10Z"
+    }
+  },
+  {
+    "name": "zhubao315.github.io",
+    "full_name": "zhubao315/zhubao315.github.io",
+    "description": "ZHUBAO 个人数字品牌门户与公开仓库目录",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "CSS",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2022-02-11T03:16:21Z",
+    "updated_at": "2026-11-17T01:24:46Z",
+    "pushed_at": "2026-11-24T11:30:09Z",
+    "size_kb": 28245,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "BUILD",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 541,
+    "languages": {
+      "CSS": 190369,
+      "Astro": 144847,
+      "Python": 108967,
+      "TypeScript": 51775,
+      "JavaScript": 43185
+    },
+    "top_languages": [
+      {
+        "name": "CSS",
+        "pct": 35
+      },
+      {
+        "name": "Astro",
+        "pct": 27
+      },
+      {
+        "name": "Python",
+        "pct": 20
+      },
+      {
+        "name": "TypeScript",
+        "pct": 10
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/deploy.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 2,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-24T11:30:22Z"
+    }
+  },
+  {
+    "name": "e-life-method",
+    "full_name": "zhubao315/e-life-method",
+    "description": "e-Life 自主进化人生操作系统 — 知识管理方法论：理论、方法与实践",
+    "homepage": "https://zhubao315.github.io/e-life-method/",
+    "default_branch": "main",
+    "language": "HTML",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [
+      "e-life",
+      "knowledge-management",
+      "methodology",
+      "obsidian",
+      "personal-knowledge-management",
+      "pkm",
+      "second-brain"
+    ],
+    "created_at": "2026-06-04T03:35:52Z",
+    "updated_at": "2026-06-08T08:55:22Z",
+    "pushed_at": "2026-06-08T08:55:10Z",
+    "size_kb": 66,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 5,
+    "languages": {
+      "HTML": 39695
+    },
+    "top_languages": [
+      {
+        "name": "HTML",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-06-08T08:55:11Z"
+    }
+  },
+  {
+    "name": "gdmp-master",
+    "full_name": "zhubao315/gdmp-master",
+    "description": "GDMP 无代码平台版本化运维知识包（无 AI Skill Runtime，知识包≠AI 执行）",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-11-24T03:00:12Z",
+    "updated_at": "2026-11-24T03:02:13Z",
+    "pushed_at": "2026-11-24T03:02:08Z",
+    "size_kb": 102,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 62,
+    "languages": {
+      "Python": 4985,
+      "JavaScript": 2074,
+      "Shell": 1573
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 58
+      },
+      {
+        "name": "JavaScript",
+        "pct": 24
+      },
+      {
+        "name": "Shell",
+        "pct": 18
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/test.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": "skill-v1.0.0",
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-24T03:02:14Z"
+    }
+  },
+  {
+    "name": "investment-discipline",
+    "full_name": "zhubao315/investment-discipline",
+    "description": "《投资的纪律》Agent Skill · 投资研究与纪律执行助手（采集→校验→分析→纪律检查闭环）。零依赖、可追溯。不预测、不荐股、不承诺收益。",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [
+      "agent-skill",
+      "ai-agent",
+      "claude",
+      "financial-analysis",
+      "investment",
+      "investment-research",
+      "llm",
+      "python",
+      "quantitative-finance",
+      "risk-management",
+      "valuation",
+      "zero-dependencies"
+    ],
+    "created_at": "2026-10-13T06:10:36Z",
+    "updated_at": "2026-10-21T17:04:36Z",
+    "pushed_at": "2026-10-13T06:35:02Z",
+    "size_kb": 163,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 41,
+    "languages": {
+      "Python": 193111
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/ci.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-10-13T06:35:04Z"
+    }
+  },
+  {
+    "name": "knowledge-base-engineering-skill",
+    "full_name": "zhubao315/knowledge-base-engineering-skill",
+    "description": "Portable Knowledge Base Engineering AI skill: read-only-first diagnosis, governance and verification for Markdown/Obsidian knowledge bases.",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": "MIT",
+    "topics": [
+      "ai-agent",
+      "ai-skill",
+      "knowledge-base",
+      "knowledge-engineering",
+      "knowledge-management",
+      "llm",
+      "markdown",
+      "obsidian",
+      "pkm",
+      "rag"
+    ],
+    "created_at": "2026-10-21T11:34:40Z",
+    "updated_at": "2026-10-22T10:13:02Z",
+    "pushed_at": "2026-10-22T10:12:59Z",
+    "size_kb": 69,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 54,
+    "languages": {
+      "Python": 32180
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/tests.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": "v1.2.0",
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-10-22T10:13:00Z"
+    }
+  },
+  {
+    "name": "learn-agentic-ai",
+    "full_name": "zhubao315/learn-agentic-ai",
+    "description": "Learn Agentic AI using Dapr Agentic Cloud Ascent (DACA) Design Pattern and Agent-Native Cloud Technologies: OpenAI Agents SDK, Memory, MCP, A2A, Knowledge Graphs, Dapr, Rancher Desktop, and Kubernetes.",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "Jupyter Notebook",
+    "fork": true,
+    "parent": null,
+    "license": "MIT",
+    "topics": [],
+    "created_at": "2025-05-13T01:34:51Z",
+    "updated_at": "2025-05-14T07:36:10Z",
+    "pushed_at": "2025-05-14T07:36:03Z",
+    "size_kb": 140760,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "THINK",
+    "source_type": "UPSTREAM",
+    "status": "DORMANT",
+    "file_count": 2316,
+    "languages": {
+      "Jupyter Notebook": 18820946,
+      "Python": 885184,
+      "Starlark": 52197,
+      "HTML": 42905,
+      "Dockerfile": 14127,
+      "Shell": 6574,
+      "Makefile": 1941,
+      "TypeScript": 1646,
+      "Batchfile": 124
+    },
+    "top_languages": [
+      {
+        "name": "Jupyter Notebook",
+        "pct": 95
+      },
+      {
+        "name": "Python",
+        "pct": 4
+      },
+      {
+        "name": "Starlark",
+        "pct": 0
+      },
+      {
+        "name": "HTML",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [
+      {
+        "path": "11_graph_query_language/Building-Knowledge-Graphs-Practitioner's-Guide-OReilly-book.pdf",
+        "size": 18609801
+      },
+      {
+        "path": "backup_recent/04_integrations_openai_agents/00_agent_generated_queries/AI vs. Your Database_ To Let It Query, or Not_",
+        "size": 13968044
+      },
+      {
+        "path": "backup_recent/04_integrations_openai_agents/AI Unleashed_ How OpenAI's Agents SDK is Connecting Minds to the World.wav",
+        "size": 19562924
+      }
+    ],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "reading-2026",
+    "full_name": "zhubao315/reading-2026",
+    "description": "2026年度阅读收获：在奇点与道之间寻找锚点",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "HTML",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-06-04T06:00:15Z",
+    "updated_at": "2026-06-08T09:00:55Z",
+    "pushed_at": "2026-06-08T09:00:48Z",
+    "size_kb": 3372,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 28,
+    "languages": {
+      "HTML": 41196
+    },
+    "top_languages": [
+      {
+        "name": "HTML",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/pages.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 2,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-06-08T09:00:52Z"
+    }
+  },
+  {
+    "name": "tescreal-guide",
+    "full_name": "zhubao315/tescreal-guide",
+    "description": "TESCREAL Complete Guide - Visual guide to the seven tech philosophies shaping Silicon Valley",
+    "homepage": "https://zhubao315.github.io/tescreal-guide",
+    "default_branch": "main",
+    "language": "HTML",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-04-17T11:51:02Z",
+    "updated_at": "2026-04-20T03:42:44Z",
+    "pushed_at": "2026-04-20T03:42:41Z",
+    "size_kb": 180,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 28,
+    "languages": {
+      "HTML": 302556
+    },
+    "top_languages": [
+      {
+        "name": "HTML",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-04-20T03:42:43Z"
+    }
+  },
+  {
+    "name": "uPrompt",
+    "full_name": "zhubao315/uPrompt",
+    "description": "提示词管理变得简单",
+    "homepage": null,
+    "default_branch": "main",
+    "language": null,
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2025-08-04T07:21:13Z",
+    "updated_at": "2025-08-11T08:28:45Z",
+    "pushed_at": "2025-08-11T08:28:41Z",
+    "size_kb": 2,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "EXPERIMENT",
+    "file_count": 1,
+    "languages": {},
+    "top_languages": [],
+    "has_readme": false,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "uRead",
+    "full_name": "zhubao315/uRead",
+    "description": "本地优先的深度阅读与知识内化系统 · READ · REFLECT · INTERNALIZE",
+    "homepage": "https://zhubao315.github.io/uRead/",
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": "MIT",
+    "topics": [
+      "ebook-reader",
+      "github-pages",
+      "hugo",
+      "indexeddb",
+      "knowledge-management",
+      "pwa",
+      "react",
+      "reading-notes",
+      "tailwindcss",
+      "typescript",
+      "vite",
+      "web-reader"
+    ],
+    "created_at": "2026-03-25T02:43:26Z",
+    "updated_at": "2026-11-23T07:16:59Z",
+    "pushed_at": "2026-11-24T11:34:50Z",
+    "size_kb": 337502,
+    "stars": 1,
+    "forks": 0,
+    "has_pages": true,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 5888,
+    "languages": {
+      "Python": 1433302,
+      "HTML": 795105,
+      "TypeScript": 603032,
+      "JavaScript": 542123,
+      "SCSS": 434685,
+      "CSS": 39774,
+      "Shell": 848,
+      "Makefile": 353
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 37
+      },
+      {
+        "name": "HTML",
+        "pct": 21
+      },
+      {
+        "name": "TypeScript",
+        "pct": 16
+      },
+      {
+        "name": "JavaScript",
+        "pct": 14
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/auto-sync.yml",
+      ".github/workflows/ci.yml",
+      ".github/workflows/deploy.yml",
+      ".github/workflows/lists-sync.yml"
+    ],
+    "large_files": [
+      {
+        "path": "book-library/books/《AI时代，如何真正学会》-朱宝.epub",
+        "size": 12518217
+      },
+      {
+        "path": "book-library/books/《千分之一的你：从16型到64型》.epub",
+        "size": 16425557
+      },
+      {
+        "path": "public/audio/0e843ff5f0dc2345.wav",
+        "size": 27029804
+      },
+      {
+        "path": "public/audio/9887fb179fc5e4c3.wav",
+        "size": 10686764
+      },
+      {
+        "path": "public/audio/9c26b1681588726e.wav",
+        "size": 36322604
+      },
+      {
+        "path": "public/audio/ccbd6a79e9c152bb.wav",
+        "size": 23765804
+      },
+      {
+        "path": "public/notes/notes.json",
+        "size": 22432938
+      }
+    ],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 4,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "failure",
+      "date": "2026-11-24T11:34:52Z"
+    }
+  },
+  {
+    "name": "uRepo",
+    "full_name": "zhubao315/uRepo",
+    "description": "主题报告",
+    "homepage": "https://zhubao315.github.io/uRepo/",
+    "default_branch": "main",
+    "language": "HTML",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-04-01T06:50:49Z",
+    "updated_at": "2026-04-03T09:49:05Z",
+    "pushed_at": "2026-04-03T09:49:02Z",
+    "size_kb": 81,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "EXPERIMENT",
+    "file_count": 6,
+    "languages": {
+      "HTML": 195066
+    },
+    "top_languages": [
+      {
+        "name": "HTML",
+        "pct": 100
+      }
+    ],
+    "has_readme": false,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-04-03T09:49:03Z"
+    }
+  },
+  {
+    "name": "uVision",
+    "full_name": "zhubao315/uVision",
+    "description": "投资人知识库 - GitHub Pages 项目",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "TypeScript",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-02-12T02:24:49Z",
+    "updated_at": "2026-02-12T11:04:10Z",
+    "pushed_at": "2026-02-12T11:03:48Z",
+    "size_kb": 4524,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "EXPERIMENT",
+    "file_count": 1442,
+    "languages": {
+      "TypeScript": 725186,
+      "JavaScript": 527592,
+      "Python": 417600,
+      "HTML": 222868,
+      "Shell": 113959,
+      "CSS": 49865
+    },
+    "top_languages": [
+      {
+        "name": "TypeScript",
+        "pct": 35
+      },
+      {
+        "name": "JavaScript",
+        "pct": 26
+      },
+      {
+        "name": "Python",
+        "pct": 20
+      },
+      {
+        "name": "HTML",
+        "pct": 11
+      }
+    ],
+    "has_readme": false,
+    "has_license_file": false,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "failure",
+      "date": "2026-02-12T11:03:49Z"
+    }
+  },
+  {
+    "name": "uWise",
+    "full_name": "zhubao315/uWise",
+    "description": null,
+    "homepage": null,
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-02-27T02:42:14Z",
+    "updated_at": "2026-03-31T09:26:03Z",
+    "pushed_at": "2026-03-31T09:25:59Z",
+    "size_kb": 78,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "EXPERIMENT",
+    "file_count": 65,
+    "languages": {
+      "Python": 26558
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/daily-update.yml",
+      ".github/workflows/deploy.yml",
+      ".github/workflows/test.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 4,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "failure",
+      "date": "2026-05-31T06:19:44Z"
+    }
+  },
+  {
+    "name": "zhubao315",
+    "full_name": "zhubao315/zhubao315",
+    "description": "Personal digital portfolio — AI systems, product engineering, knowledge engineering, investment research, quantified life, and creative work.",
+    "homepage": "https://zhubao315.github.io",
+    "default_branch": "main",
+    "language": "HTML",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [
+      "ai-agents",
+      "digital-products",
+      "knowledge-engineering",
+      "personal-portfolio",
+      "portfolio",
+      "profile-readme",
+      "quantified-self"
+    ],
+    "created_at": "2022-11-13T07:43:32Z",
+    "updated_at": "2026-11-12T09:33:28Z",
+    "pushed_at": "2026-11-16T09:31:53Z",
+    "size_kb": 300,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 4,
+    "languages": {
+      "HTML": 11507,
+      "Python": 3401
+    },
+    "top_languages": [
+      {
+        "name": "HTML",
+        "pct": 77
+      },
+      {
+        "name": "Python",
+        "pct": 23
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-12T08:51:46Z"
+    }
+  },
+  {
+    "name": "active-watch",
+    "full_name": "zhubao315/active-watch",
+    "description": "ACTIVE 四站运营中枢：每日巡检 / 共享 COROS 配额账本 / 品牌单一事实源",
+    "homepage": "https://zhubao315.github.io/running/",
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-11-13T10:07:31Z",
+    "updated_at": "2026-11-13T10:07:45Z",
+    "pushed_at": "2026-11-24T04:17:00Z",
+    "size_kb": 30589,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "MEASURE",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 156,
+    "languages": {
+      "Python": 73170,
+      "JavaScript": 63183,
+      "CSS": 16906,
+      "TypeScript": 14695,
+      "Shell": 5507
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 42
+      },
+      {
+        "name": "JavaScript",
+        "pct": 36
+      },
+      {
+        "name": "CSS",
+        "pct": 10
+      },
+      {
+        "name": "TypeScript",
+        "pct": 8
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/patrol.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": "v2.0.0",
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-23T16:28:41Z"
+    }
+  },
+  {
+    "name": "cycling",
+    "full_name": "zhubao315/cycling",
+    "description": "zhubao315 的骑行生涯 · 2,600+ 次骑行 · COROS MCP 自动同步",
+    "homepage": "https://zhubao315.github.io/cycling/",
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": "MIT",
+    "topics": [
+      "coros",
+      "cycling",
+      "data-visualization",
+      "fit",
+      "github-pages",
+      "react"
+    ],
+    "created_at": "2026-10-26T01:50:30Z",
+    "updated_at": "2026-11-12T08:17:40Z",
+    "pushed_at": "2026-11-24T04:21:25Z",
+    "size_kb": 156356,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "MEASURE",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 10371,
+    "languages": {
+      "Python": 342853,
+      "TypeScript": 330093,
+      "CSS": 113933,
+      "JavaScript": 45306,
+      "Dockerfile": 2940,
+      "HTML": 2819
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 41
+      },
+      {
+        "name": "TypeScript",
+        "pct": 39
+      },
+      {
+        "name": "CSS",
+        "pct": 14
+      },
+      {
+        "name": "JavaScript",
+        "pct": 5
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/brand-guard.yml",
+      ".github/workflows/ci.yml",
+      ".github/workflows/coros_sync.yml",
+      ".github/workflows/gh-pages.yml"
+    ],
+    "large_files": [
+      {
+        "path": "run_page/data.db",
+        "size": 25718784
+      },
+      {
+        "path": "src/static/activities.json",
+        "size": 20181011
+      }
+    ],
+    "pages_config": null,
+    "latest_release": "v2.0.0",
+    "workflow_count": 4,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "failure",
+      "date": "2026-11-24T04:15:58Z"
+    }
+  },
+  {
+    "name": "grok-build",
+    "full_name": "zhubao315/grok-build",
+    "description": "SpaceXAI's coding agent harness and TUI. Fullscreen, mouse interactive, extensible.",
+    "homepage": null,
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2026-07-16T09:39:18Z",
+    "updated_at": "2026-07-16T09:39:19Z",
+    "pushed_at": "2026-07-16T05:46:12Z",
+    "size_kb": 7770,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "MEASURE",
+    "source_type": "MODIFIED",
+    "status": "ACTIVE",
+    "file_count": 2734,
+    "languages": {
+      "Rust": 51639815,
+      "Python": 110069,
+      "JavaScript": 61570,
+      "Shell": 38501,
+      "PowerShell": 24822
+    },
+    "top_languages": [
+      {
+        "name": "Rust",
+        "pct": 100
+      },
+      {
+        "name": "Python",
+        "pct": 0
+      },
+      {
+        "name": "JavaScript",
+        "pct": 0
+      },
+      {
+        "name": "Shell",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "health",
+    "full_name": "zhubao315/health",
+    "description": "zhubao315 的健康数据仓库 · 睡眠/HRV/静息心率/压力 · COROS MCP 自动同步",
+    "homepage": "https://zhubao315.github.io/health/",
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": "MIT",
+    "topics": [
+      "chartjs",
+      "coros",
+      "github-pages",
+      "health",
+      "hrv",
+      "quantified-self",
+      "sleep",
+      "sqlite"
+    ],
+    "created_at": "2026-10-26T03:43:32Z",
+    "updated_at": "2026-11-19T03:04:31Z",
+    "pushed_at": "2026-11-24T04:43:22Z",
+    "size_kb": 30941,
+    "stars": 1,
+    "forks": 0,
+    "has_pages": true,
+    "category": "MEASURE",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 127,
+    "languages": {
+      "Python": 162230,
+      "JavaScript": 157080,
+      "CSS": 65333,
+      "HTML": 29372
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 39
+      },
+      {
+        "name": "JavaScript",
+        "pct": 38
+      },
+      {
+        "name": "CSS",
+        "pct": 16
+      },
+      {
+        "name": "HTML",
+        "pct": 7
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/body_sync.yml",
+      ".github/workflows/brand-guard.yml",
+      ".github/workflows/health_sync.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": "v2.0.0",
+    "workflow_count": 3,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "failure",
+      "date": "2026-11-24T04:42:28Z"
+    }
+  },
+  {
+    "name": "hiking",
+    "full_name": "zhubao315/hiking",
+    "description": "zhubao315 的徒步与山野 · 3D 地形记录 · COROS MCP 自动同步",
+    "homepage": "https://zhubao315.github.io/hiking/",
+    "default_branch": "main",
+    "language": "TypeScript",
+    "fork": false,
+    "parent": null,
+    "license": "MIT",
+    "topics": [
+      "3d-terrain",
+      "coros",
+      "fit",
+      "github-pages",
+      "hiking",
+      "trail"
+    ],
+    "created_at": "2026-10-26T01:50:34Z",
+    "updated_at": "2026-11-12T02:44:42Z",
+    "pushed_at": "2026-11-23T09:54:46Z",
+    "size_kb": 20864,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "MEASURE",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 838,
+    "languages": {
+      "TypeScript": 349758,
+      "Python": 324634,
+      "CSS": 115415,
+      "JavaScript": 47927,
+      "Dockerfile": 2940,
+      "HTML": 2831
+    },
+    "top_languages": [
+      {
+        "name": "TypeScript",
+        "pct": 41
+      },
+      {
+        "name": "Python",
+        "pct": 38
+      },
+      {
+        "name": "CSS",
+        "pct": 14
+      },
+      {
+        "name": "JavaScript",
+        "pct": 6
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/brand-guard.yml",
+      ".github/workflows/ci.yml",
+      ".github/workflows/coros_sync.yml",
+      ".github/workflows/gh-pages.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": "v2.0.0",
+    "workflow_count": 4,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-23T09:54:47Z"
+    }
+  },
+  {
+    "name": "running",
+    "full_name": "zhubao315/running",
+    "description": "zhubao315 的跑步生涯 · COROS MCP 自动同步 · 3D 地形",
+    "homepage": "https://zhubao315.github.io/running/",
+    "default_branch": "main",
+    "language": "TypeScript",
+    "fork": true,
+    "parent": null,
+    "license": "MIT",
+    "topics": [
+      "coros",
+      "data-visualization",
+      "fit",
+      "github-pages",
+      "react",
+      "running"
+    ],
+    "created_at": "2022-06-16T02:41:23Z",
+    "updated_at": "2026-11-23T10:02:37Z",
+    "pushed_at": "2026-11-24T03:57:19Z",
+    "size_kb": 381014,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "MEASURE",
+    "source_type": "MODIFIED",
+    "status": "ACTIVE",
+    "file_count": 3823,
+    "languages": {
+      "TypeScript": 330666,
+      "Python": 194273,
+      "CSS": 113743,
+      "JavaScript": 47667,
+      "Dockerfile": 2940,
+      "HTML": 2816
+    },
+    "top_languages": [
+      {
+        "name": "TypeScript",
+        "pct": 48
+      },
+      {
+        "name": "Python",
+        "pct": 28
+      },
+      {
+        "name": "CSS",
+        "pct": 16
+      },
+      {
+        "name": "JavaScript",
+        "pct": 7
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/bake-scenes.yml",
+      ".github/workflows/brand-guard.yml",
+      ".github/workflows/ci.yml",
+      ".github/workflows/coros_sync.yml",
+      ".github/workflows/gh-pages.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": "v2.0.0",
+    "workflow_count": 5,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-24T03:56:14Z"
+    }
+  },
+  {
+    "name": "2d-micro-anime-skill",
+    "full_name": "zhubao315/2d-micro-anime-skill",
+    "description": "2D 微动漫全流程制作 Skill：五幕剧本 → 6 轮一致性提示词出图 → 自研 2D 网格形变动画引擎 → ACE-Step 配乐 / Qwen3-TTS 配音 → FFmpeg 合成 → 宣传发布。提炼自原创微动漫《拥抱不完美的自己》。",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": "MIT",
+    "topics": [],
+    "created_at": "2026-10-30T03:05:59Z",
+    "updated_at": "2026-10-30T03:06:16Z",
+    "pushed_at": "2026-10-30T03:06:12Z",
+    "size_kb": 30,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "CREATE",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 17,
+    "languages": {
+      "Python": 15086
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
+    "last_run": null
+  },
+  {
+    "name": "dual-asset-strategy",
+    "full_name": "zhubao315/dual-asset-strategy",
+    "description": "双资产投资策略：改变世界与不被世界改变的攻守之道 | 10年回测年化16.21%",
+    "homepage": "https://zhubao315.github.io/dual-asset-strategy/",
+    "default_branch": "master",
+    "language": "HTML",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-07-03T10:08:33Z",
+    "updated_at": "2026-07-03T10:24:56Z",
+    "pushed_at": "2026-07-03T10:24:49Z",
+    "size_kb": 5,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "CREATE",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 2,
+    "languages": {
+      "HTML": 21783
+    },
+    "top_languages": [
+      {
+        "name": "HTML",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-07-03T10:24:50Z"
+    }
+  },
+  {
+    "name": "h029-psychology",
+    "full_name": "zhubao315/h029-psychology",
+    "description": "所有领域最终通向心理学：万学归心的认知升级 | 8领域24案例验证，心理瓶颈占比100%",
+    "homepage": "https://zhubao315.github.io/h029-psychology/",
+    "default_branch": "main",
+    "language": "HTML",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-07-03T10:29:27Z",
+    "updated_at": "2026-07-03T10:29:50Z",
+    "pushed_at": "2026-07-03T10:29:37Z",
+    "size_kb": 6,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "CREATE",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 2,
+    "languages": {
+      "HTML": 23301
+    },
+    "top_languages": [
+      {
+        "name": "HTML",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-07-03T10:29:45Z"
+    }
+  },
+  {
+    "name": "hip-drive-running",
+    "full_name": "zhubao315/hip-drive-running",
+    "description": "送髋跑：4本书构建的送髋技术体系与训练路径",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "HTML",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-09-14T06:47:54Z",
+    "updated_at": "2026-09-14T06:48:18Z",
+    "pushed_at": "2026-09-14T06:48:14Z",
+    "size_kb": 9,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "CREATE",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 1,
+    "languages": {
+      "HTML": 41222
+    },
+    "top_languages": [
+      {
+        "name": "HTML",
+        "pct": 100
+      }
+    ],
+    "has_readme": false,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-09-14T06:48:31Z"
+    }
+  },
+  {
+    "name": "mbti64",
+    "full_name": "zhubao315/mbti64",
+    "description": "64 型人格稀有度测评 · 120 道中文情景题 · 64 型 × 7 档稀有度（Next.js 静态站）",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "TypeScript",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-11-02T11:47:52Z",
+    "updated_at": "2026-11-12T03:31:02Z",
+    "pushed_at": "2026-11-12T02:30:59Z",
+    "size_kb": 723854,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "CREATE",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 911,
+    "languages": {
+      "TypeScript": 751185,
+      "JavaScript": 471858,
+      "Python": 445693,
+      "CSS": 7888,
+      "Shell": 5705
+    },
+    "top_languages": [
+      {
+        "name": "TypeScript",
+        "pct": 45
+      },
+      {
+        "name": "JavaScript",
+        "pct": 28
+      },
+      {
+        "name": "Python",
+        "pct": 26
+      },
+      {
+        "name": "CSS",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/ci.yml",
+      ".github/workflows/deploy.yml"
+    ],
+    "large_files": [
+      {
+        "path": "书-千分之一的你/《千分之一的你：从16型到64型》.epub",
+        "size": 13620587
+      }
+    ],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 3,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-12T02:31:01Z"
+    }
+  },
+  {
+    "name": "memoir",
+    "full_name": "zhubao315/memoir",
+    "description": "数字人生回忆录 - 记录你的人生重要时刻",
+    "homepage": null,
+    "default_branch": "master",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-01-29T08:15:04Z",
+    "updated_at": "2026-11-18T02:49:50Z",
+    "pushed_at": "2026-11-24T11:32:42Z",
+    "size_kb": 2679,
+    "stars": 1,
+    "forks": 0,
+    "has_pages": true,
+    "category": "CREATE",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 182,
+    "languages": {
+      "Python": 289663,
+      "TypeScript": 123380,
+      "HTML": 76131,
+      "CSS": 18669,
+      "Shell": 6103
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 56
+      },
+      {
+        "name": "TypeScript",
+        "pct": 24
+      },
+      {
+        "name": "HTML",
+        "pct": 15
+      },
+      {
+        "name": "CSS",
+        "pct": 4
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": true,
+    "has_tests": false,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/pages.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": "v1.1.0",
+    "workflow_count": 2,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-24T11:32:45Z"
+    }
+  },
+  {
+    "name": "perfectme",
+    "full_name": "zhubao315/perfectme",
+    "description": "满分的我 · The Perfect Me ｜ 原创 2D 微动漫（Qwen-Image × ACE-Step × Qwen3-TTS）｜ 在线观看",
+    "homepage": "https://zhubao315.github.io/perfectme/",
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [
+      "2d-animation",
+      "ace-step",
+      "anime",
+      "chinese",
+      "ffmpeg",
+      "github-pages",
+      "kdenlive",
+      "micro-animation",
+      "opentoonz",
+      "psychological",
+      "qwen",
+      "self-discrepancy",
+      "student-project",
+      "tts"
+    ],
+    "created_at": "2026-10-10T12:46:22Z",
+    "updated_at": "2026-10-10T13:10:24Z",
+    "pushed_at": "2026-10-10T13:10:19Z",
+    "size_kb": 507999,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "CREATE",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 345,
+    "languages": {
+      "Python": 100303,
+      "HTML": 63722
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 61
+      },
+      {
+        "name": "HTML",
+        "pct": 39
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [
+      {
+        "path": "00-文档总览.pdf",
+        "size": 14148590
+      },
+      {
+        "path": "07-成片/高一1班-朱明萱-满分的我(配音版).mp4",
+        "size": 61017573
+      },
+      {
+        "path": "07-成片/高一1班-朱明萱-满分的我.mp4",
+        "size": 60421766
+      },
+      {
+        "path": "10-宣传网站/assets/film.mp4",
+        "size": 61017573
+      },
+      {
+        "path": "build/mix.wav",
+        "size": 26763486
+      },
+      {
+        "path": "build/mix_raw.wav",
+        "size": 26763486
+      },
+      {
+        "path": "build/music.wav",
+        "size": 26280150
+      },
+      {
+        "path": "build/visual.mp4",
+        "size": 43177274
+      }
+    ],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-10-10T13:10:21Z"
+    }
+  }
+]

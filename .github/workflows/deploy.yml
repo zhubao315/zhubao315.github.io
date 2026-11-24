@@ -4,6 +4,18 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'sync = fetch + commit, check = CI drift detection'
+        required: true
+        default: sync
+        type: choice
+        options: [sync, check]
+  schedule:
+    # Daily 03:17 UTC; off-the-hour avoids GitHub's top-of-hour cron crunch.
+    - cron: '17 3 * * *'
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: read
@@ -16,7 +28,8 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -39,6 +52,9 @@ jobs:
       - name: Check internal links
         run: npm run test:links
 
+      - name: Browser tests (desktop + mobile)
+        run: npx playwright install --with-deps chromium && npm test
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -46,7 +62,9 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -54,3 +72,75 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  data-drift-check:
+    if: github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'check')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.23.4
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check generated GitHub data for drift
+        env:
+          GITHUB_TOKEN: ${{ secrets.ECOSYSTEM_PAT || secrets.GITHUB_TOKEN }}
+        run: node scripts/sync-github-data.mjs --check
+
+  sync-github-data:
+    if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'sync')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    concurrency:
+      group: github-data-sync
+      cancel-in-progress: false
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ECOSYSTEM_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.23.4
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync GitHub inventory from GitHub API
+        env:
+          GITHUB_TOKEN: ${{ secrets.ECOSYSTEM_PAT || secrets.GITHUB_TOKEN }}
+        run: node scripts/sync-github-data.mjs
+
+      - name: Commit and push changed generated data
+        env:
+          GITHUB_TOKEN: ${{ secrets.ECOSYSTEM_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -z "$(git status --porcelain -- src/data/generated)" ]; then
+            echo "No generated-data changes; skipping commit."
+            exit 0
+          fi
+          git add src/data/generated/repositories.json \
+                  src/data/generated/github-stats.json \
+                  src/data/generated/pages.json
+          git commit -m "chore(data): sync GitHub repository inventory ($(date -u +%Y-%m-%d))"
+          git push origin HEAD:main

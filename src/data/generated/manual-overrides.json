@@ -1,0 +1,16 @@
+{
+  "_comment": "人工维护字段。sync-github-data.mjs 只读取本文件，永不写入。允许字段：category / status / description / source_type。",
+  "_allowed_keys": ["category", "status", "description", "source_type"],
+  "repos": {
+    "zhubao315/uRead": {
+      "category": "THINK",
+      "status": "ACTIVE",
+      "description": "本地优先的深度阅读与知识内化系统 · READ · REFLECT · INTERNALIZE"
+    },
+    "zhubao315/zhubao315.github.io": {
+      "category": "BUILD",
+      "status": "ACTIVE",
+      "description": "ZHUBAO 个人数字品牌门户与公开仓库目录"
+    }
+  }
+}

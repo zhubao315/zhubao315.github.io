@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import repositories from '../../data/generated/repositories.json';
+import stats from '../../data/generated/github-stats.json';
+import '../../styles/repositories.css';
+
+const CATEGORY_LABELS: Record<string, string> = {
+  BUILD: '构建系统',
+  THINK: '工程知识',
+  MEASURE: '量化生活',
+  CREATE: '创造作品',
+  UNCATEGORIZED: '待归类',
+};
+const SOURCE_LABELS: Record<string, string> = {
+  ORIGINAL: '原创',
+  MODIFIED: '二次开发',
+  UPSTREAM: '上游研究',
+};
+const STATUS_LABELS: Record<string, string> = {
+  ACTIVE: '持续更新',
+  DORMANT: '长期未更新',
+  EXPERIMENT: '实验项目',
+  ARCHIVED: '已归档',
+};
+
+const cards = repositories.map((repo, index) => ({
+  ...repo,
+  index: String(index + 1).padStart(2, '0'),
+  categoryLabel: CATEGORY_LABELS[repo.category] ?? repo.category,
+  sourceLabel: SOURCE_LABELS[repo.source_type] ?? repo.source_type,
+  statusLabel: STATUS_LABELS[repo.status] ?? repo.status,
+  search: [
+    repo.name, repo.full_name, repo.description ?? '', repo.language ?? '',
+    ...(repo.topics ?? []), ...(repo.top_languages ?? []).map((lang) => lang.name),
+  ].join(' ').toLowerCase(),
+}));
+
+const title = 'Repository Explorer · ZHUBAO 公开仓库目录';
+const description = `ZHUBAO 的全部 ${stats.public_repos} 个公开仓库：按 BUILD / THINK / MEASURE / CREATE 分类，支持原创、二次开发与上游研究筛选。`;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="repos-hero">
+    <div class="shell">
+      <p class="repos-kicker">GitHub · Repository Explorer</p>
+      <h1>_PUBLIC <em>REPOSITORIES</em></h1>
+      <p class="repos-lede">
+        这里收录全部公开仓库，而不是只展示精选案例。每个条目保留来源、方向、维护状态与在线入口；
+        原创、二次开发与上游研究分开呈现，不把 fork 冒充作品。
+      </p>
+      <div class="repos-stats" aria-label="仓库统计">
+        <div class="repos-stat"><b>{stats.public_repos}</b><span>公开仓库</span></div>
+        <div class="repos-stat"><b>{stats.original}</b><span>原创项目</span></div>
+        <div class="repos-stat"><b>{stats.modified}</b><span>二次开发</span></div>
+        <div class="repos-stat"><b>{stats.upstream}</b><span>上游研究</span></div>
+        <div class="repos-stat"><b>{stats.pages_ok}</b><span>在线站点</span></div>
+        <div class="repos-stat"><b>{stats.last_verified}</b><span>数据核验日期</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="repos-body">
+    <div class="shell">
+      <SectionHeader
+        index="01"
+        eyebrow="Directory"
+        title="全部仓库"
+        note={`数据由 GitHub API 生成 · ${stats.generated_at}`}
+      />
+
+      <div class="repos-toolbar">
+        <label>
+          <span class="sr-only">搜索仓库</span>
+          <input
+            id="repo-search"
+            class="repos-search"
+            type="search"
+            placeholder="搜索名称、描述、语言、Topics…"
+            autocomplete="off"
+          />
+        </label>
+        <div class="repos-filters" role="group" aria-label="方向筛选">
+          <button class="repos-filter" type="button" data-filter="category" data-value="ALL" aria-pressed="true">全部方向</button>
+          <button class="repos-filter" type="button" data-filter="category" data-value="BUILD" aria-pressed="false">BUILD</button>
+          <button class="repos-filter" type="button" data-filter="category" data-value="THINK" aria-pressed="false">THINK</button>
+          <button class="repos-filter" type="button" data-filter="category" data-value="MEASURE" aria-pressed="false">MEASURE</button>
+          <button class="repos-filter" type="button" data-filter="category" data-value="CREATE" aria-pressed="false">CREATE</button>
+        </div>
+        <div class="repos-filters" role="group" aria-label="来源筛选">
+          <button class="repos-filter" type="button" data-filter="source" data-value="ALL" aria-pressed="true">全部来源</button>
+          <button class="repos-filter" type="button" data-filter="source" data-value="ORIGINAL" aria-pressed="false">原创</button>
+          <button class="repos-filter" type="button" data-filter="source" data-value="MODIFIED" aria-pressed="false">二次开发</button>
+          <button class="repos-filter" type="button" data-filter="source" data-value="UPSTREAM" aria-pressed="false">上游研究</button>
+        </div>
+        <div class="repos-filters" role="group" aria-label="状态筛选">
+          <button class="repos-filter" type="button" data-filter="status" data-value="ALL" aria-pressed="true">全部状态</button>
+          <button class="repos-filter" type="button" data-filter="status" data-value="ACTIVE" aria-pressed="false">持续更新</button>
+          <button class="repos-filter" type="button" data-filter="status" data-value="DORMANT" aria-pressed="false">长期未更新</button>
+          <button class="repos-filter" type="button" data-filter="pages" data-value="YES" aria-pressed="false">有在线站点</button>
+        </div>
+        <span class="repos-meta" id="repo-count" aria-live="polite">{cards.length} 个仓库</span>
+      </div>
+
+      <div class="repos-grid" id="repo-grid">
+        {cards.map((repo) => (
+          <article
+            class="repo-card"
+            data-category={repo.category}
+            data-source={repo.source_type}
+            data-status={repo.status}
+            data-pages={repo.has_pages ? 'yes' : 'no'}
+            data-search={repo.search}
+          >
+            <div class="repo-topline">
+              <span>{repo.index} / {repo.categoryLabel}</span>
+              <span class="repo-source">{repo.sourceLabel} · {repo.statusLabel}</span>
+            </div>
+            <h3><a href={`https://github.com/${repo.full_name}`} rel="noopener noreferrer">{repo.name}</a></h3>
+            <p class="repo-desc">{repo.description ?? '（仓库未提供描述）'}</p>
+            {repo.top_languages.length > 0 && (
+              <div class="repo-langs">
+                {repo.top_languages.map((lang) => <span>{lang.name} {lang.pct}%</span>)}
+              </div>
+            )}
+            {repo.topics && repo.topics.length > 0 && (
+              <ul class="repo-tags">{repo.topics.slice(0, 5).map((topic) => <li>{topic}</li>)}</ul>
+            )}
+            <div class="repo-card-foot">
+              <span>更新 {repo.pushed_at ? repo.pushed_at.slice(0, 10) : '—'}</span>
+              <span class="repo-links">
+                {repo.homepage && <a href={repo.homepage} rel="noopener noreferrer">站点</a>}
+                {repo.latest_release && <a href={`https://github.com/${repo.full_name}/releases/tag/${repo.latest_release}`} rel="noopener noreferrer">Release</a>}
+              </span>
+            </div>
+            {repo.has_pages && <span class="repo-badge repo-badge--pages">GitHub Pages</span>}
+          </article>
+        ))}
+      </div>
+      <p class="repos-empty" id="repo-empty" hidden>没有匹配的仓库。</p>
+
+      <p class="repos-note">
+        数据来自 GitHub REST API 自动生成，人工字段（方向、来源、状态）保存在生成数据中，不会被同步覆盖。
+        完整审计见 <a href="/ecosystem-audit/00-EXECUTIVE-SUMMARY.md">Phase 0 执行摘要</a> 与
+        <a href="/ecosystem-audit/01-REPOSITORY-INVENTORY.md">仓库清单</a>。
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const grid = document.getElementById('repo-grid');
+    const cards = Array.from(grid?.querySelectorAll('.repo-card') ?? []);
+    const input = document.getElementById('repo-search') as HTMLInputElement | null;
+    const count = document.getElementById('repo-count');
+    const empty = document.getElementById('repo-empty');
+    const state = { category: 'ALL', source: 'ALL', status: 'ALL', pages: 'ALL', query: '' };
+
+    function apply() {
+      let visible = 0;
+      for (const card of cards) {
+        const el = card as HTMLElement;
+        const matchCategory = state.category === 'ALL' || el.dataset.category === state.category;
+        const matchSource = state.source === 'ALL' || el.dataset.source === state.source;
+        const matchStatus = state.status === 'ALL' || el.dataset.status === state.status;
+        const matchPages = state.pages !== 'YES' || el.dataset.pages === 'yes';
+        const matchQuery = !state.query || (el.dataset.search ?? '').includes(state.query);
+        const show = matchCategory && matchSource && matchStatus && matchPages && matchQuery;
+        el.hidden = !show;
+        if (show) visible += 1;
+      }
+      if (count) count.textContent = `${visible} 个仓库`;
+      if (empty) empty.hidden = visible !== 0;
+    }
+
+    input?.addEventListener('input', () => { state.query = input.value.trim().toLowerCase(); apply(); });
+    document.querySelectorAll<HTMLButtonElement>('.repos-filter').forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        const value = button.dataset.value ?? 'ALL';
+        const group = button.parentElement;
+        group?.querySelectorAll<HTMLButtonElement>('.repos-filter').forEach((b) => b.setAttribute('aria-pressed', 'false'));
+        button.setAttribute('aria-pressed', 'true');
+        if (filter && filter in state) state[filter as keyof typeof state] = value;
+        apply();
+      });
+    });
+  </script>
+</BaseLayout>
