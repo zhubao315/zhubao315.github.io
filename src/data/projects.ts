@@ -452,7 +452,7 @@ export const projects: Project[] = [
     featured: false,
     tagline: '让读过的书，留下值得反复阅读的内容。READ · REFLECT · REVISIT。',
     summary:
-      '从文字书库升级为有视觉识别的阅读发现平台：1595 篇笔记、39 份书单、1818 条书籍记录。',
+      '从文字书库升级为有视觉识别的阅读发现平台：1599 篇笔记、39 份书单、1807 条书籍记录。',
     description:
       '一个 Personal Reading Library：公开门户与本地工作台共用同一站点。前者把私有 Obsidian 仓库中的阅读沉淀发布为只读档案，后者用 IndexedDB 管理自己的资料、笔记、卡片与书单。',
     tech: ['TypeScript', 'React 19', 'Vite 8', 'Tailwind CSS', 'IndexedDB', 'GitHub Pages', 'foliate-js'],
@@ -491,7 +491,7 @@ export const projects: Project[] = [
         },
       ],
       evidence: [
-        '内容基线（2026-11-20）：1595 篇公开笔记、10 个主题、39 份书单、1818 条书籍记录、2 本有权分发的电子书。',
+        '内容基线（2026-11-20）：1599 篇公开笔记、10 个主题、39 份书单、1807 条书籍记录、5 本已发布 EPUB（授权待裁定）。',
         '媒体产物：1818 张书籍主题视觉 + 49 张主题/书单 16:9 视觉；统一 MediaImage 组件负责比例、懒加载与一次性 fallback。',
         '质量口径：单元测试 226 passed / 1 skipped（32 文件）、E2E 25、全量门禁 37/37、严格发布检查与内容对账通过。',
         '两个同步工作流：笔记每天、书单每周一；版本未变时跳过提交与部署，不制造空提交。',
