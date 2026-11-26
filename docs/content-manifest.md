@@ -1,6 +1,6 @@
 # Content Manifest
 
-**Snapshot date:** 2026-11-24  
+**Snapshot date:** 2026-11-26  
 **Canonical data:** `src/data/projects.ts`, `src/data/site.ts`  
 **Rule:** every number below is either read from a public repository/site or explicitly marked as a derived total.
 
@@ -10,12 +10,12 @@
 |---|---|---|
 | Name | 朱宝 / ZHUBAO | Public GitHub profile |
 | GitHub account created | 2011-11-19 | GitHub API |
-| Public repositories | 61 | GitHub API |
-| Non-Fork repositories | 24 | GitHub API |
-| Fork / upstream research | 37 | GitHub API |
+| Public repositories | 68 | GitHub API |
+| Non-Fork repositories | 29 | GitHub API |
+| Fork / upstream research | 39 | GitHub API |
 | Location label | 北京 · UTC+8 | Personal profile label used by the site |
 | Public links | `github.com/zhubao315`, `x.com/zhubao315` | GitHub profile metadata |
-| Verification date | 2026-11-24 | Manual snapshot |
+| Verification date | 2026-11-26 | Manual snapshot + `sync-github-data.mjs` |
 
 No employer, client, revenue, user count, investment return, or production SLA is claimed.
 
@@ -87,8 +87,10 @@ Two works are presented as manuscripts, not published books:
 |---|---|---|---|
 | 知识库工程学 | 从收藏到可治理的知识系统 | 13 chapters, 5 appendices, companion Skill v1.2.0 | Continuously revised |
 | 投资的纪律 | 从情绪交易到纪律复利 | 8 task modes, 45 checks, 63 tests | Companion Skill open source |
+| AI时代，如何真正学会 | 在工具之外，重建学习的纪律 | No public manuscript carrier; related e-Life Method repo | In progress; no ISBN or release date |
+| 千分之一的你 | 64 型人格与稀有度的视觉书稿 | Linked to public MBTI64 repo | Visual / review stage; no ISBN or release date |
 
-No ISBN, publisher, print run, sales figure, award, or release date is claimed.
+No ISBN, publisher, print run, sales figure, award, or release date is claimed. The two additional manuscripts are listed as in progress, with links to related public projects rather than to a manuscript carrier.
 
 ## 6. Contact and brand assets
 
@@ -127,3 +129,18 @@ The portrait is explicitly labeled “PUBLIC AVATAR” on the About page; it is 
 - No claim that a Fork is original work.
 - No claim that a fixture test proves production scale.
 - No claim that inaccessible legacy writing was recovered.
+
+
+## 9. Meta insights and knowledge-base integration (2026-11-26)
+
+Three cross-domain essays were published from the personal knowledge base into `src/content/articles/` and surfaced on `/think/`:
+
+| Article | Origin | Evidence used | Boundary stated |
+|---|---|---|---|
+| 所有领域最终通向心理学 | H-029 meta-hypothesis | 8 domains / 24 cases; 100% psychological bottleneck; 4.6/5 average weight | Classification study, not a controlled experiment |
+| 健康、投资、心理：人生操作系统的三条主线 | Cross-domain synthesis note | Three-layer model + six documented connections | Interpretive framework, not medical or investment advice |
+| 复利不是公式，是四个领域共用的失败清单 | Cross-domain compounding note | Public Quantified Life snapshots (1,039 days; 2,037 runs / 24,548 km; 5,776 rides; 344 hikes) | Snapshots change; live sites are the source of truth |
+
+Repository classification was aligned with the four public directions in `scripts/sync-github-data.mjs`: `uRead`, `h029-psychology`, `dual-asset-strategy`, `tescreal-guide` and related research are THINK; `active-watch`, `gdmp-master`, `grok-build` and `zhubao315.github.io` are BUILD; `hip-drive-running` is MEASURE; `mbti64`, `perfectme`, `memoir` and `2d-micro-anime-skill` remain CREATE. Regenerated counts: BUILD 45 / THINK 14 / MEASURE 5 / CREATE 4.
+
+One public page probe returned 404 (`uRepo`); the project page already states that this site is not stably published. The private `obsidian-vault` repository is not linked from any public page. See `docs/kb-github-integration.md` for the full crosswalk.

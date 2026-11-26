@@ -1607,6 +1607,34 @@ export const publications = [
     linkLabel: '查看配套 Skill',
     coverClass: 'book--gold',
   },
+  {
+    id: 'ai-era-learning-book',
+    index: '03',
+    title: 'AI时代，如何真正学会',
+    subtitle: '在工具之外，重建学习的纪律',
+    type: '书稿 · 方法论',
+    status: '创作中 · 无公开载体',
+    description:
+      '把阅读、笔记、复盘与跨域连接写成一套可复跑的学习方法。书稿仍在修订，公开可见的是相关方法论站点，不标示发行信息。',
+    facts: ['对应 e-Life 方法论', '状态以作者公开信息为准'],
+    href: 'https://github.com/zhubao315/e-life-method',
+    linkLabel: '查看相关方法论',
+    coverClass: 'book--teal',
+  },
+  {
+    id: 'one-in-a-thousand-book',
+    index: '04',
+    title: '千分之一的你',
+    subtitle: '64 型人格与稀有度的视觉书稿',
+    type: '书稿 · 人格探索',
+    status: '视觉与审校阶段',
+    description:
+      '把 64 型人格与稀有度体系写成可阅读的书稿，配合 MBTI64 的型别页与视觉稿持续修订。',
+    facts: ['关联 MBTI64 项目', '视觉 / 审校阶段'],
+    href: 'https://github.com/zhubao315/mbti64',
+    linkLabel: '查看关联测评站',
+    coverClass: 'book--violet',
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {

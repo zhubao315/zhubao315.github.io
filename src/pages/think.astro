@@ -2,8 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import { ArrowUpRight } from '@lucide/astro';
+import { getCollection } from 'astro:content';
 import { brandFields } from '../data/brand';
 import { projects, publications } from '../data/projects';
+
+const insightIds = [
+  'all-disciplines-lead-to-psychology',
+  'three-lines-of-life-os',
+  'compounding-across-domains',
+];
+const allArticles = await getCollection('articles');
+const insights = insightIds.flatMap((id) =>
+  allArticles.filter((article) => article.id === id),
+);
 
 const knowledgeBase = projects.find((project) => project.id === 'knowledge-base-engineering')!;
 const eLife = projects.find((project) => project.id === 'e-life-method')!;
@@ -79,7 +90,7 @@ const notes = [
           </p>
           <div class="page-hero-meta">
             <div class="hero-fact"><strong>03</strong><span>研究轨道</span></div>
-            <div class="hero-fact"><strong>02</strong><span>书稿项目</span></div>
+            <div class="hero-fact"><strong>04</strong><span>书稿项目</span></div>
             <div class="hero-fact"><strong>01</strong><span>共同方法：可验证</span></div>
           </div>
         </div>
@@ -179,17 +190,64 @@ const notes = [
     </div>
   </section>
 
+  <section class="section think-insights">
+    <div class="shell">
+      <header class="section-head">
+        <div class="section-index"><span>02</span><i aria-hidden="true"></i></div>
+        <div class="section-title">
+          <p class="eyebrow">Meta Insights / 三篇元洞察</p>
+          <h2>不是四个题目，<br />是同一套系统的三种读法。</h2>
+        </div>
+        <div class="section-aside">
+          <p class="section-note">
+            这些判断来自长期记录与跨域对照，而非单点灵感。每篇都给出直接答案、证据与失效边界。
+          </p>
+        </div>
+      </header>
+
+      <div class="track-list">
+        {
+          insights.map((insight) => (
+            <article class="track-row" data-reveal>
+              <div class="track-index">
+                <span>{insight.data.category.toUpperCase()}</span>
+                <i aria-hidden="true"></i>
+              </div>
+              <div class="track-title">
+                <p class="track-en">{insight.data.project ?? 'ZHUBAO RESEARCH'}</p>
+                <h3>{insight.data.title}</h3>
+                <p class="track-statement">{insight.data.description}</p>
+              </div>
+              <p class="track-body">
+                阅读时间约 3 分钟 · 核验于 {insight.data.date.toISOString().slice(0, 10)}
+              </p>
+              <div class="track-links">
+                <a href={`/articles/${insight.id}/`}>
+                  <span>阅读全文</span>
+                  <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+      <p class="flow-note">
+        三篇文章分别对应 H-029 心理学元假设、健康×投资×心理三层模型，以及投资/跑步/知识/健康共用的复利结构。
+      </p>
+    </div>
+  </section>
+
   <section class="section publications-section think-publications">
     <div class="shell">
       <header class="section-head section-head--dark">
-        <div class="section-index"><span>02</span><i aria-hidden="true"></i></div>
+        <div class="section-index"><span>03</span><i aria-hidden="true"></i></div>
         <div class="section-title">
-          <p class="eyebrow">Manuscripts / 两本书稿</p>
+          <p class="eyebrow">Manuscripts / 四本书稿</p>
           <h2>写下来，是为了<br />让方法接受时间的检验。</h2>
         </div>
         <div class="section-aside">
           <p class="section-note">
-            两本书稿与各自的开源 Skill 互为验证：书提供完整架构，Skill 让方法真正运行，并暴露边界。
+            两本书稿与各自的开源 Skill 互为验证；另两本仍在创作中，只呈现可公开核验的关联项目与状态。
           </p>
         </div>
       </header>
@@ -237,7 +295,7 @@ const notes = [
   <section class="section think-notes">
     <div class="shell">
       <header class="section-head">
-        <div class="section-index"><span>03</span><i aria-hidden="true"></i></div>
+        <div class="section-index"><span>04</span><i aria-hidden="true"></i></div>
         <div class="section-title">
           <p class="eyebrow">Reading & Field Notes</p>
           <h2>阅读、训练与观察现场记录。</h2>

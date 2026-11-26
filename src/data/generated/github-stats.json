@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T04:01:12Z",
+  "generated_at": "2026-11-26T07:05:12Z",
   "last_verified": "2026-11-26",
   "total_repos": 78,
   "public_repos": 68,
@@ -10,13 +10,13 @@
   "non_fork_public": 29,
   "fork_public": 39,
   "pages_enabled": 21,
-  "pages_ok": 21,
-  "pages_problem": 0,
+  "pages_ok": 20,
+  "pages_problem": 1,
   "by_category": {
-    "BUILD": 42,
-    "THINK": 13,
-    "MEASURE": 6,
-    "CREATE": 7,
+    "BUILD": 45,
+    "THINK": 14,
+    "MEASURE": 5,
+    "CREATE": 4,
     "UNCATEGORIZED": 0
   },
   "statuses": {

@@ -1,5 +1,76 @@
 [
   {
+    "name": "active-watch",
+    "full_name": "zhubao315/active-watch",
+    "description": "ACTIVE 四站运营中枢：每日巡检 / 共享 COROS 配额账本 / 品牌单一事实源",
+    "homepage": "https://github.com/zhubao315/active-watch",
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [
+      "automation",
+      "brand-system",
+      "coros",
+      "github-actions",
+      "observability"
+    ],
+    "created_at": "2026-11-13T10:07:31Z",
+    "updated_at": "2026-11-25T01:29:50Z",
+    "pushed_at": "2026-11-26T02:09:14Z",
+    "size_kb": 30595,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 156,
+    "languages": {
+      "Python": 73170,
+      "JavaScript": 63183,
+      "CSS": 16906,
+      "TypeScript": 14695,
+      "Shell": 5507
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 42
+      },
+      {
+        "name": "JavaScript",
+        "pct": 36
+      },
+      {
+        "name": "CSS",
+        "pct": 10
+      },
+      {
+        "name": "TypeScript",
+        "pct": 8
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/patrol.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": "v2.0.0",
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-25T16:02:52Z"
+    }
+  },
+  {
     "name": "AgentTuning",
     "full_name": "zhubao315/AgentTuning",
     "description": "AgentTuning: Enabling Generalized Agent Abilities for LLMs",
@@ -1110,6 +1181,65 @@
     "last_run": null
   },
   {
+    "name": "gdmp-master",
+    "full_name": "zhubao315/gdmp-master",
+    "description": "GDMP 无代码平台版本化运维知识包（无 AI Skill Runtime，知识包≠AI 执行）",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-11-24T03:00:12Z",
+    "updated_at": "2026-11-24T03:02:13Z",
+    "pushed_at": "2026-11-24T03:02:08Z",
+    "size_kb": 102,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 62,
+    "languages": {
+      "Python": 4985,
+      "JavaScript": 2074,
+      "Shell": 1573
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 58
+      },
+      {
+        "name": "JavaScript",
+        "pct": 24
+      },
+      {
+        "name": "Shell",
+        "pct": 18
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/test.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": "skill-v1.0.0",
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-24T03:02:14Z"
+    }
+  },
+  {
     "name": "GitHubPoster",
     "full_name": "zhubao315/GitHubPoster",
     "description": "Make everything a GitHub svg poster and Skyline!",
@@ -1233,6 +1363,65 @@
     "pages_config": null,
     "latest_release": null,
     "workflow_count": 5,
+    "last_run": null
+  },
+  {
+    "name": "grok-build",
+    "full_name": "zhubao315/grok-build",
+    "description": "SpaceXAI's coding agent harness and TUI. Fullscreen, mouse interactive, extensible.",
+    "homepage": null,
+    "default_branch": "main",
+    "language": null,
+    "fork": true,
+    "parent": null,
+    "license": "Apache-2.0",
+    "topics": [],
+    "created_at": "2026-07-16T09:39:18Z",
+    "updated_at": "2026-07-16T09:39:19Z",
+    "pushed_at": "2026-07-16T05:46:12Z",
+    "size_kb": 7770,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "UPSTREAM",
+    "status": "ACTIVE",
+    "file_count": 2734,
+    "languages": {
+      "Rust": 51639815,
+      "Python": 110069,
+      "JavaScript": 61570,
+      "Shell": 38501,
+      "PowerShell": 24822
+    },
+    "top_languages": [
+      {
+        "name": "Rust",
+        "pct": 100
+      },
+      {
+        "name": "Python",
+        "pct": 0
+      },
+      {
+        "name": "JavaScript",
+        "pct": 0
+      },
+      {
+        "name": "Shell",
+        "pct": 0
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 0,
     "last_run": null
   },
   {
@@ -2458,37 +2647,38 @@
     ],
     "created_at": "2026-03-24T10:43:58Z",
     "updated_at": "2026-11-25T01:29:51Z",
-    "pushed_at": "2026-11-26T03:39:41Z",
-    "size_kb": 2605,
+    "pushed_at": "2026-11-26T06:52:59Z",
+    "size_kb": 7498,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
     "category": "BUILD",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 194,
+    "file_count": 1912,
     "languages": {
-      "Python": 454671,
+      "Python": 456135,
       "TypeScript": 83413,
       "CSS": 25242,
+      "JavaScript": 11510,
       "HTML": 1502
     },
     "top_languages": [
       {
         "name": "Python",
-        "pct": 80
+        "pct": 79
       },
       {
         "name": "TypeScript",
-        "pct": 15
+        "pct": 14
       },
       {
         "name": "CSS",
         "pct": 4
       },
       {
-        "name": "HTML",
-        "pct": 0
+        "name": "JavaScript",
+        "pct": 2
       }
     ],
     "has_readme": true,
@@ -2499,16 +2689,17 @@
     "workflow_files": [
       ".github/workflows/ci.yml",
       ".github/workflows/pages.yml",
-      ".github/workflows/release.yml"
+      ".github/workflows/release.yml",
+      ".github/workflows/sync-vault-skills.yml"
     ],
     "large_files": [],
     "pages_config": null,
     "latest_release": "v2.0.0",
-    "workflow_count": 3,
+    "workflow_count": 4,
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-26T03:40:54Z"
+      "date": "2026-11-26T06:54:25Z"
     }
   },
   {
@@ -2530,38 +2721,38 @@
     ],
     "created_at": "2022-02-11T03:16:21Z",
     "updated_at": "2026-11-25T01:29:46Z",
-    "pushed_at": "2026-11-26T03:46:38Z",
-    "size_kb": 28395,
+    "pushed_at": "2026-11-26T06:21:48Z",
+    "size_kb": 28793,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
     "category": "BUILD",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 576,
+    "file_count": 578,
     "languages": {
-      "CSS": 196317,
-      "Astro": 154524,
+      "CSS": 200287,
+      "Astro": 163915,
       "Python": 108967,
-      "JavaScript": 63114,
-      "TypeScript": 56384
+      "TypeScript": 102171,
+      "JavaScript": 71214
     },
     "top_languages": [
       {
         "name": "CSS",
-        "pct": 34
+        "pct": 31
       },
       {
         "name": "Astro",
-        "pct": 27
+        "pct": 25
       },
       {
         "name": "Python",
-        "pct": 19
+        "pct": 17
       },
       {
-        "name": "JavaScript",
-        "pct": 11
+        "name": "TypeScript",
+        "pct": 16
       }
     ],
     "has_readme": true,
@@ -2579,7 +2770,7 @@
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-26T03:46:39Z"
+      "date": "2026-11-26T06:21:50Z"
     }
   },
   {
@@ -2602,7 +2793,7 @@
     ],
     "created_at": "2026-11-25T02:31:15Z",
     "updated_at": "2026-11-25T02:33:51Z",
-    "pushed_at": "2026-11-25T10:47:38Z",
+    "pushed_at": "2026-11-26T06:38:22Z",
     "size_kb": 16066,
     "stars": 0,
     "forks": 0,
@@ -2610,7 +2801,7 @@
     "category": "BUILD",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 91,
+    "file_count": 93,
     "languages": {
       "Python": 242317,
       "JavaScript": 72192,
@@ -2650,7 +2841,54 @@
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-25T10:47:40Z"
+      "date": "2026-11-26T06:38:24Z"
+    }
+  },
+  {
+    "name": "dual-asset-strategy",
+    "full_name": "zhubao315/dual-asset-strategy",
+    "description": "双资产投资策略：改变世界与不被世界改变的攻守之道 | 10年回测年化16.21%",
+    "homepage": "https://zhubao315.github.io/dual-asset-strategy/",
+    "default_branch": "master",
+    "language": "HTML",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-07-03T10:08:33Z",
+    "updated_at": "2026-07-03T10:24:56Z",
+    "pushed_at": "2026-07-03T10:24:49Z",
+    "size_kb": 5,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "THINK",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 2,
+    "languages": {
+      "HTML": 21783
+    },
+    "top_languages": [
+      {
+        "name": "HTML",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-07-03T10:24:50Z"
     }
   },
   {
@@ -2709,62 +2947,50 @@
     }
   },
   {
-    "name": "gdmp-master",
-    "full_name": "zhubao315/gdmp-master",
-    "description": "GDMP 无代码平台版本化运维知识包（无 AI Skill Runtime，知识包≠AI 执行）",
-    "homepage": null,
+    "name": "h029-psychology",
+    "full_name": "zhubao315/h029-psychology",
+    "description": "所有领域最终通向心理学：万学归心的认知升级 | 8领域24案例验证，心理瓶颈占比100%",
+    "homepage": "https://zhubao315.github.io/h029-psychology/",
     "default_branch": "main",
-    "language": "Python",
+    "language": "HTML",
     "fork": false,
     "parent": null,
     "license": null,
     "topics": [],
-    "created_at": "2026-11-24T03:00:12Z",
-    "updated_at": "2026-11-24T03:02:13Z",
-    "pushed_at": "2026-11-24T03:02:08Z",
-    "size_kb": 102,
+    "created_at": "2026-07-03T10:29:27Z",
+    "updated_at": "2026-07-03T10:29:50Z",
+    "pushed_at": "2026-07-03T10:29:37Z",
+    "size_kb": 6,
     "stars": 0,
     "forks": 0,
-    "has_pages": false,
+    "has_pages": true,
     "category": "THINK",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 62,
+    "file_count": 2,
     "languages": {
-      "Python": 4985,
-      "JavaScript": 2074,
-      "Shell": 1573
+      "HTML": 23301
     },
     "top_languages": [
       {
-        "name": "Python",
-        "pct": 58
-      },
-      {
-        "name": "JavaScript",
-        "pct": 24
-      },
-      {
-        "name": "Shell",
-        "pct": 18
+        "name": "HTML",
+        "pct": 100
       }
     ],
     "has_readme": true,
     "has_license_file": false,
-    "has_changelog": true,
-    "has_tests": true,
+    "has_changelog": false,
+    "has_tests": false,
     "has_docs": false,
-    "workflow_files": [
-      ".github/workflows/test.yml"
-    ],
+    "workflow_files": [],
     "large_files": [],
     "pages_config": null,
-    "latest_release": "skill-v1.0.0",
+    "latest_release": null,
     "workflow_count": 1,
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-24T03:02:14Z"
+      "date": "2026-07-03T10:29:45Z"
     }
   },
   {
@@ -3420,77 +3646,6 @@
     }
   },
   {
-    "name": "active-watch",
-    "full_name": "zhubao315/active-watch",
-    "description": "ACTIVE 四站运营中枢：每日巡检 / 共享 COROS 配额账本 / 品牌单一事实源",
-    "homepage": "https://github.com/zhubao315/active-watch",
-    "default_branch": "main",
-    "language": "Python",
-    "fork": false,
-    "parent": null,
-    "license": null,
-    "topics": [
-      "automation",
-      "brand-system",
-      "coros",
-      "github-actions",
-      "observability"
-    ],
-    "created_at": "2026-11-13T10:07:31Z",
-    "updated_at": "2026-11-25T01:29:50Z",
-    "pushed_at": "2026-11-26T02:09:14Z",
-    "size_kb": 30595,
-    "stars": 0,
-    "forks": 0,
-    "has_pages": false,
-    "category": "MEASURE",
-    "source_type": "ORIGINAL",
-    "status": "ACTIVE",
-    "file_count": 156,
-    "languages": {
-      "Python": 73170,
-      "JavaScript": 63183,
-      "CSS": 16906,
-      "TypeScript": 14695,
-      "Shell": 5507
-    },
-    "top_languages": [
-      {
-        "name": "Python",
-        "pct": 42
-      },
-      {
-        "name": "JavaScript",
-        "pct": 36
-      },
-      {
-        "name": "CSS",
-        "pct": 10
-      },
-      {
-        "name": "TypeScript",
-        "pct": 8
-      }
-    ],
-    "has_readme": true,
-    "has_license_file": false,
-    "has_changelog": true,
-    "has_tests": true,
-    "has_docs": true,
-    "workflow_files": [
-      ".github/workflows/patrol.yml"
-    ],
-    "large_files": [],
-    "pages_config": null,
-    "latest_release": "v2.0.0",
-    "workflow_count": 1,
-    "last_run": {
-      "status": "completed",
-      "conclusion": "success",
-      "date": "2026-11-25T16:02:52Z"
-    }
-  },
-  {
     "name": "cycling",
     "full_name": "zhubao315/cycling",
     "description": "zhubao315 的骑行生涯 · 2,600+ 次骑行 · COROS MCP 自动同步",
@@ -3574,65 +3729,6 @@
       "conclusion": "success",
       "date": "2026-11-26T02:08:26Z"
     }
-  },
-  {
-    "name": "grok-build",
-    "full_name": "zhubao315/grok-build",
-    "description": "SpaceXAI's coding agent harness and TUI. Fullscreen, mouse interactive, extensible.",
-    "homepage": null,
-    "default_branch": "main",
-    "language": null,
-    "fork": true,
-    "parent": null,
-    "license": "Apache-2.0",
-    "topics": [],
-    "created_at": "2026-07-16T09:39:18Z",
-    "updated_at": "2026-07-16T09:39:19Z",
-    "pushed_at": "2026-07-16T05:46:12Z",
-    "size_kb": 7770,
-    "stars": 0,
-    "forks": 0,
-    "has_pages": false,
-    "category": "MEASURE",
-    "source_type": "UPSTREAM",
-    "status": "ACTIVE",
-    "file_count": 2734,
-    "languages": {
-      "Rust": 51639815,
-      "Python": 110069,
-      "JavaScript": 61570,
-      "Shell": 38501,
-      "PowerShell": 24822
-    },
-    "top_languages": [
-      {
-        "name": "Rust",
-        "pct": 100
-      },
-      {
-        "name": "Python",
-        "pct": 0
-      },
-      {
-        "name": "JavaScript",
-        "pct": 0
-      },
-      {
-        "name": "Shell",
-        "pct": 0
-      }
-    ],
-    "has_readme": true,
-    "has_license_file": true,
-    "has_changelog": true,
-    "has_tests": false,
-    "has_docs": false,
-    "workflow_files": [],
-    "large_files": [],
-    "pages_config": null,
-    "latest_release": null,
-    "workflow_count": 0,
-    "last_run": null
   },
   {
     "name": "health",
@@ -3786,6 +3882,53 @@
     }
   },
   {
+    "name": "hip-drive-running",
+    "full_name": "zhubao315/hip-drive-running",
+    "description": "送髋跑：4本书构建的送髋技术体系与训练路径",
+    "homepage": null,
+    "default_branch": "main",
+    "language": "HTML",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-09-14T06:47:54Z",
+    "updated_at": "2026-09-14T06:48:18Z",
+    "pushed_at": "2026-09-14T06:48:14Z",
+    "size_kb": 9,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "MEASURE",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 1,
+    "languages": {
+      "HTML": 41222
+    },
+    "top_languages": [
+      {
+        "name": "HTML",
+        "pct": 100
+      }
+    ],
+    "has_readme": false,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": false,
+    "has_docs": false,
+    "workflow_files": [],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-09-14T06:48:31Z"
+    }
+  },
+  {
     "name": "running",
     "full_name": "zhubao315/running",
     "description": "zhubao315 的跑步生涯 · COROS MCP 自动同步 · 3D 地形",
@@ -3914,147 +4057,6 @@
       "status": "completed",
       "conclusion": "success",
       "date": "2026-11-25T02:09:26Z"
-    }
-  },
-  {
-    "name": "dual-asset-strategy",
-    "full_name": "zhubao315/dual-asset-strategy",
-    "description": "双资产投资策略：改变世界与不被世界改变的攻守之道 | 10年回测年化16.21%",
-    "homepage": "https://zhubao315.github.io/dual-asset-strategy/",
-    "default_branch": "master",
-    "language": "HTML",
-    "fork": false,
-    "parent": null,
-    "license": null,
-    "topics": [],
-    "created_at": "2026-07-03T10:08:33Z",
-    "updated_at": "2026-07-03T10:24:56Z",
-    "pushed_at": "2026-07-03T10:24:49Z",
-    "size_kb": 5,
-    "stars": 0,
-    "forks": 0,
-    "has_pages": true,
-    "category": "CREATE",
-    "source_type": "ORIGINAL",
-    "status": "ACTIVE",
-    "file_count": 2,
-    "languages": {
-      "HTML": 21783
-    },
-    "top_languages": [
-      {
-        "name": "HTML",
-        "pct": 100
-      }
-    ],
-    "has_readme": true,
-    "has_license_file": false,
-    "has_changelog": false,
-    "has_tests": false,
-    "has_docs": false,
-    "workflow_files": [],
-    "large_files": [],
-    "pages_config": null,
-    "latest_release": null,
-    "workflow_count": 1,
-    "last_run": {
-      "status": "completed",
-      "conclusion": "success",
-      "date": "2026-07-03T10:24:50Z"
-    }
-  },
-  {
-    "name": "h029-psychology",
-    "full_name": "zhubao315/h029-psychology",
-    "description": "所有领域最终通向心理学：万学归心的认知升级 | 8领域24案例验证，心理瓶颈占比100%",
-    "homepage": "https://zhubao315.github.io/h029-psychology/",
-    "default_branch": "main",
-    "language": "HTML",
-    "fork": false,
-    "parent": null,
-    "license": null,
-    "topics": [],
-    "created_at": "2026-07-03T10:29:27Z",
-    "updated_at": "2026-07-03T10:29:50Z",
-    "pushed_at": "2026-07-03T10:29:37Z",
-    "size_kb": 6,
-    "stars": 0,
-    "forks": 0,
-    "has_pages": true,
-    "category": "CREATE",
-    "source_type": "ORIGINAL",
-    "status": "ACTIVE",
-    "file_count": 2,
-    "languages": {
-      "HTML": 23301
-    },
-    "top_languages": [
-      {
-        "name": "HTML",
-        "pct": 100
-      }
-    ],
-    "has_readme": true,
-    "has_license_file": false,
-    "has_changelog": false,
-    "has_tests": false,
-    "has_docs": false,
-    "workflow_files": [],
-    "large_files": [],
-    "pages_config": null,
-    "latest_release": null,
-    "workflow_count": 1,
-    "last_run": {
-      "status": "completed",
-      "conclusion": "success",
-      "date": "2026-07-03T10:29:45Z"
-    }
-  },
-  {
-    "name": "hip-drive-running",
-    "full_name": "zhubao315/hip-drive-running",
-    "description": "送髋跑：4本书构建的送髋技术体系与训练路径",
-    "homepage": null,
-    "default_branch": "main",
-    "language": "HTML",
-    "fork": false,
-    "parent": null,
-    "license": null,
-    "topics": [],
-    "created_at": "2026-09-14T06:47:54Z",
-    "updated_at": "2026-09-14T06:48:18Z",
-    "pushed_at": "2026-09-14T06:48:14Z",
-    "size_kb": 9,
-    "stars": 0,
-    "forks": 0,
-    "has_pages": true,
-    "category": "CREATE",
-    "source_type": "ORIGINAL",
-    "status": "ACTIVE",
-    "file_count": 1,
-    "languages": {
-      "HTML": 41222
-    },
-    "top_languages": [
-      {
-        "name": "HTML",
-        "pct": 100
-      }
-    ],
-    "has_readme": false,
-    "has_license_file": false,
-    "has_changelog": false,
-    "has_tests": false,
-    "has_docs": false,
-    "workflow_files": [],
-    "large_files": [],
-    "pages_config": null,
-    "latest_release": null,
-    "workflow_count": 1,
-    "last_run": {
-      "status": "completed",
-      "conclusion": "success",
-      "date": "2026-09-14T06:48:31Z"
     }
   },
   {

@@ -2540,6 +2540,18 @@ button:hover .arrow {
   color: var(--navy);
 }
 
+.book--teal {
+  background: var(--measure);
+  color: var(--navy);
+}
+
+.book--violet {
+  background: var(--navy-3);
+  color: var(--paper);
+  outline: 1px solid var(--create);
+  outline-offset: -9px;
+}
+
 .book-cover-top,
 .book-cover-bottom {
   position: relative;
