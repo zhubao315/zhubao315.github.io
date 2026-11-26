@@ -411,4 +411,14 @@ async function main() {
   console.log(`[sync] done in ${((Date.now() - started) / 1000).toFixed(1)}s — ${written} file(s) changed.`);
 }
 
-main().catch((error) => { console.error('[sync] FAILED:', error instanceof Error ? error.message : error); process.exit(1); });
+main().catch((error) => {
+  const message = error instanceof Error ? error.message : String(error);
+  // A rate-limited or unavailable GitHub API is not a data-drift signal.
+  // In check mode it must not block the Pages deployment.
+  if (checkMode && /GitHub (403|429)|rate limit|timed out|aborted/i.test(message)) {
+    console.warn(`[sync] SKIP drift check: GitHub API unavailable (${message}); deployment continues.`);
+    process.exit(0);
+  }
+  console.error('[sync] FAILED:', message);
+  process.exit(1);
+});
