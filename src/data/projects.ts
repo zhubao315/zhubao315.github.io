@@ -196,12 +196,14 @@ export const projects: Project[] = [
     summary: 'SOP → 标准化 Skill → 可调用执行器，一条可复用的能力工程链路。',
     description:
       '面向 Agent 的技能基础设施：把零散 SOP 转换为结构化 Skills，提供 Schema、CLI、Python 接口、原生执行器与版本化治理。',
-    tech: ['Python 3.10+', 'YAML / JSON Schema', 'CLI', 'OpenAI-compatible APIs'],
+    tech: ['Python 3.11+', 'YAML / JSON Schema', 'CLI', 'OpenAI-compatible APIs'],
     githubUrl: 'https://github.com/zhubao315/uSkill',
+    demoUrl: 'https://zhubao315.github.io/uSkill/',
+    demoLabel: '阅读文档',
     metrics: [
       { value: '4', label: '项能力属性', note: '可驾驭 / 复用 / 调用 / 迭代' },
-      { value: 'v1.1', label: '当前版本', note: 'AI 转换与原生执行器' },
-      { value: '0', label: '部署依赖', note: '开源与本地优先' },
+      { value: 'v2.0.0', label: '当前版本', note: 'tag v2.0.0（2026-11-13）；GitHub Release 页待补' },
+      { value: '292', label: '项测试', note: '2026-11-26 本地实测全部通过' },
     ],
     caseStudy: {
       context: [
@@ -225,21 +227,25 @@ export const projects: Project[] = [
         },
       ],
       evidence: [
-        '提供统一 Schema、CLI、Python 接口和原生 Skill Executor。',
-        '支持将非结构化 SOP 转换为 YAML / JSON 定义的 Skills。',
-        'V1.1 增加多模型适配与标准化视觉识别，文档随仓库维护。',
+        'v2.0.0（tag，2026-11-13）交付六个 Sprint：标准、Builder、Runtime、Evaluation、治理与分发、发布工程。',
+        '支持标准 SKILL.md 与增强 uskill.yaml 双层结构，提供校验、导入、导出与 migrate。',
+        '受治理运行时强制执行 timeout / retry / 权限 / 审批 / 检查点 / DAG 子技能调度；评测支持基线对照与回归门禁。',
+        '2026-11-26 本地执行 pytest：292 项测试全部通过（无需 API Key）。',
+        'MIT 许可证；文档站 https://zhubao315.github.io/uSkill/ 已上线。',
       ],
       boundaries: [
-        '当前公开文档站点未上线，使用说明以 GitHub 仓库 README 为准。',
-        'V1.1 的 AI 转换与执行器仍标记为 Beta，适用边界以仓库说明为准。',
+        'v2.0.0 目前以 Git tag 为准，GitHub Release 页尚未发布该版本（2026-11-26 实测）。',
+        'pyproject.toml 的开发状态仍标记为 Beta；技能市场对 Web 界面仍在规划中。',
+        'CI 基线使用 MockProvider，全绿说明判分管道未退化，不等于真实模型的语义质量。',
       ],
     },
-    definition: 'uSkill 是一个用于定义、校验、执行和治理 AI Agent Skills 的开源工程平台，把 SOP 转换为结构化 Skill，并通过统一 Schema、CLI 与执行器形成可复用的能力资产。',
+    definition: 'uSkill 是一个用于定义、校验、执行和治理 AI Agent Skills 的开源工程平台（MIT，v2.0.0）：把 SOP 转换为双层标准技能，通过受治理运行时、评测门禁与风险分级形成可追溯的能力资产。',
     audience: ['AI 工程师与 Agent 开发者', '使用 Codex / Claude Code / OpenCode 的用户', '需要把团队 SOP 变成可执行能力的技术负责人'],
-    versionNote: '案例记录为 v1.1；AI 转换与原生执行器标记为 Beta，实际版本以仓库 Release 为准。',
+    versionNote: 'v2.0.0（tag，2026-11-13）；GitHub Release 页尚未发布；包版本定义在 core/uskills/_version.py。',
     evidenceLinks: [
       { label: 'README 与双层标准', href: 'https://github.com/zhubao315/uSkill#readme' },
-      { label: '项目演示站', href: 'https://zhubao315.github.io/uSkill/' },
+      { label: '完整文档', href: 'https://zhubao315.github.io/uSkill/' },
+      { label: 'v2.0.0 tag', href: 'https://github.com/zhubao315/uSkill/releases/tag/v2.0.0' },
     ],
     faqs: [
       {
@@ -248,15 +254,19 @@ export const projects: Project[] = [
       },
       {
         question: 'uSkill 是否绑定某一家模型？',
-        answer: '不绑定。技能定义独立于模型，模型是可替换的执行引擎；这是项目的核心设计原则。',
+        answer: '不绑定。技能定义独立于模型；2.0 提供 OpenAI、OpenAI Responses、Anthropic、兼容网关、Ollama 等 Provider，MockProvider 可离线跑通全部命令。',
       },
       {
-        question: '现在可以用于生产环境吗？',
-        answer: '需要按仓库说明判断。v1.1 的 AI 转换与原生执行器仍标记为 Beta，适用边界以仓库文档为准。',
+        question: '升级到 2.0 需要改 1.x 技能文件吗？',
+        answer: '不需要。2.0 字段均为可选增量，SCHEMA_VERSION 保持 1.1.0，存量技能加载/校验/执行向后兼容；可用 uskills migrate --dry-run 先看报告。',
+      },
+      {
+        question: '没有 API Key 能体验吗？评测全绿代表效果好？',
+        answer: '大部分命令可在 MockProvider 下端到端运行。评测全绿只说明判分管道未退化、输出契约合规，不等于真实模型的语义质量；真实效果需自己的评测集接真实模型跑矩阵。',
       },
     ],
     schemaType: 'SoftwareApplication',
-    lastVerified: '2026-11-11',
+    lastVerified: '2026-11-26',
   },
   {
     id: 'knowledge-base-engineering',
