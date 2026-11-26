@@ -52,6 +52,18 @@ export interface ProjectCaseStudy {
   boundaries?: string[];
 }
 
+export interface ProjectFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface ProjectEvidenceLink {
+  label: string;
+  href: string;
+}
+
+export type ProjectSchemaType = 'SoftwareApplication' | 'WebApplication' | 'CreativeWork';
+
 export interface Project {
   id: string;
   slug: string;
@@ -74,6 +86,18 @@ export interface Project {
   metrics?: ProjectMetric[];
   caseStudy?: ProjectCaseStudy;
   sourceNote?: string;
+  /** 一句话直接答案；用于首屏与结构化数据，必须能从 README 或页面核验。 */
+  definition?: string;
+  /** 真正需要这个项目的用户；不写虚构用户画像。 */
+  audience?: string[];
+  /** 版本口径；无已核验 Release 时不写具体版本号。 */
+  versionNote?: string;
+  /** 可点击的一手证据，优先 README / Release / 演示站。 */
+  evidenceLinks?: ProjectEvidenceLink[];
+  /** 用户真正会搜索的问题；答案必须来自已有事实。 */
+  faqs?: ProjectFAQ[];
+  /** 只在真实符合定义时使用，默认 CreativeWork。 */
+  schemaType?: ProjectSchemaType;
   lastVerified: string;
 }
 
@@ -135,6 +159,28 @@ export const projects: Project[] = [
         '付费完整报告是转化链路的 Demo，不接支付、不扣费。',
       ],
     },
+    definition: 'MBTI64 是一个纯静态的中文人格探索产品：120 道情景题经六维计分，映射到 64 型人格与 7 档稀有度，答案只在浏览器本地计算。',
+    audience: ['想深入了解人格类型的普通用户', '喜欢分享测评结果与型别卡片的用户'],
+    versionNote: '静态导出的前端应用；版本与题目变更以仓库 Release 为准。',
+    evidenceLinks: [
+      { label: 'README 与题库说明', href: 'https://github.com/zhubao315/mbti64#readme' },
+      { label: '在线测评', href: 'https://zhubao315.github.io/mbti64/' },
+    ],
+    faqs: [
+      {
+        question: 'MBTI64 是心理诊断或临床测评工具吗？',
+        answer: '不是。结果只用于娱乐与自我探索，不构成心理咨询、诊断或医疗建议；页面明确标注这一边界。',
+      },
+      {
+        question: '测评答案会上传到服务器吗？',
+        answer: '不会。站点是静态导出的，答案只在浏览器本地计算，进度保存在浏览器里，不注册、不上传。',
+      },
+      {
+        question: '64 型人格和 7 档稀有度是怎么来的？',
+        answer: '基础型与决策姿态、变化策略组合成 64 型；稀有度概率、并列档位与相似度归一化都有独立规则和测试，源码可在仓库查看。',
+      },
+    ],
+    schemaType: 'WebApplication',
     lastVerified: '2026-11-11',
   },
   {
@@ -188,6 +234,28 @@ export const projects: Project[] = [
         'V1.1 的 AI 转换与执行器仍标记为 Beta，适用边界以仓库说明为准。',
       ],
     },
+    definition: 'uSkill 是一个用于定义、校验、执行和治理 AI Agent Skills 的开源工程平台，把 SOP 转换为结构化 Skill，并通过统一 Schema、CLI 与执行器形成可复用的能力资产。',
+    audience: ['AI 工程师与 Agent 开发者', '使用 Codex / Claude Code / OpenCode 的用户', '需要把团队 SOP 变成可执行能力的技术负责人'],
+    versionNote: '案例记录为 v1.1；AI 转换与原生执行器标记为 Beta，实际版本以仓库 Release 为准。',
+    evidenceLinks: [
+      { label: 'README 与双层标准', href: 'https://github.com/zhubao315/uSkill#readme' },
+      { label: '项目演示站', href: 'https://zhubao315.github.io/uSkill/' },
+    ],
+    faqs: [
+      {
+        question: 'uSkill 和普通 Prompt 有什么区别？',
+        answer: 'Prompt 的价值通常停留在一次对话里；uSkill 用统一 Schema 描述输入、步骤、约束与输出，让技能独立于模型，可验证、可版本化、可重复调用。',
+      },
+      {
+        question: 'uSkill 是否绑定某一家模型？',
+        answer: '不绑定。技能定义独立于模型，模型是可替换的执行引擎；这是项目的核心设计原则。',
+      },
+      {
+        question: '现在可以用于生产环境吗？',
+        answer: '需要按仓库说明判断。v1.1 的 AI 转换与原生执行器仍标记为 Beta，适用边界以仓库文档为准。',
+      },
+    ],
+    schemaType: 'SoftwareApplication',
     lastVerified: '2026-11-11',
   },
   {
@@ -243,6 +311,27 @@ export const projects: Project[] = [
         'Notion API 与 RAG 适配尚未实机联调。',
       ],
     },
+    definition: 'Knowledge Base Engineering 是一个只读优先的知识库治理 Skill：先诊断重复、断链与无来源结论，再在人类授权下完成准入、分级、固化与上下文交付。',
+    audience: ['使用 Obsidian 的长期笔记用户', '需要审计与治理大型知识库的团队', '希望 AI 在证据边界内处理知识资产的人'],
+    versionNote: '案例记录为 v1.2.0；具体版本以仓库 Release 为准。',
+    evidenceLinks: [
+      { label: 'README 与治理规则', href: 'https://github.com/zhubao315/knowledge-base-engineering-skill#readme' },
+    ],
+    faqs: [
+      {
+        question: '这个 Skill 会直接修改或删除我的笔记吗？',
+        answer: '默认不会。扫描、检索、统计和建议可以自动完成；写入、移动、批量重命名、软归档与基线调整需要明确授权与恢复路径，删除不在 AI 权限集合内。',
+      },
+      {
+        question: '25 项测试能证明什么？',
+        answer: '它们覆盖缺 frontmatter、断链、孤岛、占位、提示注入与 scaffold 安全边界，证明流程与权限约束；不代表一万篇规模知识库的生产性能。',
+      },
+      {
+        question: '它能解析全部 Dataview、Canvas 或 Notion 属性吗？',
+        answer: '不能。扫描器是启发式的；Notion API 与 RAG 适配尚未实机联调，边界已在案例页说明。',
+      },
+    ],
+    schemaType: 'SoftwareApplication',
     lastVerified: '2026-11-11',
   },
   {
@@ -297,6 +386,27 @@ export const projects: Project[] = [
         '没有授权实时源时，页面必须标注“最新可用行情”及其时间与延迟，不能写“实时”。',
       ],
     },
+    definition: '投资的纪律是一个零依赖的 Agent Skill，把投资研究、数据校验、买入前检查、卖出复核、组合合规与复盘变成可执行、可追溯的工作流；它不荐股、不预测、不承诺收益。',
+    audience: ['希望建立研究流程的个人投资者', '需要可复盘决策记录的长期投资者'],
+    versionNote: '能力规模以仓库为准：8 种任务路由、45 项结构校验、63 项单元测试。',
+    evidenceLinks: [
+      { label: 'README 与规则说明', href: 'https://github.com/zhubao315/investment-discipline#readme' },
+    ],
+    faqs: [
+      {
+        question: '它会推荐股票或预测涨跌吗？',
+        answer: '不会。项目不预测涨跌、不给目标价、不承诺收益或胜率，也不推荐具体证券；它只帮助按统一标准完成研究和复盘。',
+      },
+      {
+        question: '行情数据如何处理？',
+        answer: '采集结果必须区分数据时间与延迟；缺失数据记为待核实而非通过。没有授权实时源时，必须标注“最新可用行情”及时间，不能写“实时”。',
+      },
+      {
+        question: '它会连接证券账户或执行交易吗？',
+        answer: '不会。项目不执行交易、不连接证券账户、不保存持仓凭据，核心校验可离线复跑。',
+      },
+    ],
+    schemaType: 'SoftwareApplication',
     lastVerified: '2026-11-11',
   },
   {
@@ -360,9 +470,31 @@ export const projects: Project[] = [
         '不同仓库 README 与旧 Profile README 可能存在更新时间差；本项目以各站点 README 的数据快照为准。',
       ],
     },
+    definition: '量化生活是一条 COROS → SQLite → JSON / CSV → GitHub Pages 的个人数据流水线，把健康、跑步、骑行与徒步的长期记录变成每天自动更新、可查询、可解释的静态站点。',
+    audience: ['长期记录运动与健康数据的个人用户', '关注可复现数据管道的开发者', '希望历史数据始终可查的量化生活实践者'],
+    versionNote: '数据每天自动同步；统计口径与日期以各独立站点的数据文件为准。',
+    evidenceLinks: [
+      { label: '健康数据仓库 README', href: 'https://github.com/zhubao315/health#readme' },
+      { label: '健康面板', href: 'https://zhubao315.github.io/health/' },
+      { label: '跑步站点', href: 'https://zhubao315.github.io/running/' },
+    ],
+    faqs: [
+      {
+        question: '数据来自哪里，是否需要服务器？',
+        answer: '来自 COROS 设备，经 MCP 与 Python 同步写入 SQLite，再生成静态数据页面。没有服务器和数据库云服务，历史都托管在 GitHub Pages。',
+      },
+      {
+        question: '缺失的睡眠或运动数据会被补零吗？',
+        answer: '不会。缺失阶段保持 null，数据质量报告公开缺失率、断档、重复键与异常值；同步失败不推进水位，下次从缺口重读。',
+      },
+      {
+        question: '这些健康数据会发送到第三方分析平台吗？',
+        answer: '不会。站点是静态页面，更细的个人健康数据以各项目站点为准，主页只展示经过挑选的汇总指标。',
+      },
+    ],
+    lastVerified: '2026-11-11',
     sourceNote:
       'Health、Cycling、Hiking 为非 Fork 仓库；Running 的 GitHub 元数据为 Fork，但页面与数据管道已深度改造为个人跑步档案，故在本作品集中作为二次开发标注。',
-    lastVerified: '2026-11-11',
   },
   {
     id: 'perfectme',
@@ -420,6 +552,24 @@ export const projects: Project[] = [
         '宣传站包含自动播放等交互，移动端体验以实际站点为准。',
       ],
     },
+    definition: '《满分的我》是一部约 2 分 31 秒的原创 2D 微动漫，围绕“被喜欢”与“做自己”展开，并配套剧本、分镜、角色设定、创作文档与独立宣传站。',
+    audience: ['对原创动画与角色叙事感兴趣的观众', '关注 AI 辅助创作流程的创作者'],
+    versionNote: '成片有字幕版与配音版；制作工具与素材清单以仓库文档为准。',
+    evidenceLinks: [
+      { label: '创作文档与素材', href: 'https://github.com/zhubao315/perfectme#readme' },
+      { label: '在线观看', href: 'https://zhubao315.github.io/perfectme/' },
+    ],
+    faqs: [
+      {
+        question: '这是一段纯 AI 生成的视频吗？',
+        answer: '不是。剧本与分镜先行，AI 用于降低视觉与音频制作的边际成本，不代替叙事判断；项目还包含自研网格形变动画、剪辑与宣传站。',
+      },
+      {
+        question: '成片有多长，在哪里观看？',
+        answer: '约 2 分 31 秒，提供字幕版与配音版，可通过项目演示站观看。',
+      },
+    ],
+    schemaType: 'CreativeWork',
     lastVerified: '2026-11-11',
   },
   {
@@ -553,6 +703,7 @@ export const projects: Project[] = [
       '从原创微动漫《拥抱不完美的自己》提炼出的全流程制作 Skill，覆盖剧本、提示词、自研 2D 网格形变动画引擎、ACE-Step 配乐、Qwen3-TTS 配音与 FFmpeg 合成。',
     tech: ['Python', 'Agent Skills', 'Qwen-Image', 'ACE-Step', 'FFmpeg'],
     githubUrl: 'https://github.com/zhubao315/2d-micro-anime-skill',
+    schemaType: 'SoftwareApplication',
     lastVerified: '2026-11-11',
   },
   {

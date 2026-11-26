@@ -14,7 +14,8 @@
     "check": "astro check",
     "test": "playwright test",
     "test:links": "node scripts/check-links.mjs",
-    "test:all": "npm run build && npm run test:links && npm test",
+    "test:seo": "node scripts/audit-seo.mjs",
+    "test:all": "npm run build && npm run test:links && npm run test:seo && npm test",
     "screenshots": "node scripts/capture-screenshots.mjs",
     "sync:github": "node scripts/sync-github-data.mjs",
     "sync:github:check": "node scripts/sync-github-data.mjs --check"

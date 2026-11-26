@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
+# ChatGPT Search / AI 搜索发现：显式允许抓取公开内容。
+User-agent: OAI-SearchBot
+Allow: /
+
+# 模型训练数据抓取：默认不授权。此策略与搜索发现独立，
+# 若决定授权训练数据，需人工修改此处并重新评估内容授权边界。
+User-agent: GPTBot
+Disallow: /
+
 Sitemap: https://zhubao315.github.io/sitemap-index.xml

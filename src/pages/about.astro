@@ -8,6 +8,30 @@ import { lifeSites } from '../data/projects';
 const totalActivities = 2037 + 5776 + 344;
 const totalDistance = 24548 + 45291 + 2694;
 
+// ProfilePage 仅在页面真实展示完整个人档案时使用；不填写未核验的出版或雇佣信息。
+const profileSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  name: '关于朱宝',
+  url: new URL('/about/', site.url).href,
+  inLanguage: 'zh-CN',
+  mainEntity: {
+    '@type': 'Person',
+    name: '朱宝',
+    alternateName: 'ZHUBAO',
+    url: site.url,
+    jobTitle: 'AI Systems & Product Builder',
+    knowsAbout: [
+      'AI Engineering',
+      'Agent Skills',
+      'Knowledge Engineering',
+      'Product Engineering',
+      'Quantified Self',
+    ],
+    sameAs: [site.github, site.x],
+  },
+};
+
 const capabilities = [
   {
     index: '01',
@@ -90,6 +114,7 @@ const timeline = [
   title="关于朱宝 | AI 系统、产品工程与知识工程"
   description="朱宝的个人工作档案：AI 与 Agent 系统、数字产品、知识工程、投资研究与量化生活。这里记录方法、证据、边界与持续建设中的作品。"
   type="profile"
+  schema={profileSchema}
 >
   <section class="page-hero about-hero page-hero--brand">
     <div class="shell">

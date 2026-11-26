@@ -1272,3 +1272,64 @@
 .project-pager a:hover strong {
   color: var(--gold);
 }
+
+/* SEO / GEO: direct answer block. Uses the existing case-section language. */
+.direct-answer-section {
+  padding-top: clamp(20px, 3vw, 34px);
+  padding-bottom: clamp(20px, 3vw, 34px);
+  border-top: 1px solid var(--line);
+}
+
+.direct-answer {
+  max-width: 900px;
+}
+
+.direct-answer h2 {
+  margin-bottom: 14px;
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.direct-answer-text {
+  color: #2f3a4d;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.85;
+}
+
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item summary {
+  padding: 18px 0;
+  color: #202b3c;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.6;
+  cursor: pointer;
+  list-style-position: inside;
+}
+
+.faq-item summary::marker {
+  color: var(--electric-ink);
+}
+
+.faq-item p {
+  max-width: 760px;
+  padding-bottom: 20px;
+  color: #465166;
+  font-size: 0.87rem;
+  line-height: 1.95;
+}
+
+.fact-list dd {
+  max-width: 68%;
+  overflow-wrap: anywhere;
+}

@@ -10,6 +10,7 @@ import {
   sourceMeta,
   type Project,
 } from '../../data/projects';
+import { site } from '../../data/site';
 
 export function getStaticPaths() {
   return projects.map((project, index) => ({
@@ -37,19 +38,28 @@ const hasVisual =
   ['uskill', 'knowledge-base-engineering', 'investment-discipline', 'quantified-life'].includes(project.id);
 const related = featuredProjects.filter((item) => item.id !== project.id).slice(0, 3);
 const pageTitle = `${project.name} · ${project.nameZh} | 朱宝 ZHUBAO`;
-const metaDescription = `${project.summary} ${project.tagline}`;
+const metaDescription = project.definition ?? `${project.summary} ${project.tagline}`;
+const pageUrl = new URL(`/work/${project.slug}/`, site.url).href;
+const schemaType = project.schemaType ?? 'CreativeWork';
 
 const projectSchema = {
   '@context': 'https://schema.org',
-  '@type': 'CreativeWork',
+  '@type': schemaType,
   name: project.name,
   alternateName: project.nameZh,
-  description: project.summary,
-  url: new URL(`/work/${project.slug}/`, 'https://zhubao315.github.io').href,
-  author: { '@type': 'Person', name: '朱宝', url: 'https://zhubao315.github.io' },
+  description: project.definition ?? project.summary,
+  url: pageUrl,
+  author: { '@type': 'Person', name: '朱宝', url: site.url },
   keywords: project.tech.join(', '),
   codeRepository: project.githubUrl,
   ...(project.demoUrl ? { sameAs: [project.demoUrl, project.githubUrl] } : { sameAs: [project.githubUrl] }),
+  ...(schemaType === 'SoftwareApplication'
+    ? {
+        applicationCategory:
+          project.category === 'investment' ? 'FinanceApplication' : 'DeveloperApplication',
+      }
+    : {}),
+  ...(schemaType === 'WebApplication' ? { applicationCategory: 'LifestyleApplication' } : {}),
 };
 ---
 
@@ -57,7 +67,14 @@ const projectSchema = {
   title={pageTitle}
   description={metaDescription}
   image={project.cover?.src ?? '/og-default.png'}
+  imageAlt={project.coverAlt ?? `${project.name} 项目封面`}
   type="article"
+  breadcrumbs={[
+    { name: '首页', href: `${site.url}/` },
+    { name: '作品', href: `${site.url}/work/` },
+    { name: project.name },
+  ]}
+  schema={projectSchema}
 >
   <article class="project-page">
     <header class="project-hero">
@@ -122,6 +139,20 @@ const projectSchema = {
       )
     }
 
+    {
+      project.definition && (
+        <section class="section direct-answer-section" aria-labelledby="direct-answer-title">
+          <div class="shell">
+            <div class="direct-answer">
+              <p class="case-kicker">00 / DIRECT ANSWER</p>
+              <h2 id="direct-answer-title">一句话说明</h2>
+              <p class="direct-answer-text">{project.definition}</p>
+            </div>
+          </div>
+        </section>
+      )
+    }
+
     <div class="section project-content-section">
       <div class="shell">
         <div class="project-content-grid">
@@ -134,6 +165,16 @@ const projectSchema = {
                     <h2>问题与判断</h2>
                     {project.caseStudy.context.map((paragraph) => <p>{paragraph}</p>)}
                   </section>
+
+                  {project.audience && project.audience.length > 0 && (
+                    <section class="case-section" data-reveal>
+                      <p class="case-kicker">WHO / AUDIENCE</p>
+                      <h2>谁需要它</h2>
+                      <ul class="evidence-list">
+                        {project.audience.map((item) => <li>{item}</li>)}
+                      </ul>
+                    </section>
+                  )}
 
                   <section class="case-section" data-reveal>
                     <p class="case-kicker">02 / APPROACH</p>
@@ -219,6 +260,21 @@ const projectSchema = {
                 </section>
               )
             }
+
+            {project.faqs && project.faqs.length > 0 && (
+              <section class="case-section" data-reveal>
+                <p class="case-kicker">FAQ / QUESTIONS</p>
+                <h2>常见问题</h2>
+                <div class="faq-list">
+                  {project.faqs.map((faq) => (
+                    <details class="faq-item">
+                      <summary>{faq.question}</summary>
+                      <p>{faq.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
 
           <aside class="project-sidebar" data-reveal>
@@ -229,6 +285,7 @@ const projectSchema = {
                 <div><dt>来源</dt><dd>{source.labelZh}</dd></div>
                 <div><dt>领域</dt><dd>{category.labelZh}</dd></div>
                 <div><dt>核验</dt><dd>{project.lastVerified}</dd></div>
+                <div><dt>版本</dt><dd>{project.versionNote ?? '以仓库 Release 为准'}</dd></div>
               </dl>
             </div>
 
@@ -257,6 +314,19 @@ const projectSchema = {
                 ))}
               </div>
             </div>
+
+            {project.evidenceLinks && project.evidenceLinks.length > 0 && (
+              <div class="sidebar-block">
+                <p class="sidebar-label">EVIDENCE</p>
+                <div class="sidebar-links">
+                  {project.evidenceLinks.map((link) => (
+                    <a href={link.href} target="_blank" rel="noreferrer">
+                      <span>{link.label}</span><span>↗</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <p class="sidebar-note">
               项目事实核验于 {project.lastVerified}。功能、测试数与在线状态可能随仓库更新而变化。
