@@ -202,8 +202,8 @@ export const projects: Project[] = [
     demoLabel: '阅读文档',
     metrics: [
       { value: '4', label: '项能力属性', note: '可驾驭 / 复用 / 调用 / 迭代' },
-      { value: 'v2.0.0', label: '当前版本', note: 'tag v2.0.0（2026-11-13）；GitHub Release 页待补' },
-      { value: '292', label: '项测试', note: '2026-11-26 本地实测全部通过' },
+      { value: 'v2.0.0', label: '当前版本', note: 'tag v2.0.0（2026-11-13）；Release 页 2026-11-26 已补齐' },
+      { value: '301', label: '项测试', note: '2026-11-26 本地实测全部通过' },
     ],
     caseStudy: {
       context: [
@@ -230,18 +230,18 @@ export const projects: Project[] = [
         'v2.0.0（tag，2026-11-13）交付六个 Sprint：标准、Builder、Runtime、Evaluation、治理与分发、发布工程。',
         '支持标准 SKILL.md 与增强 uskill.yaml 双层结构，提供校验、导入、导出与 migrate。',
         '受治理运行时强制执行 timeout / retry / 权限 / 审批 / 检查点 / DAG 子技能调度；评测支持基线对照与回归门禁。',
-        '2026-11-26 本地执行 pytest：292 项测试全部通过（无需 API Key）。',
+        '2026-11-26 本地执行 pytest：301 项测试全部通过（无需 API Key）。',
         'MIT 许可证；文档站 https://zhubao315.github.io/uSkill/ 已上线。',
       ],
       boundaries: [
-        'v2.0.0 目前以 Git tag 为准，GitHub Release 页尚未发布该版本（2026-11-26 实测）。',
-        'pyproject.toml 的开发状态仍标记为 Beta；技能市场对 Web 界面仍在规划中。',
+        'v2.0.0 的 GitHub Release 页已于 2026-11-26 补齐（tag v2.0.0）。',
+        'pyproject.toml 的开发状态仍标记为 Beta；Workbench 3.0 提供本地只读 Web MVP（React + FastAPI，需本机运行、不写文件），托管技能市场与云端面板仍无。',
         'CI 基线使用 MockProvider，全绿说明判分管道未退化，不等于真实模型的语义质量。',
       ],
     },
     definition: 'uSkill 是一个用于定义、校验、执行和治理 AI Agent Skills 的开源工程平台（MIT，v2.0.0）：把 SOP 转换为双层标准技能，通过受治理运行时、评测门禁与风险分级形成可追溯的能力资产。',
     audience: ['AI 工程师与 Agent 开发者', '使用 Codex / Claude Code / OpenCode 的用户', '需要把团队 SOP 变成可执行能力的技术负责人'],
-    versionNote: 'v2.0.0（tag，2026-11-13）；GitHub Release 页尚未发布；包版本定义在 core/uskills/_version.py。',
+    versionNote: 'v2.0.0（tag，2026-11-13；Release 页 2026-11-26 已补齐）；包版本定义在 core/uskills/_version.py。',
     evidenceLinks: [
       { label: 'README 与双层标准', href: 'https://github.com/zhubao315/uSkill#readme' },
       { label: '完整文档', href: 'https://zhubao315.github.io/uSkill/' },

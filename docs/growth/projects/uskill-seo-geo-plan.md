@@ -17,23 +17,23 @@
 | 包版本 | `__version__ = "2.0.0"`，单一来源 `core/uskills/_version.py` | 源码实读 |
 | Python | `requires-python >=3.11`（3.10 EOL），支持 3.11–3.13 矩阵 | `pyproject.toml`、CHANGELOG |
 | 协议 | MIT | `LICENSE`、`pyproject.toml` |
-| 测试 | 2026-11-26 本地 `pytest -q`：**292 passed in 2.81s**，全部基于 MockProvider，无需 API Key | 实测命令输出 |
-| 覆盖率口径 | CHANGELOG 称 CI 实测 91%；文档站仍写 261 测试 / 90.6% —— **文档数字过期** | CHANGELOG vs `docs/index.md` |
+| 测试 | 2026-11-26 本地 `pytest -q`：**301 passed in 2.92s**，全部基于 MockProvider，无需 API Key | 实测命令输出 |
+| 覆盖率口径 | 审计时文档站写 261 测试 / 90.6%，与 CHANGELOG 的 91% 不一致；2026-11-26 已改为 301 项实测 + 覆盖率门禁 80% | `docs/index.md` 修正提交、CI 配置 |
 | CI | `ci.yml`、`pages.yml`、`release.yml`；矩阵 + 覆盖率门禁 80% + eval 回归门禁 | 仓库文件、CHANGELOG |
 | 文档站 | `/uSkill/` HTTP 200；MkDocs Material，含快速开始、CLI、架构、FAQ | 实测 + 本地文档 |
 | 社区信号 | Star 0 / Fork 0 / Watcher 0 / Open Issue 0（2026-11-26 API） | GitHub API |
 | Topics | `agent-skills`、`ai-agent`、`python`、`skills-framework`、`standardization` | GitHub API |
-| 规划中 | 技能市场 / Web 面板、幂等续跑、触发精度 | `docs/roadmap.md`、`docs/ROADMAP_2.0.md` |
+| 规划中 | 托管技能市场 / 云端面板、幂等续跑与触发精度；Workbench 3.0 本地只读 Web MVP 已实现 | `workbench/`、`docs/roadmap.md` |
 
 ### 1.2 已实现 vs 未实现（避免夸大）
 
 **已实现且有测试证据**：双层标准（SKILL.md + uskill.yaml）、校验/导入/导出/migrate、SOP 规则式与 AI 转换、受治理运行时（timeout/retry/权限/审批/检查点/DAG 并行）、JSON Schema 输入约束与输出校验修复环、评测（基线对照、多模型矩阵、版本比较、回归门禁、LLM-as-Judge 隔离）、L0–L4 风险分级、脚本静态扫描、审计脱敏、Registry 五种检索、包校验分发、MCP 工具桥接。
 
-**未实现 / 规划中**：技能市场、Web 管理面板、幂等续跑与触发精度（V3.0）。**不得在推广文案中写成已实现。**
+**未实现 / 规划中**：托管技能市场、云端面板、幂等续跑与触发精度（V3.0）。Workbench 3.0 本地只读 Web MVP（React + FastAPI）已实现，需本机运行、不写文件。**不得把托管市场写成已实现。**
 
 ### 1.3 与主站数据的一致性（已修正）
 
-审计发现主页 `projects.ts` 的 uSkill 数据停留在 v1.1 / Python 3.10+ / "文档未上线"，与仓库实际不符。本次已修正：版本 v2.0.0、Python 3.11+、292 项测试、文档站入口、边界说明（Release 页待补、Beta 状态、Mock 基线含义），并把 `lastVerified` 更新为 2026-11-26。
+审计发现主页 `projects.ts` 的 uSkill 数据停留在 v1.1 / Python 3.10+ / "文档未上线"，与仓库实际不符。本次已修正：版本 v2.0.0、Python 3.11+、301 项测试、文档站入口、边界说明（Release 页已补、Beta 状态、Mock 基线含义），并把 `lastVerified` 更新为 2026-11-26。
 
 ---
 
@@ -87,7 +87,7 @@
 | 21 | 能接入现有 CI 吗？ | ✅ | 文档 FAQ：三条命令门禁 |
 | 22 | 需要数据库或服务器吗？ | ✅ | 文档 FAQ：不需要 |
 | 23 | 升级 2.0 要改 1.x 技能吗？ | ✅ | 文档 FAQ：不用，向后兼容 |
-| 24 | 技能市场 / Web 面板何时可用？ | ❌ | 规划中，没有明确时间；**不要给承诺日期** |
+| 24 | 有 Web 界面吗？ | ⚠️ | Workbench 3.0 本地只读 MVP 已实现；托管市场与云端面板规划中，**不要给承诺日期** |
 
 **内容缺口优先级**：#3（用户类型）、#5（版本与 Release 口径）、#9（Python 版本）、#24（路线图边界）。
 
@@ -109,8 +109,8 @@
 
 ### 4.2 文档站（uSkill 自身仓库）
 
-- 首页 hero 已很完整；把"261 回归测试 / 90.6%"更新为**实际口径**（292 项测试本地实测通过；覆盖率以 CI 最新报告为准，不写死数字）。
-- 增加"当前版本"事实卡：`v2.0.0` tag / 2026-11-13 / Release 页待补 / Python 3.11+ / MIT。
+- 首页 hero 已很完整；把"261 回归测试 / 90.6%"更新为**实际口径**（301 项测试本地实测通过；覆盖率以 CI 最新报告为准，不写死数字）。
+- 增加"当前版本"事实卡：`v2.0.0` tag / 2026-11-13 / Release 页 2026-11-26 已补 / Python 3.11+ / MIT。
 - 所有页面增加稳定引用地址（`https://zhubao315.github.io/uSkill/`）以便被 AI 引用。
 
 ### 4.3 GitHub 仓库
@@ -136,9 +136,9 @@
 | 版本 | v2.0.0（`core/uskills/_version.py` 为单一来源） |
 | 协议 | MIT |
 | 运行门槛 | Python ≥ 3.11；无需 API Key（MockProvider） |
-| 测试 | 292 项本地实测全部通过（`pytest -q`） |
+| 测试 | 301 项本地实测全部通过（`pytest -q`） |
 | 文档 | https://zhubao315.github.io/uSkill/ |
-| 当前边界 | v2.0.0 Release 页待补；技能市场 / Web 面板规划中 |
+| 当前边界 | v2.0.0 Release 页已补；Workbench 3.0 本地 MVP；托管市场与云端面板规划中 |
 ```
 
 **在「这是什么」之前增加：**
@@ -178,7 +178,7 @@ uskills run content_pipeline --input '{"text":"示例"}' --library skills
 
 **边界**
 
-> v2.0.0 以 Git tag 为准，Release 页待补；开发状态仍标记为 Beta；技能市场与 Web 面板仍在规划中。CI 全绿只说明判分管道未退化，不等于真实模型语义质量。
+> v2.0.0 以 Git tag 为准，Release 页已于 2026-11-26 补齐；开发状态仍标记为 Beta；Workbench 3.0 是本地只读 MVP，托管市场与云端面板仍在规划中。CI 全绿只说明判分管道未退化，不等于真实模型语义质量。
 
 ---
 
@@ -191,7 +191,7 @@ uskills run content_pipeline --input '{"text":"示例"}' --library skills
 5. **需要 API Key 吗？** — 不需要。MockProvider 可端到端体验校验、运行、评测与治理命令。
 6. **升级 2.0 要改 1.x 技能吗？** — 不用。字段为可选增量，`SCHEMA_VERSION` 保持 1.1.0。
 7. **评测全绿说明模型效果好？** — 不说明。它守护判分管道与输出契约，真实效果需自己的评测集接真实模型。
-8. **有 Web 管理后台吗？** — 没有。当前分发是带 sha256 清单的 zip 与 Git 仓库；市场/Web 面板仍在规划中。
+8. **有 Web 管理后台吗？** — 有本地 Workbench 3.0 只读 MVP（React + FastAPI），需在本机运行且不写文件；没有托管市场或云端面板。分发仍是带 sha256 清单的 zip 与 Git 仓库。
 
 ---
 
@@ -234,7 +234,7 @@ uskills run content_pipeline --input '{"text":"示例"}' --library skills
 ### 中文
 
 - **GitHub Description（建议）**：`Agent Skills 工程平台：双层标准、受治理运行时、评测门禁与风险分级。MIT / Python 3.11+ / v2.0.0`
-- **知乎/公众号标题候选**：《把 SOP 变成可执行的 Agent Skill：一个开源项目的 292 项测试背后》
+- **知乎/公众号标题候选**：《把 SOP 变成可执行的 Agent Skill：一个开源项目的 301 项测试背后》
 - **掘金标题候选**：《uSkill 2.0：用 JSON Schema 和回归门禁治理 Agent Skills》
 - **V2EX 项目介绍要点**：解决的问题、6 条快速开始命令、无需 API Key、MIT、明确说"没有 Web 后台"。
 - **B站脚本结构**：问题（30s）→ 双层标准（60s）→ 无 Key 跑通流水线（90s）→ 评测门禁（60s）→ 边界与路线图（30s）。
@@ -300,9 +300,9 @@ uskills run content_pipeline --input '{"text":"示例"}' --library skills
 
 | 优先级 | 任务 | 状态 |
 |---|---|---|
-| P0 | 修正主站 uSkill 过期事实（v2.0.0 / Python 3.11+ / 292 测试 / 文档已上线 / 边界） | **已完成** |
-| P0 | 补 GitHub Release（v2.0.0 目前只有 tag） | 待执行（需仓库写权限） |
-| P0 | 文档站测试数字从 261 改为实际口径 | 待执行 |
+| P0 | 修正主站 uSkill 过期事实（v2.0.0 / Python 3.11+ / 301 测试 / 文档已上线 / 边界） | **已完成** |
+| P0 | 补 GitHub Release（v2.0.0） | **已完成**（2026-11-26） |
+| P0 | 文档站测试数字从 261 改为实际口径 | **已完成**（301 项实测） |
 | P1 | README 事实卡 + "谁应该用它" | 建议稿已完成，待人工审核落地 |
 | P1 | 主站 FAQ 补版本/Python/路线图三问 | 待执行 |
 | P1 | 文章 1、2、5、7 | 待创作 |
@@ -310,7 +310,7 @@ uskills run content_pipeline --input '{"text":"示例"}' --library skills
 | P2 | 英文教程与 Dev.to | 待执行 |
 | P2 | B站演示视频 | 待执行 |
 | P2 | 接入 GSC / Bing AI Performance，建立基准 | 待外部配置 |
-| P2 | 技能市场 / Web 面板 | 规划中，不给日期 |
+| P2 | 托管技能市场 / 云端面板 | 规划中，不给日期（本地 MVP 已实现） |
 
 ---
 
