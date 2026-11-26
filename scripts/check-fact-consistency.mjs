@@ -73,7 +73,12 @@ const media = await text('src/components/ProjectMedia.astro');
 expect('ProjectMedia.no_hardcoded_version', !/v1\.1 \/ BETA/.test(media), '视觉稿不得硬编码版本号');
 
 // 4. SEO structural guards.
-const workPages = htmlFiles.filter((file) => file.includes(`${path.sep}work${path.sep}`) && file.endsWith('index.html') && !file.endsWith(`${path.sep}work${path.sep}index.html`));
+// Use paths relative to dist/: CI checkouts live under /home/runner/work/...,
+// so matching the absolute path would wrongly classify every page as a work page.
+const workPages = htmlFiles.filter((file) => {
+  const rel = path.relative(DIST, file);
+  return rel.startsWith(`work${path.sep}`) && rel.endsWith('index.html') && rel !== `work${path.sep}index.html`;
+});
 const badJsonLd = [];
 let ogOk = true;
 for (const file of workPages) {
