@@ -65,9 +65,16 @@ Open the local URL printed by Astro (normally `http://localhost:4321`).
 | `npm run build` | Type-check and build the static site into `dist/` |
 | `npm run preview` | Preview the built site locally |
 | `npm run test:links` | Validate required routes and all internal links in `dist/` |
+| `npm run test:links:external` | Diagnostic external link check; writes `docs/link-report.json` (403/429/network = warning, 404/410 = broken) |
 | `npm run sync:github:check` | CI-only drift check: generated GitHub metadata must match the live API |
 | `npm run facts:build` | Validate the manual fact registry, reconcile GitHub stats, recompute derived values |
 | `npm run facts:check` | Verify rendered pages and source guards against the fact registry (run after build) |
+| `npm run measure:baseline` | Write a static `dist/` baseline to `docs/perf-baseline.{json,md}` (lab data, not Lighthouse) |
+
+`npm run build` also runs `scripts/dedupe-brand-assets.mjs`, which removes byte-identical brand
+binaries from `dist/` only (source files under `public/brand/` and manifest hashes are untouched).
+It never removes a file referenced by built HTML. Measured effect: 588 → 544 files and
+21,837 KiB → 18,745 KiB in the Pages artifact.
 | `npx playwright test` | Run the browser tests |
 | `npm run test:all` | Build, check links, then run Playwright |
 

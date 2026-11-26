@@ -78,23 +78,49 @@ async function resolveTarget(urlPath) {
   return `${direct}.html`;
 }
 
+async function mapLimit(items, limit, fn) {
+  const results = new Array(items.length);
+  let cursor = 0;
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (true) {
+      const index = cursor++;
+      if (index >= items.length) return;
+      results[index] = await fn(items[index]);
+    }
+  }));
+  return results;
+}
+
+/**
+ * External links are diagnostic, not a deploy gate: 403/429 (bot protection),
+ * 5xx (server hiccup) and network failures are warnings; only 404/410 are
+ * treated as definitively broken. Results are written to docs/link-report.json.
+ */
 async function checkExternalUrls(urls) {
   const failures = [];
-  for (const url of [...urls].sort()) {
+  const warnings = [];
+  const list = [...urls].sort();
+  await mapLimit(list, 6, async (url) => {
     try {
-      const response = await fetch(url, {
+      let response = await fetch(url, {
         method: 'HEAD',
         redirect: 'follow',
         signal: AbortSignal.timeout(10_000),
       });
-      if (!response.ok) {
-        failures.push(`${url}: HTTP ${response.status}`);
+      if (response.status === 405 || response.status === 501) {
+        response = await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(10_000) });
       }
+      if (response.ok) return;
+      const detail = `${url}: HTTP ${response.status}`;
+      if ([404, 410].includes(response.status)) failures.push(detail);
+      else if ([403, 429].includes(response.status)) warnings.push(`${detail} (bot protection / rate limit)`);
+      else if (response.status >= 500) warnings.push(`${detail} (upstream server error)`);
+      else warnings.push(detail);
     } catch (error) {
-      failures.push(`${url}: ${error instanceof Error ? error.message : String(error)}`);
+      warnings.push(`${url}: network error (${error instanceof Error ? error.message : String(error)})`);
     }
-  }
-  return failures;
+  });
+  return { failures, warnings, checked: list.length };
 }
 
 const htmlFiles = (await walk(root)).filter((file) => file.endsWith('.html'));
@@ -147,8 +173,54 @@ for (const file of htmlFiles) {
   }
 }
 
+let external = null;
 if (checkExternal) {
-  failures.push(...(await checkExternalUrls(externalUrls)));
+  external = await checkExternalUrls(externalUrls);
+  const docsDir = path.resolve('docs');
+  await fs.mkdir(docsDir, { recursive: true });
+
+  // Keep an append-only history so repeated failures do not look like new incidents.
+  const historyPath = path.join(docsDir, 'link-history.jsonl');
+  const previous = (await fs.readFile(historyPath, 'utf8').catch(() => ''))
+    .split('\n')
+    .filter(Boolean)
+    .flatMap((line) => {
+      try { return [JSON.parse(line)]; } catch { return []; }
+    });
+  const knownBroken = new Set();
+  for (const entry of previous.slice(-2)) {
+    for (const failure of entry.external_failures ?? []) knownBroken.add(failure);
+  }
+  const newBroken = external.failures.filter((failure) => !knownBroken.has(failure));
+  const resolved = [...knownBroken].filter((failure) => !external.failures.includes(failure));
+
+  const generatedAt = new Date().toISOString();
+  const report = {
+    generated_at: generatedAt,
+    internal: { checked, failures },
+    external: { checked: external.checked, failures: external.failures, warnings: external.warnings },
+    noise_reduction: {
+      window_runs: 2,
+      new_failures: newBroken,
+      resolved_failures: resolved,
+      note: 'A broken link already seen in the last 2 runs is a known issue, not a new incident.',
+    },
+    note: 'Lab check. 403/429/5xx and network errors are warnings; only 404/410 are broken.',
+  };
+  await fs.writeFile(path.join(docsDir, 'link-report.json'), `${JSON.stringify(report, null, 2)}\n`);
+  const entry = {
+    generated_at: generatedAt,
+    internal_failures: failures.length,
+    external_checked: external.checked,
+    external_failures: external.failures,
+    warning_count: external.warnings.length,
+    new_failures: newBroken,
+    resolved_failures: resolved,
+  };
+  const history = [...previous, entry].slice(-200);
+  await fs.writeFile(historyPath, history.map((item) => JSON.stringify(item)).join('\n') + '\n');
+  console.log(`[links] report written to docs/link-report.json (${external.failures.length} broken, ${external.warnings.length} warnings).`);
+  console.log(`[links] new failures since last 2 runs: ${newBroken.length}; resolved: ${resolved.length}.`);
 }
 
 if (missingRequired.length > 0) {
@@ -157,17 +229,25 @@ if (missingRequired.length > 0) {
 }
 
 if (failures.length > 0) {
-  console.error(`\nBroken links (${failures.length}):`);
+  console.error(`\nBroken internal links (${failures.length}):`);
   for (const failure of failures.slice(0, 50)) console.error(`  - ${failure}`);
   if (failures.length > 50) console.error(`  ... and ${failures.length - 50} more`);
 }
+if (external?.failures.length) {
+  console.error(`\nBroken external links (${external.failures.length}):`);
+  for (const failure of external.failures.slice(0, 50)) console.error(`  - ${failure}`);
+}
+if (external?.warnings.length) {
+  console.warn(`\nExternal link warnings (${external.warnings.length}):`);
+  for (const warning of external.warnings.slice(0, 20)) console.warn(`  - ${warning}`);
+}
 
-if (missingRequired.length > 0 || failures.length > 0) {
+if (missingRequired.length > 0 || failures.length > 0 || (external?.failures.length ?? 0) > 0) {
   process.exit(1);
 }
 
 if (checkExternal) {
-  console.log(`Link check passed: ${checked} internal references, ${externalUrls.size} external URLs across ${htmlFiles.length} HTML files.`);
+  console.log(`Link check passed: ${checked} internal references, ${external?.checked ?? 0} external URLs across ${htmlFiles.length} HTML files.`);
 } else {
   console.log(`Link check passed: ${checked} internal references across ${htmlFiles.length} HTML files. (External links skipped; pass --external to check them.)`);
 }

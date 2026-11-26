@@ -9,18 +9,20 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && node scripts/dedupe-brand-assets.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "test": "playwright test",
     "test:links": "node scripts/check-links.mjs",
+    "test:links:external": "node scripts/check-links.mjs --external",
     "test:seo": "node scripts/audit-seo.mjs",
     "test:all": "npm run build && npm run test:links && npm run test:seo && npm run facts:build && npm run facts:check && npm test",
     "screenshots": "node scripts/capture-screenshots.mjs",
     "sync:github": "node scripts/sync-github-data.mjs",
     "sync:github:check": "node scripts/sync-github-data.mjs --check",
     "facts:build": "node scripts/build-fact-registry.mjs",
-    "facts:check": "node scripts/check-fact-consistency.mjs"
+    "facts:check": "node scripts/check-fact-consistency.mjs",
+    "measure:baseline": "node scripts/measure-baseline.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.6",

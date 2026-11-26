@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-11-26T11:47:11.764Z",
+  "internal": {
+    "checked": 2572,
+    "failures": []
+  },
+  "external": {
+    "checked": 194,
+    "failures": [],
+    "warnings": [
+      "http://www.logspace.ai: network error (fetch failed)",
+      "http://www.kuafuai.net: network error (fetch failed)",
+      "https://open-assistant.io: network error (fetch failed)",
+      "https://deepseek.com/harness: network error (The operation was aborted due to timeout)",
+      "https://openclaude.gitlawb.com: network error (The operation was aborted due to timeout)",
+      "https://x.com/zhubao315: network error (fetch failed)",
+      "https://wiki.hyperledger.org/display/fabric: network error (The operation was aborted due to timeout)"
+    ]
+  },
+  "noise_reduction": {
+    "window_runs": 2,
+    "new_failures": [],
+    "resolved_failures": [],
+    "note": "A broken link already seen in the last 2 runs is a known issue, not a new incident."
+  },
+  "note": "Lab check. 403/429/5xx and network errors are warnings; only 404/410 are broken."
+}

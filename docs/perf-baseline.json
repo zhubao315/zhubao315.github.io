@@ -1,0 +1,116 @@
+{
+  "_meta": {
+    "generated_at": "2026-11-26T10:55:28Z",
+    "source": "dist/ static analysis (lab, not Lighthouse, not field data)",
+    "commands": [
+      "npm run build",
+      "npm run measure:baseline"
+    ]
+  },
+  "files": 544,
+  "html_pages": 55,
+  "total_bytes": 19195196,
+  "total_kib": 18745.3,
+  "by_class_bytes": {
+    "html": 1506950,
+    "css": 159909,
+    "js": 0,
+    "image": 15674715,
+    "font": 355216,
+    "json": 126705,
+    "xml": 3761,
+    "other": 1367940
+  },
+  "image_formats": {
+    "webp": 83,
+    "svg": 211,
+    "png": 119
+  },
+  "inline_script_bytes": 133000,
+  "inline_script_kib": 129.9,
+  "pages_with_inline_script": 55,
+  "largest_files": [
+    {
+      "path": "brand/01-LOGO/SOURCE.png",
+      "bytes": 1524104
+    },
+    {
+      "path": "brand/slices/SOURCE.png",
+      "bytes": 1524104
+    },
+    {
+      "path": "brand/brand-logo-guide.pdf",
+      "bytes": 1154181
+    },
+    {
+      "path": "brand/09-EXPORTS/zhubao-brand-overview.png",
+      "bytes": 1019461
+    },
+    {
+      "path": "brand/zhubao-symbol.svg",
+      "bytes": 372012
+    },
+    {
+      "path": "brand/01-LOGO/CONTACT-SHEET.png",
+      "bytes": 367215
+    },
+    {
+      "path": "brand/slices/CONTACT-SHEET.png",
+      "bytes": 367215
+    },
+    {
+      "path": "brand/zhubao-horizontal.svg",
+      "bytes": 341216
+    },
+    {
+      "path": "brand/zhubao-symbol.png",
+      "bytes": 278866
+    },
+    {
+      "path": "_astro/38036cf7bf29.C94UFBQQ_Zucoon.webp",
+      "bytes": 267536
+    },
+    {
+      "path": "brand/09-EXPORTS/png/zhubao-typography-specimen.png",
+      "bytes": 264223
+    },
+    {
+      "path": "brand/zhubao-horizontal.png",
+      "bytes": 255771
+    }
+  ],
+  "largest_fonts": [
+    {
+      "path": "_astro/inter-latin-ext-wght-normal.DO1Apj_S.woff2",
+      "bytes": 85068
+    },
+    {
+      "path": "_astro/inter-latin-wght-normal.Dx4kXJAl.woff2",
+      "bytes": 48256
+    },
+    {
+      "path": "_astro/inter-cyrillic-ext-wght-normal.BOeWTOD4.woff2",
+      "bytes": 25960
+    },
+    {
+      "path": "_astro/manrope-latin-wght-normal.DHIcAJRg.woff2",
+      "bytes": 24836
+    },
+    {
+      "path": "_astro/instrument-serif-latin-400-italic.DKMiL14s.woff2",
+      "bytes": 22128
+    },
+    {
+      "path": "_astro/instrument-serif-latin-400-italic.u__WvvIK.woff",
+      "bytes": 19264
+    },
+    {
+      "path": "_astro/inter-greek-wght-normal.CkhJZR-_.woff2",
+      "bytes": 18996
+    },
+    {
+      "path": "_astro/inter-cyrillic-wght-normal.DqGufNeO.woff2",
+      "bytes": 18748
+    }
+  ]
+}

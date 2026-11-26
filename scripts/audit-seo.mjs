@@ -62,7 +62,10 @@ for (const file of htmlFiles) {
 
   if (!title) fail(`${route}: missing <title>`);
   if (!description) fail(`${route}: missing meta description`);
-  if (!canonical) fail(`${route}: missing canonical link`);
+  // noindex pages have no canonical URL (GitHub Pages serves /404.html, not /404/).
+  if (/noindex/.test(robots || '')) {
+    if (canonical) warn(`${route}: noindex page should not declare a canonical`);
+  } else if (!canonical) fail(`${route}: missing canonical link`);
   else if (canonical !== url) fail(`${route}: canonical mismatch (${canonical})`);
   if (!robots) fail(`${route}: missing robots meta`);
   if (!ogTitle) fail(`${route}: missing og:title`);

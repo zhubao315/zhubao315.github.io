@@ -4,11 +4,18 @@ import SectionHeader from '../../components/SectionHeader.astro';
 import repositories from '../../data/generated/repositories.json';
 import pages from '../../data/generated/pages.json';
 import stats from '../../data/generated/github-stats.json';
+import brokenHomepages from '../../data/broken-homepages.json';
 import '../../styles/repositories.css';
 
 const livePages = new Set(
   pages.filter((page) => page.status === 200).map((page) => page.repo),
 );
+// A declared homepage can point to a Pages site that currently returns 404.
+// Do not render a link we already know is broken (e.g. uRepo at audit time).
+const brokenHomepageUrls = new Set([
+  ...pages.filter((page) => page.status !== 200).map((page) => page.url),
+  ...brokenHomepages.map((entry) => entry.url),
+]);
 
 const CATEGORY_LABELS: Record<string, string> = {
   BUILD: '构建系统',
@@ -36,6 +43,7 @@ const cards = repositories.map((repo, index) => ({
   sourceLabel: SOURCE_LABELS[repo.source_type] ?? repo.source_type,
   statusLabel: STATUS_LABELS[repo.status] ?? repo.status,
   pagesLive: livePages.has(repo.full_name),
+  homepageLive: Boolean(repo.homepage && !brokenHomepageUrls.has(repo.homepage)),
   search: [
     repo.name, repo.full_name, repo.description ?? '', repo.language ?? '',
     ...(repo.topics ?? []), ...(repo.top_languages ?? []).map((lang) => lang.name),
@@ -135,7 +143,7 @@ const description = `ZHUBAO 的全部 ${stats.public_repos} 个公开仓库：�
             <div class="repo-card-foot">
               <span>更新 {repo.pushed_at ? repo.pushed_at.slice(0, 10) : '—'}</span>
               <span class="repo-links">
-                {repo.homepage && <a href={repo.homepage} rel="noopener noreferrer">站点</a>}
+                {repo.homepageLive && <a href={repo.homepage} rel="noopener noreferrer">站点</a>}
                 {repo.latest_release && <a href={`https://github.com/${repo.full_name}/releases/tag/${repo.latest_release}`} rel="noopener noreferrer">Release</a>}
               </span>
             </div>

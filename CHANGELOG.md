@@ -18,11 +18,21 @@
 - 文章项目回链按项目名动态映射，不再全部指向 uSkill；THINK 页新增「全部原创文章」入口。
 - 修复 3 篇文章中的 6 处相对链接断裂；`check-links.mjs` 现在会解析相对链接。
 - 书稿页「相关观点」改为从文章集合实时读取标题，不再使用手写标题表（实测发现 `obsidian-governance-workflow` 的旧标题已与文章实际标题不符）；指向不存在文章的条目自动跳过。
-- 案例页新增「03 / ENGINEERING DECISIONS / 技术决策与取舍」区块；uSkill 与 uRead 已写入可追溯的决策、理由和取舍，Evidence / Boundaries 顺延为 04 / 05。
+- 案例页新增「03 / ENGINEERING DECISIONS / 技术决策与取舍」区块；uSkill、uRead、Knowledge Base Engineering、Quantified Life 四个旗舰项目已写入可追溯的决策、理由和取舍，Evidence / Boundaries 顺延为 04 / 05。
 
 ### 内容
 - 补齐 `/books/` 与 4 个书稿落地页、真实书封与互引（提交 `06b8382` 及其前序提交）。
 - README 与 content manifest 的数量、快照日期与 CI 说明同步到当前状态。
+
+### 性能
+- 新增 `npm run measure:baseline`，把 `dist/` 的静态构成写入 `docs/perf-baseline.{json,md}`（实验室静态分析，非 Lighthouse / RUM）。
+- `npm run build` 增加 `scripts/dedupe-brand-assets.mjs`：只从 `dist/brand` 移除 SHA-256 完全相同且未被 HTML 引用的导出副本，`public/brand/` 源文件和 manifest 哈希不变。实测产物从 588 文件 / 21,837 KiB 降到 544 文件 / 18,745 KiB。
+
+### 链接与巡检
+- 新增 `npm run test:links:external` 与 `external-links.yml`（每周 + 手动，诊断性、不阻断部署）；403/429/5xx/网络超时记为警告，只有 404/410 记为断链，报告写入 `docs/link-report.json`。
+- 外链巡检发现并修复 3 处真实问题：`uRepo` 的 Pages 404、`DockerTarBuilder` 的外部域名 404、404 页面 canonical 指向不存在的 `/404/`。前两者从仓库目录移除失效入口（`src/data/broken-homepages.json` 记录原因），noindex 页面不再输出 canonical / og:url。
+- 最新外链巡检：194 个 URL，0 断链，16 条警告（网络超时/反爬）；内链 2572 条 0 断链。
+- 巡检降噪与历史：`docs/link-report.json` 现在包含 `noise_reduction`，把最近 2 次运行中出现过的断链标为「已知问题」，只把新出现的记为事件；同时追加写入 `docs/link-history.jsonl`（最多保留 200 次），CI 工件同时上传两者。
 
 ## 验证口径
 

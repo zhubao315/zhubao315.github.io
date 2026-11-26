@@ -12,6 +12,18 @@ const agentTotal = (projectsSource.match(/^    category: 'agent'/gm) || []).leng
 const prototypeTotal = (projectsSource.match(/^    status: 'prototype'/gm) || []).length;
 const originalTotal = (projectsSource.match(/^    sourceType: 'original'/gm) || []).length;
 
+// Compatibility routes are noindex and intentionally omit canonical / og:url.
+const noindexRoutes = new Set([
+  '/2022/07/05/hello-world/',
+  '/2022/07/05/zhubao315/',
+  '/tags/',
+  '/categories/',
+  '/archives/',
+  '/archives/2022/',
+  '/archives/2022/07/',
+  '/2022/07/05/',
+]);
+
 const primaryRoutes = [
   '/',
   '/work/',
@@ -67,7 +79,12 @@ test.describe('required routes', () => {
 
       await expect(page.locator('h1')).toHaveCount(1);
       expect(await page.locator('html').getAttribute('lang')).toBe('zh-CN');
-      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /^https:\/\/zhubao315\.github\.io/);
+      if (noindexRoutes.has(route)) {
+        await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+        await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+      } else {
+        await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /^https:\/\/zhubao315\.github\.io/);
+      }
 
       const layout = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,

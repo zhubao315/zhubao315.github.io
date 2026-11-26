@@ -349,6 +349,28 @@ export const projects: Project[] = [
         'Notion API 与 RAG 适配尚未实机联调。',
       ],
     },
+    decisions: [
+      {
+        title: '为什么只读优先、物理删除不在 AI 权限集合',
+        decision: '扫描、统计与建议可以自动执行；写入、移动、批量重命名、归档与基线调整必须经人类授权并保留恢复路径。',
+        reason: '知识库的不可逆操作无法靠「事后道歉」回滚；把删除排除在 AI 权限外，才能把治理交给一个可审计、可回滚的流程。',
+      },
+      {
+        title: '为什么 PASS 必须带时间、范围与方法',
+        decision: 'NOT_RUN 与 BLOCKED 不计入通过；报告不能用自己的输出证明自己跑过。',
+        reason: '假红灯比没红灯更危险。没有独立证据的「已完成」会让后续治理建立在错误基线上，也会让 AI 的自信看起来像事实。',
+      },
+      {
+        title: '为什么默认 dry-run 且 scaffold 拒绝非空目录',
+        decision: '所有写操作先出计划；初始化脚手架在非空目录直接拒绝，不覆盖、不移动、不删除。',
+        reason: '治理工具面对的往往是积累了多年、无法重建的个人知识库；保护既有内容比「一次跑完」更重要。',
+      },
+      {
+        title: '为什么把 25 项回归测试标为流程验证而非性能基准',
+        decision: '测试覆盖缺 frontmatter、断链、孤岛、提示注入与权限边界，不宣称万篇规模下的生产性能。',
+        reason: 'fixture 测试证明契约与权限没有被破坏，不能替代真实规模压测；把两者混为一谈会误导读者。',
+      },
+    ],
     definition: 'Knowledge Base Engineering 是一个只读优先的知识库治理 Skill：先诊断重复、断链与无来源结论，再在人类授权下完成准入、分级、固化与上下文交付。',
     audience: ['使用 Obsidian 的长期笔记用户', '需要审计与治理大型知识库的团队', '希望 AI 在证据边界内处理知识资产的人'],
     versionNote: '案例记录为 v1.2.0；具体版本以仓库 Release 为准。',
@@ -508,6 +530,28 @@ export const projects: Project[] = [
         '不同仓库 README 与旧 Profile README 可能存在更新时间差；本项目以各站点 README 的数据快照为准。',
       ],
     },
+    decisions: [
+      {
+        title: '为什么缺失数据保持缺失',
+        decision: '缺失的睡眠阶段保持 null；质量报告公开缺失率、断档、重复键与稳健异常值。',
+        reason: '把缺测补成零会制造不存在的生理事件，也会让长期趋势和相关性失真。承认缺失，数据才可能被继续信任。',
+      },
+      {
+        title: '为什么同步失败不能推进水位',
+        decision: '每张表独立维护水位；部分失败保留旧日期，下次从缺口重读；写入用 upsert，避免空值覆盖历史。',
+        reason: '一次网络失败不应抹掉多年记录。水位代表「已可靠读到哪里」，不是「脚本跑到了哪里」。',
+      },
+      {
+        title: '为什么坚持静态站点与 Git 历史',
+        decision: 'SQLite 作为采集侧真相，页面端只消费生成的 JSON / CSV，所有产物托管在 GitHub Pages。',
+        reason: '没有服务器和数据库云服务，十几年的数据仍然可查、可回放；静态页面也降低了长期维护成本。',
+      },
+      {
+        title: '为什么面板、报告与 CSV 共用一套指标定义',
+        decision: '滚动统计、基线、相关性与质量检查由同一组 Python 函数计算，四个站点共享同一发布流程。',
+        reason: '同一个指标在不同入口出现不同数值，会直接摧毁长期数据记录的可信度；统一定义是「可解释」的前提。',
+      },
+    ],
     definition: '量化生活是一条 COROS → SQLite → JSON / CSV → GitHub Pages 的个人数据流水线，把健康、跑步、骑行与徒步的长期记录变成每天自动更新、可查询、可解释的静态站点。',
     audience: ['长期记录运动与健康数据的个人用户', '关注可复现数据管道的开发者', '希望历史数据始终可查的量化生活实践者'],
     versionNote: '数据每天自动同步；统计口径与日期以各独立站点的数据文件为准。',
@@ -738,16 +782,66 @@ export const projects: Project[] = [
     name: 'Memoir',
     nameZh: '数字人生回忆录',
     category: 'creative',
-    status: 'prototype',
+    status: 'active',
     sourceType: 'original',
     featured: false,
-    tagline: '记录人生重要时刻的数字容器。',
-    summary: '数字人生回忆录早期 MVP，探索个人叙事与时间记录的交互方式。',
+    tagline: 'Your life. Your stories. Your legacy. 把人生记忆变成家庭资产。',
+    summary: 'AI 原生的个人记忆、人生故事、家庭记忆与数字传承平台，六大产品中心与显式授权策略。',
     description:
-      '一个关于人生重要时刻的记录产品原型。当前没有稳定在线演示，适合作为产品探索与交互实验查看。',
-    tech: ['HTML', 'Digital Storytelling'],
+      '从个人记忆到家庭协作再到数字传承的完整产品：多模态记忆库、AI 故事工作室、家庭空间、回忆录出版与可撤销授权的传承机制。强调数据归属、服务端隔离、AI 结果可追溯。',
+    tech: ['React 18', 'FastAPI', 'SQLite / PostgreSQL', 'Docker', 'AI Providers'],
     githubUrl: 'https://github.com/zhubao315/memoir',
-    lastVerified: '2026-11-11',
+    demoUrl: 'https://zhubao315.github.io/memoir/',
+    demoLabel: '在线落地页',
+    metrics: [
+      { value: '6', label: '个产品中心', note: '记忆 / 故事 / 家庭 / 出版 / 传承' },
+      { value: '200', label: '条中文问题库', note: 'AI 动态访谈' },
+      { value: '5', label: '种角色授权', note: '家庭空间分级协作' },
+    ],
+    caseStudy: {
+      context: [
+        '人生记忆类产品最容易在"方便"和"归属"之间失衡。Memoir 的设计前提是所有记忆有明确归属、服务端强制隔离，AI 结果保留模型、Prompt 版本、输入引用与时间，不确定信息标记待确认。',
+      ],
+      approach: [
+        { index: '01', title: '从记忆到故事', body: 'Life Studio 与 Memory Vault 负责多模态记忆、时间线与人物地点关联；Story Studio 用 200 条问题库与动态访谈把素材变成可编辑、可回滚的故事版本。' },
+        { index: '02', title: '家庭协作是可授权的', body: 'Family Circle 提供邀请机制与五种角色分级授权，评论与补充都带归属，不把家庭资料当成默认共享资源。' },
+        { index: '03', title: '传承必须可撤销、可导出', body: 'Legacy Book 支持 PDF / Markdown / JSON 导出与可撤销二维码；Digital Legacy 要求显式授权、指定分享范围、身份核验与人工审核。' },
+      ],
+      evidence: [
+        '六个产品中心与能力清单见仓库 README；版本 v1.0.0，Python 3.11+，MIT 协议。',
+        '技术栈：React 18 + TypeScript + Vite，FastAPI + Pydantic v2 + SQLAlchemy 2.x，SQLite 开发 / PostgreSQL + pgvector 生产。',
+        '公开页面不列出演示账号或密码；本地开发需自行注册并用合成数据。',
+        '2026-11-26 实测演示落地页返回 HTTP 200。',
+      ],
+      boundaries: [
+        '公开落地页不是完整产品演示；本地运行需自行配置凭据与密钥，生产环境必须使用独立凭据管理。',
+        'AI 生成内容保留来源与版本，不确定信息标记待确认，不宣称事实正确。',
+      ],
+    },
+    definition: 'Memoir 是一个 AI 原生的个人记忆与数字传承平台：用六大中心把多模态记忆变成故事、家庭协作与可撤销授权的传承资料，并强调数据归属、服务端隔离与 AI 结果可追溯。',
+    audience: ['想长期保存家庭故事的普通用户', '重视隐私与数据控制的用户', '关注数字遗产与家庭资料安全的实践者'],
+    versionNote: 'v1.0.0（仓库 README badge）；Python 3.11+，MIT 协议。',
+    evidenceLinks: [
+      { label: 'README 与产品中心', href: 'https://github.com/zhubao315/memoir#readme' },
+      { label: '在线落地页', href: 'https://zhubao315.github.io/memoir/' },
+      { label: '安全审计', href: 'https://github.com/zhubao315/memoir/blob/main/docs/audit/SECURITY_AUDIT.md' },
+    ],
+    faqs: [
+      {
+        question: '家庭资料会被默认共享吗？',
+        answer: '不会。Family Circle 使用邀请机制与五种角色分级授权；所有记忆有明确归属，服务端强制隔离。',
+      },
+      {
+        question: 'AI 生成的故事可靠吗？',
+        answer: '系统保存模型、Prompt 版本、输入引用与时间，不确定信息标记为待确认；它不编造事实，也不代替你核对。',
+      },
+      {
+        question: '数字传承可以撤销吗？',
+        answer: '可以。Digital Legacy 要求显式授权、指定分享范围、身份核验与人工审核；出版内容支持完整导出与可撤销二维码。',
+      },
+    ],
+    schemaType: 'WebApplication',
+    lastVerified: '2026-11-26',
   },
   {
     id: '2d-micro-anime-skill',
