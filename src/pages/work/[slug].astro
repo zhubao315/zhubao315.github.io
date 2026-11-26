@@ -195,8 +195,27 @@ const projectSchema = {
                     </div>
                   </section>
 
+                  {project.decisions && project.decisions.length > 0 && (
+                    <section class="case-section" data-reveal>
+                      <p class="case-kicker">03 / ENGINEERING DECISIONS</p>
+                      <h2>技术决策与取舍</h2>
+                      <div class="approach-list">
+                        {project.decisions.map((decision, index) => (
+                          <div class="approach-step">
+                            <span>{String(index + 1).padStart(2, '0')}</span>
+                            <div>
+                              <h3>{decision.title}</h3>
+                              <p><strong>{decision.decision}</strong></p>
+                              <p>{decision.reason}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+                  )}
+
                   <section class="case-section" data-reveal>
-                    <p class="case-kicker">03 / EVIDENCE</p>
+                    <p class="case-kicker">04 / EVIDENCE</p>
                     <h2>公开可核验的成果</h2>
                     <ul class="evidence-list">
                       {project.caseStudy.evidence.map((item) => <li>{item}</li>)}
@@ -205,7 +224,7 @@ const projectSchema = {
 
                   {project.caseStudy.boundaries && (
                     <section class="case-section case-section--boundaries" data-reveal>
-                      <p class="case-kicker">04 / BOUNDARIES</p>
+                      <p class="case-kicker">05 / BOUNDARIES</p>
                       <h2>边界与未完成</h2>
                       <ul class="boundary-list">
                         {project.caseStudy.boundaries.map((item) => <li>{item}</li>)}

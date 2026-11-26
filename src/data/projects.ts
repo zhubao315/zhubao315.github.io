@@ -52,6 +52,15 @@ export interface ProjectCaseStudy {
   boundaries?: string[];
 }
 
+export interface ProjectDecision {
+  /** 决策主题，例如「为什么用 IndexedDB」。 */
+  title: string;
+  /** 最终采用的方案。 */
+  decision: string;
+  /** 为什么这样选、取舍是什么；必须可追溯到仓库文档或实测。 */
+  reason: string;
+}
+
 export interface ProjectFAQ {
   question: string;
   answer: string;
@@ -92,6 +101,8 @@ export interface Project {
   audience?: string[];
   /** 版本口径；无已核验 Release 时不写具体版本号。 */
   versionNote?: string;
+  /** 关键技术决策：解决什么取舍，为什么这样选。 */
+  decisions?: ProjectDecision[];
   /** 可点击的一手证据，优先 README / Release / 演示站。 */
   evidenceLinks?: ProjectEvidenceLink[];
   /** 用户真正会搜索的问题；答案必须来自已有事实。 */
@@ -239,6 +250,23 @@ export const projects: Project[] = [
         'CI 基线使用 MockProvider，全绿说明判分管道未退化，不等于真实模型的语义质量。',
       ],
     },
+    decisions: [
+      {
+        title: '为什么先把 Skill 写成 Schema，而不是直接优化提示词',
+        decision: '用统一 Schema 描述输入、步骤、约束与输出；模型只是可替换的执行引擎。',
+        reason: '提示词的价值困在一次对话里，无法验证版本与兼容范围。结构化契约才能让技能被复用、评测与回归。',
+      },
+      {
+        title: '为什么把治理放进运行时',
+        decision: '受治理运行时强制执行 timeout / retry / 权限 / 人工审批 / 检查点与 DAG 子技能调度。',
+        reason: '只在文档里写「要谨慎」不等于有边界；把约束变成运行时行为，执行日志才可复盘，L0–L4 风险分级才有落点。',
+      },
+      {
+        title: '为什么 CI 用 MockProvider',
+        decision: '评测门禁在固定数据集与 Mock 执行器上做回归，不把 CI 全绿说成语义质量达标。',
+        reason: '真实模型有随机性与成本；门禁应验证判分管道没有退化，而不是冒充对模型能力的背书。',
+      },
+    ],
     definition: 'uSkill 是一个用于定义、校验、执行和治理 AI Agent Skills 的开源工程平台（MIT，v2.0.0）：把 SOP 转换为双层标准技能，通过受治理运行时、评测门禁与风险分级形成可追溯的能力资产。',
     audience: ['AI 工程师与 Agent 开发者', '使用 Codex / Claude Code / OpenCode 的用户', '需要把团队 SOP 变成可执行能力的技术负责人'],
     versionNote: 'v2.0.0（tag，2026-11-13；Release 页 2026-11-26 已补齐）；包版本定义在 core/uskills/_version.py。',
@@ -663,6 +691,28 @@ export const projects: Project[] = [
         'TTS 服务停机，无新音频；朗读依赖设备原生语音，音色与断句由浏览器决定；书籍主题视觉不冒充出版封面。',
       ],
     },
+    decisions: [
+      {
+        title: '为什么用 IndexedDB 做本地工作台',
+        decision: '个人数据默认留在浏览器本地，不做云端同步，也不在浏览器直连私有仓库。',
+        reason: '阅读笔记属于私人资料；本地优先让数据在用户设备上可读可改，同时避免把私库 Token 暴露给前端。',
+      },
+      {
+        title: '为什么把公开门户与个人工作台分开',
+        decision: '公开门户只消费构建期生成的静态 JSON / HTML，工作台才使用 IndexedDB。',
+        reason: '两者边界不同：门户可缓存、可索引；工作台要可删除、可恢复。分开后发布策略与本地数据互不影响。',
+      },
+      {
+        title: '为什么删除先进入回收站',
+        decision: '普通删除写 deleted_at，只有回收站里的二次确认才真正移除数据；备份保留已删除实体。',
+        reason: '长期使用积累的数据经不起一次误点。恢复优先、永久删除显式化，比单纯的两步确认更能降低不可逆风险。',
+      },
+      {
+        title: '为什么不把 AI 摘要塞进阅读器',
+        decision: 'AI 只作为增强能力，不替用户生成摘要或推荐书单。',
+        reason: '产品价值在 READ → REFLECT → INTERNALIZE；如果由 AI 代替理解与输出，阅读闭环就退化成摘要工具。',
+      },
+    ],
     lastVerified: '2026-11-20',
   },
   {
