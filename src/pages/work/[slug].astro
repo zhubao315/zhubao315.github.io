@@ -11,6 +11,7 @@ import {
   type Project,
 } from '../../data/projects';
 import { site } from '../../data/site';
+import { bookByProject, getBook } from '../../data/books';
 
 export function getStaticPaths() {
   return projects.map((project, index) => ({
@@ -314,6 +315,17 @@ const projectSchema = {
                 ))}
               </div>
             </div>
+
+            {bookByProject[project.slug] && (
+              <div class="sidebar-block">
+                <p class="sidebar-label">MANUSCRIPT / 关联书稿</p>
+                <div class="sidebar-links">
+                  <a href={`/books/${bookByProject[project.slug]}/`}>
+                    <span>{getBook(bookByProject[project.slug])?.title}</span><span>→</span>
+                  </a>
+                </div>
+              </div>
+            )}
 
             {project.evidenceLinks && project.evidenceLinks.length > 0 && (
               <div class="sidebar-block">

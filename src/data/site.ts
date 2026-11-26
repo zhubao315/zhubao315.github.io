@@ -27,6 +27,7 @@ export const nav = [
   { label: '首页', en: 'HOME', href: '/' },
   { label: '作品', en: 'WORK', href: '/work/' },
   { label: '思考', en: 'THINK', href: '/think/' },
+  { label: '书稿', en: 'BOOKS', href: '/books/' },
   { label: '探索', en: 'EXPLORE', href: '/explore/' },
   { label: '仓库', en: 'REPOS', href: '/repositories/' },
   { label: '关于', en: 'ABOUT', href: '/about/' },

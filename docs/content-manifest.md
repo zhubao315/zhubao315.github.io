@@ -144,3 +144,18 @@ Three cross-domain essays were published from the personal knowledge base into `
 Repository classification was aligned with the four public directions in `scripts/sync-github-data.mjs`: `uRead`, `h029-psychology`, `dual-asset-strategy`, `tescreal-guide` and related research are THINK; `active-watch`, `gdmp-master`, `grok-build` and `zhubao315.github.io` are BUILD; `hip-drive-running` is MEASURE; `mbti64`, `perfectme`, `memoir` and `2d-micro-anime-skill` remain CREATE. Regenerated counts: BUILD 45 / THINK 14 / MEASURE 5 / CREATE 4.
 
 One public page probe returned 404 (`uRepo`); the project page already states that this site is not stably published. The private `obsidian-vault` repository is not linked from any public page. See `docs/kb-github-integration.md` for the full crosswalk.
+
+## 10. Book landing pages and cross-site references (2026-11-26)
+
+Four self-authored manuscripts now have dedicated landing pages at `/books/<slug>/`, linked from the navigation, homepage publications, Think page, related work pages and relevant articles. Each page carries: core thesis extracted from its public uRead note, reader ID, note slug, companion repository, related projects/articles and explicit boundaries (no ISBN, publisher or release date).
+
+| Book | Direction | Reader ID | uRead note slug |
+|---|---|---|---|
+| 知识库工程学 | THINK | 38036cf7bf29 | B5-科技科普__《知识库工程学》-朱宝 |
+| 投资的纪律 | THINK | a2e2ed0dd1d8 | B6-投资理财__《投资的纪律》-朱宝 |
+| AI时代，如何真正学会 | THINK | dd24f66b8e72 | B3-认知成长__《AI时代，如何真正学会》-朱宝 |
+| 千分之一的你 | CREATE | df4c81f86b08 | B3-认知成长__《千分之一的你》-朱宝 |
+
+Direction rule: all four are THINK (engineering knowledge) by primary function; 千分之一的你 carries CREATE as a secondary direction because it is a personality-exploration work. No book is classified as BUILD or MEASURE.
+
+Cross-site links are reciprocal: uRead note pages link back to these landing pages (`src/data/ownBooks.ts`), and uRead book detail pages link to both the landing page and the reader (`scripts/books-index.mjs`). The uRead distribution manifest remains `DRAFT_AWAITING_OWNER_APPROVAL`; this change adds links only and does not alter distribution policy or the approval baseline.

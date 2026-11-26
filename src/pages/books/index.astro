@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ArrowUpRight } from '@lucide/astro';
+import { books, readerUrl, noteUrl } from '../../data/books';
+import '../../styles/books.css';
+
+const directions = [
+  { code: 'THINK', label: '02 · 工程知识', note: '把信息经过结构、证据与纪律，变成可调用的资产。' },
+  { code: 'CREATE', label: '04 · 创造作品', note: '把抽象想法变成可以体验、观看和分享的作品。' },
+];
+---
+
+<BaseLayout
+  title="书稿 · 朱宝 ZHUBAO"
+  description="四部自著书稿：知识库工程学、投资的纪律、AI时代如何真正学会、千分之一的你。每一本都有在线阅读、公开读书笔记与配套项目。"
+>
+  <section class="books-hero">
+    <div class="shell">
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="/">首页</a><span class="sep">/</span><span>书稿</span>
+      </nav>
+      <p class="repos-kicker">Manuscripts · Four Directions</p>
+      <h1>写下来，<br /><em>让方法接受时间的检验。</em></h1>
+      <p class="books-lede">
+        四部自著书稿，不是一个完成时的纪念碑，而是持续被项目、证据与实践修正的系统。每本都有在线阅读器、对应的公开读书笔记，以及可核验的配套项目与 Skill。
+      </p>
+      <div class="books-meta">
+        <div><strong>04</strong><span>书稿</span></div>
+        <div><strong>02</strong><span>主方向 THINK</span></div>
+        <div><strong>01</strong><span>副方向 CREATE</span></div>
+        <div><strong>2026-11-26</strong><span>核验日期</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <div class="section-index"><span>01</span><i aria-hidden="true"></i></div>
+        <div class="section-title">
+          <p class="eyebrow">Four Manuscripts / 四部书稿</p>
+          <h2>从系统，到判断，到学习，<br />再到人格探索。</h2>
+        </div>
+        <div class="section-aside">
+          <p class="section-note">
+            方向按 Z-GRID 归类：前三部属于 THINK，人格探索的《千分之一的你》属于 CREATE。
+          </p>
+        </div>
+      </div>
+
+      <div class="books-grid">
+        {
+          books.map((book) => (
+            <article class="book-card">
+              <div class={`book-thumb ${book.coverClass}`} aria-hidden="true">
+                <span>ZHUBAO / {book.directionIndex}</span>
+                <b>{book.title}</b>
+                <span>MANUSCRIPT</span>
+              </div>
+              <div>
+                <span class="book-dir">{book.direction} · {book.directionLabel}</span>
+                <h2><a href={`/books/${book.slug}/`}>{book.title}</a></h2>
+                <p class="book-sub">{book.subtitle}</p>
+                <p>{book.summary}</p>
+                <div class="book-links">
+                  <a href={`/books/${book.slug}/`}>书籍详情 <ArrowUpRight size={13} aria-hidden="true" /></a>
+                  <a href={readerUrl(book.readerId)} target="_blank" rel="noreferrer">在线阅读 <ArrowUpRight size={13} aria-hidden="true" /></a>
+                  <a href={noteUrl(book.noteSlug)} target="_blank" rel="noreferrer">读书笔记 <ArrowUpRight size={13} aria-hidden="true" /></a>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper-alt">
+    <div class="shell">
+      <div class="section-head">
+        <div class="section-index"><span>02</span><i aria-hidden="true"></i></div>
+        <div class="section-title">
+          <p class="eyebrow">Direction Map / 方向归位</p>
+          <h2>书稿不是第四类，<br />是四条工作线的文字形态。</h2>
+        </div>
+      </div>
+      <div class="track-list">
+        {
+          directions.map((direction) => (
+            <article class="track-row">
+              <div class="track-index"><span>{direction.code}</span><i aria-hidden="true"></i></div>
+              <div class="track-title">
+                <p class="track-en">{direction.label}</p>
+                <h3>{direction.code === 'THINK' ? '工程知识' : '创造作品'}</h3>
+                <p class="track-statement">{direction.note}</p>
+              </div>
+              <p class="track-body">
+                {books.filter((book) => book.direction === direction.code).map((book) => book.title).join(' · ')}
+              </p>
+              <div class="track-links">
+                <a href={direction.code === 'THINK' ? '/think/' : '/work/mbti64/'}>
+                  <span>{direction.code === 'THINK' ? '思考与研究' : '关联作品'}</span>
+                  <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+      <p class="publications-note">
+        没有可核实的出版社、ISBN 或发行时间，因此不以「已出版」呈现。书稿状态以作者公开仓库与阅读器为准。
+      </p>
+    </div>
+  </section>
+</BaseLayout>

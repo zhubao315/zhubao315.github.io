@@ -67,3 +67,14 @@
 - `uRepo` 公开页探测返回 **404**；项目页已注明「当前线上站点未稳定发布」，分类仍为 THINK 实验项。
 - 站点计数来自 `github-stats.json`，`npm run sync:github:check` 用于 CI 漂移检测。
 - 数字快照随时间变化：各独立站点实时页面为最终事实源。
+
+## 7. 书稿落地页与 uRead 互引（2026-11-26）
+
+四部书稿的方向归位：**主维度 THINK**，其中《千分之一的你》副维度 CREATE；没有归入 BUILD 或 MEASURE。每本书有独立落地页 `/books/<slug>/`，并在以下位置互相引用：
+
+- 主站：导航、首页 publications、`/think/` publications、项目页侧栏（MANUSCRIPT）、文章页（关联书稿）。
+- uRead：公开笔记详情页（作者书稿区块）、书籍详情页（落地页 + 在线阅读）。
+- 在线阅读器：`https://zhubao315.github.io/uRead/books/reader.html?id=<readerId>`。
+- 公开读书笔记：`https://zhubao315.github.io/uRead/read/<encoded slug>`。
+
+uRead 的 `distribution-manifest.json` 仍是 `DRAFT_AWAITING_OWNER_APPROVAL`（4 本 approval: pending）。本次只加链接，不改分发授权、不碰 `publishing/approved-baseline.json`；逐本批准仍由所有者决定。

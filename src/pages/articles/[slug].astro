@@ -3,6 +3,7 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { ArrowUpRight, ArrowLeft } from '@lucide/astro';
 import { site } from '../../data/site';
+import { bookByArticle, getBook } from '../../data/books';
 import '../../styles/articles.css';
 
 export async function getStaticPaths() {
@@ -29,6 +30,9 @@ const { title, description, date, updated, author, keywords, project } = entry.d
 const published = date.toISOString().slice(0, 10);
 const modified = (updated ?? date).toISOString().slice(0, 10);
 const pageUrl = new URL(`/articles/${entry.id}/`, site.url).href;
+const relatedBooks = (bookByArticle[entry.id] ?? [])
+  .map((slug) => getBook(slug))
+  .filter((book) => Boolean(book));
 
 const articleSchema = {
   '@context': 'https://schema.org',
@@ -72,6 +76,16 @@ const articleSchema = {
           <span>BY {author}</span>
         </div>
         <Content />
+        {relatedBooks.length > 0 && (
+          <div class="article-facts">
+            <p>
+              关联书稿（含在线阅读与公开读书笔记）：
+              {relatedBooks.map((book, index) => (
+                <>{index > 0 && ' · '}<a href={`/books/${book!.slug}/`}>{book!.title}</a></>
+              ))}
+            </p>
+          </div>
+        )}
         <div class="article-facts">
           <p>更新日期：{modified} · 适用项目：{project ?? '通用'} · 关键词：{keywords.join(' / ')}</p>
           <p>

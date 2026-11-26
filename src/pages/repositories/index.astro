@@ -2,8 +2,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import repositories from '../../data/generated/repositories.json';
+import pages from '../../data/generated/pages.json';
 import stats from '../../data/generated/github-stats.json';
 import '../../styles/repositories.css';
+
+const livePages = new Set(
+  pages.filter((page) => page.status === 200).map((page) => page.repo),
+);
 
 const CATEGORY_LABELS: Record<string, string> = {
   BUILD: '构建系统',
@@ -30,6 +35,7 @@ const cards = repositories.map((repo, index) => ({
   categoryLabel: CATEGORY_LABELS[repo.category] ?? repo.category,
   sourceLabel: SOURCE_LABELS[repo.source_type] ?? repo.source_type,
   statusLabel: STATUS_LABELS[repo.status] ?? repo.status,
+  pagesLive: livePages.has(repo.full_name),
   search: [
     repo.name, repo.full_name, repo.description ?? '', repo.language ?? '',
     ...(repo.topics ?? []), ...(repo.top_languages ?? []).map((lang) => lang.name),
@@ -109,7 +115,7 @@ const description = `ZHUBAO 的全部 ${stats.public_repos} 个公开仓库：�
             data-category={repo.category}
             data-source={repo.source_type}
             data-status={repo.status}
-            data-pages={repo.has_pages ? 'yes' : 'no'}
+            data-pages={repo.pagesLive ? 'yes' : 'no'}
             data-search={repo.search}
           >
             <div class="repo-topline">
@@ -133,7 +139,7 @@ const description = `ZHUBAO 的全部 ${stats.public_repos} 个公开仓库：�
                 {repo.latest_release && <a href={`https://github.com/${repo.full_name}/releases/tag/${repo.latest_release}`} rel="noopener noreferrer">Release</a>}
               </span>
             </div>
-            {repo.has_pages && <span class="repo-badge repo-badge--pages">GitHub Pages</span>}
+            {repo.pagesLive && <span class="repo-badge repo-badge--pages">GitHub Pages</span>}
           </article>
         ))}
       </div>

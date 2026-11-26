@@ -1,4 +1,5 @@
 ---
+import { bookByPublication } from '../data/books';
 import { ArrowRight, ArrowUpRight } from '@lucide/astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
@@ -358,6 +359,11 @@ const nowItems = [
                 <a class="text-link" href={publication.href} target="_blank" rel="noreferrer">
                   {publication.linkLabel} <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
                 </a>
+                {bookByPublication[publication.id] && (
+                  <a class="text-link" href={`/books/${bookByPublication[publication.id]}/`}>
+                    书稿详情（含笔记与互引） <ArrowUpRight size={15} stroke-width={1.4} aria-hidden="true" />
+                  </a>
+                )}
               </div>
             </article>
           ))
