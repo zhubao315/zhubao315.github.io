@@ -582,40 +582,46 @@
     "description": "DeepSeek Harness: Everything is a Plugin.",
     "homepage": "https://deepseek.com/harness",
     "default_branch": "master",
-    "language": null,
+    "language": "TypeScript",
     "fork": true,
     "parent": null,
     "license": "MIT",
     "topics": [],
     "created_at": "2026-08-14T02:13:08Z",
-    "updated_at": "2026-08-14T02:13:08Z",
-    "pushed_at": "2026-08-13T13:00:21Z",
-    "size_kb": 117204,
+    "updated_at": "2026-11-25T03:28:50Z",
+    "pushed_at": "2026-11-25T02:27:37Z",
+    "size_kb": 424863,
     "stars": 0,
     "forks": 0,
     "has_pages": false,
     "category": "BUILD",
     "source_type": "MODIFIED",
     "status": "ACTIVE",
-    "file_count": 7412,
+    "file_count": 22949,
     "languages": {
-      "TypeScript": 23780553,
-      "CSS": 391961,
-      "Python": 168201,
-      "JavaScript": 130642,
-      "Shell": 16923,
-      "C": 11763,
-      "C++": 6877,
-      "HTML": 425
+      "TypeScript": 81135907,
+      "CSS": 1112020,
+      "Python": 927184,
+      "JavaScript": 635173,
+      "Swift": 582139,
+      "PowerShell": 275384,
+      "C#": 255698,
+      "C++": 151898,
+      "NSIS": 51820,
+      "Shell": 28984,
+      "HTML": 23491,
+      "C": 18048,
+      "Batchfile": 1262,
+      "Makefile": 1198
     },
     "top_languages": [
       {
         "name": "TypeScript",
-        "pct": 97
+        "pct": 95
       },
       {
         "name": "CSS",
-        "pct": 2
+        "pct": 1
       },
       {
         "name": "Python",
@@ -628,31 +634,55 @@
     ],
     "has_readme": true,
     "has_license_file": true,
-    "has_changelog": false,
+    "has_changelog": true,
     "has_tests": true,
     "has_docs": true,
     "workflow_files": [
       ".github/workflows/build-exe-for-python-sdk.yml",
+      ".github/workflows/build-exe-for-ssh-helper.yml",
+      ".github/workflows/build-preview-cloudflare.yml",
+      ".github/workflows/ci-master.yml",
+      ".github/workflows/ci-python.yml",
+      ".github/workflows/ci-windows.yml",
       ".github/workflows/ci.yml",
+      ".github/workflows/cua-helper-package-macos.yml",
+      ".github/workflows/cua-helper-package-windows.yml",
+      ".github/workflows/desktop-publish.yml",
+      ".github/workflows/desktop-rollout.yml",
       ".github/workflows/docs-pages.yml",
-      ".github/workflows/e2b-e2e.yml",
       ".github/workflows/e2e.yml",
       ".github/workflows/expected-filenames.yml",
       ".github/workflows/issue-lifecycle.yml",
       ".github/workflows/issue-policy.yml",
-      ".github/workflows/landlock-run-release.yml",
-      ".github/workflows/landlock-run.yml",
+      ".github/workflows/macos-intel-package.yml",
+      ".github/workflows/macos-package.yml",
+      ".github/workflows/node-addon-system-release.yml",
+      ".github/workflows/node-addon-system.yml",
       ".github/workflows/pi-ai-provider-e2e.yml",
+      ".github/workflows/pr-check-after-approve.yml",
+      ".github/workflows/pr-check-on-base-branch.yml",
+      ".github/workflows/pr-check-on-head-branch.yml",
+      ".github/workflows/publish-ssh-helper.yml",
       ".github/workflows/python-release.yml",
+      ".github/workflows/release-publish.yml",
+      ".github/workflows/release-vendor-publish.yml",
       ".github/workflows/release-vendor.yml",
       ".github/workflows/release.yml",
-      ".github/workflows/sandbox.yml"
+      ".github/workflows/sandbox.yml",
+      ".github/workflows/stale-pull-requests.yml",
+      ".github/workflows/weighted-approval-review-event.yml",
+      ".github/workflows/weighted-approval.yml",
+      ".github/workflows/windows-package.yml"
     ],
     "large_files": [],
     "pages_config": null,
     "latest_release": null,
-    "workflow_count": 15,
-    "last_run": null
+    "workflow_count": 35,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "failure",
+      "date": "2026-11-25T02:27:55Z"
+    }
   },
   {
     "name": "DevOpsGPT",
@@ -2371,16 +2401,16 @@
     "license": "MIT",
     "topics": [],
     "created_at": "2026-11-19T02:05:05Z",
-    "updated_at": "2026-11-19T03:04:30Z",
-    "pushed_at": "2026-11-19T03:28:18Z",
-    "size_kb": 79,
-    "stars": 1,
+    "updated_at": "2026-11-25T10:16:46Z",
+    "pushed_at": "2026-11-25T02:09:10Z",
+    "size_kb": 86,
+    "stars": 0,
     "forks": 0,
     "has_pages": false,
     "category": "BUILD",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 69,
+    "file_count": 70,
     "languages": {
       "Python": 51611
     },
@@ -2396,42 +2426,49 @@
     "has_tests": true,
     "has_docs": false,
     "workflow_files": [
-      ".github/workflows/ci.yml"
+      ".github/workflows/ci.yml",
+      ".github/workflows/skills-python.yml"
     ],
     "large_files": [],
     "pages_config": null,
     "latest_release": null,
-    "workflow_count": 1,
+    "workflow_count": 2,
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-19T03:28:20Z"
+      "date": "2026-11-25T02:09:30Z"
     }
   },
   {
     "name": "uSkill",
     "full_name": "zhubao315/uSkill",
     "description": "uSkills is the controllable, reusable, callable, and evolvable skill foundation for Agents, built with orchestration engineering.",
-    "homepage": null,
+    "homepage": "https://github.com/zhubao315/uSkill",
     "default_branch": "main",
     "language": "Python",
     "fork": false,
     "parent": null,
     "license": "MIT",
-    "topics": [],
+    "topics": [
+      "agent-skills",
+      "ai-agent",
+      "python",
+      "skills-framework",
+      "standardization"
+    ],
     "created_at": "2026-03-24T10:43:58Z",
-    "updated_at": "2026-04-01T01:29:37Z",
-    "pushed_at": "2026-11-13T10:17:17Z",
-    "size_kb": 2302,
+    "updated_at": "2026-11-25T01:29:51Z",
+    "pushed_at": "2026-11-26T02:23:18Z",
+    "size_kb": 2499,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
     "category": "BUILD",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 131,
+    "file_count": 194,
     "languages": {
-      "Python": 377003
+      "Python": 441843
     },
     "top_languages": [
       {
@@ -2456,42 +2493,48 @@
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-13T10:17:10Z"
+      "date": "2026-11-26T02:23:58Z"
     }
   },
   {
     "name": "zhubao315.github.io",
     "full_name": "zhubao315/zhubao315.github.io",
     "description": "ZHUBAO 个人数字品牌门户与公开仓库目录",
-    "homepage": null,
+    "homepage": "https://zhubao315.github.io/",
     "default_branch": "main",
     "language": "CSS",
     "fork": false,
     "parent": null,
     "license": null,
-    "topics": [],
+    "topics": [
+      "astro",
+      "digital-garden",
+      "personal-brand",
+      "portfolio",
+      "zhubao"
+    ],
     "created_at": "2022-02-11T03:16:21Z",
-    "updated_at": "2026-11-17T01:24:46Z",
-    "pushed_at": "2026-11-24T11:30:09Z",
-    "size_kb": 28245,
+    "updated_at": "2026-11-25T01:29:46Z",
+    "pushed_at": "2026-11-25T03:55:20Z",
+    "size_kb": 28395,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
     "category": "BUILD",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 541,
+    "file_count": 554,
     "languages": {
-      "CSS": 190369,
-      "Astro": 144847,
+      "CSS": 196317,
+      "Astro": 154524,
       "Python": 108967,
-      "TypeScript": 51775,
-      "JavaScript": 43185
+      "JavaScript": 63114,
+      "TypeScript": 56384
     },
     "top_languages": [
       {
         "name": "CSS",
-        "pct": 35
+        "pct": 34
       },
       {
         "name": "Astro",
@@ -2499,11 +2542,11 @@
       },
       {
         "name": "Python",
-        "pct": 20
+        "pct": 19
       },
       {
-        "name": "TypeScript",
-        "pct": 10
+        "name": "JavaScript",
+        "pct": 11
       }
     ],
     "has_readme": true,
@@ -2521,7 +2564,78 @@
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-24T11:30:22Z"
+      "date": "2026-11-25T03:55:36Z"
+    }
+  },
+  {
+    "name": "zhuocheng-terminal",
+    "full_name": "zhubao315/zhuocheng-terminal",
+    "description": "把旧手机变成一张常亮的修身桌面。离线金句、AI伴读、曾国藩日课与微习惯终端。",
+    "homepage": "https://zhubao315.github.io/zhuocheng-terminal/",
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": "MIT",
+    "topics": [
+      "daily-cultivation",
+      "digital-wellbeing",
+      "offline-first",
+      "phonebox",
+      "python",
+      "zhuocheng"
+    ],
+    "created_at": "2026-11-25T02:31:15Z",
+    "updated_at": "2026-11-25T02:33:51Z",
+    "pushed_at": "2026-11-25T10:47:38Z",
+    "size_kb": 16066,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": true,
+    "category": "BUILD",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 91,
+    "languages": {
+      "Python": 242317,
+      "JavaScript": 72192,
+      "HTML": 32491,
+      "CSS": 19241
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 66
+      },
+      {
+        "name": "JavaScript",
+        "pct": 20
+      },
+      {
+        "name": "HTML",
+        "pct": 9
+      },
+      {
+        "name": "CSS",
+        "pct": 5
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": true,
+    "has_changelog": true,
+    "has_tests": true,
+    "has_docs": true,
+    "workflow_files": [
+      ".github/workflows/ci.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 2,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-25T10:47:40Z"
     }
   },
   {
@@ -2724,15 +2838,15 @@
     ],
     "created_at": "2026-10-21T11:34:40Z",
     "updated_at": "2026-10-22T10:13:02Z",
-    "pushed_at": "2026-10-22T10:12:59Z",
-    "size_kb": 69,
+    "pushed_at": "2026-11-25T02:09:03Z",
+    "size_kb": 79,
     "stars": 0,
     "forks": 0,
     "has_pages": false,
     "category": "THINK",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 54,
+    "file_count": 55,
     "languages": {
       "Python": 32180
     },
@@ -2748,16 +2862,17 @@
     "has_tests": true,
     "has_docs": false,
     "workflow_files": [
+      ".github/workflows/skills-python.yml",
       ".github/workflows/tests.yml"
     ],
     "large_files": [],
     "pages_config": null,
     "latest_release": "v1.2.0",
-    "workflow_count": 1,
+    "workflow_count": 2,
     "last_run": {
       "status": "completed",
-      "conclusion": "success",
-      "date": "2026-10-22T10:13:00Z"
+      "conclusion": "failure",
+      "date": "2026-11-25T02:09:28Z"
     }
   },
   {
@@ -2993,21 +3108,21 @@
       "web-reader"
     ],
     "created_at": "2026-03-25T02:43:26Z",
-    "updated_at": "2026-11-23T07:16:59Z",
-    "pushed_at": "2026-11-24T11:34:50Z",
-    "size_kb": 337502,
-    "stars": 1,
+    "updated_at": "2026-11-25T09:31:32Z",
+    "pushed_at": "2026-11-25T03:48:34Z",
+    "size_kb": 340058,
+    "stars": 0,
     "forks": 0,
     "has_pages": true,
     "category": "THINK",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 5888,
+    "file_count": 2893,
     "languages": {
       "Python": 1433302,
       "HTML": 795105,
       "TypeScript": 603032,
-      "JavaScript": 542123,
+      "JavaScript": 544053,
       "SCSS": 434685,
       "CSS": 39774,
       "Shell": 848,
@@ -3052,24 +3167,8 @@
         "size": 16425557
       },
       {
-        "path": "public/audio/0e843ff5f0dc2345.wav",
-        "size": 27029804
-      },
-      {
-        "path": "public/audio/9887fb179fc5e4c3.wav",
-        "size": 10686764
-      },
-      {
-        "path": "public/audio/9c26b1681588726e.wav",
-        "size": 36322604
-      },
-      {
-        "path": "public/audio/ccbd6a79e9c152bb.wav",
-        "size": 23765804
-      },
-      {
         "path": "public/notes/notes.json",
-        "size": 22432938
+        "size": 22427910
       }
     ],
     "pages_config": null,
@@ -3077,8 +3176,8 @@
     "workflow_count": 4,
     "last_run": {
       "status": "completed",
-      "conclusion": "failure",
-      "date": "2026-11-24T11:34:52Z"
+      "conclusion": "success",
+      "date": "2026-11-25T11:02:32Z"
     }
   },
   {
@@ -3205,8 +3304,8 @@
     "topics": [],
     "created_at": "2026-02-27T02:42:14Z",
     "updated_at": "2026-03-31T09:26:03Z",
-    "pushed_at": "2026-03-31T09:25:59Z",
-    "size_kb": 78,
+    "pushed_at": "2026-11-25T02:13:47Z",
+    "size_kb": 79,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
@@ -3239,8 +3338,8 @@
     "workflow_count": 4,
     "last_run": {
       "status": "completed",
-      "conclusion": "failure",
-      "date": "2026-05-31T06:19:44Z"
+      "conclusion": "success",
+      "date": "2026-11-25T02:13:49Z"
     }
   },
   {
@@ -3264,15 +3363,15 @@
     ],
     "created_at": "2022-11-13T07:43:32Z",
     "updated_at": "2026-11-12T09:33:28Z",
-    "pushed_at": "2026-11-16T09:31:53Z",
-    "size_kb": 300,
+    "pushed_at": "2026-11-25T02:02:55Z",
+    "size_kb": 302,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
     "category": "THINK",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 4,
+    "file_count": 5,
     "languages": {
       "HTML": 11507,
       "Python": 3401
@@ -3292,32 +3391,40 @@
     "has_changelog": false,
     "has_tests": false,
     "has_docs": false,
-    "workflow_files": [],
+    "workflow_files": [
+      ".github/workflows/profile-guard.yml"
+    ],
     "large_files": [],
     "pages_config": null,
     "latest_release": null,
-    "workflow_count": 1,
+    "workflow_count": 2,
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-12T08:51:46Z"
+      "date": "2026-11-25T02:02:58Z"
     }
   },
   {
     "name": "active-watch",
     "full_name": "zhubao315/active-watch",
     "description": "ACTIVE 四站运营中枢：每日巡检 / 共享 COROS 配额账本 / 品牌单一事实源",
-    "homepage": "https://zhubao315.github.io/running/",
+    "homepage": "https://github.com/zhubao315/active-watch",
     "default_branch": "main",
     "language": "Python",
     "fork": false,
     "parent": null,
     "license": null,
-    "topics": [],
+    "topics": [
+      "automation",
+      "brand-system",
+      "coros",
+      "github-actions",
+      "observability"
+    ],
     "created_at": "2026-11-13T10:07:31Z",
-    "updated_at": "2026-11-13T10:07:45Z",
-    "pushed_at": "2026-11-24T04:17:00Z",
-    "size_kb": 30589,
+    "updated_at": "2026-11-25T01:29:50Z",
+    "pushed_at": "2026-11-26T02:09:14Z",
+    "size_kb": 30592,
     "stars": 0,
     "forks": 0,
     "has_pages": false,
@@ -3365,7 +3472,7 @@
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-23T16:28:41Z"
+      "date": "2026-11-25T16:02:52Z"
     }
   },
   {
@@ -3388,15 +3495,15 @@
     ],
     "created_at": "2026-10-26T01:50:30Z",
     "updated_at": "2026-11-12T08:17:40Z",
-    "pushed_at": "2026-11-24T04:21:25Z",
-    "size_kb": 156356,
+    "pushed_at": "2026-11-26T02:12:47Z",
+    "size_kb": 159273,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
     "category": "MEASURE",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 10371,
+    "file_count": 10377,
     "languages": {
       "Python": 342853,
       "TypeScript": 330093,
@@ -3441,7 +3548,7 @@
       },
       {
         "path": "src/static/activities.json",
-        "size": 20181011
+        "size": 20198467
       }
     ],
     "pages_config": null,
@@ -3449,8 +3556,8 @@
     "workflow_count": 4,
     "last_run": {
       "status": "completed",
-      "conclusion": "failure",
-      "date": "2026-11-24T04:15:58Z"
+      "conclusion": "success",
+      "date": "2026-11-26T02:08:26Z"
     }
   },
   {
@@ -3533,10 +3640,10 @@
       "sqlite"
     ],
     "created_at": "2026-10-26T03:43:32Z",
-    "updated_at": "2026-11-19T03:04:31Z",
-    "pushed_at": "2026-11-24T04:43:22Z",
-    "size_kb": 30941,
-    "stars": 1,
+    "updated_at": "2026-11-25T10:01:56Z",
+    "pushed_at": "2026-11-25T03:31:20Z",
+    "size_kb": 32097,
+    "stars": 0,
     "forks": 0,
     "has_pages": true,
     "category": "MEASURE",
@@ -3584,7 +3691,7 @@
     "last_run": {
       "status": "completed",
       "conclusion": "failure",
-      "date": "2026-11-24T04:42:28Z"
+      "date": "2026-11-25T03:30:23Z"
     }
   },
   {
@@ -3683,7 +3790,7 @@
     ],
     "created_at": "2022-06-16T02:41:23Z",
     "updated_at": "2026-11-23T10:02:37Z",
-    "pushed_at": "2026-11-24T03:57:19Z",
+    "pushed_at": "2026-11-26T01:46:08Z",
     "size_kb": 381014,
     "stars": 0,
     "forks": 0,
@@ -3691,7 +3798,7 @@
     "category": "MEASURE",
     "source_type": "MODIFIED",
     "status": "ACTIVE",
-    "file_count": 3823,
+    "file_count": 3825,
     "languages": {
       "TypeScript": 330666,
       "Python": 194273,
@@ -3737,7 +3844,7 @@
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-24T03:56:14Z"
+      "date": "2026-11-26T01:44:48Z"
     }
   },
   {
@@ -3753,22 +3860,27 @@
     "topics": [],
     "created_at": "2026-10-30T03:05:59Z",
     "updated_at": "2026-10-30T03:06:16Z",
-    "pushed_at": "2026-10-30T03:06:12Z",
-    "size_kb": 30,
+    "pushed_at": "2026-11-25T02:08:56Z",
+    "size_kb": 48,
     "stars": 0,
     "forks": 0,
     "has_pages": false,
     "category": "CREATE",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 17,
+    "file_count": 22,
     "languages": {
-      "Python": 15086
+      "Python": 22308,
+      "JavaScript": 6248
     },
     "top_languages": [
       {
         "name": "Python",
-        "pct": 100
+        "pct": 78
+      },
+      {
+        "name": "JavaScript",
+        "pct": 22
       }
     ],
     "has_readme": true,
@@ -3776,12 +3888,18 @@
     "has_changelog": false,
     "has_tests": false,
     "has_docs": false,
-    "workflow_files": [],
+    "workflow_files": [
+      ".github/workflows/skills-python.yml"
+    ],
     "large_files": [],
     "pages_config": null,
     "latest_release": null,
-    "workflow_count": 0,
-    "last_run": null
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-25T02:09:26Z"
+    }
   },
   {
     "name": "dual-asset-strategy",
@@ -3928,15 +4046,21 @@
     "name": "mbti64",
     "full_name": "zhubao315/mbti64",
     "description": "64 型人格稀有度测评 · 120 道中文情景题 · 64 型 × 7 档稀有度（Next.js 静态站）",
-    "homepage": null,
+    "homepage": "https://zhubao315.github.io/mbti64/",
     "default_branch": "main",
     "language": "TypeScript",
     "fork": false,
     "parent": null,
     "license": null,
-    "topics": [],
+    "topics": [
+      "assessment",
+      "mbti",
+      "nextjs",
+      "personality",
+      "psychology"
+    ],
     "created_at": "2026-11-02T11:47:52Z",
-    "updated_at": "2026-11-12T03:31:02Z",
+    "updated_at": "2026-11-25T01:29:47Z",
     "pushed_at": "2026-11-12T02:30:59Z",
     "size_kb": 723854,
     "stars": 0,
@@ -3999,28 +4123,34 @@
     "name": "memoir",
     "full_name": "zhubao315/memoir",
     "description": "数字人生回忆录 - 记录你的人生重要时刻",
-    "homepage": null,
+    "homepage": "https://zhubao315.github.io/memoir/",
     "default_branch": "master",
     "language": "Python",
     "fork": false,
     "parent": null,
     "license": null,
-    "topics": [],
+    "topics": [
+      "digital-legacy",
+      "family-history",
+      "fastapi",
+      "memoir",
+      "react"
+    ],
     "created_at": "2026-01-29T08:15:04Z",
-    "updated_at": "2026-11-18T02:49:50Z",
-    "pushed_at": "2026-11-24T11:32:42Z",
-    "size_kb": 2679,
+    "updated_at": "2026-11-25T01:29:49Z",
+    "pushed_at": "2026-11-25T02:22:01Z",
+    "size_kb": 2698,
     "stars": 1,
     "forks": 0,
     "has_pages": true,
     "category": "CREATE",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 182,
+    "file_count": 183,
     "languages": {
       "Python": 289663,
-      "TypeScript": 123380,
-      "HTML": 76131,
+      "TypeScript": 125444,
+      "HTML": 76050,
       "CSS": 18669,
       "Shell": 6103
     },
@@ -4056,8 +4186,8 @@
     "workflow_count": 2,
     "last_run": {
       "status": "completed",
-      "conclusion": "success",
-      "date": "2026-11-24T11:32:45Z"
+      "conclusion": "failure",
+      "date": "2026-11-25T02:22:03Z"
     }
   },
   {
@@ -4088,27 +4218,27 @@
     ],
     "created_at": "2026-10-10T12:46:22Z",
     "updated_at": "2026-10-10T13:10:24Z",
-    "pushed_at": "2026-10-10T13:10:19Z",
-    "size_kb": 507999,
+    "pushed_at": "2026-11-25T07:34:19Z",
+    "size_kb": 776495,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
     "category": "CREATE",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 345,
+    "file_count": 353,
     "languages": {
-      "Python": 100303,
-      "HTML": 63722
+      "Python": 115052,
+      "HTML": 64250
     },
     "top_languages": [
       {
         "name": "Python",
-        "pct": 61
+        "pct": 64
       },
       {
         "name": "HTML",
-        "pct": 39
+        "pct": 36
       }
     ],
     "has_readme": true,
@@ -4120,27 +4250,31 @@
     "large_files": [
       {
         "path": "00-文档总览.pdf",
-        "size": 14148590
+        "size": 14142249
       },
       {
-        "path": "07-成片/高一1班-朱明萱-满分的我(配音版).mp4",
-        "size": 61017573
+        "path": "07-成片/满分的我(配音版).mp4",
+        "size": 61277312
       },
       {
-        "path": "07-成片/高一1班-朱明萱-满分的我.mp4",
-        "size": 60421766
+        "path": "07-成片/满分的我-动画版-H3.mp4",
+        "size": 75181835
+      },
+      {
+        "path": "07-成片/满分的我.mp4",
+        "size": 60682032
       },
       {
         "path": "10-宣传网站/assets/film.mp4",
-        "size": 61017573
+        "size": 75181835
       },
       {
         "path": "build/mix.wav",
-        "size": 26763486
+        "size": 26819934
       },
       {
         "path": "build/mix_raw.wav",
-        "size": 26763486
+        "size": 26819934
       },
       {
         "path": "build/music.wav",
@@ -4148,7 +4282,7 @@
       },
       {
         "path": "build/visual.mp4",
-        "size": 43177274
+        "size": 43305881
       }
     ],
     "pages_config": null,
@@ -4157,7 +4291,7 @@
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-10-10T13:10:21Z"
+      "date": "2026-11-25T07:34:21Z"
     }
   }
 ]
