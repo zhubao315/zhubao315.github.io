@@ -157,7 +157,7 @@ const featuredCount = workProjects.filter((project) => project.featured).length;
           researchProjects.map((project, index) => (
             <a class="research-row" href={project.githubUrl} target="_blank" rel="noreferrer">
               <span class="research-index">{String(index + 1).padStart(2, '0')}</span>
-              <strong>{project.name}<em>FORK / RESEARCH</em></strong>
+              <strong>{project.name}<em>{project.sourceType === 'modified' ? 'FORK / MODIFIED' : 'FORK / RESEARCH'}</em></strong>
               <span class="research-area">{project.area}</span>
               <span class="research-note">{project.note}</span>
               <ArrowUpRight size={16} stroke-width={1.4} aria-hidden="true" />

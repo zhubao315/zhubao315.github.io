@@ -1274,6 +1274,8 @@ export interface ResearchProject {
   note: string;
   githubUrl: string;
   area: string;
+  /** 默认 upstream；仅在有本人提交证据时标为 modified。 */
+  sourceType?: 'modified' | 'upstream';
 }
 
 export const researchProjects: ResearchProject[] = [
@@ -1336,6 +1338,175 @@ export const researchProjects: ResearchProject[] = [
     note: '多模型桌面客户端的交互与架构研究。',
     githubUrl: 'https://github.com/zhubao315/cherry-studio',
     area: 'AI Product',
+  },
+  {
+    name: 'ApeRAG',
+    note: '上游研究（Fork，未发现本人修改证据）：ApeRAG: Best choice for building your own Knowledge Graph and for Context Engineering',
+    githubUrl: 'https://github.com/zhubao315/ApeRAG',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'Auto-GPT',
+    note: '上游研究（Fork，未发现本人修改证据）：An experimental open-source attempt to make GPT-4 fully autonomous.',
+    githubUrl: 'https://github.com/zhubao315/Auto-GPT',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'ChatDev',
+    note: '上游研究（Fork，未发现本人修改证据）：Create Customized Software using Natural Language Idea (through Multi-Agent Collaboration)',
+    githubUrl: 'https://github.com/zhubao315/ChatDev',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'co-mate',
+    note: '上游研究（Fork，未发现本人修改证据）：Co-mate is an AI-powered architecture copilot, design and governance tools.',
+    githubUrl: 'https://github.com/zhubao315/co-mate',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'DevOpsGPT',
+    note: '上游研究（Fork，未发现本人修改证据）：Multi agent system for AI-driven software development. Convert natural language requirements into working soft',
+    githubUrl: 'https://github.com/zhubao315/DevOpsGPT',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'docker_image_pusher',
+    note: '二次开发（本地存在本人提交）：使用Github Action将国外的Docker镜像转存到阿里云私有仓库，供国内服务器使用，免费易用',
+    githubUrl: 'https://github.com/zhubao315/docker_image_pusher',
+    area: 'AI & Infra',
+      sourceType: 'modified',
+  },
+  {
+    name: 'DockerTarBuilder',
+    note: '上游研究（Fork，未发现本人修改证据）：它是一个工作流。可快速构建指定架构/平台的docker镜像',
+    githubUrl: 'https://github.com/zhubao315/DockerTarBuilder',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'fabric',
+    note: '上游研究（Fork，未发现本人修改证据）：Hyperledger Fabric is an enterprise-grade permissioned distributed ledger framework for developing solutions a',
+    githubUrl: 'https://github.com/zhubao315/fabric',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'fabric-prompt',
+    note: '上游研究（Fork，未发现本人修改证据）：fabric is an open-source framework for augmenting humans using AI. It provides a modular framework for solving',
+    githubUrl: 'https://github.com/zhubao315/fabric-prompt',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'GitHubPoster',
+    note: '上游研究（Fork，未发现本人修改证据）：Make everything a GitHub svg poster and Skyline!',
+    githubUrl: 'https://github.com/zhubao315/GitHubPoster',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'grok-build',
+    note: '上游研究（Fork，未发现本人修改证据）：SpaceXAI\'s coding agent harness and TUI. Fullscreen, mouse interactive, extensible.',
+    githubUrl: 'https://github.com/zhubao315/grok-build',
+    area: 'Quantified',
+  },
+  {
+    name: 'kubezoo',
+    note: '上游研究（Fork，未发现本人修改证据）：a lightweight kubernetes multi-tenancy gateway',
+    githubUrl: 'https://github.com/zhubao315/kubezoo',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'langflow',
+    note: '上游研究（Fork，未发现本人修改证据）：⛓️ LangFlow is a UI for LangChain, designed with react-flow to provide an effortless way to experiment and pro',
+    githubUrl: 'https://github.com/zhubao315/langflow',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'leapp',
+    note: '上游研究（Fork，未发现本人修改证据）：library to quickly export and deploy entire inference pipelines',
+    githubUrl: 'https://github.com/zhubao315/leapp',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'newton',
+    note: '上游研究（Fork，未发现本人修改证据）：An open-source, GPU-accelerated physics simulation engine built upon NVIDIA Warp, specifically targeting robot',
+    githubUrl: 'https://github.com/zhubao315/newton',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'Open-Assistant',
+    note: '上游研究（Fork，未发现本人修改证据）：OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and ret',
+    githubUrl: 'https://github.com/zhubao315/Open-Assistant',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'open_llama',
+    note: '上游研究（Fork，未发现本人修改证据）：OpenLLaMA, a permissively licensed open source reproduction of Meta AI’s LLaMA 7B trained on the RedPajama dat',
+    githubUrl: 'https://github.com/zhubao315/open_llama',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'openclaude',
+    note: '上游研究（Fork，未发现本人修改证据）：runs anywhere. uses anything',
+    githubUrl: 'https://github.com/zhubao315/openclaude',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'OpenLLM',
+    note: '上游研究（Fork，未发现本人修改证据）：An open platform for operating large language models(LLMs) in production. Fine-tune, serve, deploy, and monito',
+    githubUrl: 'https://github.com/zhubao315/OpenLLM',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'orawatch',
+    note: '上游研究（Fork，未发现本人修改证据）：仓库未提供描述',
+    githubUrl: 'https://github.com/zhubao315/orawatch',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'pigsty',
+    note: '上游研究（Fork，未发现本人修改证据）：Pigsty - Battery-Included Open-Source Distribution for PostgreSQL',
+    githubUrl: 'https://github.com/zhubao315/pigsty',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'portainer',
+    note: '上游研究（Fork，未发现本人修改证据）：Making Docker and Kubernetes management easy.',
+    githubUrl: 'https://github.com/zhubao315/portainer',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'portainer-templates',
+    note: '上游研究（Fork，未发现本人修改证据）：🚢 400+ 1-click Portainer app templates',
+    githubUrl: 'https://github.com/zhubao315/portainer-templates',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'Python-Core-50-Courses',
+    note: '上游研究（Fork，未发现本人修改证据）：Python语言基础50课',
+    githubUrl: 'https://github.com/zhubao315/Python-Core-50-Courses',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'QueryGPT',
+    note: '上游研究（Fork，未发现本人修改证据）：基于Langchain 的自然语言表格数据查询工具 A Natural Language Tabular Data Query Tool based on Langchain',
+    githubUrl: 'https://github.com/zhubao315/QueryGPT',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'stable-diffusion-webui',
+    note: '上游研究（Fork，未发现本人修改证据）：Stable Diffusion web UI',
+    githubUrl: 'https://github.com/zhubao315/stable-diffusion-webui',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'stable-diffusion-webui-docker',
+    note: '上游研究（Fork，未发现本人修改证据）：Easy Docker setup for Stable Diffusion with user-friendly UI',
+    githubUrl: 'https://github.com/zhubao315/stable-diffusion-webui-docker',
+    area: 'AI & Infra',
+  },
+  {
+    name: 'substrate',
+    note: '上游研究（Fork，未发现本人修改证据）：Substrate: The platform for blockchain innovators',
+    githubUrl: 'https://github.com/zhubao315/substrate',
+    area: 'AI & Infra',
   },
 ];
 
