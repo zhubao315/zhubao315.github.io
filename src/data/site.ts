@@ -1,3 +1,5 @@
+import githubStats from './generated/github-stats.json';
+
 export const site = {
   name: 'ZHUBAO',
   nameZh: '朱宝',
@@ -15,10 +17,10 @@ export const site = {
   tagline: 'Build Systems. Engineer Knowledge. Measure Life. Create Things.',
   taglineZh: '构建系统 · 工程知识 · 量化生活 · 创造作品',
   statement: '把想法变成系统，把知识沉淀为资产，把生活记录成可持续的实践。',
-  repoCount: 61,
-  nonForkCount: 24,
-  forkCount: 37,
-  lastVerified: '2026-11-11',
+  repoCount: githubStats.public_repos,
+  nonForkCount: githubStats.original + githubStats.modified,
+  forkCount: githubStats.upstream,
+  lastVerified: githubStats.last_verified,
 };
 
 export const nav = [
@@ -26,6 +28,7 @@ export const nav = [
   { label: '作品', en: 'WORK', href: '/work/' },
   { label: '思考', en: 'THINK', href: '/think/' },
   { label: '探索', en: 'EXPLORE', href: '/explore/' },
+  { label: '仓库', en: 'REPOS', href: '/repositories/' },
   { label: '关于', en: 'ABOUT', href: '/about/' },
 ];
 

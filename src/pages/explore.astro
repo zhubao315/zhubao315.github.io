@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
 import { Image } from 'astro:assets';
 import { ArrowUpRight } from '@lucide/astro';
 import { projects, lifeSites, categoryMeta, statusMeta } from '../data/projects';
@@ -28,7 +29,7 @@ const creativeProjects = [animeSkill, memoir, uprompt];
       <div class="page-masthead">
         <span><i aria-hidden="true"></i> FIELD NOTES / 03</span>
         <span>PERSONALITY · QUANTIFIED LIFE · CREATIVE</span>
-        <span>SNAPSHOT 2026-11-11</span>
+        <span>SNAPSHOT {site.lastVerified}</span>
       </div>
 
       <div class="page-hero-title">
@@ -165,7 +166,7 @@ const creativeProjects = [animeSkill, memoir, uprompt];
           <div><span>02</span><strong>同步可失败，历史不可倒退</strong><p>失败不推进水位，重拉不会用空值覆盖已存历史。</p></div>
           <div><span>03</span><strong>统计口径同源</strong><p>面板、CSV 与报告共享同一套计算定义，避免各说各话。</p></div>
         </div>
-        <p class="data-snapshot">SNAPSHOT · 2026-11-11 · 数字以各站点实时页面为最终事实源</p>
+        <p class="data-snapshot">SNAPSHOT · {site.lastVerified} · 数字以各站点实时页面为最终事实源</p>
       </div>
     </div>
   </section>

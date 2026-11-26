@@ -19,6 +19,8 @@ const requiredRoutes = [
   'work/index.html',
   'think/index.html',
   'explore/index.html',
+  'repositories/index.html',
+  'ecosystem-audit/00-EXECUTIVE-SUMMARY.md',
   '404.html',
 ];
 

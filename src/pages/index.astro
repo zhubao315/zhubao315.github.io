@@ -47,7 +47,7 @@ const nowItems = [
   {
     title: 'A library built for discovery',
     zh: '把阅读档案做成可发现的平台',
-    desc: 'uRead 0.33.1 引入统一媒体系统与设备语音朗读，把 1595 篇笔记、39 份书单与 1818 条书籍记录串成一条阅读路径。',
+    desc: 'uRead 0.34.5 引入沉浸式阅读与原生语音听书，把 1599 篇笔记、39 份书单与 1807 条书籍记录串成一条阅读路径。',
     href: '/work/uread/',
     status: 'active',
   },
@@ -263,7 +263,7 @@ const nowItems = [
         index="03"
         eyebrow="Project Universe / Index"
         title="更多方法、研究与实验。"
-        note="主站不罗列全部 61 个仓库。这里展示能代表方法论广度的项目；Fork 与上游研究在作品页单独标注。"
+        note="主站不罗列全部 {site.repoCount} 个仓库。这里展示能代表方法论广度的项目；Fork 与上游研究在作品页单独标注。"
         link="/work/"
         linkLabel="进入完整项目索引"
       />
@@ -375,7 +375,7 @@ const nowItems = [
             />
             <div class="life-media-caption">
               <span><span class="live-dot" aria-hidden="true"></span> DAILY SYNC / HEALTH</span>
-              <span>DATA SNAPSHOT · 2026-11-11</span>
+              <span>DATA SNAPSHOT · {site.lastVerified}</span>
             </div>
           </a>
           <p class="life-snapshot">
@@ -402,7 +402,7 @@ const nowItems = [
             }
           </div>
           <p class="life-snapshot">
-            SNAPSHOT · 2026-11-11. 不同站点独立更新，数字会随时间增长；以各站点实时页面为最终事实源。
+            SNAPSHOT · {site.lastVerified}. 不同站点独立更新，数字会随时间增长；以各站点实时页面为最终事实源。
           </p>
         </div>
       </div>
@@ -415,7 +415,7 @@ const nowItems = [
         index="06"
         eyebrow="Now Building / Current Focus"
         title="正在把哪些问题往前推。"
-        note="不是路线图承诺，而是当前公开可见的建设重点。uRead 核验于 2026-11-20，其余项目核验于 2026-11-11。"
+        note="不是路线图承诺，而是当前公开可见的建设重点。uRead 核验于 2026-11-24，其余项目核验日期见各案例页。"
       />
 
       <div class="now-grid">

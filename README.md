@@ -33,6 +33,18 @@ These paths remain available as supplemental `noindex` compatibility entries. Th
 - `/2022/07/05/hello-world/`
 - `/2022/07/05/zhubao315/`
 
+## Repository Explorer
+
+`/repositories/` is generated from `src/data/generated/`:
+
+- `repositories.json` — all 67 public repos with category / source / status / stack / Pages metadata
+- `github-stats.json` — single source of truth for counts used by `src/data/site.ts`
+- `pages.json` — live Pages health probes
+- `manual-overrides.json` — human-maintained category/status/description overrides (sync reads, never writes)
+
+Regenerate with `npm run sync:github` (needs `GITHUB_TOKEN` from env) and verify drift with
+`npm run sync:github:check`. A daily workflow commits only when generated data actually changes.
+
 ## Quick start
 
 Requirements: Node.js **22.23.4 or newer** and npm.

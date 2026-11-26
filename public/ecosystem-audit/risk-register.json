@@ -1,0 +1,132 @@
+[
+  {
+    "id": "R-001",
+    "repo": "uRead",
+    "severity": "high",
+    "category": "privacy",
+    "title": "allow_all_legacy 全量公开笔记正文",
+    "evidence": "publishing/policy.json mode=allow_all_legacy; 1599 篇完整正文进入 public/notes",
+    "action": "生成逐笔记 allow/deny/pending 清单，人工审批后再切换策略；未批准不改线上内容",
+    "status": "open"
+  },
+  {
+    "id": "R-002",
+    "repo": "uRead",
+    "severity": "high",
+    "category": "copyright",
+    "title": "电子书缺少独立分发授权清单",
+    "evidence": "book-library/books/ 内 EPUB/PDF 仅凭目录位置进入 dist/books/",
+    "action": "新增 distribution-manifest.json 白名单 + CI 测试阻止未授权书籍进入产物",
+    "status": "open"
+  },
+  {
+    "id": "R-003",
+    "repo": "memoir",
+    "severity": "high",
+    "category": "data",
+    "title": "已提交数据库与 pycache",
+    "evidence": "backend/memoir.db、backend/__pycache__/*.pyc 被 Git 跟踪且 .gitignore 已含规则",
+    "action": "通过 API untrack（保留磁盘文件）、强化忽略、脱敏 fixture、评估历史清理与凭据轮换",
+    "status": "open"
+  },
+  {
+    "id": "R-004",
+    "repo": "perfectme",
+    "severity": "high",
+    "category": "privacy",
+    "title": "视频文件名含班级/姓名，成片约 58 MiB",
+    "evidence": "07-成片/高一1班-朱明萱-满分的我*.mp4 等",
+    "action": "发布资产与制作资产分离、通用文件名、确认当事人授权、压缩与懒加载",
+    "status": "open"
+  },
+  {
+    "id": "R-005",
+    "repo": "zhubao315.github.io",
+    "severity": "medium",
+    "category": "data-consistency",
+    "title": "主页仓库数字与 API 不一致",
+    "evidence": "src/data/site.ts: repoCount=61/nonFork=24/fork=37 lastVerified=2026-11-11；API=67/28/39",
+    "action": "GitHub API 自动生成 github-stats.json，单一事实源，冲突报告",
+    "status": "open"
+  },
+  {
+    "id": "R-006",
+    "repo": "uRepo",
+    "severity": "medium",
+    "category": "availability",
+    "title": "Pages 站点 404",
+    "evidence": "https://zhubao315.github.io/uRepo/ HTTP 404",
+    "action": "确认是否仍需发布；否则关闭 Pages 或修复构建",
+    "status": "open"
+  },
+  {
+    "id": "R-007",
+    "repo": "multiple",
+    "severity": "medium",
+    "category": "license",
+    "title": "原创仓库缺 LICENSE",
+    "evidence": "约 20 个原创/二次开发仓库无 LICENSE 文件或元数据",
+    "action": "按资产类型分别补许可，不批量套 MIT",
+    "status": "open"
+  },
+  {
+    "id": "R-008",
+    "repo": "multiple",
+    "severity": "medium",
+    "category": "performance",
+    "title": "超大二进制资产",
+    "evidence": "ApeRAG 72 MiB JSON；perfectme 多份 58 MiB MP4；fabric-prompt 42 MiB 图片；uRead 34 MiB WAV",
+    "action": "先做体积报告，再决定 LFS/归档/压缩，不直接重写历史",
+    "status": "open"
+  },
+  {
+    "id": "R-009",
+    "repo": "uRead",
+    "severity": "high",
+    "category": "privacy",
+    "title": "2986 个历史正文 detail JSON 仍公开",
+    "evidence": "4585 files vs 1599 current hashes; 40.57 MiB; 100/100 sampled HTTP 200",
+    "action": "产出清单供人工裁决；批准后原子化重建 detail/，不擅自删除",
+    "status": "open"
+  },
+  {
+    "id": "R-010",
+    "repo": "uRead",
+    "severity": "high",
+    "category": "process",
+    "title": "auto-sync 自动批准中和 require_approval",
+    "evidence": "APPROVE=1 npm run publish:approve in allow_all_legacy clears baseline diff/sensitive/orphan gates",
+    "action": "切换正式策略前必须删除该步骤；当前不擅自改策略",
+    "status": "open"
+  },
+  {
+    "id": "R-011",
+    "repo": "memoir",
+    "severity": "high",
+    "category": "credentials",
+    "title": "线上落地页公开演示弱口令",
+    "evidence": "gh-pages:index.html:277-280, README.md:142-150, docs/TEST_ACCOUNTS.md:7-11",
+    "action": "删除公开凭据并重新部署；重置相关实例密码",
+    "status": "open"
+  },
+  {
+    "id": "R-012",
+    "repo": "perfectme",
+    "severity": "high",
+    "category": "privacy",
+    "title": "成片含未成年人真实姓名与班级且整仓库发布",
+    "evidence": "07-成片/高一1班-朱明萱-*.mp4 (60.4/61.0 MiB); legacy Pages from main:/; frames/credits burned in",
+    "action": "发布与制作资产分离；通用文件名；重渲染/遮蔽；监护人/学校/赛事授权复核",
+    "status": "open"
+  },
+  {
+    "id": "R-013",
+    "repo": "perfectme",
+    "severity": "medium",
+    "category": "license",
+    "title": "无 LICENSE，保留所有权利且无授权文件",
+    "evidence": "API license=null; README © 2026 朱明萱 保留所有权利",
+    "action": "补 LICENSE 或明确权利声明；核验模型商用条款",
+    "status": "open"
+  }
+]

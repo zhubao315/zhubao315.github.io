@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-11-24T11:21:27Z",
+  "total_repos_including_private": 77,
+  "public_repos": 67,
+  "private_repos": 10,
+  "original_public": 28,
+  "fork_public": 39,
+  "archived": 0,
+  "pages_enabled": 20,
+  "pages_http_ok": 19,
+  "pages_problem": 1,
+  "by_category": {
+    "BUILD": 40,
+    "THINK": 12,
+    "MEASURE": 6,
+    "CREATE": 8,
+    "UNCATEGORIZED": 1
+  },
+  "source_types": {
+    "ORIGINAL": 28,
+    "MODIFIED": 12,
+    "UPSTREAM": 27
+  },
+  "statuses": {
+    "ACTIVE": 33,
+    "DORMANT": 29,
+    "EXPERIMENT": 5,
+    "ARCHIVED": 0
+  }
+}
