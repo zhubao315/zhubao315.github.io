@@ -58,3 +58,15 @@
 2. 用 Bing Webmaster Tools 的 AI Performance 报告观察 `Cited Pages` 与 `Grounding Queries`。
 3. 先写两篇内容支柱文章（Agent Skills、知识库治理），再考虑 `Article` Schema 与英文版。
 4. 定期用真实问题（例如"如何把 SOP 转成 Agent Skill"）测试能否找到官方页面，并记录结果。
+
+## Evidence
+- 仓库与站点事实: GitHub REST API、线上页面实测、本地构建产物，核验于 2026-11-26
+- 项目实现与测试: 对应仓库 README / 源码 / 测试输出，见文中各处引用
+
+## Unverified
+- 搜索量、排名、CTR、AI 引用次数: UNVERIFIED — 需接入 Google Search Console / Bing Webmaster Tools
+- 真实转化与用户反馈: UNVERIFIED — 需自有事件与社区反馈记录
+
+## Review gate
+- [ ] human review
+- [ ] external publish approved (default: no)

@@ -62,3 +62,15 @@ PLAYWRIGHT_CHROMIUM_PATH=<本机 chromium 路径> npm test
 ```
 
 CI 中浏览器由 `npx playwright install --with-deps chromium` 安装，无需该环境变量。
+
+## Evidence
+- 仓库与站点事实: GitHub REST API、线上页面实测、本地构建产物，核验于 2026-11-26
+- 项目实现与测试: 对应仓库 README / 源码 / 测试输出，见文中各处引用
+
+## Unverified
+- 搜索量、排名、CTR、AI 引用次数: UNVERIFIED — 需接入 Google Search Console / Bing Webmaster Tools
+- 真实转化与用户反馈: UNVERIFIED — 需自有事件与社区反馈记录
+
+## Review gate
+- [ ] human review
+- [ ] external publish approved (default: no)

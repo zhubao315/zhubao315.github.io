@@ -94,3 +94,15 @@
 `active-watch`, `zhuocheng-terminal`, `zhubao315.github.io`, `uWise`, `ulife-os-infra`, `zhubao315`, `gdmp-master`, `ai-agent-master`, `leapp`, `newton`, `substrate`, `grok-build`, `openclaude`, `pigsty`, `piglet-docker`, `ApeRAG`, `fabric`, `fabric-prompt`, `docker_image_pusher`, `kubezoo`, `DockerTarBuilder`, `OpenLLM`, `portainer`, `ChatDev`, `DevOpsGPT`, `QueryGPT`, `co-mate`, `open_llama`, `Open-Assistant`, `portainer-templates`, `stable-diffusion-webui-docker`, `langflow`, `Auto-GPT`, `stable-diffusion-webui`, `Python-Core-50-Courses`, `GitHubPoster`, `orawatch`
 
 > 其中 `zhuocheng-terminal`、`ai-agent-master`、`gdmp-master`、`ulife-os-infra`、`active-watch`、`uWise` 属于策略中的重点或长尾项目，应优先补入主页数据；其余多为 Fork / 上游研究或历史归档，按第三梯队规则处理即可。
+
+## Evidence
+- 仓库与站点事实: GitHub REST API、线上页面实测、本地构建产物，核验于 2026-11-26
+- 项目实现与测试: 对应仓库 README / 源码 / 测试输出，见文中各处引用
+
+## Unverified
+- 搜索量、排名、CTR、AI 引用次数: UNVERIFIED — 需接入 Google Search Console / Bing Webmaster Tools
+- 真实转化与用户反馈: UNVERIFIED — 需自有事件与社区反馈记录
+
+## Review gate
+- [ ] human review
+- [ ] external publish approved (default: no)

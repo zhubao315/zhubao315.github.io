@@ -1,0 +1,147 @@
+{
+  "generated_at": "2026-11-26T03:27:33.791109+00:00",
+  "count": 8,
+  "entries": [
+    {
+      "path": "../site/docs/growth/01-full-audit.md",
+      "title": "01 · ZHUBAO Growth OS 全面审计",
+      "has_evidence": true,
+      "has_unverified": true,
+      "has_review_gate": true,
+      "keywords": [
+        "审计日期",
+        "审计对象",
+        "审计依据",
+        "方法",
+        "能够确认",
+        "无法确认",
+        "68 个公开仓库",
+        "78 个仓库",
+        "67",
+        "61"
+      ]
+    },
+    {
+      "path": "../site/docs/growth/02-project-inventory.md",
+      "title": "02 · 仓库全量清单",
+      "has_evidence": true,
+      "has_unverified": true,
+      "has_review_gate": true,
+      "keywords": [
+        "核验日期",
+        "数据源",
+        "说明"
+      ]
+    },
+    {
+      "path": "../site/docs/growth/03-priority-matrix.md",
+      "title": "03 · 项目分级运营矩阵",
+      "has_evidence": true,
+      "has_unverified": true,
+      "has_review_gate": true,
+      "keywords": [
+        "编制日期",
+        "依据",
+        "重要说明",
+        "候选搜索意图方向",
+        "不平均分配资源",
+        "一个品牌中枢 + 8~10 个重点增长项目 + 专业长尾 + 上游研究档案",
+        "缺失",
+        "缺失",
+        "缺失",
+        "先删除收益数字"
+      ]
+    },
+    {
+      "path": "../site/docs/growth/04-data-inconsistencies.md",
+      "title": "04 · 数据不一致与事实核验清单",
+      "has_evidence": true,
+      "has_unverified": true,
+      "has_review_gate": true,
+      "keywords": [
+        "核验日期",
+        "规则",
+        "D01 / D02 / D03 / D05 / D06 已完成",
+        "D07 → D08/D09/D10",
+        "D11/D12",
+        "D15",
+        "D16–D19"
+      ]
+    },
+    {
+      "path": "../site/docs/growth/geo-implementation-report.md",
+      "title": "GEO（AI 搜索）实施报告",
+      "has_evidence": true,
+      "has_unverified": true,
+      "has_review_gate": true,
+      "keywords": [
+        "执行日期",
+        "目标",
+        "答案先行",
+        "目标用户",
+        "FAQ",
+        "可点击证据",
+        "版本诚实",
+        "边界保留",
+        "未接入 Google Search Console / Bing Webmaster Tools"
+      ]
+    },
+    {
+      "path": "../site/docs/growth/projects/uskill-seo-geo-plan.md",
+      "title": "uSkill · 单项目 SEO / GEO 全面优化方案",
+      "has_evidence": true,
+      "has_unverified": true,
+      "has_review_gate": true,
+      "keywords": [
+        "编制日期",
+        "项目",
+        "方法",
+        "GitHub Release 页尚无 v2.0.0",
+        "292 passed in 2.81s",
+        "文档数字过期",
+        "已实现且有测试证据",
+        "未实现 / 规划中",
+        "不得在推广文案中写成已实现。",
+        "排除"
+      ]
+    },
+    {
+      "path": "../site/docs/growth/seo-test-report.md",
+      "title": "SEO / GEO 测试报告",
+      "has_evidence": true,
+      "has_unverified": true,
+      "has_review_gate": true,
+      "keywords": [
+        "执行日期",
+        "说明",
+        "0 errors / 0 warnings / 1 hint",
+        "通过",
+        "通过",
+        "76 passed",
+        "首次 `npm test` 失败",
+        "`repositories.spec.ts` 6 个用例 × 2 视口失败",
+        "剩余 2 个失败",
+        "新增 SEO 脚本首次报 18 个 `<img>` 缺 alt"
+      ]
+    },
+    {
+      "path": "../site/docs/growth/technical-seo-report.md",
+      "title": "技术 SEO 改造报告（提示词 6）",
+      "has_evidence": true,
+      "has_unverified": true,
+      "has_review_gate": true,
+      "keywords": [
+        "执行日期",
+        "基线",
+        "原则",
+        "无缺失",
+        "0 个重复标题、0 个重复描述、0 个 canonical 不匹配",
+        "决策说明",
+        "可人工反转的内容授权决策",
+        "未验证",
+        "明确未添加",
+        "本次不建设英文页面、不添加 hreflang"
+      ]
+    }
+  ]
+}
