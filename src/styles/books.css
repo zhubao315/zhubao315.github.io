@@ -265,3 +265,112 @@
     max-width: 260px;
   }
 }
+
+/* 金句摘录与深度解析 */
+.book-quotes-note {
+  max-width: 72ch;
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+.book-quotes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line-strong);
+}
+.book-quote {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.book-quote-index {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+  padding-top: 6px;
+}
+.book-quote-text {
+  margin: 0 0 14px;
+  font-family: var(--serif, Georgia, serif);
+  font-size: 1.18rem;
+  line-height: 1.65;
+  color: var(--text);
+  border-left: 2px solid var(--accent);
+  padding-left: 16px;
+}
+.book-quote-meta {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 8px 14px;
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+.book-quote-meta dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  padding-top: 3px;
+}
+.book-quote-meta dd {
+  margin: 0;
+  color: var(--muted);
+}
+@media (max-width: 680px) {
+  .book-quote { grid-template-columns: 28px minmax(0, 1fr); gap: 10px; }
+  .book-quote-meta { grid-template-columns: 1fr; gap: 2px; }
+  .book-quote-meta dt { padding-top: 8px; }
+}
+
+/* 章节跳转与阅读节奏 */
+.section-head[id] { scroll-margin-top: 88px; }
+.book-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 0;
+}
+.book-jump a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 13px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  line-height: 1;
+  color: var(--muted);
+  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+.book-jump a:hover,
+.book-jump a:focus-visible {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent-wash, transparent);
+}
+.book-jump a span {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--accent);
+}
+/* 详情站长页：收敛章节标题，让正文更快进入视野 */
+.book-detail-hero .section-title h2 {
+  font-size: clamp(1.9rem, 3.1vw, 3.15rem);
+  letter-spacing: -0.04em;
+}
+.book-detail-hero .section-head {
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+/* 金句解析：语境轻、解析重，形成两级阅读层级 */
+.book-quote-meta dd:last-child {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+@media (max-width: 680px) {
+  .book-jump a { padding: 7px 11px; font-size: 0.74rem; }
+  .book-detail-hero .section-title h2 { font-size: clamp(1.75rem, 8vw, 2.4rem); }
+}
