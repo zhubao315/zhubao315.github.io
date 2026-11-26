@@ -54,7 +54,7 @@
 
 **已执行的修复**：把 `/oc/site` 的本地独有提交保存到 `backup/pre-growth-sync-20261126`，合并远端 `main`（解决 `deploy.yml` 冲突，保留 Playwright 详细步骤、失败报告上传与 PR 不部署的守卫），并重新构建。现在本地落后 0、领先 2，Sitemap 24 URL，链接检查 1433 条引用通过。
 
-**仍需注意**：`github-stats.json` 是 2026-11-24 的快照（67 个公开仓库），而 GitHub API 当前为 68。需要重新运行 `scripts/sync-github-data.mjs` 生成最新快照；不能用旧快照冒充今日事实。
+**统计快照已刷新**：重新运行 `scripts/sync-github-data.mjs` 后，`github-stats.json` 的 `generated_at = 2026-11-26`、`public_repos = 68`、`original = 29`、`modified = 12`、`upstream = 27`、`fork_public = 39`，与 GitHub API 一致。在线站点尚未部署这一更新（未执行 push），因此线上仍显示 67，属于正常部署延迟。
 
 ---
 

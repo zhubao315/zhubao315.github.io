@@ -9,8 +9,8 @@
 
 | ID | 问题 | 证据 | 影响 | 建议修复 | 状态 |
 |---|---|---|---|---|---|
-| D01 | 仓库总数三套口径：GitHub 68 / 线上 67 / 本地源码 61 | `api.github.com/users/zhubao315` → `public_repos: 68`；线上首页 `<strong>67</strong>`；审计开始时本地 `site.ts` → `repoCount: 61` | 品牌可信度；所有引用该数字的页面 | 已改为读取 `github-stats.json`；但快照仍为 67，需重新生成对齐 68 | 部分修复 |
-| D02 | Fork / 非 Fork 口径不一致：API 39/29，本地源码 37/24 | 同上 API；原 `site.ts` → `forkCount: 37`, `nonForkCount: 24` | ABOUT 页"SOURCE: GitHub API"声明与数字不符 | 同上；快照值 28/39 仍需刷新 | 部分修复 |
+| D01 | 仓库总数三套口径：GitHub 68 / 线上 67 / 本地源码 61 | `api.github.com/users/zhubao315` → `public_repos: 68`；线上首页 `<strong>67</strong>`；审计开始时本地 `site.ts` → `repoCount: 61` | 品牌可信度；所有引用该数字的页面 | 已改为读取 `github-stats.json` 并重新生成快照（68）；线上待部署 | 已修复（待部署） |
+| D02 | Fork / 非 Fork 口径不一致：API 39/29，本地源码 37/24 | 同上 API；原 `site.ts` → `forkCount: 37`, `nonForkCount: 24` | ABOUT 页"SOURCE: GitHub API"声明与数字不符 | 快照已刷新为 non_fork 29 / fork 39；分类为 29 原创 / 12 二改 / 27 上游 | 已修复（待部署） |
 | D03 | 两处硬编码 "61 个仓库" 绕过单一事实源 | `src/pages/index.astro:266`、`src/pages/work/index.astro:134` | 数据再次漂移 | 同步后远端已改为 `{site.repoCount}`，本地不再出现硬编码 | 已修复 |
 | D04 | 分类口径"28 原创 / 12 二次开发 / 27 上游研究"与数据模型不符 | `projects.ts` 中 18 个项目的 `sourceType` 全部为 `original`，无任何 `modified` | 二次开发贡献无法被识别，上游归因不清 | 扩展 `SourceType` 为 `original \| modified \| research` 并回填 | 待修 |
 | D05 | 本地工作区落后远端 8 个提交 | 审计时本地 HEAD `0354689`；远端 `main` `08fcc15` | 基于本地快照的改动会覆盖线上已有工作（如 `/repositories/`） | 已备份 `backup/pre-growth-sync-20261126` 并合并远端；冲突已解决，构建与链接检查通过 | 已修复 |
@@ -43,7 +43,7 @@
 
 ## 修复优先级建议
 
-1. **D03 / D05 / D06 已完成**：代码基线合并、硬编码移除、Sitemap 重建。D01 / D02 只差重新生成统计快照（`node scripts/sync-github-data.mjs`）。
+1. **D01 / D02 / D03 / D05 / D06 已完成**：代码基线合并、硬编码移除、Sitemap 重建、统计快照刷新到 2026-11-26（68/29/12/27/39）。D01 / D02 的线上生效还需 push 触发部署，本次未执行 push。
 2. **D07 → D08/D09/D10**：补项目负责人并修正过期事实，之后才写推广文案。
 3. **D11/D12**：合规与可信度风险，优先于流量优化。
 4. **D15**：一行配置即可完成，性价比最高。
