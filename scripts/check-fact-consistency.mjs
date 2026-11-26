@@ -74,16 +74,18 @@ expect('ProjectMedia.no_hardcoded_version', !/v1\.1 \/ BETA/.test(media), '视�
 
 // 4. SEO structural guards.
 const workPages = htmlFiles.filter((file) => file.includes(`${path.sep}work${path.sep}`) && file.endsWith('index.html') && !file.endsWith(`${path.sep}work${path.sep}index.html`));
-let jsonLdOk = workPages.length > 0;
+const badJsonLd = [];
 let ogOk = true;
 for (const file of workPages) {
   const html = await fs.readFile(file, 'utf8');
-  jsonLdOk &&= (html.match(/application\/ld\+json/g) ?? []).length === 4;
+  const count = (html.match(/application\/ld\+json/g) ?? []).length;
+  if (count !== 4) badJsonLd.push(`${path.relative(DIST, file)}=${count}`);
   const width = html.match(/og:image:width" content="(\d+)"/)?.[1];
   const ogImage = html.match(/property="og:image" content="([^"]+)"/)?.[1] ?? '';
   if (width === '1200' && ogImage.includes('/_astro/')) ogOk = false;
 }
-expect('work.jsonld_count', jsonLdOk, `${workPages.length} 个项目页每页应恰有 4 个 JSON-LD`);
+const jsonLdOk = workPages.length > 0 && badJsonLd.length === 0;
+expect('work.jsonld_count', jsonLdOk, `${workPages.length} 个项目页每页应恰有 4 个 JSON-LD${badJsonLd.length ? `; 异常: ${badJsonLd.slice(0, 12).join(', ')}` : ''}`);
 expect('work.og_dimensions', ogOk, '项目页 OG 宽度不得恒为 1200（应传入真实尺寸）');
 
 expect('registry.no_conflicts', registry.conflicts.length === 0, `fact-registry 有 ${registry.conflicts.length} 项冲突`);
