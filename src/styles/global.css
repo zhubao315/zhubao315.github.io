@@ -2666,9 +2666,9 @@ button:hover .arrow {
   margin-top: clamp(38px, 5vw, 58px);
   padding-top: 17px;
   border-top: 1px solid var(--line-dark);
-  color: var(--muted);
+  color: var(--muted-light);
   font-family: var(--mono);
-  font-size: 0.56rem;
+  font-size: 0.76rem;
   line-height: 1.7;
   letter-spacing: 0.03em;
 }

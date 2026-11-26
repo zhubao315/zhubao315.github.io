@@ -57,4 +57,4 @@ category: knowledge
 
 ## 下一步
 
-阅读 [H029 Psychology 项目页](/work/h029-psychology/) 与 [仓库 README](https://github.com/zhubao315/h029-psychology#readme)。相关方法见 [三条主线](./three-lines-of-life-os/) 与 [复利的跨域应用](./compounding-across-domains/)。
+阅读 [H029 Psychology 项目页](/work/h029-psychology/) 与 [仓库 README](https://github.com/zhubao315/h029-psychology#readme)。相关方法见 [三条主线](/articles/three-lines-of-life-os/) 与 [复利的跨域应用](/articles/compounding-across-domains/)。

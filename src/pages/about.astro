@@ -5,8 +5,11 @@ import { ArrowUpRight, ArrowRight } from '@lucide/astro';
 import { directions, principles, site } from '../data/site';
 import { lifeSites } from '../data/projects';
 
-const totalActivities = 2037 + 5776 + 344;
-const totalDistance = 24548 + 45291 + 2694;
+// 派生值一律从 lifeSites（其口径与日期已写在其 secondary 字段）计算，禁止手写常量。
+const numeric = (value: string) => Number(value.replace(/[^0-9]/g, '')) || 0;
+const sportSites = lifeSites.filter((item) => item.id !== 'health');
+const totalActivities = sportSites.reduce((sum, item) => sum + numeric(item.stat), 0);
+const totalDistance = sportSites.reduce((sum, item) => sum + numeric(item.secondary.split('·')[0]), 0);
 
 // ProfilePage 仅在页面真实展示完整个人档案时使用；不填写未核验的出版或雇佣信息。
 const profileSchema = {
@@ -268,10 +271,10 @@ const timeline = [
 
           <p class="about-brand-label">LOGO / 品牌板严格切图</p>
           <div class="about-brand-slices">
-            <figure><img src="/brand/slices/symbol-panel.png" alt="Z-Grid 符号" loading="lazy" /><figcaption>符号</figcaption></figure>
-            <figure><img src="/brand/slices/horizontal-lockup.png" alt="横向组合标" loading="lazy" /><figcaption>横向组合</figcaption></figure>
-            <figure><img src="/brand/slices/stacked-lockup.png" alt="纵向组合标" loading="lazy" /><figcaption>纵向组合</figcaption></figure>
-            <figure><img src="/brand/slices/mono-light.png" alt="浅底单色版" loading="lazy" /><figcaption>浅底单色</figcaption></figure>
+            <figure><img src="/brand/slices/symbol-panel.png" alt="Z-Grid 符号" width="155" height="130" loading="lazy" /><figcaption>符号</figcaption></figure>
+            <figure><img src="/brand/slices/horizontal-lockup.png" alt="横向组合标" width="510" height="120" loading="lazy" /><figcaption>横向组合</figcaption></figure>
+            <figure><img src="/brand/slices/stacked-lockup.png" alt="纵向组合标" width="190" height="150" loading="lazy" /><figcaption>纵向组合</figcaption></figure>
+            <figure><img src="/brand/slices/mono-light.png" alt="浅底单色版" width="122" height="135" loading="lazy" /><figcaption>浅底单色</figcaption></figure>
           </div>
 
           <p class="about-brand-label">COLOR / 主品牌色与方向色</p>
@@ -384,7 +387,7 @@ const timeline = [
           <span class="about-record-label">MOVEMENT / COMBINED</span>
           <strong>{totalActivities.toLocaleString('en-US')}</strong>
           <p>次跑步、骑行与徒步记录，合计约 {totalDistance.toLocaleString('en-US')} km。</p>
-          <span class="about-record-foot">DERIVED FROM PUBLIC PAGES</span>
+          <span class="about-record-foot">DERIVED FROM PUBLIC PAGES · AS OF {site.lastVerified}</span>
         </div>
         <div class="about-record-stat" data-reveal style="--reveal-delay:180ms">
           <span class="about-record-label">MANUSCRIPTS</span>

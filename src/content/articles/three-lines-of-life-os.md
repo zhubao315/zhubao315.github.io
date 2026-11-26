@@ -52,4 +52,4 @@ category: knowledge
 
 ## 下一步
 
-阅读 [所有领域最终通向心理学](./all-disciplines-lead-to-psychology/) 与 [复利的跨域应用](./compounding-across-domains/)；公开数据见 [量化生活探索页](/explore/#quantified-life)。
+阅读 [所有领域最终通向心理学](/articles/all-disciplines-lead-to-psychology/) 与 [复利的跨域应用](/articles/compounding-across-domains/)；公开数据见 [量化生活探索页](/explore/#quantified-life)。

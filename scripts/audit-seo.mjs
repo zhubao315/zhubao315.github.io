@@ -78,10 +78,14 @@ for (const file of htmlFiles) {
 
   const jsonLd = [...html.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)];
   if (!jsonLd.length) fail(`${route}: no JSON-LD found`);
+  const seenJsonLd = new Set();
   for (const [, raw] of jsonLd) {
     try {
       const parsed = JSON.parse(raw);
       if (!parsed['@context'] || !parsed['@type']) fail(`${route}: JSON-LD missing @context or @type`);
+      const key = JSON.stringify(parsed);
+      if (seenJsonLd.has(key)) fail(`${route}: duplicate JSON-LD block (same @type and payload)`);
+      seenJsonLd.add(key);
     } catch (e) {
       fail(`${route}: invalid JSON-LD (${String(e).slice(0, 90)})`);
     }
@@ -89,6 +93,16 @@ for (const file of htmlFiles) {
 
   const h1Count = (html.match(/<h1\b/gi) || []).length;
   if (h1Count !== 1) fail(`${route}: expected exactly one <h1>, found ${h1Count}`);
+  const h1Index = html.search(/<h1\b/i);
+  const h2Index = html.search(/<h2\b/i);
+  if (h1Index >= 0 && h2Index >= 0 && h2Index < h1Index) {
+    fail(`${route}: <h2> appears before <h1>`);
+  }
+
+  if (!match(html, /<meta property="og:image:width" content="([^"]*)"/i) ||
+      !match(html, /<meta property="og:image:height" content="([^"]*)"/i)) {
+    fail(`${route}: og:image dimensions missing`);
+  }
 
   const images = [...html.matchAll(/<img\b([^>]*)>/gi)];
   // Empty alt is valid for decorative images; only a missing attribute is an error.

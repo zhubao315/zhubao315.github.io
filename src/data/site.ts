@@ -18,8 +18,10 @@ export const site = {
   taglineZh: '构建系统 · 工程知识 · 量化生活 · 创造作品',
   statement: '把想法变成系统，把知识沉淀为资产，把生活记录成可持续的实践。',
   repoCount: githubStats.public_repos,
-  nonForkCount: githubStats.original + githubStats.modified,
-  forkCount: githubStats.upstream,
+  // 直接读取 GitHub API 口径，不再把「原创 + 二次开发」误称非 Fork。
+  // 39 个 GitHub Fork 中有 2 个被人工标为二次开发，分类口径另行展示。
+  nonForkCount: githubStats.non_fork_public,
+  forkCount: githubStats.fork_public,
   lastVerified: githubStats.last_verified,
 };
 

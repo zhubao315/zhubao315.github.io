@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { brandFields, categoryField } from '../data/brand';
 import { categoryMeta, type Project } from '../data/projects';
+import { site } from '../data/site';
 import uskillLogo from '../assets/projects/uskill-logo.svg';
 import investmentBanner from '../assets/projects/investment-banner.svg';
 import healthImage from '../assets/projects/health.webp';
@@ -25,6 +26,8 @@ const sizes =
     : '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 800px';
 const widths = mode === 'hero' ? [800, 1200, 1600] : [480, 800, 1200];
 const loading = mode === 'hero' ? 'eager' : 'lazy';
+// 版本与核验日期从项目数据读取，不在视觉稿里硬编码，避免同页出现两个版本。
+const versionLabel = project.metrics?.find((metric) => metric.label === '当前版本')?.value ?? '版本以仓库为准';
 
 const quantImages: { image: ImageMetadata; label: string; alt: string }[] = [
   { image: healthImage, label: 'HEALTH / 2026', alt: '健康数据面板截图' },
@@ -39,10 +42,10 @@ const quantImages: { image: ImageMetadata; label: string; alt: string }[] = [
       <div class="skill-visual" aria-label="uSkill 能力链路示意图">
         <div class="visual-meta">
           <span>AGENT SKILL FOUNDATION</span>
-          <span>v1.1 / BETA</span>
+          <span>{versionLabel}</span>
         </div>
         <div class="skill-visual-core">
-          <img class="skill-logo" src={uskillLogo.src} alt="uSkills logo" />
+          <img class="skill-logo" src={uskillLogo.src} alt="uSkills logo" width="128" height="128" />
           <div class="skill-flow">
             <span>SOP</span>
             <i aria-hidden="true">→</i>
@@ -92,7 +95,7 @@ const quantImages: { image: ImageMetadata; label: string; alt: string }[] = [
     project.id === 'investment-discipline' && (
       <div class="investment-visual" aria-label="投资的纪律 Agent Skill 视觉图">
         <div class="investment-banner">
-          <img src={investmentBanner.src} alt="投资的纪律 · Agent Skill 横幅" loading={loading} />
+          <img src={investmentBanner.src} alt="投资的纪律 · Agent Skill 横幅" width="1280" height="360" loading={loading} />
         </div>
         <div class="investment-rules">
           <span>COLLECT</span><i>→</i><span>VERIFY</span><i>→</i><span>ANALYZE</span><i>→</i
@@ -137,7 +140,7 @@ const quantImages: { image: ImageMetadata; label: string; alt: string }[] = [
           </figure>
         </div>
         <p class="visual-caption quant-caption">
-          <span class="live-dot" aria-hidden="true"></span> DAILY SYNC · 数据快照 2026-11-11
+          <span class="live-dot" aria-hidden="true"></span> DAILY SYNC · 数据快照 {site.lastVerified}
         </p>
       </div>
     )

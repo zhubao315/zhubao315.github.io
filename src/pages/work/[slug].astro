@@ -69,6 +69,8 @@ const projectSchema = {
   description={metaDescription}
   image={project.cover?.src ?? '/og-default.png'}
   imageAlt={project.coverAlt ?? `${project.name} 项目封面`}
+  imageWidth={project.cover?.width ?? 1200}
+  imageHeight={project.cover?.height ?? 630}
   type="article"
   breadcrumbs={[
     { name: '首页', href: `${site.url}/` },
@@ -387,6 +389,4 @@ const projectSchema = {
       </div>
     </nav>
   </article>
-
-  <script type="application/ld+json" set:html={JSON.stringify(projectSchema)} />
 </BaseLayout>

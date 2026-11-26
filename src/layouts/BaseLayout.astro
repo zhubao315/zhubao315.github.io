@@ -17,6 +17,9 @@ interface Props {
   description?: string;
   image?: string;
   imageAlt?: string;
+  /** OG 图片真实像素；传入真实尺寸，避免社交平台裁切。 */
+  imageWidth?: number;
+  imageHeight?: number;
   type?: 'website' | 'article' | 'profile';
   noindex?: boolean;
   bodyClass?: string;
@@ -31,6 +34,8 @@ const {
   description = site.description,
   image = site.ogImage,
   imageAlt = 'ZHUBAO · Build Systems. Engineer Knowledge. Measure Life. Create Things.',
+  imageWidth = 1200,
+  imageHeight = 630,
   type = 'website',
   noindex = false,
   bodyClass = '',
@@ -80,7 +85,7 @@ const websiteSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#07111F" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="dark" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -99,8 +104,8 @@ const websiteSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content={String(imageWidth)} />
+    <meta property="og:image:height" content={String(imageHeight)} />
     <meta property="og:image:alt" content={imageAlt} />
 
     <meta name="twitter:card" content="summary_large_image" />

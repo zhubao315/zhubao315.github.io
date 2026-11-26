@@ -128,14 +128,18 @@ for (const file of htmlFiles) {
       continue;
     }
 
-    // Relative hrefs (./about, ../x, page.html) are resolved by the browser
-    // against the current document; they are intentionally not checked here.
+    // Resolve relative hrefs against the current document directory instead of
+    // silently skipping them; only fragments with no path are ignored above.
+    let candidate = value;
     if (!value.startsWith('/')) {
-      continue;
+      const clean = decodeURIComponent(value.split('#')[0].split('?')[0]);
+      if (!clean) continue;
+      const pageDir = path.posix.dirname('/' + path.relative(root, file).split(path.sep).join('/'));
+      candidate = path.posix.normalize(path.posix.join(pageDir, clean));
     }
 
     checked += 1;
-    const target = await resolveTarget(value);
+    const target = await resolveTarget(candidate);
 
     if (!(await isFile(target))) {
       failures.push(`${page}: missing target ${value}`);

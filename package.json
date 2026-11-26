@@ -15,10 +15,12 @@
     "test": "playwright test",
     "test:links": "node scripts/check-links.mjs",
     "test:seo": "node scripts/audit-seo.mjs",
-    "test:all": "npm run build && npm run test:links && npm run test:seo && npm test",
+    "test:all": "npm run build && npm run test:links && npm run test:seo && npm run facts:build && npm run facts:check && npm test",
     "screenshots": "node scripts/capture-screenshots.mjs",
     "sync:github": "node scripts/sync-github-data.mjs",
-    "sync:github:check": "node scripts/sync-github-data.mjs --check"
+    "sync:github:check": "node scripts/sync-github-data.mjs --check",
+    "facts:build": "node scripts/build-fact-registry.mjs",
+    "facts:check": "node scripts/check-fact-consistency.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

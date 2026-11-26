@@ -40,6 +40,21 @@ jobs:
       - name: Check internal links
         run: npm run test:links
 
+      # 只读校验：GitHub 元数据快照必须与当前 API 一致，陈旧数据不得静默发布。
+      - name: Check GitHub data drift
+        run: npm run sync:github:check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Audit technical SEO
+        run: npm run test:seo
+
+      - name: Build and verify fact registry
+        run: npm run facts:build && npm run facts:check
+
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
+
       - name: Install Playwright browser
         run: npx playwright install --with-deps chromium
 

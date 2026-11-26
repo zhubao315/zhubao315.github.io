@@ -57,4 +57,4 @@ r 和 n 缺一不可：r 再大，n 为零就没有复利；n 再大，r 为零�
 
 ## 下一步
 
-阅读 [三条主线](./three-lines-of-life-os/) 与 [所有领域最终通向心理学](./all-disciplines-lead-to-psychology/)；长期数据见 [健康](https://zhubao315.github.io/health/) · [跑步](https://zhubao315.github.io/running/) · [骑行](https://zhubao315.github.io/cycling/) · [徒步](https://zhubao315.github.io/hiking/)。
+阅读 [三条主线](/articles/three-lines-of-life-os/) 与 [所有领域最终通向心理学](/articles/all-disciplines-lead-to-psychology/)；长期数据见 [健康](https://zhubao315.github.io/health/) · [跑步](https://zhubao315.github.io/running/) · [骑行](https://zhubao315.github.io/cycling/) · [徒步](https://zhubao315.github.io/hiking/)。

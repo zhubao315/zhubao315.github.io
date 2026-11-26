@@ -3,6 +3,7 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { ArrowUpRight, ArrowLeft } from '@lucide/astro';
 import { site } from '../../data/site';
+import { projects } from '../../data/projects';
 import { bookByArticle, getBook } from '../../data/books';
 import '../../styles/articles.css';
 
@@ -30,6 +31,8 @@ const { title, description, date, updated, author, keywords, project } = entry.d
 const published = date.toISOString().slice(0, 10);
 const modified = (updated ?? date).toISOString().slice(0, 10);
 const pageUrl = new URL(`/articles/${entry.id}/`, site.url).href;
+// frontmatter 的 project 是显示名而非 slug；按项目数据映射，避免全部回链到 uSkill。
+const linkedProject = project ? projects.find((item) => item.name === project || item.nameZh === project) : undefined;
 const relatedBooks = (bookByArticle[entry.id] ?? [])
   .map((slug) => getBook(slug))
   .filter((book) => Boolean(book));
@@ -93,7 +96,7 @@ const articleSchema = {
           </p>
           <p>
             <a href="/articles/"><ArrowLeft size={13} /> 返回文章列表</a>
-            {project && <> · <a href={`/work/uskill/`}>查看 uSkill 项目页 <ArrowUpRight size={13} /></a></>}
+            {linkedProject && <> · <a href={`/work/${linkedProject.slug}/`}>查看 {linkedProject.name} 项目页 <ArrowUpRight size={13} /></a></>}
           </p>
         </div>
       </div>

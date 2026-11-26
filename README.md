@@ -4,8 +4,8 @@ Source for **[zhubao315.github.io](https://zhubao315.github.io)** — a working 
 
 The site is a static Astro build: warm editorial design, bilingual content, verified project facts, no third-party runtime scripts, and a compatibility layer for the 2022 Hexo URLs.
 
-**Content snapshot:** 2026-11-24  
-**Production:** deployed via GitHub Actions on 2026-11-12  
+**Content snapshot:** 2026-11-26  
+**Production:** deployed via GitHub Actions on push to `main` (see `.github/workflows/deploy.yml`)  
 **Stack:** Astro 7 · TypeScript · native CSS · Playwright · GitHub Pages
 
 ## Pages
@@ -13,9 +13,10 @@ The site is a static Astro build: warm editorial design, bilingual content, veri
 | Route | Purpose |
 |---|---|
 | `/` | Home: identity, six flagship projects, four directions, project index, manuscripts, quantified life, current focus |
-| `/work/` | Filterable index of 18 projects plus 10 upstream research samples |
-| `/work/[slug]/` | 18 case studies with status, source type, evidence, links, and boundaries |
+| `/work/` | Filterable index driven by `projects.ts` (25 cases) plus the full upstream research directory |
+| `/work/[slug]/` | Case studies with status, source type, evidence, links, and boundaries |
 | `/think/` | Knowledge engineering, investment discipline, AI/Agent research, manuscripts |
+| `/books/` | Manuscript pages and cross-references to related projects (manuscript status, not published) |
 | `/explore/` | Personality, quantified life, and creative work |
 | `/about/` | Working statement, principles, verified record, timeline, capabilities, boundaries |
 | `/404.html` | Designed recovery page |
@@ -37,13 +38,12 @@ These paths remain available as supplemental `noindex` compatibility entries. Th
 
 `/repositories/` is generated from `src/data/generated/`:
 
-- `repositories.json` — all 67 public repos with category / source / status / stack / Pages metadata
+- `repositories.json` — all 68 public repos with category / source / status / stack / Pages metadata
 - `github-stats.json` — single source of truth for counts used by `src/data/site.ts`
 - `pages.json` — live Pages health probes
 - `manual-overrides.json` — human-maintained category/status/description overrides (sync reads, never writes)
 
-Regenerate with `npm run sync:github` (needs `GITHUB_TOKEN` from env) and verify drift with
-`npm run sync:github:check`. A daily workflow commits only when generated data actually changes.
+Regenerate manually with `npm run sync:github` (needs `GITHUB_TOKEN` from env). Every PR and push is checked with `npm run sync:github:check` in CI: stale generated data fails the build instead of being silently published. There is no automatic daily sync job.
 
 ## Quick start
 
@@ -65,7 +65,10 @@ Open the local URL printed by Astro (normally `http://localhost:4321`).
 | `npm run build` | Type-check and build the static site into `dist/` |
 | `npm run preview` | Preview the built site locally |
 | `npm run test:links` | Validate required routes and all internal links in `dist/` |
-| `npx playwright test` | Run the 32 browser tests |
+| `npm run sync:github:check` | CI-only drift check: generated GitHub metadata must match the live API |
+| `npm run facts:build` | Validate the manual fact registry, reconcile GitHub stats, recompute derived values |
+| `npm run facts:check` | Verify rendered pages and source guards against the fact registry (run after build) |
+| `npx playwright test` | Run the browser tests |
 | `npm run test:all` | Build, check links, then run Playwright |
 
 The Playwright config starts a preview server on port `4321` and reuses an existing local server outside CI.
@@ -88,8 +91,10 @@ The Playwright config starts a preview server on port `4321` and reuses an exist
 │   ├── assets/                    # Brand, project covers, generated visuals
 │   ├── components/                # Header, footer, project cards, legacy shell
 │   ├── data/
+│   │   ├── portfolio-facts.json   # Human-maintained authoritative facts (schema-validated)
 │   │   ├── projects.ts            # Canonical project, metric, case-study data
 │   │   └── site.ts                # Identity, navigation, directions, snapshot
+│   ├── schemas/portfolio-facts.schema.json
 │   ├── layouts/BaseLayout.astro   # Metadata, fonts, JSON-LD, skip link
 │   ├── pages/                     # Primary, case-study, compatibility, 404
 │   └── styles/                    # Tokens and page-specific native CSS

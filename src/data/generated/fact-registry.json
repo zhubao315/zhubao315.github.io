@@ -1,0 +1,131 @@
+{
+  "_meta": {
+    "generated_at": "2026-11-26T09:53:44Z",
+    "source_hashes": {
+      "portfolio-facts.json": "86178030cd9c",
+      "github-stats.json": "d0c2387a876d"
+    },
+    "last_verified": "2026-11-26"
+  },
+  "facts": {
+    "public_repos": {
+      "value": 68,
+      "source": "github_api",
+      "as_of": "2026-11-26",
+      "note": "GitHub API public_repos；与 generated/github-stats.json 对账"
+    },
+    "non_fork_public": {
+      "value": 29,
+      "source": "github_api",
+      "as_of": "2026-11-26",
+      "note": "API fork==false；不得用 original+modified 推导"
+    },
+    "fork_public": {
+      "value": 39,
+      "source": "github_api",
+      "as_of": "2026-11-26",
+      "note": "API fork==true"
+    },
+    "original": {
+      "value": 29,
+      "source": "github_api",
+      "as_of": "2026-11-26",
+      "note": "人工分类：原创（不含 2 个 Fork 二次开发）"
+    },
+    "modified": {
+      "value": 2,
+      "source": "manual",
+      "as_of": "2026-11-26",
+      "note": "Fork 但有本人实质提交：running、docker_image_pusher"
+    },
+    "upstream": {
+      "value": 37,
+      "source": "manual",
+      "as_of": "2026-11-26",
+      "note": "Fork 且无实质改造；39 - 2 = 37"
+    },
+    "uskill_version": {
+      "value": "v2.0.0",
+      "source": "github_tag",
+      "as_of": "2026-11-13",
+      "note": "tag v2.0.0；Release 页 2026-11-26 补齐"
+    },
+    "health_days": {
+      "value": 1054,
+      "source": "repo_readme",
+      "as_of": "2026-11-26",
+      "note": "health README STATS 块：每日健康汇总"
+    },
+    "running_sessions": {
+      "value": 2044,
+      "source": "repo_readme",
+      "as_of": "2026-11-26"
+    },
+    "running_km": {
+      "value": 24660,
+      "source": "repo_readme",
+      "as_of": "2026-11-26"
+    },
+    "cycling_sessions": {
+      "value": 5808,
+      "source": "repo_readme",
+      "as_of": "2026-11-26"
+    },
+    "cycling_km": {
+      "value": 45549,
+      "source": "repo_readme",
+      "as_of": "2026-11-26"
+    },
+    "hiking_sessions": {
+      "value": 344,
+      "source": "repo_readme",
+      "as_of": "2026-11-26"
+    },
+    "hiking_km": {
+      "value": 2694,
+      "source": "repo_readme",
+      "as_of": "2026-11-26"
+    },
+    "total_sessions": {
+      "value": 8196,
+      "source": "derived",
+      "as_of": "2026-11-26",
+      "derived_from": [
+        "running_sessions",
+        "cycling_sessions",
+        "hiking_sessions"
+      ]
+    },
+    "total_km": {
+      "value": 72903,
+      "source": "derived",
+      "as_of": "2026-11-26",
+      "derived_from": [
+        "running_km",
+        "cycling_km",
+        "hiking_km"
+      ]
+    }
+  },
+  "derived": {
+    "total_sessions": {
+      "value": 8196,
+      "parts": [
+        "running_sessions",
+        "cycling_sessions",
+        "hiking_sessions"
+      ],
+      "as_of": "2026-11-26"
+    },
+    "total_km": {
+      "value": 72903,
+      "parts": [
+        "running_km",
+        "cycling_km",
+        "hiking_km"
+      ],
+      "as_of": "2026-11-26"
+    }
+  },
+  "conflicts": []
+}
