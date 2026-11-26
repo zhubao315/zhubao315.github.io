@@ -325,3 +325,52 @@
   .book-quote-meta { grid-template-columns: 1fr; gap: 2px; }
   .book-quote-meta dt { padding-top: 8px; }
 }
+
+/* 章节跳转与阅读节奏 */
+.section-head[id] { scroll-margin-top: 88px; }
+.book-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 0;
+}
+.book-jump a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 13px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  line-height: 1;
+  color: var(--muted);
+  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+.book-jump a:hover,
+.book-jump a:focus-visible {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent-wash, transparent);
+}
+.book-jump a span {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--accent);
+}
+/* 详情站长页：收敛章节标题，让正文更快进入视野 */
+.book-detail-hero .section-title h2 {
+  font-size: clamp(1.9rem, 3.1vw, 3.15rem);
+  letter-spacing: -0.04em;
+}
+.book-detail-hero .section-head {
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+/* 金句解析：语境轻、解析重，形成两级阅读层级 */
+.book-quote-meta dd:last-child {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+@media (max-width: 680px) {
+  .book-jump a { padding: 7px 11px; font-size: 0.74rem; }
+  .book-detail-hero .section-title h2 { font-size: clamp(1.75rem, 8vw, 2.4rem); }
+}

@@ -77,7 +77,13 @@ const title = `${book.title} · 自著书稿 | 朱宝 ZHUBAO`;
           )}
         </div>
 
-        <div class="section-head" style="margin-top:42px">
+        <nav class="book-jump" aria-label="本页章节导航">
+          <a href="#core-thesis">核心观点 <span>{book.corePoints.length}</span></a>
+          <a href="#quotes">金句解析 <span>{book.quotes.length}</span></a>
+          <a href="#references">互引</a>
+        </nav>
+
+        <div class="section-head" id="core-thesis" style="margin-top:42px">
           <div class="section-index"><span>01</span><i aria-hidden="true"></i></div>
           <div class="section-title">
             <p class="eyebrow">Core Thesis / 核心观点</p>
@@ -86,18 +92,18 @@ const title = `${book.title} · 自著书稿 | 朱宝 ZHUBAO`;
         </div>
         <ol class="book-thesis">
           {book.corePoints.map((point) => (
-            <li>{point.split('**').map((part, i) => (i % 2 === 1 ? <strong>{part}</strong> : part))}</li>
+            <li><span>{point.split('**').map((part, i) => (i % 2 === 1 ? <strong>{part}</strong> : part))}</span></li>
           ))}
         </ol>
 
-        <div class="section-head" style="margin-top:48px">
+        <div class="section-head" id="quotes" style="margin-top:48px">
           <div class="section-index"><span>02</span><i aria-hidden="true"></i></div>
           <div class="section-title">
             <p class="eyebrow">Quotes &amp; Deep Analysis / 金句摘录与深度解析</p>
             <h2>原文、语境，<br />以及它真正的含义。</h2>
           </div>
         </div>
-        <p class="book-quotes-note">以下金句与解析逐条摘自「{book.noteTitle}」，按「原文—语境—深度解析」三段呈现；它们是公开笔记的转录，不代表对原典的独立核验。</p>
+        <p class="book-quotes-note">以下金句与解析逐条摘自公开笔记《{book.noteTitle}》，按「原文 — 语境 — 深度解析」三段呈现；它们是笔记的转录，不代表对原典的独立核验。</p>
         <ol class="book-quotes">
           {book.quotes.map((quote, i) => (
             <li class="book-quote">
@@ -113,7 +119,7 @@ const title = `${book.title} · 自著书稿 | 朱宝 ZHUBAO`;
           ))}
         </ol>
 
-        <div class="section-head" style="margin-top:48px">
+        <div class="section-head" id="references" style="margin-top:48px">
           <div class="section-index"><span>03</span><i aria-hidden="true"></i></div>
           <div class="section-title">
             <p class="eyebrow">Cross References / 互引</p>
