@@ -1,0 +1,95 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ArrowUpRight, ArrowLeft } from '@lucide/astro';
+import { site } from '../../data/site';
+import '../../styles/articles.css';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('articles');
+  return entries.map((entry, index) => ({
+    params: { slug: entry.id },
+    props: {
+      entry,
+      prev: entries[(index - 1 + entries.length) % entries.length],
+      next: entries[(index + 1) % entries.length],
+    },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'articles'>;
+  prev: CollectionEntry<'articles'>;
+  next: CollectionEntry<'articles'>;
+}
+
+const { entry, prev, next } = Astro.props;
+const { Content } = await render(entry);
+const { title, description, date, updated, author, keywords, project } = entry.data;
+const published = date.toISOString().slice(0, 10);
+const modified = (updated ?? date).toISOString().slice(0, 10);
+const pageUrl = new URL(`/articles/${entry.id}/`, site.url).href;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: title,
+  description,
+  url: pageUrl,
+  inLanguage: 'zh-CN',
+  datePublished: published,
+  dateModified: modified,
+  author: { '@type': 'Person', name: author, url: site.url },
+  keywords: keywords.join(', '),
+  mainEntityOfPage: pageUrl,
+};
+---
+
+<BaseLayout
+  title={`${title} | 朱宝 ZHUBAO`}
+  description={description}
+  type="article"
+  breadcrumbs={[
+    { name: '首页', href: `${site.url}/` },
+    { name: '文章', href: `${site.url}/articles/` },
+    { name: title },
+  ]}
+  schema={articleSchema}
+>
+  <article class="section">
+    <div class="shell">
+      <div class="article-body">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="/">首页</a><span class="sep">/</span>
+          <a href="/articles/">文章</a><span class="sep">/</span>
+          <span>{title}</span>
+        </nav>
+        <h1 class="article-title">{title}</h1>
+        <div class="article-meta" style="margin-top:26px">
+          <span>PUBLISHED {published}</span>
+          {updated && <span>UPDATED {modified}</span>}
+          {project && <span>{project}</span>}
+          <span>BY {author}</span>
+        </div>
+        <Content />
+        <div class="article-facts">
+          <p>更新日期：{modified} · 适用项目：{project ?? '通用'} · 关键词：{keywords.join(' / ')}</p>
+          <p>
+            事实来源：仓库 README、源码、测试输出与项目文档；文章不自动发布，发布前经人工审核。
+          </p>
+          <p>
+            <a href="/articles/"><ArrowLeft size={13} /> 返回文章列表</a>
+            {project && <> · <a href={`/work/uskill/`}>查看 uSkill 项目页 <ArrowUpRight size={13} /></a></>}
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <nav class="section article-pager" aria-label="文章导航">
+    <div class="shell">
+      <a href={`/articles/${prev.id}/`}><span>上一篇</span><strong>{prev.data.title}</strong></a>
+      <a href={`/articles/${next.id}/`}><span>下一篇</span><strong>{next.data.title}</strong></a>
+    </div>
+  </nav>
+</BaseLayout>

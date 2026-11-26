@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import '../../styles/articles.css';
+
+const entries = (await getCollection('articles')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const title = '文章 · 工程实践与方法 | 朱宝 ZHUBAO';
+const description = '基于真实项目代码、测试与迭代记录的原创技术文章：Agent Skills 工程、知识库治理、量化生活与产品实践。';
+---
+
+<BaseLayout title={title} description={description} type="website">
+  <section class="page-hero">
+    <div class="shell">
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="/">首页</a><span class="sep">/</span><span>文章</span>
+      </nav>
+      <h1>Writing that<br /><em>holds up.</em></h1>
+      <p class="page-lede">这里只收录能从代码、测试或真实过程中找到出处的内容。每篇文章都给出直接答案、适用边界与证据来源。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="article-list">
+        {entries.map((entry) => (
+          <a class="article-row" href={`/articles/${entry.id}/`}>
+            <div class="article-meta">
+              <span>{entry.data.date.toISOString().slice(0, 10)}</span>
+              {entry.data.project && <span>{entry.data.project}</span>}
+              {entry.data.keywords.slice(0, 2).map((keyword) => <span>{keyword}</span>)}
+            </div>
+            <h2>{entry.data.title}</h2>
+            <p>{entry.data.description}</p>
+          </a>
+        ))}
+      </div>
+      <p class="article-facts">
+        共 {entries.length} 篇 · 事实核验 {site.lastVerified} · 所有文章均保留人工审核记录，不自动生成发布。
+      </p>
+    </div>
+  </section>
+</BaseLayout>
