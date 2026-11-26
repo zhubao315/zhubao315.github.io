@@ -7,7 +7,14 @@ import DirectionMark from '../components/DirectionMark.astro';
 import { Image } from 'astro:assets';
 import { brandFields } from '../data/brand';
 import { directions, site } from '../data/site';
-import { lifeSites, projects, publications, categoryMeta, statusMeta } from '../data/projects';
+import {
+  lifeSites,
+  projects,
+  researchProjects,
+  publications,
+  categoryMeta,
+  statusMeta,
+} from '../data/projects';
 import perfectmeCover from '../assets/projects/perfectme.webp';
 import healthImage from '../assets/projects/health.webp';
 
@@ -18,37 +25,48 @@ const investment = projects.find((p) => p.id === 'investment-discipline')!;
 const quantified = projects.find((p) => p.id === 'quantified-life')!;
 const perfectme = projects.find((p) => p.id === 'perfectme')!;
 
-const universeProjects = ['e-life-method', 'uread', 'tescreal-guide', 'h029-psychology', 'dual-asset-strategy', 'hip-drive-running']
+const universeProjects = [
+  'zhuocheng-terminal',
+  'ai-agent-master',
+  'uwise',
+  'gdmp-master',
+  'ulife-os-infra',
+  'active-watch',
+  'piglet-docker',
+  'e-life-method',
+  'uread',
+  'tescreal-guide',
+]
   .map((id) => projects.find((project) => project.id === id))
   .filter(Boolean);
 
 const nowItems = [
   {
-    title: 'Agent Skills as infrastructure',
-    zh: '让能力可治理，而不只是可调用',
-    desc: 'uSkill、知识库工程与投资纪律，共同探索技能的标准、权限、证据与版本化。',
+    title: 'uSkill 2.0 / governed runtime',
+    zh: '让 Agent Skills 有标准、有门禁、有证据',
+    desc: 'v2.0.0 Release 已补齐；双层标准、受治理运行时、评测门禁与 L0–L4 风险分级持续维护。',
     href: '/work/uskill/',
     status: 'active',
   },
   {
-    title: 'Products that invite exploration',
-    zh: '把方法论变成可以体验的产品',
-    desc: 'MBTI64 继续打磨测评、型别页与分享链路；让复杂内容拥有更低的进入门槛。',
-    href: '/work/mbti64/',
+    title: 'Offline daily cultivation',
+    zh: '把旧手机变成常亮的修身桌面',
+    desc: '拙诚日课全离线信息屏 2.1：999 条金句、30 条微习惯、可校验的 APK，不需要网络与 API Key。',
+    href: '/work/zhuocheng-terminal/',
     status: 'active',
   },
   {
-    title: 'A life measured over years',
-    zh: '用长期数据理解身体与时间',
-    desc: '健康、跑步、骑行与徒步每天自动同步，保持历史可查、口径可解释。',
-    href: '/work/quantified-life/',
+    title: 'Knowledge engineering in practice',
+    zh: '把知识库治理写成可复跑流程',
+    desc: '知识库工程的 OESA 循环与两篇原创文章：先诊断，再授权变更，让 AI 在证据边界内工作。',
+    href: '/work/knowledge-base-engineering/',
     status: 'active',
   },
   {
-    title: 'A library built for discovery',
-    zh: '把阅读档案做成可发现的平台',
-    desc: 'uRead 0.34.5 引入沉浸式阅读与原生语音听书，把 1599 篇笔记、39 份书单与 1807 条书籍记录串成一条阅读路径。',
-    href: '/work/uread/',
+    title: 'ACTIVE operations backbone',
+    zh: '四个运动站点的巡检、配额与品牌治理',
+    desc: 'ACTIVE Watch 不发布页面：每日巡检、共享 COROS 配额账本与品牌单一事实源，保证长期数据站持续运行。',
+    href: '/work/active-watch/',
     status: 'active',
   },
 ] as const;
@@ -137,8 +155,9 @@ const nowItems = [
       <div class="hero-facts" aria-label="公开资料快照">
         <div class="hero-fact"><strong>{site.repoCount}</strong><span>公开仓库</span></div>
         <div class="hero-fact"><strong>04</strong><span>核心方向</span></div>
+        <div class="hero-fact"><strong>{projects.length}</strong><span>项目案例</span></div>
+        <div class="hero-fact"><strong>{researchProjects.length}</strong><span>研究档案</span></div>
         <div class="hero-fact"><strong>2011</strong><span>加入 GitHub</span></div>
-        <div class="hero-fact"><strong>2026.11</strong><span>资料已核验</span></div>
         <div class="hero-fact hero-fact--note"><span>SOURCE</span><strong>GitHub API · 公开页面</strong></div>
       </div>
 
@@ -163,7 +182,7 @@ const nowItems = [
         index="01"
         eyebrow="Selected Work / 2024—2026"
         title="六件作品，四种把想法变成系统的方式。"
-        note="从 AI 能力底座到人格测评、知识治理、投资纪律、长期数据与原创动画。每一个项目都指向同一个问题：方法如何真正运行起来？"
+        note="从 AI 能力底座到人格测评、知识治理、投资纪律、长期数据与原创动画。新补齐的拙诚日课、AI-Agent Master、GDMP Master、uLife OS Infra、ACTIVE Watch 与 uWise 在下方项目索引中。"
         link="/work/"
         linkLabel="全部作品与实验"
       />
@@ -263,7 +282,7 @@ const nowItems = [
         index="03"
         eyebrow="Project Universe / Index"
         title="更多方法、研究与实验。"
-        note="主站不罗列全部 {site.repoCount} 个仓库。这里展示能代表方法论广度的项目；Fork 与上游研究在作品页单独标注。"
+        note={`主站不罗列全部 ${site.repoCount} 个仓库。这里展示最新补齐的项目与方法论样本；Fork 与上游研究在作品页单独标注，不包装成原创。`}
         link="/work/"
         linkLabel="进入完整项目索引"
       />
@@ -415,7 +434,7 @@ const nowItems = [
         index="06"
         eyebrow="Now Building / Current Focus"
         title="正在把哪些问题往前推。"
-        note="不是路线图承诺，而是当前公开可见的建设重点。uRead 核验于 2026-11-24，其余项目核验日期见各案例页。"
+        note={`不是路线图承诺，而是当前公开可见的建设重点。统一快照核验于 ${site.lastVerified}，逐项日期见各案例页。`}
       />
 
       <div class="now-grid">
