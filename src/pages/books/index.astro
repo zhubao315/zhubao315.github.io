@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import { ArrowUpRight } from '@lucide/astro';
 import { books, readerUrl, noteUrl } from '../../data/books';
 import '../../styles/books.css';
@@ -52,10 +53,8 @@ const directions = [
         {
           books.map((book) => (
             <article class="book-card">
-              <div class={`book-thumb ${book.coverClass}`} aria-hidden="true">
-                <span>ZHUBAO / {book.directionIndex}</span>
-                <b>{book.title}</b>
-                <span>MANUSCRIPT</span>
+              <div class={`book-thumb ${book.coverClass}`}>
+                <Image src={book.cover} alt={book.coverAlt} widths={[160, 320]} sizes="132px" loading="lazy" />
               </div>
               <div>
                 <span class="book-dir">{book.direction} · {book.directionLabel}</span>

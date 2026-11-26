@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import { ArrowUpRight, ArrowLeft } from '@lucide/astro';
 import { books, readerUrl, noteUrl } from '../../data/books';
 import { projects } from '../../data/projects';
@@ -145,10 +146,8 @@ const title = `${book.title} · 自著书稿 | 朱宝 ZHUBAO`;
       </div>
 
       <aside>
-        <div class={`book-detail-cover ${book.coverClass}`} aria-hidden="true">
-          <span>ZHUBAO / {book.directionIndex}</span>
-          <b>{book.title}</b>
-          <small>MANUSCRIPT · 2026</small>
+        <div class={`book-detail-cover ${book.coverClass}`}>
+          <Image src={book.cover} alt={book.coverAlt} widths={[260, 520]} sizes="260px" />
         </div>
         <ul class="book-thesis" style="margin-top:24px">
           {book.facts.map((fact) => <li>{fact}</li>)}

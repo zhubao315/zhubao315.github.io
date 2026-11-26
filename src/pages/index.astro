@@ -1,11 +1,11 @@
 ---
-import { bookByPublication } from '../data/books';
+import { Image } from 'astro:assets';
+import { bookByPublication, getBook } from '../data/books';
 import { ArrowRight, ArrowUpRight } from '@lucide/astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import FeaturedProject from '../components/FeaturedProject.astro';
 import DirectionMark from '../components/DirectionMark.astro';
-import { Image } from 'astro:assets';
 import { brandFields } from '../data/brand';
 import { directions, site } from '../data/site';
 import {
@@ -334,16 +334,28 @@ const nowItems = [
         {
           publications.map((publication) => (
             <article class="publication" data-reveal>
-              <div class={`book-cover ${publication.coverClass}`} aria-hidden="true">
-                <div class="book-cover-top">
-                  <span>ZHUBAO / {publication.index}</span>
-                  <span>MANUSCRIPT</span>
-                </div>
-                <h3>{publication.title.split('').slice(0, 3).join('')}<br />{publication.title.split('').slice(3).join('')}</h3>
-                <div class="book-cover-bottom">
-                  <span>朱宝 著</span>
-                  <span>{publication.type}</span>
-                </div>
+              <div class={`book-cover ${publication.coverClass}`}>
+                {bookByPublication[publication.id] && getBook(bookByPublication[publication.id]) ? (
+                  <Image
+                    src={getBook(bookByPublication[publication.id])!.cover}
+                    alt={`${publication.title} 书封`}
+                    widths={[220, 440]}
+                    sizes="220px"
+                    loading="lazy"
+                  />
+                ) : (
+                  <>
+                    <div class="book-cover-top">
+                      <span>ZHUBAO / {publication.index}</span>
+                      <span>MANUSCRIPT</span>
+                    </div>
+                    <h3>{publication.title.split('').slice(0, 3).join('')}<br />{publication.title.split('').slice(3).join('')}</h3>
+                    <div class="book-cover-bottom">
+                      <span>朱宝 著</span>
+                      <span>{publication.type}</span>
+                    </div>
+                  </>
+                )}
               </div>
               <div>
                 <div class="publication-meta">

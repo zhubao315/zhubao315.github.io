@@ -1,3 +1,9 @@
+import type { ImageMetadata } from 'astro';
+import knowledgeCover from '../assets/books/38036cf7bf29.png';
+import investmentCover from '../assets/books/a2e2ed0dd1d8.png';
+import aiLearningCover from '../assets/books/dd24f66b8e72.png';
+import personalityCover from '../assets/books/df4c81f86b08.png';
+
 /**
  * 四部自著书稿的公开载体与关联关系。
  *
@@ -18,6 +24,8 @@ export interface Book {
   directionLabel: string;
   status: string;
   coverClass: string;
+  cover: ImageMetadata;
+  coverAlt: string;
   summary: string;
   thesis: string[];
   facts: string[];
@@ -46,6 +54,8 @@ export const books: Book[] = [
     directionLabel: '工程知识 · 知识工程',
     status: '自著书稿 · 在线阅读',
     coverClass: 'book--navy',
+    cover: knowledgeCover,
+    coverAlt: '《知识库工程学》书封',
     summary:
       '把个人知识管理写成一门工程学：以 OESA 闭环、真实事故病历与可复现脚本为支撑，处理规模增长后的治理、权限与 AI 边界问题。',
     thesis: [
@@ -87,6 +97,8 @@ export const books: Book[] = [
     directionLabel: '工程知识 · 投资研究',
     status: '自著书稿 · 在线阅读',
     coverClass: 'book--gold',
+    cover: investmentCover,
+    coverAlt: '《投资的纪律》书封',
     summary:
       '把研究、数据校验、风险边界与复盘写成可执行的清单；目标不是预测价格，而是提前锁定「亏得起」的条件。',
     thesis: [
@@ -124,6 +136,8 @@ export const books: Book[] = [
     directionLabel: '工程知识 · 学习方法',
     status: '自著书稿 · 在线阅读',
     coverClass: 'book--teal',
+    cover: aiLearningCover,
+    coverAlt: '《AI时代，如何真正学会》书封',
     summary:
       'AI 让「看过」更便宜，却没有让「学会」更便宜。本书把学会变成可判定的能力标准，并给出六个会被绕过的短路点。',
     thesis: [
@@ -162,6 +176,8 @@ export const books: Book[] = [
     directionLabel: '创造作品 · 人格探索',
     status: '自著书稿 · 在线阅读',
     coverClass: 'book--violet',
+    cover: personalityCover,
+    coverAlt: '《千分之一的你》书封',
     summary:
       '把 MBTI 的四种调节状态展开为 64 个观察位置，用稀有度、对标练习与证据分层，把人格测评做成可以继续探索的作品。',
     thesis: [
