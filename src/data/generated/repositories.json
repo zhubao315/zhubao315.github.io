@@ -529,7 +529,7 @@
     "forks": 0,
     "has_pages": false,
     "category": "BUILD",
-    "source_type": "MODIFIED",
+    "source_type": "UPSTREAM",
     "status": "DORMANT",
     "file_count": 1604,
     "languages": {
@@ -595,7 +595,7 @@
     "forks": 0,
     "has_pages": false,
     "category": "BUILD",
-    "source_type": "MODIFIED",
+    "source_type": "UPSTREAM",
     "status": "ACTIVE",
     "file_count": 22949,
     "languages": {
@@ -803,7 +803,7 @@
     "forks": 0,
     "has_pages": false,
     "category": "BUILD",
-    "source_type": "MODIFIED",
+    "source_type": "UPSTREAM",
     "status": "DORMANT",
     "file_count": 6,
     "languages": {},
@@ -1448,7 +1448,7 @@
     "forks": 0,
     "has_pages": false,
     "category": "BUILD",
-    "source_type": "MODIFIED",
+    "source_type": "UPSTREAM",
     "status": "ACTIVE",
     "file_count": 217,
     "languages": {
@@ -1505,7 +1505,7 @@
     "forks": 0,
     "has_pages": false,
     "category": "BUILD",
-    "source_type": "MODIFIED",
+    "source_type": "UPSTREAM",
     "status": "ACTIVE",
     "file_count": 1638,
     "languages": {
@@ -1679,7 +1679,7 @@
     "forks": 0,
     "has_pages": false,
     "category": "BUILD",
-    "source_type": "MODIFIED",
+    "source_type": "UPSTREAM",
     "status": "ACTIVE",
     "file_count": 2713,
     "languages": {
@@ -2112,7 +2112,7 @@
     "forks": 0,
     "has_pages": false,
     "category": "BUILD",
-    "source_type": "MODIFIED",
+    "source_type": "UPSTREAM",
     "status": "DORMANT",
     "file_count": 50,
     "languages": {},
@@ -2148,7 +2148,7 @@
     "forks": 0,
     "has_pages": false,
     "category": "BUILD",
-    "source_type": "MODIFIED",
+    "source_type": "UPSTREAM",
     "status": "DORMANT",
     "file_count": 196,
     "languages": {
@@ -2331,7 +2331,7 @@
     "forks": 0,
     "has_pages": false,
     "category": "BUILD",
-    "source_type": "MODIFIED",
+    "source_type": "UPSTREAM",
     "status": "ACTIVE",
     "file_count": 2683,
     "languages": {
@@ -2458,8 +2458,8 @@
     ],
     "created_at": "2026-03-24T10:43:58Z",
     "updated_at": "2026-11-25T01:29:51Z",
-    "pushed_at": "2026-11-26T02:23:18Z",
-    "size_kb": 2499,
+    "pushed_at": "2026-11-26T03:39:41Z",
+    "size_kb": 2605,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
@@ -2468,12 +2468,27 @@
     "status": "ACTIVE",
     "file_count": 194,
     "languages": {
-      "Python": 441843
+      "Python": 454671,
+      "TypeScript": 83413,
+      "CSS": 25242,
+      "HTML": 1502
     },
     "top_languages": [
       {
         "name": "Python",
-        "pct": 100
+        "pct": 80
+      },
+      {
+        "name": "TypeScript",
+        "pct": 15
+      },
+      {
+        "name": "CSS",
+        "pct": 4
+      },
+      {
+        "name": "HTML",
+        "pct": 0
       }
     ],
     "has_readme": true,
@@ -2488,12 +2503,12 @@
     ],
     "large_files": [],
     "pages_config": null,
-    "latest_release": "v0.0.1",
+    "latest_release": "v2.0.0",
     "workflow_count": 3,
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-26T02:23:58Z"
+      "date": "2026-11-26T03:40:54Z"
     }
   },
   {
@@ -2505,7 +2520,7 @@
     "language": "CSS",
     "fork": false,
     "parent": null,
-    "license": null,
+    "license": "MIT",
     "topics": [
       "astro",
       "digital-garden",
@@ -2515,7 +2530,7 @@
     ],
     "created_at": "2022-02-11T03:16:21Z",
     "updated_at": "2026-11-25T01:29:46Z",
-    "pushed_at": "2026-11-25T03:55:20Z",
+    "pushed_at": "2026-11-26T03:46:38Z",
     "size_kb": 28395,
     "stars": 0,
     "forks": 0,
@@ -2523,7 +2538,7 @@
     "category": "BUILD",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 554,
+    "file_count": 576,
     "languages": {
       "CSS": 196317,
       "Astro": 154524,
@@ -2550,7 +2565,7 @@
       }
     ],
     "has_readme": true,
-    "has_license_file": false,
+    "has_license_file": true,
     "has_changelog": true,
     "has_tests": true,
     "has_docs": true,
@@ -2560,11 +2575,11 @@
     "large_files": [],
     "pages_config": null,
     "latest_release": null,
-    "workflow_count": 2,
+    "workflow_count": 3,
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-25T03:55:36Z"
+      "date": "2026-11-26T03:46:39Z"
     }
   },
   {
@@ -3424,7 +3439,7 @@
     "created_at": "2026-11-13T10:07:31Z",
     "updated_at": "2026-11-25T01:29:50Z",
     "pushed_at": "2026-11-26T02:09:14Z",
-    "size_kb": 30592,
+    "size_kb": 30595,
     "stars": 0,
     "forks": 0,
     "has_pages": false,
@@ -3496,7 +3511,7 @@
     "created_at": "2026-10-26T01:50:30Z",
     "updated_at": "2026-11-12T08:17:40Z",
     "pushed_at": "2026-11-26T02:12:47Z",
-    "size_kb": 159273,
+    "size_kb": 159358,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
@@ -3579,7 +3594,7 @@
     "forks": 0,
     "has_pages": false,
     "category": "MEASURE",
-    "source_type": "MODIFIED",
+    "source_type": "UPSTREAM",
     "status": "ACTIVE",
     "file_count": 2734,
     "languages": {
@@ -3641,8 +3656,8 @@
     ],
     "created_at": "2026-10-26T03:43:32Z",
     "updated_at": "2026-11-25T10:01:56Z",
-    "pushed_at": "2026-11-25T03:31:20Z",
-    "size_kb": 32097,
+    "pushed_at": "2026-11-26T02:46:14Z",
+    "size_kb": 33253,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
@@ -3690,8 +3705,8 @@
     "workflow_count": 3,
     "last_run": {
       "status": "completed",
-      "conclusion": "failure",
-      "date": "2026-11-25T03:30:23Z"
+      "conclusion": "success",
+      "date": "2026-11-26T02:45:22Z"
     }
   },
   {
@@ -3791,7 +3806,7 @@
     "created_at": "2022-06-16T02:41:23Z",
     "updated_at": "2026-11-23T10:02:37Z",
     "pushed_at": "2026-11-26T01:46:08Z",
-    "size_kb": 381014,
+    "size_kb": 374673,
     "stars": 0,
     "forks": 0,
     "has_pages": true,

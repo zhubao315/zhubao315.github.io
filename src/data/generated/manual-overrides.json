@@ -1,5 +1,5 @@
 {
-  "_comment": "人工维护字段。sync-github-data.mjs 只读取本文件，永不写入。允许字段：category / status / description / source_type。",
+  "_comment": "人工维护字段。sync-github-data.mjs 只读取本文件，永不写入。允许字段：category / status / description / source_type。source_type 的修改分类必须有本人提交或明确修改说明作为证据。",
   "_allowed_keys": ["category", "status", "description", "source_type"],
   "repos": {
     "zhubao315/uRead": {
@@ -11,6 +11,18 @@
       "category": "BUILD",
       "status": "ACTIVE",
       "description": "ZHUBAO 个人数字品牌门户与公开仓库目录"
-    }
+    },
+    "zhubao315/cube-studio": { "source_type": "UPSTREAM" },
+    "zhubao315/deepseek-harness": { "source_type": "UPSTREAM" },
+    "zhubao315/DockerTarBuilder": { "source_type": "UPSTREAM" },
+    "zhubao315/leapp": { "source_type": "UPSTREAM" },
+    "zhubao315/newton": { "source_type": "UPSTREAM" },
+    "zhubao315/openclaude": { "source_type": "UPSTREAM" },
+    "zhubao315/Python-Core-50-Courses": { "source_type": "UPSTREAM" },
+    "zhubao315/QueryGPT": { "source_type": "UPSTREAM" },
+    "zhubao315/substrate": { "source_type": "UPSTREAM" },
+    "zhubao315/grok-build": { "source_type": "UPSTREAM" },
+    "zhubao315/docker_image_pusher": { "source_type": "MODIFIED" },
+    "zhubao315/running": { "source_type": "MODIFIED" }
   }
 }

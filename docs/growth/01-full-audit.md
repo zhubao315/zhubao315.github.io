@@ -54,7 +54,7 @@
 
 **已执行的修复**：把 `/oc/site` 的本地独有提交保存到 `backup/pre-growth-sync-20261126`，合并远端 `main`（解决 `deploy.yml` 冲突，保留 Playwright 详细步骤、失败报告上传与 PR 不部署的守卫），并重新构建。现在本地落后 0、领先 2，Sitemap 24 URL，链接检查 1433 条引用通过。
 
-**统计快照已刷新**：重新运行 `scripts/sync-github-data.mjs` 后，`github-stats.json` 的 `generated_at = 2026-11-26`、`public_repos = 68`、`original = 29`、`modified = 12`、`upstream = 27`、`fork_public = 39`，与 GitHub API 一致。在线站点尚未部署这一更新（未执行 push），因此线上仍显示 67，属于正常部署延迟。
+**统计快照已刷新并按证据修正**：重新运行 `scripts/sync-github-data.mjs` 后，`github-stats.json` 的 `generated_at = 2026-11-26`、`public_repos = 68`、`original = 29`、`modified = 2`、`upstream = 37`、`fork_public = 39`。原先把 12 个 Fork 标为「二次开发」缺乏修改证据；逐一核查本地提交后，只有 `docker_image_pusher`（6 次本人提交）与 `running`（92 次）保留 `MODIFIED`，其余 10 个改回 `UPSTREAM`，避免把上游功能包装成自己的成果。主站 `projects.ts` 的量化生活已标记为 `modified` 并保留来源说明。
 
 ---
 

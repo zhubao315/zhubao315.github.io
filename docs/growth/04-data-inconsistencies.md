@@ -12,7 +12,7 @@
 | D01 | 仓库总数三套口径：GitHub 68 / 线上 67 / 本地源码 61 | `api.github.com/users/zhubao315` → `public_repos: 68`；线上首页 `<strong>67</strong>`；审计开始时本地 `site.ts` → `repoCount: 61` | 品牌可信度；所有引用该数字的页面 | 已改为读取 `github-stats.json` 并重新生成快照（68）；线上待部署 | 已修复（待部署） |
 | D02 | Fork / 非 Fork 口径不一致：API 39/29，本地源码 37/24 | 同上 API；原 `site.ts` → `forkCount: 37`, `nonForkCount: 24` | ABOUT 页"SOURCE: GitHub API"声明与数字不符 | 快照已刷新为 non_fork 29 / fork 39；分类为 29 原创 / 12 二改 / 27 上游 | 已修复（待部署） |
 | D03 | 两处硬编码 "61 个仓库" 绕过单一事实源 | `src/pages/index.astro:266`、`src/pages/work/index.astro:134` | 数据再次漂移 | 同步后远端已改为 `{site.repoCount}`，本地不再出现硬编码 | 已修复 |
-| D04 | 分类口径"28 原创 / 12 二次开发 / 27 上游研究"与数据模型不符 | `projects.ts` 中 18 个项目的 `sourceType` 全部为 `original`，无任何 `modified` | 二次开发贡献无法被识别，上游归因不清 | 扩展 `SourceType` 为 `original \| modified \| research` 并回填 | 待修 |
+| D04 | 分类口径"28 原创 / 12 二次开发 / 27 上游研究"与数据模型不符 | 审计时 `projects.ts` 全部为 `original`，生成数据把 12 个 Fork 标为 `MODIFIED` | 二次开发贡献无法被识别，上游归因不清 | 已按本人提交证据修正为 29 原创 / 2 二改 / 37 上游；量化生活标记为 `modified` 并保留来源说明 | 已修复 |
 | D05 | 本地工作区落后远端 8 个提交 | 审计时本地 HEAD `0354689`；远端 `main` `08fcc15` | 基于本地快照的改动会覆盖线上已有工作（如 `/repositories/`） | 已备份 `backup/pre-growth-sync-20261126` 并合并远端；冲突已解决，构建与链接检查通过 | 已修复 |
 | D06 | 本地构建 23 个 sitemap URL，线上 24 个 | `dist/sitemap-0.xml` 与线上 sitemap 对比；差异为 `/repositories/` | 本地测试无法覆盖线上真实路由 | 同步后重建，现为 24 | 已修复 |
 

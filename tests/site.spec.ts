@@ -1,4 +1,16 @@
+import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
+
+// Derive expected counts from the single source of truth.
+const projectsSource = readFileSync(new URL('../src/data/projects.ts', import.meta.url), 'utf8');
+const projectsBlock = projectsSource.slice(
+  projectsSource.indexOf('export const projects'),
+  projectsSource.indexOf('export const featuredProjects'),
+);
+const projectTotal = (projectsBlock.match(/^    id: '/gm) || []).length;
+const agentTotal = (projectsSource.match(/^    category: 'agent'/gm) || []).length;
+const prototypeTotal = (projectsSource.match(/^    status: 'prototype'/gm) || []).length;
+const originalTotal = (projectsSource.match(/^    sourceType: 'original'/gm) || []).length;
 
 const primaryRoutes = [
   '/',
@@ -128,14 +140,14 @@ test.describe('homepage', () => {
 test.describe('work index', () => {
   test('filters by category, search, query string, and resets', async ({ page }) => {
     await page.goto('/work/', { waitUntil: 'networkidle' });
-    await expect(page.locator('[data-project-card]')).toHaveCount(18);
+    await expect(page.locator('[data-project-card]')).toHaveCount(projectTotal);
 
     await page.getByRole('button', { name: /AI & Agent/ }).click();
-    await expect(page.locator('[data-project-card]:visible')).toHaveCount(2);
+    await expect(page.locator('[data-project-card]:visible')).toHaveCount(agentTotal);
     await expect(page.locator('[data-project-card]:visible').filter({ hasText: 'uSkill' })).toHaveCount(1);
 
     await page.locator('[data-filter-reset]').click();
-    await expect(page.locator('[data-project-card]:visible')).toHaveCount(18);
+    await expect(page.locator('[data-project-card]:visible')).toHaveCount(projectTotal);
 
     await page.locator('[data-project-search]').fill('MBTI');
     await expect(page.locator('[data-project-card]:visible')).toHaveCount(1);
@@ -143,20 +155,20 @@ test.describe('work index', () => {
     await page.locator('[data-filter-reset]').click();
     await page.goto('/work/?filter=agent', { waitUntil: 'networkidle' });
     await expect(page.locator('[data-filter-category="agent"]')).toHaveAttribute('aria-pressed', 'true');
-    await expect(page.locator('[data-project-card]:visible')).toHaveCount(2);
+    await expect(page.locator('[data-project-card]:visible')).toHaveCount(agentTotal);
 
     await page.locator('[data-filter-reset]').click();
     await page.locator('[data-project-status]').selectOption('prototype');
-    await expect(page.locator('[data-project-card]:visible')).toHaveCount(3);
+    await expect(page.locator('[data-project-card]:visible')).toHaveCount(prototypeTotal);
 
     await page.locator('[data-filter-reset]').click();
     await page.locator('[data-project-source]').selectOption('original');
-    await expect(page.locator('[data-project-card]:visible')).toHaveCount(18);
+    await expect(page.locator('[data-project-card]:visible')).toHaveCount(originalTotal);
     await page.locator('[data-project-source]').selectOption('research');
     await expect(page.locator('[data-project-card]:visible')).toHaveCount(0);
     await expect(page.locator('[data-empty-state]')).toBeVisible();
     await page.locator('[data-filter-reset]').click();
-    await expect(page.locator('[data-project-card]:visible')).toHaveCount(18);
+    await expect(page.locator('[data-project-card]:visible')).toHaveCount(projectTotal);
   });
 });
 

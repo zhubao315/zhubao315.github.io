@@ -426,7 +426,7 @@ export const projects: Project[] = [
     nameZh: '量化生活',
     category: 'quantified',
     status: 'active',
-    sourceType: 'original',
+    sourceType: 'modified',
     featured: true,
     tagline: '把十多年运动与健康记录，变成一个可查询的个人数据系统。',
     summary: 'COROS → SQLite → JSON / CSV → GitHub Pages 的长期数据实践。',
@@ -840,6 +840,427 @@ export const projects: Project[] = [
     tech: ['Prompt Engineering'],
     githubUrl: 'https://github.com/zhubao315/uPrompt',
     lastVerified: '2026-11-11',
+  },
+  {
+    id: 'zhuocheng-terminal',
+    slug: 'zhuocheng-terminal',
+    name: '拙诚日课',
+    nameZh: '离线日课与个人修习终端',
+    category: 'creative',
+    status: 'active',
+    sourceType: 'original',
+    featured: false,
+    tagline: '把一部旧手机，变成一张常亮的修身桌面。',
+    summary: '全离线 2.1 信息屏：金句、AI 伴读、曾国藩日课、微习惯与静坐，不需要网络与 API Key。',
+    description:
+      '面向旧设备再利用的离线个人修习终端。默认停留在每日金句全屏信息屏，六个栏目手动左右切换；内容全部在手机内运行，并提供可直接安装的 APK。',
+    tech: ['JavaScript', 'Python', 'WebView', 'Offline-first', 'PhoneBox'],
+    githubUrl: 'https://github.com/zhubao315/zhuocheng-terminal',
+    demoUrl: 'https://zhubao315.github.io/zhuocheng-terminal/',
+    demoLabel: '在线落地页',
+    extraLinks: [
+      { label: '离线版演示', href: 'https://zhubao315.github.io/zhuocheng-terminal/offline.html' },
+      { label: 'APK 下载', href: 'https://zhubao315.github.io/zhuocheng-terminal/releases/zhuocheng-offline-2.0.apk' },
+    ],
+    metrics: [
+      { value: '999', label: '条金句', note: '43 个来源' },
+      { value: '30', label: '条微习惯', note: '标注真实时长' },
+      { value: '2.1', label: '离线信息屏', note: '桥接版 v1.4.4 另存' },
+    ],
+    caseStudy: {
+      context: [
+        '修习类应用通常依赖网络、账号与推送，反而打断日常节奏。拙诚日课把方向反过来：让一台退役手机成为常亮的桌面，打开就在当下这一句，不需要电脑、网络或 API Key。',
+      ],
+      approach: [
+        {
+          index: '01',
+          title: '默认静止，而不是自动轮播',
+          body: '信息屏默认停在每日金句，无顶栏和底导航；金句、伴读、日课、微习惯、静坐、档案六个栏目由用户手动切换，避免被内容流打断。',
+        },
+        {
+          index: '02',
+          title: '离线优先，设备自己就是系统',
+          body: '内容全部在手机内运行，多端预设适配横竖屏、平板与桌面。硬件原型为红米 Note 2（LineageOS 16），APK 基座来自 PhoneBox，离线版只借它承载 WebView。',
+        },
+        {
+          index: '03',
+          title: '把可验证信息写进发布物',
+          body: '落地页、离线演示、桥接版演示与 APK 分别给出入口；APK 标注字节数与 SHA-256，方便用户自行校验。',
+        },
+      ],
+      evidence: [
+        '999 条金句（43 个来源）、999 条 AI 伴读条目、30 条微习惯与曾国藩日课十二条。',
+        '全离线版 2.1 与桥接版 v1.4.4 分别提供演示入口；APK 提供 SHA-256 校验值。',
+        '2026-11-26 实测落地页、离线演示与 APK 下载地址均返回 HTTP 200。',
+      ],
+      boundaries: [
+        'AI 伴读内容是预置的自包含条目，不调用在线模型；不会生成新的个性化内容。',
+        'APK 基于旧设备与 LineageOS 原型，兼容性以仓库说明为准；代码为 MIT，数据许可另行说明。',
+      ],
+    },
+    definition: '拙诚日课是一个全离线的个人修习终端：把旧手机变成常亮的修身桌面，提供金句、AI 伴读、曾国藩日课、微习惯与静坐六个栏目，不需要网络或 API Key。',
+    audience: ['重视日常修习与微习惯的个人用户', '希望再利用旧手机的用户', '关注离线与隐私优先应用的人'],
+    versionNote: '全离线信息屏 2.1（默认），桥接版 v1.4.4 另存；以仓库 CHANGELOG 为准。',
+    evidenceLinks: [
+      { label: '仓库 README 与发布说明', href: 'https://github.com/zhubao315/zhuocheng-terminal#readme' },
+      { label: '离线版演示', href: 'https://zhubao315.github.io/zhuocheng-terminal/offline.html' },
+    ],
+    faqs: [
+      {
+        question: '需要网络或 API Key 吗？',
+        answer: '不需要。默认的全离线版内容全部在手机内运行；AI 伴读是 999 条预置自包含条目，不调用在线模型。',
+      },
+      {
+        question: '可以用哪些设备？',
+        answer: '硬件原型是红米 Note 2（刷入 LineageOS 16），同时提供横竖屏、平板与桌面的多端预设；具体兼容性以仓库说明为准。',
+      },
+      {
+        question: 'APK 怎么验证完整性？',
+        answer: '落地页提供 APK 字节数与 SHA-256 校验值，可下载后自行比对。',
+      },
+    ],
+    schemaType: 'WebApplication',
+    lastVerified: '2026-11-26',
+  },
+  {
+    id: 'ai-agent-master',
+    slug: 'ai-agent-master',
+    name: 'AI-Agent Master',
+    nameZh: 'AI-Agent 平台运维技能',
+    category: 'agent',
+    status: 'active',
+    sourceType: 'original',
+    featured: false,
+    tagline: '把平台运维经验变成可安装、可审计的技能。',
+    summary: 'AI-Agent 0.9.3 全生命周期运维技能：真实审计、资源与 GPU 评估、部署升级回滚、故障诊断。',
+    description:
+      '按标准 Agent Skills 格式封装的运维技能包，包含 8 份真实环境审计报告、16 篇参考与 10 个 runbook，支持原生 Skillshub 安装。它不是产品源码仓库。',
+    tech: ['Agent Skills', 'Docker', 'Python', 'Runbooks'],
+    githubUrl: 'https://github.com/zhubao315/ai-agent-master',
+    metrics: [
+      { value: '8', label: '份审计报告', note: '平台/架构/服务/资源/依赖/风险等' },
+      { value: '16', label: '篇参考', note: '另有 10 个 runbook' },
+      { value: '7', label: '张 RTX 4090', note: '128 CPU / 499 GiB 基线' },
+    ],
+    caseStudy: {
+      context: [
+        'AI Agent 平台的运维知识常散落在工单与个人笔记里。这个项目把真实环境的审计、容量估算、部署、升级与回滚流程整理成可安装、可校验的技能包。',
+      ],
+      approach: [
+        { index: '01', title: '先审计真实环境', body: '报告来自实际平台与架构核查，不给未经验证的容量或性能结论。' },
+        { index: '02', title: '把容量估算写成可复核的口径', body: '双 Docker 引擎、四服务、128 CPU / 499 GiB / 7×RTX4090 作为基线，并标注置信度。' },
+        { index: '03', title: '安装与验证分开', body: '原生 Skillshub 上传成功、读回内容逐字节一致；但实际调用因上游模型不可达返回 HTTP 400，记为待复验而非成功。' },
+      ],
+      evidence: [
+        '8 份审计报告、16 篇 references、10 个 runbook（12 节结构）。',
+        '原生 Skillshub 上传与读回一致，安装位置与结构校验有记录（见 install-verification.md）。',
+        'Agent 实际调用未通过：/api/invoke 返回 HTTP 400，根因为上游 192.168.1.3:18087 不可达，非 Skill 缺陷。',
+      ],
+      boundaries: [
+        '仓库是独立技能包，不冒充产品源码仓库；9090 是文档站，产品实例在内部地址。',
+        '上游模型不可达时无法完成真实调用验证，恢复后需复验。',
+      ],
+    },
+    definition: 'AI-Agent Master 是一个按 Agent Skills 标准封装的 AI-Agent 平台运维技能，覆盖真实环境审计、GPU 与容量评估、部署升级回滚、故障诊断与原生 Skillshub 安装。',
+    audience: ['负责 AI Agent 平台运维的工程师', '需要 GPU 资源评估与容量估算的团队', '使用 OpenCode / Skillshub 的用户'],
+    versionNote: '技能版本 v1.0.0（标签 skill-v1.0.0）；许可证 Apache-2.0，以仓库 manifest 为准。',
+    evidenceLinks: [
+      { label: 'README 与验证记录', href: 'https://github.com/zhubao315/ai-agent-master#readme' },
+      { label: '安装验证', href: 'https://github.com/zhubao315/ai-agent-master/blob/main/install-verification.md' },
+    ],
+    faqs: [
+      {
+        question: '这是 AI-Agent 产品源码吗？',
+        answer: '不是。这是独立的运维技能仓库，不冒充产品源码仓库；产品实例在内部地址，仓库只提供方法与 runbook。',
+      },
+      {
+        question: '安装后能直接调用 Agent 吗？',
+        answer: '安装与结构校验已验证通过；实际调用仍需上游模型可达。当前记录中 /api/invoke 因上游不可达返回 HTTP 400，需恢复后复验。',
+      },
+    ],
+    schemaType: 'SoftwareApplication',
+    lastVerified: '2026-11-26',
+  },
+  {
+    id: 'gdmp-master',
+    slug: 'gdmp-master',
+    name: 'GDMP Master',
+    nameZh: 'GDMP 无代码平台运维知识包',
+    category: 'infrastructure',
+    status: 'active',
+    sourceType: 'original',
+    featured: false,
+    tagline: '版本化的无代码平台运维知识，而不是 AI 执行器。',
+    summary: 'GDMP 运维知识包：18 篇参考、11 个 runbook、升级兼容与备份恢复；明确无 AI Skill 运行时。',
+    description:
+      '面向 GDMP 无代码平台的版本化运维知识包，包含真实审计、技术栈说明、部署与应用发布、诊断、性能调优、升级与回滚流程。',
+    tech: ['Runbooks', 'No-code', 'Spring Boot', 'PostgreSQL'],
+    githubUrl: 'https://github.com/zhubao315/gdmp-master',
+    metrics: [
+      { value: '8', label: '份审计报告', note: '平台/架构/模块/服务/资源/数据/风险等' },
+      { value: '18', label: '篇参考', note: '另有 11 个 runbook' },
+      { value: '0', label: 'AI 运行时', note: 'native_skill_runtime=false' },
+    ],
+    caseStudy: {
+      context: [
+        '无代码平台的升级与回滚经常依赖口耳相传的经验。这个项目把真实审计与可复核的 runbook 整理成带版本与校验的安装包。',
+      ],
+      approach: [
+        { index: '01', title: '先说明它不是什么', body: 'manifest 明确 native_skill_runtime=false、ai_execution=not_enabled；知识包已安装不等于 AI 执行能力已启用。' },
+        { index: '02', title: '把变更约束写进流程', body: '生产只读、变更审批、dry-run、凭据不落盘；DB 与应用回滚分离。' },
+        { index: '03', title: '不伪造验证结果', body: '场景测试标待执行，运行时功能与容量基线标待确认；只登记已通过的安装与 SHA256 校验。' },
+      ],
+      evidence: [
+        '8 份真实审计报告、18篇参考、11 个 runbook（11 节结构）。',
+        '知识包 SHA256 校验通过，安装到 .installed/1.0.0，读回内容一致。',
+        '9191 是文档站；产品实例在内部地址，没有后台授权时不宣称运行时功能已验证。',
+      ],
+      boundaries: [
+        'GDMP WAR 中没有 ai-agent / mcp / skill / llm / vector / embedding 组件；文档中的「AI 能力」是业务功能。',
+        '没有 GDMP 后台或宿主机授权，运行时功能与容量基线标记为待确认，场景测试待执行。',
+      ],
+    },
+    definition: 'GDMP Master 是 GDMP 无代码平台的版本化运维知识包，提供真实审计、升级兼容、备份恢复与 runbook；它明确不提供 AI Skill 运行时。',
+    audience: ['维护 GDMP 无代码平台的运维人员', '需要升级兼容与回滚流程的团队'],
+    versionNote: '知识包 v1.0.0（标签 skill-v1.0.0）；安装方式见 README，配置以 manifest.yaml 为准。',
+    evidenceLinks: [
+      { label: 'README 与能力说明', href: 'https://github.com/zhubao315/gdmp-master#readme' },
+    ],
+    faqs: [
+      {
+        question: '安装知识包会启用 AI 执行能力吗？',
+        answer: '不会。manifest.yaml 明确 native_skill_runtime=false、ai_execution=not_enabled；GDMP 本身没有 AI Skill 运行时。',
+      },
+      {
+        question: '有在线产品演示吗？',
+        answer: '没有公开实例。9191 是文档站，产品实例在内部地址；未经授权的功能均标记为待确认。',
+      },
+    ],
+    lastVerified: '2026-11-26',
+  },
+  {
+    id: 'ulife-os-infra',
+    slug: 'ulife-os-infra',
+    name: 'uLife OS Infra',
+    nameZh: '个人智能体操作系统 Skill',
+    category: 'agent',
+    status: 'active',
+    sourceType: 'original',
+    featured: false,
+    tagline: '让 AI 助理拥有身份、记忆与冷启动预算。',
+    summary: '个人 AI 操作系统构建与治理技能包：身份契约、四层记忆、冷启动预算与 MCP / A2A / Skills 协议层。',
+    description:
+      '把「个人智能体操作系统」变成可安装、可审计、可复用的技能包。核心只需 Markdown，脚本为可选 Python 标准库工具，支持 Claude Code / Codex / Cursor 等客户端。',
+    tech: ['Agent Skills', 'Markdown', 'Python', 'MCP', 'A2A'],
+    githubUrl: 'https://github.com/zhubao315/ulife-os-infra',
+    metrics: [
+      { value: '4', label: '种工作模式', note: '统一 CLI（v2.0）' },
+      { value: '4', label: '层记忆', note: '身份契约 + 冷启动预算' },
+      { value: '0', label: '第三方运行时依赖', note: '核心只需要 Markdown' },
+    ],
+    caseStudy: {
+      context: [
+        '普通 AI 聊天是无状态的：每次从零开始，不记得你是谁。这个项目把个人 AI 基础设施从理念变成可安装、可审计的技能包。',
+      ],
+      approach: [
+        { index: '01', title: '先写身份契约', body: '用十文件模板让 Agent 了解你的身份、目标与边界，从一次性工具升级为持续理解你的系统。' },
+        { index: '02', title: '用预算控制冷启动', body: 'T1/T2/T3 冷启动上下文预算表与人机接力检查点，避免每次对话塞入全部上下文。' },
+        { index: '03', title: '协议层与护栏分开', body: 'MCP / A2A / Agent Skills 与 Code-as-Glue 脚本编排属于协议与执行层；人机接力护栏保留人工确认点。' },
+      ],
+      evidence: [
+        'v1.1 对齐指南 v2.1：冷启动预算、人机接力检查点、Code-as-Glue、异构算力路由与 Rework Rate 观测。',
+        'v2.0 提供四种工作模式与统一 CLI；核心零第三方依赖，脚本仅用 Python 标准库。',
+        '安装可用 npx skills add 或手动放置 SKILL.md；审计脚本可检查骨架是否合规。',
+      ],
+      boundaries: [
+        '核心只需要 Markdown；scripts/ 为可选 Python 3 标准库工具，不提供托管服务。',
+        '项目对齐公开指南与 PAI 框架，不宣称属于任何机构官方实现。',
+      ],
+    },
+    definition: 'uLife OS Infra 是一个可安装的个人智能体操作系统 Skill，用身份契约、四层记忆、冷启动预算与 MCP / A2A / Skills 协议层，把一次性对话变成持续理解你的系统。',
+    audience: ['希望 AI 助理长期理解自己的个人用户', '搭建个人 AI 基础设施的开发者', '关注上下文工程与智能体记忆的人'],
+    versionNote: 'README 记录 v2.0 四种工作模式与统一 CLI；v1.1 对齐指南 v2.1，实际版本以仓库为准。',
+    evidenceLinks: [
+      { label: 'README 与安装方式', href: 'https://github.com/zhubao315/ulife-os-infra#readme' },
+    ],
+    faqs: [
+      {
+        question: '需要数据库或云服务吗？',
+        answer: '不需要。核心只需要 Markdown；scripts/ 是可选 Python 标准库工具，没有托管服务依赖。',
+      },
+      {
+        question: '和普通的「人设提示词」有什么不同？',
+        answer: '它把身份写成可审计的十文件契约，配上四层记忆、冷启动预算与人机接力检查点，而不是一段每次复制的提示词。',
+      },
+    ],
+    schemaType: 'SoftwareApplication',
+    lastVerified: '2026-11-26',
+  },
+  {
+    id: 'active-watch',
+    slug: 'active-watch',
+    name: 'ACTIVE Watch',
+    nameZh: 'ACTIVE 四站运营中枢',
+    category: 'infrastructure',
+    status: 'active',
+    sourceType: 'original',
+    featured: false,
+    tagline: '四个运动站点的巡检、配额账本与品牌单一事实源。',
+    summary: 'ACTIVE 四站运营中枢：每日巡检、共享 COROS 配额账本与品牌单一事实源；本仓库不发布页面。',
+    description:
+      '健康 / 跑步 / 骑行 / 徒步四个站点的工程治理仓库。承担每日巡检、共享 COROS FIT 下载配额账本与四站共享品牌资产的唯一编辑处。',
+    tech: ['GitHub Actions', 'Node.js', 'Python', 'Brand governance'],
+    githubUrl: 'https://github.com/zhubao315/active-watch',
+    metrics: [
+      { value: '4', label: '个站点', note: 'HEALTH / RUNNING / CYCLING / HIKING' },
+      { value: '1', label: '张巡检 issue', note: '异常时创建/更新，恢复后关闭' },
+      { value: '50', label: '次每日 FIT 额度', note: '三站共享，租约式账本' },
+    ],
+    caseStudy: {
+      context: [
+        '多个独立站点同时同步设备数据、共享同一份配额与品牌资产时，最容易出现的不是功能缺失，而是状态漂移。ACTIVE Watch 把这些约束集中到一个工程中枢。',
+      ],
+      approach: [
+        { index: '01', title: '巡检只在真正需要处理时开 issue', body: '每天检查四站 HTTP、标题、品牌残留、数据新鲜度与失败工作流；异常时维护唯一一张 watch:incident issue。' },
+        { index: '02', title: '配额是租约，不是配额表', body: '同步前 reserve、同步后 reconcile；未用完额度当天归还另外两站；账本不可达时 fail-open 回退保守值。' },
+        { index: '03', title: '品牌单一事实源 + Guard', body: 'brand/ 是四站共享资产的唯一编辑处，sync.sh 同步并重写清单；各仓 Brand Guard 校验文件与清单一致。' },
+      ],
+      evidence: [
+        '巡检时间 05:40 UTC；范围包括 HTTP、标题、blob 同源、favicon 字节一致与数据新鲜度。',
+        'COROS 配额账本保留 3 天，单站默认取 10、硬上限 45；失败策略为 fail-open。',
+        '品牌版本 3.0 — PRECISION MOTION，含真 SVG 矢量与四站子品牌。',
+      ],
+      boundaries: [
+        '本仓库不发布页面，只承担巡检、账本与品牌源；它不是面向普通消费者的产品。',
+        '写 state/ 需要仓库 secret ACTIVE_STATE_TOKEN；轮换时需同步更新三个运动站的 secret。',
+      ],
+    },
+    definition: 'ACTIVE Watch 是 HEALTH、RUNNING、CYCLING、HIKING 四站的工程运营中枢：每日巡检、共享 COROS 配额账本与品牌单一事实源，不发布面向用户的页面。',
+    audience: ['维护多个静态数据站点的开发者', '关注品牌一致性与运维自动化的实践者'],
+    versionNote: '品牌版本 3.0 — PRECISION MOTION；巡检与账本逻辑以仓库脚本为准。',
+    evidenceLinks: [
+      { label: 'README 与巡检说明', href: 'https://github.com/zhubao315/active-watch#readme' },
+    ],
+    faqs: [
+      {
+        question: '这是一个面向普通用户的运动产品吗？',
+        answer: '不是。它不发布页面，只做巡检、配额账本与品牌资产治理，属于技术案例。',
+      },
+      {
+        question: '配额账本不可达时会中断同步吗？',
+        answer: '不会。失败策略是 fail-open：回退到保守值 10，运动站同步不会因记账失败而中断。',
+      },
+    ],
+    lastVerified: '2026-11-26',
+  },
+  {
+    id: 'uwise',
+    slug: 'uwise',
+    name: 'uWise',
+    nameZh: '领域知识百科',
+    category: 'knowledge',
+    status: 'active',
+    sourceType: 'original',
+    featured: false,
+    tagline: '把知识转化为可行动的领域结构。',
+    summary: 'AI 驱动的领域知识百科：Area → Project → Task 框架与四大核心身份，MkDocs 每日自动更新。',
+    description:
+      '以架构师、投资人、终身学习者、生活艺术家四种身份组织的领域知识库，用 MkDocs Material 发布，GitHub Actions 每日自动更新内容。',
+    tech: ['MkDocs', 'Material', 'Markdown', 'GitHub Actions'],
+    githubUrl: 'https://github.com/zhubao315/uWise',
+    demoUrl: 'https://zhubao315.github.io/uWise/',
+    demoLabel: '阅读百科',
+    metrics: [
+      { value: '4', label: '个核心身份', note: '架构师 / 投资人 / 学习者 / 生活艺术家' },
+      { value: '2.0.0', label: '包版本', note: '以 pyproject.toml 为准' },
+      { value: '1', label: '条更新链路', note: 'GitHub Actions 每日自动更新' },
+    ],
+    caseStudy: {
+      context: [
+        '知识百科容易停在资料堆积。uWise 用领域驱动框架把 Area、Project、Task 串起来，让内容指向行动而不是收藏。',
+      ],
+      approach: [
+        { index: '01', title: '用身份组织领域', body: '四大核心身份对应不同知识领域与决策场景，避免把所有内容塞进一个扁平分类。' },
+        { index: '02', title: '从领域到任务', body: 'Area → Project → Task 的层级让阅读结果可以落到具体行动。' },
+        { index: '03', title: '让更新可验证', body: '内容以 Markdown 维护，站点由 GitHub Actions 每日更新，版本与依赖写在 pyproject.toml。' },
+      ],
+      evidence: [
+        'README 明确四大核心身份与领域驱动框架；站点已上线（2026-11-26 实测 HTTP 200）。',
+        'pyproject.toml 记录 version 2.0.0、MIT 协议；技术栈为 MkDocs + Material。',
+      ],
+      boundaries: [
+        '内容是持续更新的知识整理，不构成投资、心理或医疗建议。',
+        '自动抓取的内容以来源说明为准，具体领域条目以站点最新页面为准。',
+      ],
+    },
+    definition: 'uWise 是一个 AI 驱动的领域知识百科，用架构师、投资人、终身学习者与生活艺术家四种身份和 Area → Project → Task 框架，把知识组织成可行动的领域结构。',
+    audience: ['需要长期组织领域知识的个人', '关注知识到行动转化的人', '投资研究与终身学习的实践者'],
+    versionNote: 'pyproject.toml 记录 2.0.0；内容每日自动更新，条目以站点最新版本为准。',
+    evidenceLinks: [
+      { label: 'README 与领域框架', href: 'https://github.com/zhubao315/uWise#readme' },
+      { label: '在线百科', href: 'https://zhubao315.github.io/uWise/' },
+    ],
+    faqs: [
+      {
+        question: 'uWise 和知识库工程 Skill 有什么区别？',
+        answer: 'uWise 是持续更新的领域知识百科与阅读入口；知识库工程是只读优先的治理 Skill，负责诊断与审计，两者定位不同。',
+      },
+      {
+        question: '内容会每天更新吗？',
+        answer: 'README 记录 GitHub Actions 每日自动更新知识内容；具体条目的时间与来源以站点页面为准。',
+      },
+    ],
+    lastVerified: '2026-11-26',
+  },
+  {
+    id: 'piglet-docker',
+    slug: 'piglet-docker',
+    name: 'Piglet Docker',
+    nameZh: 'AI 编程沙箱',
+    category: 'infrastructure',
+    status: 'experiment',
+    sourceType: 'original',
+    featured: false,
+    tagline: '基于 Pigsty 的轻量级 AI Coding Sandbox。',
+    summary: '把 Claude API 代理、Code-Server、JupyterLab、PostgreSQL 与 Nginx 打进一个可自托管的 Docker 镜像。',
+    description:
+      '一个实验性的 Docker 运行时环境：通过统一入口提供 AI API 格式转换、浏览器版 VS Code、交互计算环境与带向量搜索的数据库。',
+    tech: ['Docker', 'Nginx', 'PostgreSQL', 'Code-Server', 'JupyterLab'],
+    githubUrl: 'https://github.com/zhubao315/piglet-docker',
+    metrics: [
+      { value: '5', label: '个组件', note: '代理 / IDE / Jupyter / PG / Nginx' },
+      { value: '1', label: '个镜像', note: 'zhubao315/piglet:latest' },
+    ],
+    caseStudy: {
+      context: [
+        'AI 编程环境通常需要组合多个服务。Piglet Docker 把这些组件收进一个镜像，便于本地或服务器上一键启动。',
+      ],
+      approach: [
+        { index: '01', title: '统一入口', body: 'Nginx 暴露 80 端口，各组件通过固定端口提供能力，减少配置分散。' },
+        { index: '02', title: '把凭据留在运行时', body: 'VLLM_BASE_URL、DEFAULT_MODEL 与 POSTGRES_PASSWORD 通过环境变量注入，不写进镜像。' },
+      ],
+      evidence: [
+        'README 给出 Docker Hub 拉取与本地构建两种运行方式。',
+        '组件与端口清单公开：8080 代理、8443 Code-Server、8888 JupyterLab、5432 PostgreSQL。',
+      ],
+      boundaries: [
+        '没有公开在线演示；需要自托管并自行配置上游模型地址与数据库密码。',
+        '仓库最近推送为 2026-04-21，当前作为实验项目记录，不宣称生产可用性。',
+      ],
+    },
+    definition: 'Piglet Docker 是一个基于 Pigsty 的轻量级 AI 编程沙箱镜像，把 API 代理、Code-Server、JupyterLab、PostgreSQL 与 Nginx 组合成可自托管的环境。',
+    audience: ['需要本地 AI 编程环境的开发者', '想快速体验容器化工具链的团队'],
+    versionNote: '镜像标签 latest；仓库最近推送 2026-04-21，作为实验项目记录。',
+    evidenceLinks: [
+      { label: 'README 与运行方式', href: 'https://github.com/zhubao315/piglet-docker#readme' },
+    ],
+    faqs: [
+      {
+        question: '有在线演示吗？',
+        answer: '没有。这是一个需要自托管的 Docker 镜像，需自行配置上游模型地址与数据库密码。',
+      },
+    ],
+    lastVerified: '2026-11-26',
   },
 ];
 
