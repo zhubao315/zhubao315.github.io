@@ -10,6 +10,7 @@ import '../styles/responsive.css';
 import '../styles/brand-v2.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import PostHog from '../components/posthog.astro';
 import { site } from '../data/site';
 
 interface Props {
@@ -120,6 +121,7 @@ const websiteSchema = {
     <script is:inline>
       document.documentElement.classList.add('js');
     </script>
+    <PostHog />
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
     {crumbs.length > 0 && (

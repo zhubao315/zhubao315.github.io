@@ -64,10 +64,10 @@ const title = `${book.title} · 自著书稿 | 朱宝 ZHUBAO`;
         <p style="line-height:1.85;color:var(--muted);max-width:70ch">{book.summary}</p>
 
         <div class="book-actions">
-          <a class="text-link" href={readerUrl(book.readerId)} target="_blank" rel="noreferrer">
+          <a class="text-link" href={readerUrl(book.readerId)} target="_blank" rel="noreferrer" data-book-outbound="reader" data-link-location="hero">
             在线阅读全书 <ArrowUpRight size={14} aria-hidden="true" />
           </a>
-          <a class="text-link" href={noteUrl(book.noteAlias)} target="_blank" rel="noreferrer">
+          <a class="text-link" href={noteUrl(book.noteAlias)} target="_blank" rel="noreferrer" data-book-outbound="notes" data-link-location="hero">
             公开读书笔记 <ArrowUpRight size={14} aria-hidden="true" />
           </a>
           {book.companion && (
@@ -131,7 +131,7 @@ const title = `${book.title} · 自著书稿 | 朱宝 ZHUBAO`;
             <h3>公开笔记 · uRead</h3>
             <ul>
               <li>
-                <a href={noteUrl(book.noteAlias)} target="_blank" rel="noreferrer">
+                <a href={noteUrl(book.noteAlias)} target="_blank" rel="noreferrer" data-book-outbound="notes" data-link-location="references">
                   {book.noteTitle} <ArrowUpRight size={12} aria-hidden="true" />
                 </a>
               </li>
@@ -177,9 +177,28 @@ const title = `${book.title} · 自著书稿 | 朱宝 ZHUBAO`;
           {book.facts.map((fact) => <li>{fact}</li>)}
         </ul>
         <p style="margin-top:18px;font-size:0.8rem;color:var(--muted);line-height:1.7">
-          阅读器：<a href={readerUrl(book.readerId)} target="_blank" rel="noreferrer">uRead #{book.readerId}</a>
+          阅读器：<a href={readerUrl(book.readerId)} target="_blank" rel="noreferrer" data-book-outbound="reader" data-link-location="sidebar">uRead #{book.readerId}</a>
         </p>
       </aside>
     </div>
   </section>
 </BaseLayout>
+
+<script is:inline define:vars={{ bookSlug: book.slug, bookDirection: book.direction }}>
+  document.querySelectorAll('[data-book-outbound]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const outboundType = link.dataset.bookOutbound;
+      const outboundDetails = {
+        book_slug: bookSlug,
+        book_direction: bookDirection,
+        link_location: link.dataset.linkLocation,
+        outbound_type: outboundType,
+      };
+      window.posthog?.capture(
+        outboundType === 'reader' ? 'book_reader_opened' : 'book_notes_opened',
+        outboundDetails,
+      );
+      window.posthog?.logger?.info('book outbound link opened', outboundDetails);
+    });
+  });
+</script>
