@@ -48,6 +48,8 @@ const seenDescriptions = new Map();
 const pageRecords = [];
 
 for (const file of htmlFiles) {
+  // Search-engine ownership proof files are intentionally minimal; skip them.
+  if (/^google[0-9a-f]+\.html$/i.test(path.basename(file))) continue;
   const html = await fs.readFile(file, 'utf8');
   const rel = path.relative(DIST, file).split(path.sep).join('/');
   const route = rel === 'index.html' ? '/' : '/' + rel.replace(/\/index\.html$/, '/').replace(/\.html$/, '/');
