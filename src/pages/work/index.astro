@@ -200,6 +200,17 @@ const featuredCount = workProjects.filter((project) => project.featured).length;
       });
     };
 
+    const captureFilterApplied = (filterType: 'category' | 'status' | 'source' | 'reset') => {
+      const filterState = {
+        filter_type: filterType,
+        category: activeCategory,
+        status: statusSelect?.value ?? 'all',
+        source: sourceSelect?.value ?? 'all',
+      };
+      window.posthog?.capture('portfolio_filter_applied', filterState);
+      window.posthog?.logger?.info('portfolio filters applied', filterState);
+    };
+
     const applyFilters = () => {
       const query = (searchInput?.value ?? '').trim().toLowerCase();
       const status = statusSelect?.value ?? 'all';
@@ -224,11 +235,18 @@ const featuredCount = workProjects.filter((project) => project.featured).length;
       button.addEventListener('click', () => {
         setCategory(button.dataset.filterCategory ?? 'all');
         applyFilters();
+        captureFilterApplied('category');
       });
     });
 
-    statusSelect?.addEventListener('change', applyFilters);
-    sourceSelect?.addEventListener('change', applyFilters);
+    statusSelect?.addEventListener('change', () => {
+      applyFilters();
+      captureFilterApplied('status');
+    });
+    sourceSelect?.addEventListener('change', () => {
+      applyFilters();
+      captureFilterApplied('source');
+    });
     searchInput?.addEventListener('input', applyFilters);
 
     resetButton?.addEventListener('click', () => {
@@ -237,6 +255,7 @@ const featuredCount = workProjects.filter((project) => project.featured).length;
       if (sourceSelect) sourceSelect.value = 'all';
       if (searchInput) searchInput.value = '';
       applyFilters();
+      captureFilterApplied('reset');
       searchInput?.focus();
     });
 

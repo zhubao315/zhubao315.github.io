@@ -107,12 +107,12 @@ const projectSchema = {
           <div class="project-hero-links">
             {
               project.demoUrl && (
-                <a class="button" href={project.demoUrl} target="_blank" rel="noreferrer">
+                <a class="button" href={project.demoUrl} target="_blank" rel="noreferrer" data-project-outbound="live_site" data-link-location="hero">
                   {project.demoLabel ?? '在线体验'} <ArrowUpRight size={16} stroke-width={1.5} aria-hidden="true" />
                 </a>
               )
             }
-            <a class="button button--ghost" href={project.githubUrl} target="_blank" rel="noreferrer">
+            <a class="button button--ghost" href={project.githubUrl} target="_blank" rel="noreferrer" data-project-outbound="repository" data-link-location="hero">
               GitHub <ArrowUpRight size={16} stroke-width={1.5} aria-hidden="true" />
             </a>
           </div>
@@ -274,7 +274,7 @@ const projectSchema = {
                   <h2>打开各个独立站点</h2>
                   <div class="extra-links">
                     {project.extraLinks.map((link) => (
-                      <a href={link.href} target="_blank" rel="noreferrer">
+                      <a href={link.href} target="_blank" rel="noreferrer" data-project-outbound="live_site" data-link-location="extra_links">
                         {link.label} <ArrowUpRight size={16} stroke-width={1.5} aria-hidden="true" />
                       </a>
                     ))}
@@ -321,16 +321,16 @@ const projectSchema = {
             <div class="sidebar-block">
               <p class="sidebar-label">LINKS</p>
               <div class="sidebar-links">
-                <a href={project.githubUrl} target="_blank" rel="noreferrer">
+                <a href={project.githubUrl} target="_blank" rel="noreferrer" data-project-outbound="repository" data-link-location="sidebar">
                   <span>GitHub repository</span><span>↗</span>
                 </a>
                 {project.demoUrl && (
-                  <a href={project.demoUrl} target="_blank" rel="noreferrer">
+                  <a href={project.demoUrl} target="_blank" rel="noreferrer" data-project-outbound="live_site" data-link-location="sidebar">
                     <span>{project.demoLabel ?? 'Live site'}</span><span>↗</span>
                   </a>
                 )}
                 {project.extraLinks?.map((link) => (
-                  <a href={link.href} target="_blank" rel="noreferrer">
+                  <a href={link.href} target="_blank" rel="noreferrer" data-project-outbound="live_site" data-link-location="sidebar_extra">
                     <span>{link.label}</span><span>↗</span>
                   </a>
                 ))}
@@ -409,3 +409,23 @@ const projectSchema = {
     </nav>
   </article>
 </BaseLayout>
+
+<script is:inline define:vars={{ projectSlug: project.slug, projectCategory: project.category, projectSource: project.sourceType }}>
+  document.querySelectorAll('[data-project-outbound]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const outboundType = link.dataset.projectOutbound;
+      const outboundDetails = {
+        project_slug: projectSlug,
+        project_category: projectCategory,
+        project_source: projectSource,
+        link_location: link.dataset.linkLocation,
+        outbound_type: outboundType,
+      };
+      window.posthog?.capture(
+        outboundType === 'repository' ? 'project_repository_opened' : 'project_live_site_opened',
+        outboundDetails,
+      );
+      window.posthog?.logger?.info('project outbound link opened', outboundDetails);
+    });
+  });
+</script>
