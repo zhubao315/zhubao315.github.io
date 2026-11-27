@@ -1037,6 +1037,7 @@ export const projects: Project[] = [
         '999 条金句（43 个来源）、999 条 AI 伴读条目、30 条微习惯与曾国藩日课十二条。',
         '全离线版 2.1 与桥接版 v1.4.4 分别提供演示入口；APK 提供 SHA-256 校验值。',
         '2026-11-26 实测落地页、离线演示与 APK 下载地址均返回 HTTP 200。',
+        '2026-11-27 本地执行 pytest -q：22 项测试全部通过。',
       ],
       boundaries: [
         'AI 伴读内容是预置的自包含条目，不调用在线模型；不会生成新的个性化内容。',
@@ -1045,7 +1046,7 @@ export const projects: Project[] = [
     },
     definition: '拙诚日课是一个全离线的个人修习终端：把旧手机变成常亮的修身桌面，提供金句、AI 伴读、曾国藩日课、微习惯与静坐六个栏目，不需要网络或 API Key。',
     audience: ['重视日常修习与微习惯的个人用户', '希望再利用旧手机的用户', '关注离线与隐私优先应用的人'],
-    versionNote: '全离线信息屏 2.1（默认），桥接版 v1.4.4 另存；以仓库 CHANGELOG 为准。',
+    versionNote: '全离线信息屏 2.1（默认），桥接版 v1.4.4 另存；仓库无 Git tag，以 README / CHANGELOG 为准。',
     evidenceLinks: [
       { label: '仓库 README 与发布说明', href: 'https://github.com/zhubao315/zhuocheng-terminal#readme' },
       { label: '离线版演示', href: 'https://zhubao315.github.io/zhuocheng-terminal/offline.html' },
@@ -1063,9 +1064,13 @@ export const projects: Project[] = [
         question: 'APK 怎么验证完整性？',
         answer: '落地页提供 APK 字节数与 SHA-256 校验值，可下载后自行比对。',
       },
+      {
+        question: '六个栏目怎么切换？会打扰我吗？',
+        answer: '不会自动轮播。默认停在每日金句全屏信息屏，可通过滑动、点击左右半区、点栏目名或方向键手动切换；长按进入配置。',
+      },
     ],
     schemaType: 'WebApplication',
-    lastVerified: '2026-11-26',
+    lastVerified: '2026-11-27',
   },
   {
     id: 'ai-agent-master',

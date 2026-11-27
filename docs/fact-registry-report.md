@@ -1,6 +1,6 @@
 # Fact Registry Report
 
-- Generated: 2026-11-26T10:52:00Z
+- Generated: 2026-11-27T01:28:35Z
 - Last verified: 2026-11-26
 - Schema: `schemas/portfolio-facts.schema.json` (valid)
 - Facts: 16 (2 derived)
