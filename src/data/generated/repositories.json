@@ -18,7 +18,7 @@
     ],
     "created_at": "2026-11-13T10:07:31Z",
     "updated_at": "2026-11-25T01:29:50Z",
-    "pushed_at": "2026-11-26T02:09:14Z",
+    "pushed_at": "2026-11-27T01:41:25Z",
     "size_kb": 30595,
     "stars": 0,
     "forks": 0,
@@ -67,7 +67,7 @@
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-25T16:02:52Z"
+      "date": "2026-11-26T15:46:02Z"
     }
   },
   {
@@ -751,8 +751,8 @@
     "workflow_count": 35,
     "last_run": {
       "status": "completed",
-      "conclusion": "failure",
-      "date": "2026-11-26T08:26:48Z"
+      "conclusion": "success",
+      "date": "2026-11-26T10:08:17Z"
     }
   },
   {
@@ -1423,6 +1423,55 @@
     "latest_release": null,
     "workflow_count": 0,
     "last_run": null
+  },
+  {
+    "name": "growth-master",
+    "full_name": "zhubao315/growth-master",
+    "description": "ZHUBAO Growth Master — evidence-backed SEO / GEO / content / release operations Skill for a personal brand and open-source project matrix.",
+    "homepage": "https://github.com/zhubao315/growth-master",
+    "default_branch": "main",
+    "language": "Python",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "topics": [],
+    "created_at": "2026-11-26T11:54:03Z",
+    "updated_at": "2026-11-26T11:58:25Z",
+    "pushed_at": "2026-11-27T01:24:49Z",
+    "size_kb": 29,
+    "stars": 0,
+    "forks": 0,
+    "has_pages": false,
+    "category": "BUILD",
+    "source_type": "ORIGINAL",
+    "status": "ACTIVE",
+    "file_count": 30,
+    "languages": {
+      "Python": 14164
+    },
+    "top_languages": [
+      {
+        "name": "Python",
+        "pct": 100
+      }
+    ],
+    "has_readme": true,
+    "has_license_file": false,
+    "has_changelog": false,
+    "has_tests": true,
+    "has_docs": false,
+    "workflow_files": [
+      ".github/workflows/ci.yml"
+    ],
+    "large_files": [],
+    "pages_config": null,
+    "latest_release": null,
+    "workflow_count": 1,
+    "last_run": {
+      "status": "completed",
+      "conclusion": "success",
+      "date": "2026-11-27T01:24:51Z"
+    }
   },
   {
     "name": "kubesphere",
@@ -2721,38 +2770,38 @@
     ],
     "created_at": "2022-02-11T03:16:21Z",
     "updated_at": "2026-11-25T01:29:46Z",
-    "pushed_at": "2026-11-26T08:06:44Z",
-    "size_kb": 37483,
+    "pushed_at": "2026-11-27T01:41:03Z",
+    "size_kb": 37783,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
     "category": "BUILD",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 590,
+    "file_count": 611,
     "languages": {
-      "CSS": 205209,
-      "Astro": 181102,
-      "TypeScript": 114914,
+      "CSS": 207804,
+      "Astro": 185498,
+      "TypeScript": 142183,
       "Python": 108967,
-      "JavaScript": 71202
+      "JavaScript": 96106
     },
     "top_languages": [
       {
         "name": "CSS",
-        "pct": 30
+        "pct": 28
       },
       {
         "name": "Astro",
-        "pct": 27
+        "pct": 25
       },
       {
         "name": "TypeScript",
-        "pct": 17
+        "pct": 19
       },
       {
         "name": "Python",
-        "pct": 16
+        "pct": 15
       }
     ],
     "has_readme": true,
@@ -2761,7 +2810,8 @@
     "has_tests": true,
     "has_docs": true,
     "workflow_files": [
-      ".github/workflows/deploy.yml"
+      ".github/workflows/deploy.yml",
+      ".github/workflows/external-links.yml"
     ],
     "large_files": [],
     "pages_config": null,
@@ -2770,7 +2820,7 @@
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-26T08:06:45Z"
+      "date": "2026-11-27T01:41:05Z"
     }
   },
   {
@@ -3350,20 +3400,20 @@
     ],
     "created_at": "2026-03-25T02:43:26Z",
     "updated_at": "2026-11-25T09:31:32Z",
-    "pushed_at": "2026-11-26T08:49:58Z",
-    "size_kb": 483750,
+    "pushed_at": "2026-11-26T11:39:42Z",
+    "size_kb": 489658,
     "stars": 0,
     "forks": 0,
     "has_pages": true,
     "category": "THINK",
     "source_type": "ORIGINAL",
     "status": "ACTIVE",
-    "file_count": 4401,
+    "file_count": 4461,
     "languages": {
-      "Python": 1433302,
+      "Python": 1433945,
       "HTML": 795105,
-      "TypeScript": 615541,
-      "JavaScript": 557531,
+      "TypeScript": 621963,
+      "JavaScript": 571945,
       "SCSS": 434685,
       "CSS": 39774,
       "Shell": 848,
@@ -3376,7 +3426,7 @@
       },
       {
         "name": "HTML",
-        "pct": 21
+        "pct": 20
       },
       {
         "name": "TypeScript",
@@ -3384,7 +3434,7 @@
       },
       {
         "name": "JavaScript",
-        "pct": 14
+        "pct": 15
       }
     ],
     "has_readme": true,
@@ -3417,8 +3467,8 @@
     "workflow_count": 4,
     "last_run": {
       "status": "completed",
-      "conclusion": "failure",
-      "date": "2026-11-26T08:50:00Z"
+      "conclusion": "success",
+      "date": "2026-11-26T11:40:39Z"
     }
   },
   {
@@ -3466,70 +3516,6 @@
       "status": "completed",
       "conclusion": "success",
       "date": "2026-04-03T09:49:03Z"
-    }
-  },
-  {
-    "name": "uVision",
-    "full_name": "zhubao315/uVision",
-    "description": "投资人知识库 - GitHub Pages 项目",
-    "homepage": null,
-    "default_branch": "main",
-    "language": "TypeScript",
-    "fork": false,
-    "parent": null,
-    "license": null,
-    "topics": [],
-    "created_at": "2026-02-12T02:24:49Z",
-    "updated_at": "2026-02-12T11:04:10Z",
-    "pushed_at": "2026-02-12T11:03:48Z",
-    "size_kb": 4524,
-    "stars": 0,
-    "forks": 0,
-    "has_pages": true,
-    "category": "THINK",
-    "source_type": "ORIGINAL",
-    "status": "EXPERIMENT",
-    "file_count": 1442,
-    "languages": {
-      "TypeScript": 725186,
-      "JavaScript": 527592,
-      "Python": 417600,
-      "HTML": 222868,
-      "Shell": 113959,
-      "CSS": 49865
-    },
-    "top_languages": [
-      {
-        "name": "TypeScript",
-        "pct": 35
-      },
-      {
-        "name": "JavaScript",
-        "pct": 26
-      },
-      {
-        "name": "Python",
-        "pct": 20
-      },
-      {
-        "name": "HTML",
-        "pct": 11
-      }
-    ],
-    "has_readme": false,
-    "has_license_file": false,
-    "has_changelog": true,
-    "has_tests": true,
-    "has_docs": false,
-    "workflow_files": [],
-    "large_files": [],
-    "pages_config": null,
-    "latest_release": null,
-    "workflow_count": 1,
-    "last_run": {
-      "status": "completed",
-      "conclusion": "failure",
-      "date": "2026-02-12T11:03:49Z"
     }
   },
   {
@@ -4002,7 +3988,7 @@
     "last_run": {
       "status": "completed",
       "conclusion": "success",
-      "date": "2026-11-26T01:44:48Z"
+      "date": "2026-11-27T01:40:40Z"
     }
   },
   {

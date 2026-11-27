@@ -56,7 +56,6 @@
 | [gpustack](https://github.com/zhubao315/gpustack) | Fork | Python | 2026-04-20 | https://gpustack.ai | 是 | A GPU cluster manager that configures and orchestrates inference engines like vLLM and SGLang f |
 | [tescreal-guide](https://github.com/zhubao315/tescreal-guide) | 原创 | HTML | 2026-04-20 | https://zhubao315.github.io/tescreal-guide | 是 | TESCREAL Complete Guide - Visual guide to the seven tech philosophies shaping Silicon Valley |
 | [uRepo](https://github.com/zhubao315/uRepo) | 原创 | HTML | 2026-04-03 | https://zhubao315.github.io/uRepo/ | 是 | 主题报告 |
-| [uVision](https://github.com/zhubao315/uVision) | 原创 | TypeScript | 2026-02-12 | — | 是 | 投资人知识库 - GitHub Pages 项目 |
 | [Awesome-Nano-Banana-images](https://github.com/zhubao315/Awesome-Nano-Banana-images) | Fork | — | 2025-09-18 | https://picotrex.github.io/Awesome-Nano-Ba… | 是 | A curated collection of fun and creative examples generated with Nano Banana🍌, Gemini-2.5-flash |
 | [uPrompt](https://github.com/zhubao315/uPrompt) | 原创 | — | 2025-08-11 | — | 是 | 提示词管理变得简单 |
 | [ApeRAG](https://github.com/zhubao315/ApeRAG) | Fork | — | 2025-07-17 | — | — | ApeRAG: Best choice for building your own Knowledge Graph and for Context Engineering |
@@ -106,3 +105,5 @@
 ## Review gate
 - [ ] human review
 - [ ] external publish approved (default: no)
+
+> **2026-11-27 更新**：`uVision` 仓库已删除（Git 历史中的凭据形态文件无法通过普通删除清除），不再计入公开仓库清单。

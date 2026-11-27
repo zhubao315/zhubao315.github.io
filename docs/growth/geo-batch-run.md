@@ -12,7 +12,7 @@
 | e-Life Method | 定义、受众、FAQ、证据、版本口径 | README（4 理论基石 / 4 系统方法 / 5000+ 笔记实践） |
 | 2D Micro Anime Skill | 定义、受众、FAQ、证据、版本口径 | README（npx 安装、五幕流程） |
 | 量化生活 | Schema 类型 | 四个站点与数据管道 |
-| uVision | 定义、FAQ、状态 → archived | README 冻结归档说明（凭据形态文件待核验） |
+| ~~uVision~~ | 已删除仓库 | 2026-11-27 删除整个仓库以清除 Git 历史中的凭据形态文件 |
 | uRepo | 定义、FAQ、状态 → archived | README 冻结归档 + Pages 404 |
 | uPrompt | 定义、FAQ、状态 → archived | README 冻结实验 + 单提交 |
 | TESCREAL Guide | 定义、FAQ、证据 | README 七大流派 |
@@ -26,14 +26,14 @@
 
 ## 状态修正
 
-- `uVision` / `uRepo` / `uPrompt` 从 `prototype` / `experiment` 改为 `archived`，与仓库 README 的冻结说明一致。
+- `uRepo` / `uPrompt` 从 `prototype` / `experiment` 改为 `archived`，与仓库 README 的冻结说明一致；`uVision` 已于 2026-11-27 删库。
 - 所有冻结项目明确写"不安装、不部署、不纳入主页精选"，不虚构维护计划。
 
 ## 质量边界
 
 - 搜索量、竞争度、排名一律 `UNVERIFIED`，未写入数字。
 - 投资与心理类内容保留"研究记录 / 个人内容实验、不构成建议"的边界。
-- 敏感仓库（uVision 凭据形态文件）不扩展推广，只保留归档说明。
+- 敏感仓库 `uVision` 已通过删除整个仓库处理：普通删文件无法清除 Git 历史中的凭据形态文件。
 
 ## 验证
 
@@ -47,7 +47,7 @@
 ## Unverified
 - 搜索量与 AI 引用: UNVERIFIED — 需 GSC / Bing Webmaster Tools
 - 真实用户反馈: UNVERIFIED — 多数仓库 Star/Issue 为 0
-- uVision 凭据形态文件: UNVERIFIED — 需所有者完成核验与轮换
+- ~~uVision 凭据形态文件~~: 已通过删库处理，无需继续核验
 
 ## Review gate
 - [ ] human review

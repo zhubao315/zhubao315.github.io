@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "last_verified": "2026-11-26",
+    "last_verified": "2026-11-27",
     "maintainer": "human",
     "note": "人工维护的权威事实。GitHub API 字段由 build-fact-registry.mjs 与 github-stats.json 对账；派生值必须写 derived_from 与 as_of。修改本文件需人工复核证据。"
   },
@@ -87,13 +87,21 @@
       "value": 8196,
       "source": "derived",
       "as_of": "2026-11-26",
-      "derived_from": ["running_sessions", "cycling_sessions", "hiking_sessions"]
+      "derived_from": [
+        "running_sessions",
+        "cycling_sessions",
+        "hiking_sessions"
+      ]
     },
     "total_km": {
       "value": 72903,
       "source": "derived",
       "as_of": "2026-11-26",
-      "derived_from": ["running_km", "cycling_km", "hiking_km"]
+      "derived_from": [
+        "running_km",
+        "cycling_km",
+        "hiking_km"
+      ]
     }
   }
 }

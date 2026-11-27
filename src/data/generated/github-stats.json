@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-26T09:34:24Z",
-  "last_verified": "2026-11-26",
+  "generated_at": "2026-11-27T02:01:05Z",
+  "last_verified": "2026-11-27",
   "total_repos": 78,
   "public_repos": 68,
   "private_repos": 10,
@@ -9,24 +9,24 @@
   "upstream": 37,
   "non_fork_public": 29,
   "fork_public": 39,
-  "pages_enabled": 21,
+  "pages_enabled": 20,
   "pages_ok": 20,
-  "pages_problem": 1,
+  "pages_problem": 0,
   "by_category": {
-    "BUILD": 45,
-    "THINK": 14,
+    "BUILD": 46,
+    "THINK": 13,
     "MEASURE": 5,
     "CREATE": 4,
     "UNCATEGORIZED": 0
   },
   "statuses": {
-    "ACTIVE": 34,
+    "ACTIVE": 35,
     "DORMANT": 29,
-    "EXPERIMENT": 5,
+    "EXPERIMENT": 4,
     "ARCHIVED": 0
   },
   "repoCount": 68,
   "nonForkCount": 29,
   "forkCount": 39,
-  "lastVerified": "2026-11-26"
+  "lastVerified": "2026-11-27"
 }
