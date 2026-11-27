@@ -84,6 +84,7 @@ const websiteSchema = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="theme-color" content="#07111F" />
     <meta name="color-scheme" content="dark" />
     <title>{title}</title>
@@ -94,6 +95,7 @@ const websiteSchema = {
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="author" content="朱宝 ZHUBAO" />
+    <meta name="google-site-verification" content="wzYE4fFCW3oLx1vZirUrDX6-pb2xKUwRYe_XPGQWLq8" />
     <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow,max-image-preview:large'} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
@@ -138,6 +140,14 @@ const websiteSchema = {
     {pageSchemas.map((item) => (
       <script type="application/ld+json" set:html={JSON.stringify(item)} />
     ))}
+    <script
+      src="/js/zhubao-analytics.js"
+      async
+      fetchpriority="low"
+      data-site-id="home"
+      data-site-group="BUILD"
+      data-repo="zhubao315/zhubao315.github.io"
+    ></script>
   </head>
   <body class={bodyClass}>
     <a class="skip-link" href="#main">跳到主要内容</a>
