@@ -1,24 +1,24 @@
 {
   "_meta": {
-    "generated_at": "2026-11-26T10:55:28Z",
+    "generated_at": "2026-11-28T08:30:57Z",
     "source": "dist/ static analysis (lab, not Lighthouse, not field data)",
     "commands": [
       "npm run build",
       "npm run measure:baseline"
     ]
   },
-  "files": 544,
-  "html_pages": 55,
-  "total_bytes": 19195196,
-  "total_kib": 18745.3,
+  "files": 552,
+  "html_pages": 60,
+  "total_bytes": 19374468,
+  "total_kib": 18920.4,
   "by_class_bytes": {
-    "html": 1506950,
-    "css": 159909,
-    "js": 0,
+    "html": 1670477,
+    "css": 165556,
+    "js": 9641,
     "image": 15674715,
     "font": 355216,
     "json": 126705,
-    "xml": 3761,
+    "xml": 4218,
     "other": 1367940
   },
   "image_formats": {
@@ -26,9 +26,9 @@
     "svg": 211,
     "png": 119
   },
-  "inline_script_bytes": 133000,
-  "inline_script_kib": 129.9,
-  "pages_with_inline_script": 55,
+  "inline_script_bytes": 169377,
+  "inline_script_kib": 165.4,
+  "pages_with_inline_script": 59,
   "largest_files": [
     {
       "path": "brand/01-LOGO/SOURCE.png",
