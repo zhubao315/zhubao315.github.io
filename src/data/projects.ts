@@ -820,7 +820,7 @@ export const projects: Project[] = [
     evidenceLinks: [
       { label: 'README 与产品中心', href: 'https://github.com/zhubao315/memoir#readme' },
       { label: '在线落地页', href: 'https://zhubao315.github.io/memoir/' },
-      { label: '安全审计', href: 'https://github.com/zhubao315/memoir/blob/main/docs/audit/SECURITY_AUDIT.md' },
+      { label: '安全审计', href: 'https://github.com/zhubao315/memoir/blob/master/docs/audit/SECURITY_AUDIT.md' },
     ],
     faqs: [
       {

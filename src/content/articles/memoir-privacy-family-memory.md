@@ -51,7 +51,7 @@ Memoir 的设计前提写在 README 里：所有记忆有明确归属，服务�
 
 ## 下一步
 
-阅读 [Memoir 项目页](/work/memoir/) 与 [安全审计文档](https://github.com/zhubao315/memoir/blob/main/docs/audit/SECURITY_AUDIT.md)。
+阅读 [Memoir 项目页](/work/memoir/) 与 [安全审计文档](https://github.com/zhubao315/memoir/blob/master/docs/audit/SECURITY_AUDIT.md)。
 
 ## 证据
 

@@ -51,8 +51,16 @@ export interface Book {
 
 const UREAD = 'https://zhubao315.github.io/uRead';
 export const readerUrl = (id: string) => `${UREAD}/books/reader.html?id=${id}`;
-/** ASCII 稳定别名，避免中文 slug 在地址栏显示为 percent-encoded「乱码」。 */
-export const noteUrl = (alias: string) => `${UREAD}/read/${alias}`;
+/** uRead 的 ASCII 稳定别名对应的真实静态页 slug（来自 uRead src/data/noteAliases.ts）。 */
+const UREAD_NOTE_SLUGS: Record<string, string> = {
+  'book-knowledge-base-engineering': 'B5-科技科普__《知识库工程学》-朱宝',
+  'book-investment-discipline': 'B6-投资理财__《投资的纪律》-朱宝',
+  'book-ai-era-learning': 'B3-认知成长__《AI时代，如何真正学会》-朱宝',
+  'book-one-in-a-thousand': 'B3-认知成长__《千分之一的你》-朱宝',
+};
+/** 别名不等于静态路由：uRead 静态页按真实中文 slug 生成，需编码后访问。 */
+export const noteUrl = (alias: string) =>
+  `${UREAD}/read/${encodeURIComponent(UREAD_NOTE_SLUGS[alias] ?? alias)}/`;
 
 export const books: Book[] = [
   {
