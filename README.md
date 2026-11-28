@@ -128,7 +128,7 @@ Identity and repository counts live in `src/data/site.ts`. The six featured proj
 1. No employer, client, revenue, user count, return, award, or publication claim without a public source.
 2. Fork and upstream research are never presented as original work.
 3. The two books are labeled manuscripts; no ISBN or publisher is implied.
-4. Metrics are snapshots. The source sites are the authority after 2026-11-11.
+4. Metrics are snapshots. The source sites are the authority; see the verification date in `src/data/site.ts`.
 5. Derived totals are explicitly labeled as derived.
 6. A demo link is shown only when it resolves.
 7. Lost legacy content is preserved as a URL and explained, not rewritten.

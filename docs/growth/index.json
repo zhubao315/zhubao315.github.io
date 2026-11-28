@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-26T04:09:18.243702+00:00",
-  "count": 8,
+  "generated_at": "2026-11-28T11:12:41.193412+00:00",
+  "count": 9,
   "entries": [
     {
-      "path": "../site/docs/growth/01-full-audit.md",
+      "path": "docs/growth/01-full-audit.md",
       "title": "01 · ZHUBAO Growth OS 全面审计",
       "has_evidence": true,
       "has_unverified": true,
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "path": "../site/docs/growth/02-project-inventory.md",
+      "path": "docs/growth/02-project-inventory.md",
       "title": "02 · 仓库全量清单",
       "has_evidence": true,
       "has_unverified": true,
@@ -30,11 +30,12 @@
       "keywords": [
         "核验日期",
         "数据源",
-        "说明"
+        "说明",
+        "2026-11-27 更新"
       ]
     },
     {
-      "path": "../site/docs/growth/03-priority-matrix.md",
+      "path": "docs/growth/03-priority-matrix.md",
       "title": "03 · 项目分级运营矩阵",
       "has_evidence": true,
       "has_unverified": true,
@@ -53,7 +54,7 @@
       ]
     },
     {
-      "path": "../site/docs/growth/04-data-inconsistencies.md",
+      "path": "docs/growth/04-data-inconsistencies.md",
       "title": "04 · 数据不一致与事实核验清单",
       "has_evidence": true,
       "has_unverified": true,
@@ -69,7 +70,20 @@
       ]
     },
     {
-      "path": "../site/docs/growth/geo-implementation-report.md",
+      "path": "docs/growth/geo-batch-run.md",
+      "title": "GEO 批次执行报告 · 全部项目",
+      "has_evidence": true,
+      "has_unverified": true,
+      "has_review_gate": true,
+      "keywords": [
+        "执行日期",
+        "工具",
+        "范围",
+        "累计覆盖"
+      ]
+    },
+    {
+      "path": "docs/growth/geo-implementation-report.md",
       "title": "GEO（AI 搜索）实施报告",
       "has_evidence": true,
       "has_unverified": true,
@@ -87,7 +101,7 @@
       ]
     },
     {
-      "path": "../site/docs/growth/projects/uskill-seo-geo-plan.md",
+      "path": "docs/growth/projects/uskill-seo-geo-plan.md",
       "title": "uSkill · 单项目 SEO / GEO 全面优化方案",
       "has_evidence": true,
       "has_unverified": true,
@@ -106,7 +120,7 @@
       ]
     },
     {
-      "path": "../site/docs/growth/seo-test-report.md",
+      "path": "docs/growth/seo-test-report.md",
       "title": "SEO / GEO 测试报告",
       "has_evidence": true,
       "has_unverified": true,
@@ -125,7 +139,7 @@
       ]
     },
     {
-      "path": "../site/docs/growth/technical-seo-report.md",
+      "path": "docs/growth/technical-seo-report.md",
       "title": "技术 SEO 改造报告（提示词 6）",
       "has_evidence": true,
       "has_unverified": true,

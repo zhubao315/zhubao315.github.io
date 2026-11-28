@@ -32,6 +32,11 @@
 - 新增 `npm run test:links:external` 与 `external-links.yml`（每周 + 手动，诊断性、不阻断部署）；403/429/5xx/网络超时记为警告，只有 404/410 记为断链，报告写入 `docs/link-report.json`。
 - 外链巡检发现并修复 3 处真实问题：`uRepo` 的 Pages 404、`DockerTarBuilder` 的外部域名 404、404 页面 canonical 指向不存在的 `/404/`。前两者从仓库目录移除失效入口（`src/data/broken-homepages.json` 记录原因），noindex 页面不再输出 canonical / og:url。
 - 最新外链巡检：194 个 URL，0 断链，16 条警告（网络超时/反爬）；内链 2572 条 0 断链。
+
+### 实测性能（2026-11-28，实验室移动端 Lighthouse）
+- 页头/页脚 Logo 从 273 KB / 250 KB 的 PNG 换成同设计的矢量 SVG（1.4 KB / 3.5 KB）。
+- 首屏三种 woff2 字体加 `rel=preload`。
+- 结果：Performance 76 → **98**，LCP 5.0 s → **2.5 s**，CLS 0.122 → **0**，总传输 771 KiB → **251 KiB**；Accessibility 95 / Best Practices 96 / SEO 100 不变。这是实验室数据，不是 RUM。详见 `/oc/docs/quality/lighthouse-lab.md`。
 - 巡检降噪与历史：`docs/link-report.json` 现在包含 `noise_reduction`，把最近 2 次运行中出现过的断链标为「已知问题」，只把新出现的记为事件；同时追加写入 `docs/link-history.jsonl`（最多保留 200 次），CI 工件同时上传两者。
 
 ## 验证口径
